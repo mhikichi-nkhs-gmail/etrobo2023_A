@@ -21,6 +21,12 @@
 
 using namespace ev3api;
 
+int log_max=30000;
+int log_idx=0;
+
+float msg_logbuf[30000][10];
+
+
 Motor       *gLeftWheel = new Motor(PORT_C,false,LARGE_MOTOR);
 Motor       *gRightWheel = new Motor(PORT_B,false,LARGE_MOTOR);
 Motor       *gArm = new Motor(PORT_A,true,LARGE_MOTOR);
@@ -106,7 +112,7 @@ void polling_task(intptr_t unused) {
 
     rgb_raw_t rgb = gColor->getRgb();
     static char buf[100];
-    sprintf(buf,"len , bri,H,S r,g,b, turn, v : %3.3f,  %7.4f,  %5.1f, %3.2f, %d,%d,%d  , %4.2f, %4.2f ",len,br,h,s,  rgb.r, rgb.g,rgb.b ,turn,v);
+    sprintf(buf,"len , bri,H,S r,g,b, turn, v : %3.3f,  %7.4f,  %5.1f, %3.2f, %d,%d,%d  , %4.2f, %4.2f \n",len,br,h,s,  rgb.r, rgb.g,rgb.b ,turn,v);
     msg_log(buf);
 
   ext_tsk();
