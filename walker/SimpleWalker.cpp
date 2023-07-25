@@ -105,5 +105,15 @@ void SimpleWalker::resetParam()
     mSpeedControl->resetParam();
 }
 
+void SimpleWalker::init()
+{
+
+}
+
+void SimpleWalker::execStart()
+{
+    run();
+}
+
 
 

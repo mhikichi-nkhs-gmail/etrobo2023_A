@@ -1,5 +1,5 @@
 #ifndef _SCENE_H_
-#define  _SCENE_H_
+#define _SCENE_H_
 
 #include "SpeedSectionManager.h"
 

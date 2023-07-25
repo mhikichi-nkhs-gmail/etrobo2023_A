@@ -11,17 +11,19 @@ SpeedSectionManager::SpeedSectionManager()
 #endif
     Section *sc = new Section();
     
-    // LineTracer テスト
+     //LineTracer テスト
     LineTracer* tracer = (LineTracer*)sc->selectWalker(Section::TRACER);
 
     tracer->setParam(25, 0 ,  30, 0.2, 0.1 );
     tracer->setEdgeMode(_EDGE);
+    
 
-    /*
-    // SimpleWalkerテスト
+    
+    /* SimpleWalkerテスト
     SimpleWalker* walker = (SimpleWalker*)sc->selectWalker(Section::WALKER);
     walker->setCommand(10,10);
     */
+    
     addSection(sc);
 
 }

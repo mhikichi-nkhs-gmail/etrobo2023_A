@@ -29,6 +29,9 @@ public:
     void setCommandV(float forward, int turn);
     void resetParam();
 
+    virtual void init();
+    virtual void execStart();
+
 protected:
 
     float mForward;

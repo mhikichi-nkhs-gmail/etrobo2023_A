@@ -35,6 +35,9 @@ public:
 
     void printInfo();
 
+    void init();
+    void execStart();
+
     static const int LEFTEDGE;
     static const int RIGHTEDGE;
 

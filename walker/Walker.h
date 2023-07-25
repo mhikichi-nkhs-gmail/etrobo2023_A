@@ -11,19 +11,25 @@ class Walker
 {
     public:
         Walker( Odometry *odo );
-
-        virtual void run();
-        virtual void printInfo();
-
+        void run();
+        virtual void init();
+        virtual void execStart();
+        
     protected:
         Odometry *mOdo;
         PID *mPid;
 
         Brightness *mBright;
 
+        enum State {
+            INIT,
+            RUN,
+            END
+        };
+
+        State mState;
+
     private:
-
-
 
 };
 #endif
