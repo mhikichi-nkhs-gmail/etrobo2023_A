@@ -18,6 +18,7 @@
 #include "LineTracer.h"
 
 #include "Scene.h"
+#include "MotorManager.h"
 
 using namespace ev3api;
 
@@ -48,6 +49,8 @@ LineTracer *gTracer;
 
 Scene *gScene;
 
+MotorManager *gMotor;
+
 
 static void user_system_create() {
 
@@ -59,6 +62,7 @@ static void user_system_create() {
   gLength = new Length();
   gTurnAngle = new TurnAngle();
   gVelocity = new Velocity();
+  gMotor = new MotorManager(gLeftWheel, gRightWheel);
 
   gOdo = new Odometry(gLeftWheel,gRightWheel,gLength,gTurnAngle,gVelocity);
   gSpeed = new SpeedControl(gOdo,gVelocity);  
@@ -74,7 +78,6 @@ static void user_system_destroy() {
 
   delete gColor;
   delete gPolling;
-
 }
 
 
@@ -112,8 +115,8 @@ void polling_task(intptr_t unused) {
 
     rgb_raw_t rgb = gColor->getRgb();
     static char buf[100];
-    sprintf(buf,"len , bri,H,S r,g,b, turn, v : %3.3f,  %7.4f,  %5.1f, %3.2f, %d,%d,%d  , %4.2f, %4.2f \n",len,br,h,s,  rgb.r, rgb.g,rgb.b ,turn,v);
-    msg_log(buf);
+    //sprintf(buf,"len , bri,H,S r,g,b, turn, v : %3.3f,  %7.4f,  %5.1f, %3.2f, %d,%d,%d  , %4.2f, %4.2f \n",len,br,h,s,  rgb.r, rgb.g,rgb.b ,turn,v);
+    //msg_log(buf);
 
   ext_tsk();
 }

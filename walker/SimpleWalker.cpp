@@ -9,6 +9,9 @@
 #include "SimpleWalker.h"
 #include "Walker.h"
 #include "util.h"
+
+extern MotorManager *gMotor;
+
 // 定数宣言
 /**
  * コンストラクタ
@@ -26,8 +29,10 @@ SimpleWalker::SimpleWalker(
         mForward(0),
         mTurn(0),
         mBreake_flag(false),
-        mMode_flag(false)
+        mMode_flag(false),
+        mMotor(gMotor)
 {
+
 }
 
 
@@ -63,7 +68,7 @@ void SimpleWalker::run() {
     if(pwm_r<-100) pwm_r=-100;
     if(pwm_l<-100) pwm_l=-100;
 
-    mOdo->setPwm(pwm_l,pwm_r);
+    mMotor->setPwm(pwm_l,pwm_r);
 }
 
 /**
