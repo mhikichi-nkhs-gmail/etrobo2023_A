@@ -6,12 +6,12 @@ Length::Length()
 
 }
 
-float Length::getValue()
+double Length::getValue()
 {
     return mLength;
 }
 
-void Length::update(float len)
+void Length::update(double len)
 {
     mLength = len;
 }

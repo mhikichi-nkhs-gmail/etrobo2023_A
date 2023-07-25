@@ -6,11 +6,11 @@ class Length : public Measure
 {
     public:
         Length();
-        float getValue();
-        void update(float len);
+        double getValue();
+        void update(double len);
 
     private:
-        float mLength;
+        double mLength;
 };
 
 #endif

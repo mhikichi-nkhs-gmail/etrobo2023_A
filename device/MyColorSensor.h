@@ -10,15 +10,15 @@
 using namespace ev3api;
 
 typedef struct hsv_t {
-    float h;
-    float s;
-    float v;
+    double h;
+    double s;
+    double v;
 } HSV_T;
 
 typedef struct rgb_f_t {
-    float r;
-    float g;
-    float b;
+    double r;
+    double g;
+    double b;
 } RGB_F_T;
 
 class MyColorSensor 
@@ -30,8 +30,8 @@ class MyColorSensor
                     HsvSatu *s);
         void update();
         void calcHSV();
-        float normBrightness(float br,float min,float max);
-        float normColor(float br,float min,float max);
+        double normBrightness(double br,double min,double max);
+        double normColor(double br,double min,double max);
         void getHSV(rgb_f_t rgb, hsv_t& hsv);
 
         static const int BRIGHT;
@@ -60,8 +60,8 @@ class MyColorSensor
         int mMax_B;
         int mMin_B;
 
-        float mBright;
-        float mNorm_bright;
+        double mBright;
+        double mNorm_bright;
 
         rgb_f_t mRgb;
         hsv_t mHsv;

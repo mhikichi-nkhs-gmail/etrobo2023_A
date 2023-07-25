@@ -34,7 +34,7 @@ void msg_log(const char *str)
   printf(str);
   if(fp!=nullptr) fprintf(fp,str);
 }
-void msg_num(char c,float x,float y,float z,  float w,float p)
+void msg_num(char c,double x,double y,double z,  double w,double p)
 {
   msg_logbuf[log_idx][0]=c;  
   msg_logbuf[log_idx][1]=x;

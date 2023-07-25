@@ -17,10 +17,10 @@ void SpeedControl::setTargetSpeed(double speed)
 {
     static double prev_speed=0;
     double bai =1.0;
-    //float bai =0.3;
-    //float bai =speed/60.0;
+    //double bai =0.3;
+    //double bai =speed/60.0;
 
-    float spd = fmax(fabs(mTargetSpeed),fabs(speed));
+    double spd = fmax(fabs(mTargetSpeed),fabs(speed));
     /*if(spd<70) bai=1.3;
     if(spd<50) bai=0.8;
     if(spd<36) bai=0.7;*/

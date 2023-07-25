@@ -62,17 +62,17 @@ void Odometry::calc()
 
 	static int count=0;
 
-	float rs1 = current_rs1;
-	float rs2 = current_rs2;
+	double rs1 = current_rs1;
+	double rs2 = current_rs2;
 
 	//syslog(LOG_NOTICE,"rs1,rs2 = %d,%d <- %d,%d",(int)rs1,(int)rs2, prev_rs1,prev_rs2);
 
-	float drs1=rs1-prev_rs1;
-	float drs2=rs2-prev_rs2;
+	double drs1=rs1-prev_rs1;
+	double drs2=rs2-prev_rs2;
 
-	float len_l = drs1*M_PI*D_LEFT/360.0;
-	float len_r = drs2*M_PI*D_RIGHT/360.0;
-	float dth=(len_r-len_l)/TREAD;
+	double len_l = drs1*M_PI*D_LEFT/360.0;
+	double len_r = drs2*M_PI*D_RIGHT/360.0;
+	double dth=(len_r-len_l)/TREAD;
 	
 	x+= (len_r+len_l)/2.0*cos(th+dth/2.0); //進行方向 X軸 0度方向
 	y+= (len_r+len_l)/2.0*sin(th+dth/2.0); //横	

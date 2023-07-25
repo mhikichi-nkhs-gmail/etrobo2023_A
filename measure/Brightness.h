@@ -6,11 +6,11 @@ class Brightness : public Measure
 {
     public:
         Brightness();
-        float getValue();
-        void update(float br);
+        double getValue();
+        void update(double br);
 
     private:
-        float mBrightness;
+        double mBrightness;
 };
 
 #endif

@@ -8,7 +8,7 @@ PID::PID()
 
 }
 
-PID::PID(float delta) {
+PID::PID(double delta) {
     limit = 100;
     diff[0]=diff[1]=0.0;
     integral=0;
@@ -31,16 +31,16 @@ PID::~PID()
 {
 }
 
-void PID::setLimit(float limit) 
+void PID::setLimit(double limit) 
 {
     this->limit = limit;
 }
-void PID::setTarget(float t)
+void PID::setTarget(double t)
 {
     this->target = t;
 }
 
-float PID::getOperation(float value)
+double PID::getOperation(double value)
 {
 
 //   static char buf[256];
@@ -48,7 +48,7 @@ float PID::getOperation(float value)
 
     diff[0]=diff[1];
     diff[1] = target-value;
-    float prev_i=integral;
+    double prev_i=integral;
 
     delta = (diff[1]-diff[0])/DELTAT;
     /*
@@ -79,7 +79,7 @@ float PID::getOperation(float value)
     }
 
 
-    float val = diff[1]*Kp + delta*Kd + integral*Ki; 
+    double val = diff[1]*Kp + delta*Kd + integral*Ki; 
 
     static int i=0;
     if (debug) {
@@ -97,27 +97,27 @@ float PID::getOperation(float value)
     return val;
 }
 
-void PID::setKp(float kp)
+void PID::setKp(double kp)
 {
     Kp = kp;
 }
 
-void PID::setKi(float ki)
+void PID::setKi(double ki)
 {
     Ki = ki;
 }
 
-void PID::setKd(float kd)
+void PID::setKd(double kd)
 {
     Kd = kd;
 }
 
-float PID::getDiff() 
+double PID::getDiff() 
 {
     return diff[1];
 }
 
-float PID::getIntegral()
+double PID::getIntegral()
 {
     return integral;
 }
@@ -129,12 +129,12 @@ void PID::resetParam()
     resetFlg=true;
 }
 
-float PID::getTarget()
+double PID::getTarget()
 {
     return target;
 }
 
-void PID::setDeltaT(float delta)
+void PID::setDeltaT(double delta)
 {
     DELTAT = delta;
 }

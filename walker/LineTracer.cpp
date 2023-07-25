@@ -32,8 +32,8 @@ LineTracer::LineTracer( Odometry *odo,
  
 void LineTracer::run()
 {
-    float  brightness;
-    float direction;
+    double  brightness;
+    double direction;
     brightness=mBright->getValue();
     mTurn = calcTurn(brightness);
 
@@ -49,9 +49,9 @@ void LineTracer::run()
 
 
    
-float LineTracer::calcTurn(float val1) {
+double LineTracer::calcTurn(double val1) {
 
-    float bai = 1.0;   //CompositeSection用？
+    double bai = 1.0;   //CompositeSection用？
     if(mSpeedControl->getCurrentSpeed()<15) {  //12
         bai=0.5;
     }
@@ -59,26 +59,26 @@ float LineTracer::calcTurn(float val1) {
     mPid->setKi(mIFactor*bai);
     mPid->setKd(mDFactor*bai);
 
-    float val1_turn =  mPid->getOperation(val1);
+    double val1_turn =  mPid->getOperation(val1);
 
   //  mPid->debug=true;
 
     if(mLeftEdge) val1_turn = -val1_turn;
     setBias(-mForward*(1-mCurve)/(1+mCurve)*mAngleKp);
-    float turn =  val1_turn+mBias;
+    double turn =  val1_turn+mBias;
    
     return turn;
 }
 
-void LineTracer::setParam(float speed,float target,float kp, float ki, float kd) 
+void LineTracer::setParam(double speed,double target,double kp, double ki, double kd) 
 {
     setParam(speed, target, kp,  ki,  kd,
                          1, 1);
 
 }
 
-void LineTracer::setParam(float speed,float target,float kp, float ki, float kd,
-                        float angleTarget,float angleKp) 
+void LineTracer::setParam(double speed,double target,double kp, double ki, double kd,
+                        double angleTarget,double angleKp) 
 {
 
   /*  static char buf[256];
@@ -113,7 +113,7 @@ bool LineTracer::getEdgeMode()
     return mLeftEdge;
 }
 
-void LineTracer::setLimit(float limit)
+void LineTracer::setLimit(double limit)
 {
     mLimit=limit;
     mPid->setLimit(limit);
@@ -124,12 +124,12 @@ bool LineTracer::isLeftEdge()
     return mLeftEdge;
 }
 
-void LineTracer::setBias(float curve)
+void LineTracer::setBias(double curve)
 {
      mBias = curve;
 }
 
-void LineTracer::addBias(float add)
+void LineTracer::addBias(double add)
 {
     mBias += add;
 }

@@ -6,12 +6,12 @@ HsvHue::HsvHue()
 
 }
 
-float HsvHue::getValue()
+double HsvHue::getValue()
 {
     return mHue;
 }
 
-void HsvHue::update(float h)
+void HsvHue::update(double h)
 {
     mHue = h;
 }

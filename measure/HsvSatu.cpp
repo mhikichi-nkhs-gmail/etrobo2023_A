@@ -6,12 +6,12 @@ HsvSatu::HsvSatu()
 
 }
 
-float HsvSatu::getValue()
+double HsvSatu::getValue()
 {
     return mLpf->getFillteredValue();
 }
 
-void HsvSatu::update(float s)
+void HsvSatu::update(double s)
 {
     mLpf->addValue(s);
     mSatu = s;

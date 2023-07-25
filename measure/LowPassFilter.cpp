@@ -9,17 +9,17 @@ LowPassFilter::~LowPassFilter()
 {
 }
 
-void LowPassFilter::addValue(float value)
+void LowPassFilter::addValue(double value)
 {
     prev = prev*mRate + value*(1-mRate);
 }
 
-float LowPassFilter::getFillteredValue()
+double LowPassFilter::getFillteredValue()
 {    
     return prev;
 }
 
-void LowPassFilter::setRate(float rate)
+void LowPassFilter::setRate(double rate)
 {
     mRate = rate;
 }

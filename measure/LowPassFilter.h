@@ -5,13 +5,13 @@ class LowPassFilter {
     public:
         LowPassFilter();
         ~LowPassFilter();
-        void addValue(float );
-        float getFillteredValue();
-        void setRate(float rate);
+        void addValue(double );
+        double getFillteredValue();
+        void setRate(double rate);
 
     private:
-        float mRate;
-        float prev;
+        double mRate;
+        double prev;
 };
 
 #endif

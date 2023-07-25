@@ -20,18 +20,18 @@ public:
             SpeedControl *scon);
     void run();
 
-    void setParam(float speed,float target,float kp, float ki, float kd);
-    void setParam(float speed,float target,float kp, float ki, float kd,float angleTarget,float angleKp);
+    void setParam(double speed,double target,double kp, double ki, double kd);
+    void setParam(double speed,double target,double kp, double ki, double kd,double angleTarget,double angleKp);
                        
     void setEdgeMode(bool isLeftEdge);
     bool getEdgeMode();
     void changeEdgeMode();
-    void setLimit(float limit);
+    void setLimit(double limit);
 
     bool isLeftEdge();
   
-    void setBias(float curve);
-    void addBias(float add);
+    void setBias(double curve);
+    void addBias(double add);
 
     void printInfo();
 
@@ -43,22 +43,22 @@ public:
 
 
 private:
-    float calcTurn(float val1);
+    double calcTurn(double val1);
 
-    float mSpeed;
+    double mSpeed;
 
     int mTargetSpeed;
-    float mTarget;
-    float mPFactor;
-    float mIFactor;
-    float mDFactor;
+    double mTarget;
+    double mPFactor;
+    double mIFactor;
+    double mDFactor;
 
-    float mAngleKp;
+    double mAngleKp;
     bool mLeftEdge;
-    float mCurve;
+    double mCurve;
 
 
-    float mBias;
+    double mBias;
 
     int mLimit;  
 };

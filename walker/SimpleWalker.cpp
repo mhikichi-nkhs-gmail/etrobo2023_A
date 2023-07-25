@@ -37,29 +37,29 @@ SimpleWalker::SimpleWalker(
 
 
 void SimpleWalker::run() {
-    static float speed=0;
+    static double speed=0;
 
     mForward = mSpeedControl->getPwm();
 
-    float pwm_l = mForward + mTurn;      // <2>
-    float pwm_r = mForward - mTurn;      // <2>
+    double pwm_l = mForward + mTurn;      // <2>
+    double pwm_r = mForward - mTurn;      // <2>
     static const int MAXPWM=85;
     int diff = 0;
     if(pwm_l>MAXPWM) {
-        pwm_r = (int)((float)MAXPWM*pwm_r/pwm_l);
+        pwm_r = (int)((double)MAXPWM*pwm_r/pwm_l);
         pwm_l=MAXPWM;
     }
     if(pwm_l<-MAXPWM) {
-        pwm_r = (int)((float)-MAXPWM*pwm_r/pwm_l);
+        pwm_r = (int)((double)-MAXPWM*pwm_r/pwm_l);
         pwm_l=-MAXPWM;
     }
 
     if(pwm_r>MAXPWM) {
-        pwm_l = (int)((float)MAXPWM*pwm_l/pwm_r);
+        pwm_l = (int)((double)MAXPWM*pwm_l/pwm_r);
         pwm_r=MAXPWM;
     }
     if(pwm_r<-MAXPWM) {
-        pwm_l = (int)((float)-MAXPWM*pwm_l/pwm_r);
+        pwm_l = (int)((double)-MAXPWM*pwm_l/pwm_r);
         pwm_r=-MAXPWM;
     }
 
@@ -86,7 +86,7 @@ void SimpleWalker::setCommand(int forward, int turn) {
 
 }
 
-void SimpleWalker::setCommandV(float forward, int turn)
+void SimpleWalker::setCommandV(double forward, int turn)
 {
 
     mSpeedControl->setTargetSpeed(forward);

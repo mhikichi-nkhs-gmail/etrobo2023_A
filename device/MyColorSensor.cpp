@@ -67,20 +67,20 @@ void MyColorSensor::update()
     
 }
 
-float MyColorSensor::normBrightness(float br,float min, float max)
+double MyColorSensor::normBrightness(double br,double min, double max)
 {
-    float grayLevel = (max+min)/2.0;
+    double grayLevel = (max+min)/2.0;
 
-    float rate = (br-grayLevel)/(max-grayLevel);
+    double rate = (br-grayLevel)/(max-grayLevel);
     if(rate>1.0) rate=1.0;
     if(rate<-1.0) rate=-1.0;
     
     return rate;
 }
 
-float MyColorSensor::normColor(float br,float min, float max)
+double MyColorSensor::normColor(double br,double min, double max)
 {
-    float rate = (br-min)/(max-min);
+    double rate = (br-min)/(max-min);
     if(rate>1.0) rate=1.0;
     if(rate<0) rate=0;
 
@@ -89,11 +89,11 @@ float MyColorSensor::normColor(float br,float min, float max)
 
 void MyColorSensor::getHSV(rgb_f_t rgb, hsv_t& hsv)
 {
-    float r = rgb.r;
-    float g = rgb.g;
-    float b = rgb.b;
+    double r = rgb.r;
+    double g = rgb.g;
+    double b = rgb.b;
                
-    float h=0, s=0, v=0;
+    double h=0, s=0, v=0;
     
     if (r >= g && g >= b) { 
         

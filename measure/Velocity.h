@@ -6,19 +6,19 @@
 #define M_PI 3.14159265358979323846
 
 static const int MAX_CNT=25;  // 0.25s
-static const float DELTA=0.01;
+static const double DELTA=0.01;
 
 class Velocity : public Measure
 {
     public:
         Velocity();
-        float getValue();
-        void update(float cnt1,float cnt2);
+        double getValue();
+        void update(double cnt1,double cnt2);
     private:
-        float mVelocity;
+        double mVelocity;
 
-        float mCounts1[MAX_CNT];
-        float mCounts2[MAX_CNT];
+        double mCounts1[MAX_CNT];
+        double mCounts2[MAX_CNT];
         int mCounts_idx=0;
 
 };

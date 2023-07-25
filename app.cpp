@@ -25,7 +25,7 @@ using namespace ev3api;
 int log_max=30000;
 int log_idx=0;
 
-float msg_logbuf[30000][10];
+double msg_logbuf[30000][10];
 
 
 Motor       *gLeftWheel = new Motor(PORT_C,false,LARGE_MOTOR);
@@ -106,12 +106,12 @@ void polling_task(intptr_t unused) {
   gPolling->run();
 
     Measure *m = gBrightness;
-    float br = m->getValue(); 
-    float len = gLength->getValue();
-    float turn = gTurnAngle->getValue();
-    float v = gVelocity->getValue();
-    float h = gHue->getValue();
-    float s = gSatu->getValue();
+    double br = m->getValue(); 
+    double len = gLength->getValue();
+    double turn = gTurnAngle->getValue();
+    double v = gVelocity->getValue();
+    double h = gHue->getValue();
+    double s = gSatu->getValue();
 
     rgb_raw_t rgb = gColor->getRgb();
     static char buf[100];

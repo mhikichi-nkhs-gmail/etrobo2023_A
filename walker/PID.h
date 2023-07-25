@@ -8,39 +8,39 @@ using namespace ev3api;
 class PID {
     public:
         PID();
-        PID(float delta);
+        PID(double delta);
         ~PID();
-        void setLimit(float);
-        void setTarget(float);
-        float getOperation(float value);
+        void setLimit(double);
+        void setTarget(double);
+        double getOperation(double value);
 
-        void setKp(float kp);
-        void setKi(float ki);
-        void setKd(float kd);
+        void setKp(double kp);
+        void setKi(double ki);
+        void setKd(double kd);
 
-        float getDiff();
-        float getIntegral();
+        double getDiff();
+        double getIntegral();
 
         void resetParam();
-        float getTarget();
+        double getTarget();
 
-        void setDeltaT(float delta);
+        void setDeltaT(double delta);
 
         bool debug = false;
         char debug_char=' ';
     private:
-       float diff[2];
-       float integral;
-        float last_integral[1000];
-       float target;
-       float limit; 
-       float delta;
-       float Kp;
-       float Ki;
-       float Kd;
-       float DELTAT;
+       double diff[2];
+       double integral;
+        double last_integral[1000];
+       double target;
+       double limit; 
+       double delta;
+       double Kp;
+       double Ki;
+       double Kd;
+       double DELTAT;
 
-       float tgt_limit;
+       double tgt_limit;
 
        bool resetFlg;
 

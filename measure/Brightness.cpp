@@ -6,12 +6,12 @@ Brightness::Brightness()
 
 }
 
-float Brightness::getValue()
+double Brightness::getValue()
 {
     return mLpf->getFillteredValue();
 }
 
-void Brightness::update(float br)
+void Brightness::update(double br)
 {
     mLpf->addValue(br);
     mBrightness = br;
