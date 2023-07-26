@@ -14,6 +14,12 @@ class Judge
         virtual bool judgement();
 
     protected:
+        //Length *mLength;
+        //Brightness *mBrightness;
+        //HsvHue *mHsvHue;
+        //HsvSatu *mHsvSatu;
+        //TurnAngle * TurnAngle;
+
 
         enum State {
             INIT,

@@ -10,7 +10,6 @@
 #include "Length.h"
 #include "TurnAngle.h"
 #include "Odometry.h"
-#include "Velocity.h"
 #include "HsvHue.h"
 #include "HsvSatu.h"
 #include "SimpleWalker.h"
@@ -41,7 +40,6 @@ HsvSatu *gSatu;
 Odometry *gOdo;
 Length *gLength;
 TurnAngle *gTurnAngle;
-Velocity *gVelocity;
 
 SpeedControl *gSpeed;
 SimpleWalker *gWalker;
@@ -61,11 +59,10 @@ static void user_system_create() {
   gColor = new MyColorSensor(PORT_2,gBrightness,gHue,gSatu);
   gLength = new Length();
   gTurnAngle = new TurnAngle();
-  gVelocity = new Velocity();
   gMotor = new MotorManager(gLeftWheel, gRightWheel);
 
-  gOdo = new Odometry(gLeftWheel,gRightWheel,gLength,gTurnAngle,gVelocity);
-  gSpeed = new SpeedControl(gOdo,gVelocity);  
+  gOdo = new Odometry(gLeftWheel,gRightWheel,gLength,gTurnAngle);
+  gSpeed = new SpeedControl(gOdo);  
   gWalker = new SimpleWalker(gOdo,gSpeed); 
   gTracer = new LineTracer(gOdo,gSpeed);
 
@@ -109,7 +106,6 @@ void polling_task(intptr_t unused) {
     double br = m->getValue(); 
     double len = gLength->getValue();
     double turn = gTurnAngle->getValue();
-    double v = gVelocity->getValue();
     double h = gHue->getValue();
     double s = gSatu->getValue();
 

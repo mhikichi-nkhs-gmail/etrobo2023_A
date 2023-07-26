@@ -1,2 +1,2 @@
-#ifndef
-#define
+#ifndef COLOR_CONDITION
+#define COLOR_CONDITION

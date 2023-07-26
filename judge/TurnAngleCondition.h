@@ -1,2 +1,2 @@
-#ifndef
-#define
+#ifndef TURNAMGLE_CONDITION
+#define TURNAMGLE_CONDITION

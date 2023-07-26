@@ -3,12 +3,11 @@
 
 #include "PID.h"
 #include "Odometry.h"
-#include "Velocity.h"
 
 class SpeedControl
 {
     public:
-        SpeedControl(Odometry *odo, Velocity *v);
+        SpeedControl(Odometry *odo);
         void setTargetSpeed(double speed);
         int getPwm();
         void resetParam();
@@ -20,7 +19,6 @@ class SpeedControl
     private:
         PID *mPid;
         Odometry *mOdo;
-        Velocity *mVelo;
 
         double mTargetSpeed;
         int mForward; //現在PWM値

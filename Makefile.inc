@@ -11,7 +11,6 @@ APPL_CXXOBJS += \
 	Length.o \
 	TurnAngle.o \
 	Odometry.o \
-	Velocity.o \
 	HsvHue.o \
 	HsvSatu.o \
 	PID.o \

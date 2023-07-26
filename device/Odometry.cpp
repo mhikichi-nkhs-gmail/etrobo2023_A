@@ -9,13 +9,11 @@
 // test comment
 Odometry::Odometry(Motor *left, Motor *right,
 					Length *len,
-					TurnAngle *angle,
-					Velocity *velo):
+					TurnAngle *angle):
 	mLeftMotor(left),
 	mRightMotor(right),
 	mTurnAngle(angle),
-	mLength(len),
-	mVelocity(velo)
+	mLength(len)
 {
 	mLeftMotor->reset();
 	mRightMotor->reset();
@@ -51,7 +49,6 @@ void Odometry::update()
 	current_rs2 = mRightMotor->getCount();
 	
 	calc();
-	mVelocity->update(current_rs1,current_rs2);
 
 	prev_rs1=current_rs1;
 	prev_rs2=current_rs2;

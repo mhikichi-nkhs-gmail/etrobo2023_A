@@ -1,8 +1,7 @@
 #include "SpeedControl.h"
 
-SpeedControl::SpeedControl(Odometry *odo,Velocity *v):
+SpeedControl::SpeedControl(Odometry *odo):
     mOdo(odo),
-    mVelo(v),
     mForward(0),
     mCurrentSpeed(0.0),
     mMode_flag(true),
@@ -66,7 +65,6 @@ int SpeedControl::getPwm()
         return 0;
     }
   if(mCnt++==8) { // 80ms毎に速度制御
-    mCurrentSpeed = mVelo->getValue();
     double op = mPid->getOperation(mCurrentSpeed);
   //  syslog(LOG_NOTICE,"spd %d fwd %d op%d",(int)mCurrentSpeed,(int)mForward,(int)op);
    int pwd = (int)((op>0)?(op+0.5):(op-0.5));

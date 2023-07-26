@@ -7,7 +7,6 @@
 #include "Motor.h"
 #include "Length.h"
 #include "TurnAngle.h"
-#include "Velocity.h"
 
 using namespace ev3api;
 
@@ -17,8 +16,7 @@ public:
 	Odometry(Motor *left,
 			Motor *right,
 			Length *len,
-			TurnAngle *angle,
-			Velocity *velo);
+			TurnAngle *angle);
 	void update();
 	void calc();
 	void reset();
@@ -31,7 +29,6 @@ private:
 	Motor *mRightMotor;
 	Length *mLength;
 	TurnAngle *mTurnAngle;
-	Velocity *mVelocity;
 
 	int32_t current_rs1;
 	int32_t current_rs2;
