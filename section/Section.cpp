@@ -4,6 +4,7 @@ extern SimpleWalker *gWalker;
 extern LineTracer *gTracer;
 extern Odometry *gOdo;
 extern SpeedControl *gSpeed;
+extern Judge *mJudge;
 
 Section::Section()
 {
@@ -43,10 +44,11 @@ Walker *Section::selectWalker(int no)
     return mWalker;
 }
 
-/*
-Judge *Section::selectJudge(int no)
+
+/*Judge *Section::selectJudge(int no)
 {
     mJudge = judge;
 }
 */
+
 

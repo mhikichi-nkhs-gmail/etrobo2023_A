@@ -24,7 +24,13 @@ APPL_CXXOBJS += \
 	Section.o \
 	SectionManager.o \
 	SpeedSectionManager.o \
-	MotorManager.o 
+	MotorManager.o \
+	Judge.o \
+	DistanceCondition.o \
+	ColorCondition.o \
+	TimeCondition.o \
+	BrightnessCondition.o \
+	TurnAngleCondition.o
 
 SRCLANG := c++
 

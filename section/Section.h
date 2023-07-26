@@ -5,7 +5,7 @@
 #include "SimpleWalker.h"
 
 #include "Walker.h"
-//#include "Judge.h"
+#include "Judge.h"
 
 
 class Section {
@@ -23,7 +23,7 @@ class Section {
 
     protected:
         Walker *mWalker;
-    //    Judge mJudge;
+        //Judge mJudge;
 
     private:
 
