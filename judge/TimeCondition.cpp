@@ -6,7 +6,7 @@ TimeCondition::TimeCondition():
 
 }
 
-void TimeCondition::setparam(double ticn)
+void TimeCondition::setParam(double ticn)
 {
 
 }

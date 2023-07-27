@@ -6,18 +6,44 @@ LengthCondition::LengthCondition():
 
 }
 
-void LengthCondition::setparam(double dicn)
+void LengthCondition::setParam(double lencn[])
 {
-
+    mLengthkids = lencn[0];
 }
 
 void LengthCondition::init()
 {
+    mdirect = true;
+    mLengthkids = mLength->getValue() + mLengthkids;
+    if(mLengthkids < mLength->getValue())
+    {
+        mdirect = false;
+    }
 
 }
 
 bool LengthCondition::judgement()
 {
-    return false;
-
+    if(mdirect)
+    {
+        if(mLengthkids<=mLength->getValue())
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    else
+    {
+        if(mLengthkids>=mLength->getValue())
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

@@ -7,7 +7,7 @@ class BrightnessCondition : public Judge
 {
     public:
         BrightnessCondition();
-        void setparam(double brcn);
+        void setParam(double brcn);
         void init();
         bool judgement();   
 };

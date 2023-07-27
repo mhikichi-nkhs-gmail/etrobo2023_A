@@ -3,13 +3,18 @@
 
 #include "Judge.h"
 
+
 class LengthCondition : public Judge
 {
     public:
         LengthCondition();
-        void setparam(double dicn);
+        void setParam(double lencn[]);
         void init();
         bool judgement();
+
+    private:
+        double mLengthkids;
+        bool mdirect;
 
 };
 #endif

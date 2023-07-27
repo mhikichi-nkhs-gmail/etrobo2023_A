@@ -6,7 +6,7 @@ TurnAngleCondition::TurnAngleCondition():
 
 }
 
-void TurnAngleCondition::setparam(double tucn)
+void TurnAngleCondition::setParam(double tucn)
 {
 
 }

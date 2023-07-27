@@ -7,7 +7,7 @@ class TimeCondition : public Judge
 {
     public:
         TimeCondition();
-        void setparam(double ticn);
+        void setParam(double ticn);
         void init();
         bool judgement();
 };

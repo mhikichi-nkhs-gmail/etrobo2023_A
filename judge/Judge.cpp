@@ -7,12 +7,18 @@ extern HsvHue *gHsvHue;
 extern HsvSatu *gHsvSatu;
 extern TurnAngle *gTurnAngle;
 extern XPosition *gXPosition;
-extern YPosition *Yposition;
+extern YPosition *gYPosition;
 
 Judge::Judge():
-    mState(INIT)
-{
-    
+    mState(INIT),
+    mLength(gLength)
+    //mBrightness(gBrightness),
+    //mHsvHue(gHsvHue),
+    //mHsvSatu(gHsvSatu),
+    //mTurnAngle(gTurnAngle),
+    //mXPosition(gXPosition),
+    //mYposition(gYPosition)
+{   
 }
 
 bool Judge::run()
@@ -28,9 +34,9 @@ bool Judge::run()
     return false;
 }
 
-void Judge::setparam(double param[])
+void Judge::setParam(double param[])
 {
-    
+
 }
 void Judge::init()
 {

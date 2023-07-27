@@ -16,19 +16,19 @@ class Judge
     public:
         Judge();
         bool run();
-        virtual void setparam(double param[]);
+        virtual void setParam(double param[]);
         virtual void init();
         virtual bool judgement();
 
     protected:
 
         Length *mLength;
-        Brightness *mBrightness;
-        HsvHue *mHsvHue;
-        HsvSatu *mHsvSatu;
-        TurnAngle *mTurnAngle;
-        XPosition *mXPosition;
-        YPosition *mYposition;
+        //Brightness *mBrightness;
+        //HsvHue *mHsvHue;
+        //HsvSatu *mHsvSatu;
+        //TurnAngle *mTurnAngle;
+        //XPosition *mXPosition;
+        //YPosition *mYposition;
 
         enum State {
             INIT,

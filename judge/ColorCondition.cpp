@@ -6,7 +6,7 @@ ColorCondition::ColorCondition():
 
 }
 
-void ColorCondition::setparam(double cocn)
+void ColorCondition::setParam(double cocn)
 {
 
 }

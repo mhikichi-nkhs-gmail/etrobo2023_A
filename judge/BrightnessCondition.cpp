@@ -6,7 +6,7 @@ BrightnessCondition::BrightnessCondition():
 
 }
 
-void BrightnessCondition::setparam(double brcn)
+void BrightnessCondition::setParam(double brcn)
 {
 
 }
