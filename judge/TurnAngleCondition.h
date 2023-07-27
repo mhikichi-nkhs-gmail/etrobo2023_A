@@ -7,8 +7,8 @@ class TurnAngleCondition : public Judge
 {
     public:
         TurnAngleCondition();
-        virtual void setparam(double tucn);
-        virtual void init();
-        virtual bool judgement();
+        void setparam(double tucn);
+        void init();
+        bool judgement();
 };
 #endif

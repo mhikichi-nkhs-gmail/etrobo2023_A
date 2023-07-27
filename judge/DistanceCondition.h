@@ -7,9 +7,9 @@ class DistanceCondition : public Judge
 {
     public:
         DistanceCondition();
-        virtual void setparam(double dicn);
-        virtual void init();
-        virtual bool judgement();
+        void setparam(double dicn);
+        void init();
+        bool judgement();
 
 };
 #endif

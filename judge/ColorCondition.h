@@ -7,9 +7,9 @@ class ColorCondition : public Judge
 {
     public:
         ColorCondition();
-        virtual void setparam(double cocn);
-        virtual void init();
-        virtual bool judgement();
+        void setparam(double cocn);
+        void init();
+        bool judgement();
 
 };
 #endif
