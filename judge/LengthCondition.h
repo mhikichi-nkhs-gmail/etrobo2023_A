@@ -3,10 +3,10 @@
 
 #include "Judge.h"
 
-class DistanceCondition : public Judge
+class LengthCondition : public Judge
 {
     public:
-        DistanceCondition();
+        LengthCondition();
         void setparam(double dicn);
         void init();
         bool judgement();

@@ -25,7 +25,7 @@ APPL_CXXOBJS += \
 	SpeedSectionManager.o \
 	MotorManager.o \
 	Judge.o \
-	DistanceCondition.o \
+	LengthCondition.o \
 	ColorCondition.o \
 	TimeCondition.o \
 	BrightnessCondition.o \
