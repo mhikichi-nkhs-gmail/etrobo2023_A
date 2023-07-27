@@ -31,7 +31,10 @@ APPL_CXXOBJS += \
 	BrightnessCondition.o \
 	TurnAngleCondition.o \
 	XPosition.o \
-	YPosition.o
+	YPosition.o \
+	TurnWalker.o \
+	VirCurveLine.o \
+	VirStraightLine.o
 
 SRCLANG := c++
 
