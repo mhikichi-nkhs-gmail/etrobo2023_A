@@ -29,7 +29,9 @@ APPL_CXXOBJS += \
 	ColorCondition.o \
 	TimeCondition.o \
 	BrightnessCondition.o \
-	TurnAngleCondition.o
+	TurnAngleCondition.o \
+	XPosition.o \
+	YPosition.o
 
 SRCLANG := c++
 

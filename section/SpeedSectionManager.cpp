@@ -14,7 +14,7 @@ SpeedSectionManager::SpeedSectionManager()
      //LineTracer テスト
     LineTracer* tracer = (LineTracer*)sc->selectWalker(Section::TRACER);
 
-    tracer->setParam(25, 0 ,  30, 0.2, 0.1 );
+    tracer->setParam(25, 0 ,  30, 0.3, 0.1 );
     tracer->setEdgeMode(_EDGE);
     
 

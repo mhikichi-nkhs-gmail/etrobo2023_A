@@ -1,13 +1,13 @@
 #include "YPosition.h"
 
 YPosition::YPosition():
-    Measure(),
+    Measure()
 {
 }
 
 double YPosition::getValue()
 {
-    return XPosition;
+    return mYPosition;
 }
 
 void YPosition::update(double ypos)
@@ -17,5 +17,5 @@ void YPosition::update(double ypos)
 
 void YPosition::reset()
 {
-    
+
 }

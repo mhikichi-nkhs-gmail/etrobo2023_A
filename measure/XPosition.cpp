@@ -1,7 +1,7 @@
 #include "XPosition.h"
 
 XPosition::XPosition(): 
-    Measure(),
+    Measure()
 {
 }
 
@@ -17,5 +17,5 @@ void XPosition::update(double xpos)
 
 void XPosition::reset()
 {
-    
+
 }
