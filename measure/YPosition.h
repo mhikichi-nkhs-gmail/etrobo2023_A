@@ -1,19 +1,17 @@
-#ifndef __TURNANGLE_H__
-#define __TURNANGLE_H__
+#ifndef YPOSITION
+#define YPOSITION
 #include "Measure.h"
 
-#define M_PI 3.14159265358979323846
-
-class TurnAngle : public Measure
+class YPosition : public Measure
 {
     public:
-        TurnAngle();
-        double getValue();
-        void update(double angle);
+        YPosition();
+        virtual double getValue();
+        virtual void update(double ypos);
+        void reset();
 
     private:
-        double mAngle;
-        bool mAngleDeg;
+        double mYPosition;
 };
 
 #endif

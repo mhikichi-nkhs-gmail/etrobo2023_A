@@ -6,8 +6,9 @@ class XPosition : public Measure
 {
     public:
         XPosition();
-        double getValue();
-        void update(double angle);
+        virtual double getValue();
+        virtual void update(double xpos);
+        void reset();
 
     private:
         double mXPosition;

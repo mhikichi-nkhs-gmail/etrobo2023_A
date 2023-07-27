@@ -8,8 +8,9 @@ class TurnAngle : public Measure
 {
     public:
         TurnAngle();
-        double getValue();
-        void update(double angle);
+        virtual double getValue();
+        virtual void update(double angle);
+        void reset();
 
     private:
         double mAngle;
