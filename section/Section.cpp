@@ -19,8 +19,15 @@ Section::~Section()
 
 bool Section::run()
 {
-    //判定
 
+    //printf("check\n");
+    //判定
+    if(mJudge->run())
+    {
+        //printf("check1\n");
+        return true;
+    }
+    
 
     //走法
     mWalker->run();
@@ -45,10 +52,17 @@ Walker *Section::selectWalker(int no)
 }
 
 
-/*Judge *Section::selectJudge(int no)
+Judge *Section::selectJudge(int no)
 {
-    mJudge = judge;
+    //printf("selectjudge%d\n", no);
+    switch(no) {
+        case LENGTH:
+            mJudge = (Judge*)(new LengthCondition());
+            break;
+    }
+
+    return mJudge;
 }
-*/
+
 
 

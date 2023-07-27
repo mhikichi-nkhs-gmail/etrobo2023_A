@@ -6,6 +6,7 @@
 
 #include "Walker.h"
 #include "Judge.h"
+#include "LengthCondition.h"
 
 
 class Section {
@@ -14,16 +15,24 @@ class Section {
         ~Section();
         virtual bool run();
         Walker *selectWalker(int no);
-        //Judge *selectJudge(int no);
+        Judge *selectJudge(int no);
 
-        enum WALKER_NO {
+        enum WALKER_NO{
             WALKER,
             TRACER
         };
 
+        enum JUDGE_NO{
+            LENGTH
+            //COLOR,
+            //BRIGHTNESS,
+            //TURNANGLE,
+            //TIME
+        };
     protected:
         Walker *mWalker;
-        //Judge mJudge;
+        Judge *mJudge;
+        Judge *mMissJudge;
 
     private:
 

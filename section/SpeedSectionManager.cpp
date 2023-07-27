@@ -16,6 +16,24 @@ SpeedSectionManager::SpeedSectionManager()
 
     tracer->setParam(25, 0 ,  30, 0.3, 0.1 );
     tracer->setEdgeMode(_EDGE);
+
+    double retu[1] = {50.0};
+
+    Judge* length = sc->selectJudge(Section::LENGTH);
+    length->setParam(retu);
+
+    addSection(sc);
+
+    Section *one = new Section();
+
+    SimpleWalker* walker = (SimpleWalker*)one->selectWalker(Section::WALKER);
+    walker->setCommand(0,0);
+
+    Judge* stop = one->selectJudge(Section::LENGTH);
+    stop->setParam(retu);
+
+    addSection(one);
+
     
 
     
@@ -23,8 +41,6 @@ SpeedSectionManager::SpeedSectionManager()
     SimpleWalker* walker = (SimpleWalker*)sc->selectWalker(Section::WALKER);
     walker->setCommand(10,10);
     */
-    
-    addSection(sc);
 
 }
 

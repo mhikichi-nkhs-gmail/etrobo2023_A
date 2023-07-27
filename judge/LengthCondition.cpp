@@ -3,7 +3,7 @@
 LengthCondition::LengthCondition():
     Judge()
 {
-
+    //printf("const%d\n",mState);
 }
 
 void LengthCondition::setParam(double lencn[])
@@ -15,6 +15,10 @@ void LengthCondition::init()
 {
     mdirect = true;
     mLengthkids = mLength->getValue() + mLengthkids;
+
+    //printf("mdirect%d\n",mdirect);
+    //printf("mlengthkids%f\n",mLengthkids);
+    //printf("mlengthget%f\n",mLength->getValue());
     if(mLengthkids < mLength->getValue())
     {
         mdirect = false;
@@ -24,6 +28,10 @@ void LengthCondition::init()
 
 bool LengthCondition::judgement()
 {
+    //printf("mdirect%d\n",mdirect);
+    //printf("mlengthkids%f\n",mLengthkids);
+    //printf("Lastmlengthget%f\n",mLength->getValue());
+
     if(mdirect)
     {
         if(mLengthkids<=mLength->getValue())

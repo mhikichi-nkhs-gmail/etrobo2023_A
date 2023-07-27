@@ -23,9 +23,11 @@ Judge::Judge():
 
 bool Judge::run()
 {
+    //printf("judge%d\n",mState);
     switch(mState){
         case INIT:
             init();
+            mState = JUDGEMENT;
             break;
         case JUDGEMENT:
             bool result = judgement();

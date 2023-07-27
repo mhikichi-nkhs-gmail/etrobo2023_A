@@ -10,6 +10,7 @@ Walker::Walker( Odometry *odo):
 
 void Walker::run()
 {
+    //printf("walker%d\n",mState);
     switch(mState) {
         case INIT:
             init();
