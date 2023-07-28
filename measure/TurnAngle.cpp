@@ -15,3 +15,8 @@ void TurnAngle::update(double angle)
 {
     mAngle = angle;
 }
+
+void TurnAngle::reset()
+{
+    
+}

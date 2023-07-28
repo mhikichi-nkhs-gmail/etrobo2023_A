@@ -1,17 +1,33 @@
 #include "Judge.h"
+#include "Measure.h"
+
+extern Length *gLength;
+extern Brightness *gBrightness;
+extern HsvHue *gHsvHue;
+extern HsvSatu *gHsvSatu;
+extern TurnAngle *gTurnAngle;
+extern XPosition *gXPosition;
+extern YPosition *gYPosition;
 
 Judge::Judge():
-    mState(INIT)
-{
-    
+    mState(INIT),
+    mLength(gLength)
+    //mBrightness(gBrightness),
+    //mHsvHue(gHsvHue),
+    //mHsvSatu(gHsvSatu),
+    //mTurnAngle(gTurnAngle),
+    //mXPosition(gXPosition),
+    //mYposition(gYPosition)
+{   
 }
 
 bool Judge::run()
 {
+    //printf("judge%d\n",mState);
     switch(mState){
         case INIT:
             init();
-            break;
+            mState = JUDGEMENT;
         case JUDGEMENT:
             bool result = judgement();
             return result;
@@ -19,9 +35,9 @@ bool Judge::run()
     return false;
 }
 
-void Judge::setparam(double param[])
+void Judge::setParam(double param[])
 {
-    
+
 }
 void Judge::init()
 {

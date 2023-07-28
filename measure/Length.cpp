@@ -15,3 +15,8 @@ void Length::update(double len)
 {
     mLength = len;
 }
+
+void Length::reset()
+{
+    
+}

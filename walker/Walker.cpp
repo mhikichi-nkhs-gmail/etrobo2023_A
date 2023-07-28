@@ -10,18 +10,23 @@ Walker::Walker( Odometry *odo):
 
 void Walker::run()
 {
+    //printf("walker%d\n",mState);
     switch(mState) {
         case INIT:
             init();
             mState = RUN;
-            break;
         case RUN:
             execStart();
             break;
     }
 }
 
-void Walker::init()
+void Walker::setParam(double Array[])
+{
+
+}
+
+/*void Walker::init()
 {
 
 }
@@ -30,3 +35,4 @@ void Walker::execStart()
 {
 
 }
+*/

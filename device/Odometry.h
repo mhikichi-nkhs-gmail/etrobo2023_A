@@ -7,6 +7,7 @@
 #include "Motor.h"
 #include "Length.h"
 #include "TurnAngle.h"
+#include "Measure.h"
 
 using namespace ev3api;
 

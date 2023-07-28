@@ -6,8 +6,8 @@ class Brightness : public Measure
 {
     public:
         Brightness();
-        double getValue();
-        void update(double br);
+        virtual double getValue();
+        virtual void update(double br);
 
     private:
         double mBrightness;

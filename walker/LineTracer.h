@@ -22,6 +22,7 @@ public:
 
     void setParam(double speed,double target,double kp, double ki, double kd);
     void setParam(double speed,double target,double kp, double ki, double kd,double angleTarget,double angleKp);
+    void setParam(double lineArray[]);
                        
     void setEdgeMode(bool isLeftEdge);
     bool getEdgeMode();

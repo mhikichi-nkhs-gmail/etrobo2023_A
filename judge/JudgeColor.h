@@ -12,8 +12,9 @@ class JudgeColor : public Judge
         bool judgement();
 
     private:
-        double mHLange;
-        double mSLange;
+        double mHRange;
+        double mSRange;
+
 
 };
 #endif

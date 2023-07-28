@@ -6,8 +6,9 @@ class Length : public Measure
 {
     public:
         Length();
-        double getValue();
-        void update(double len);
+        virtual double getValue();
+        virtual void update(double len);
+        void reset();
 
     private:
         double mLength;
