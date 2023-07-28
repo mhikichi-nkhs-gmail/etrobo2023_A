@@ -44,8 +44,10 @@ Walker *Section::selectWalker(int no)
         case TRACER:
             mWalker = (Walker*)(new LineTracer(gOdo,gSpeed));
            break;
-        default:
-            msg_log("selectWalker error!!");
+        //default:
+            //msg_log("selectWalker error!!");
+        case WANONE:
+            break;
     }
 
     return mWalker;
@@ -72,10 +74,19 @@ Judge *Section::selectJudge(int no)
             mjudge = (Judge*)(new JudgeTime());
             break;
         */
+        case JUNONE:
+            break;
     }
 
     return mJudge;
 }
 
-
+/*EmgJudge *selectEmgJudge::selectEmgJudge(int no)
+{
+    switch(no) {
+        case EMNONE:
+            break;
+    }
+}
+*/
 

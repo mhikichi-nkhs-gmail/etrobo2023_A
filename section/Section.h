@@ -16,27 +16,42 @@
 class Section {
     public:
 
-        Walker *mWalker;
         Section();
         ~Section();
         virtual bool run();
         Walker *selectWalker(int no);
         Judge *selectJudge(int no);
+        //EmgJudge *selectEmgJudge(int no);
 
         enum WALKER_NO{
             WALKER,
-            TRACER
+            TRACER,
+            WANONE
         };
 
         enum JUDGE_NO{
-            LENGTH
+            LENGTH,
             //COLOR,
             //BRIGHTNESS,
             //TURNANGLE,
             //TIME
+            JUNONE
         };
+
+        enum EMGJUDGE_NO{
+            EMNONE
+        };
+
+        enum FLAG_NO{
+            FLNONE
+
+        };
+
+
+
+
     protected:
-        //Walker *mWalker;
+        Walker *mWalker;
         Judge *mJudge;
         Judge *mMissJudge;
 

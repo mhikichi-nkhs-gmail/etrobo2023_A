@@ -3,7 +3,7 @@
 
 SpeedSectionManager::SpeedSectionManager()
 {
-    // test用初期化
+    /* test用初期化
  #if defined(MAKE_RIGHT)
       const int _EDGE = LineTracer::LEFTEDGE;
 #else
@@ -13,14 +13,14 @@ SpeedSectionManager::SpeedSectionManager()
      //LineTracer テスト
     Section *sc = new Section();
     
-    LineTracer* tracer = (LineTracer*)sc->selectWalker(Section::TRACER);
-    double lineArray[] = {50, 0 ,  30, 0.3, 0.1 ,0 , 0, _EDGE};
-    tracer->setParam(lineArray);
+    Walker* tracer = sc->selectWalker(Section::TRACER); //ライントレーサーのオブジェクトを作る
+    double lineArray[] = {50, 0 ,  30, 0.3, 0.1 ,0 , 0, _EDGE}; //値を作る
+    tracer->setParam(lineArray); //値を渡す
 
 
-    Judge* length = sc->selectJudge(Section::LENGTH);
-    double array[] = {30.0};
-    length->setParam(array);
+    Judge* length = sc->selectJudge(Section::LENGTH); //距離判定のオブジェクトを作る
+    double array[] = {30.0}; //値を作る
+    length->setParam(array); //値を渡す
 
     addSection(sc);
 
@@ -28,7 +28,7 @@ SpeedSectionManager::SpeedSectionManager()
 
     Section *one = new Section();
 
-    SimpleWalker* walker = (SimpleWalker*)one->selectWalker(Section::WALKER);
+    Walker* walker = one->selectWalker(Section::WALKER);
     double simArray[] = {0,0};
     walker->setParam(simArray);
         
@@ -37,6 +37,7 @@ SpeedSectionManager::SpeedSectionManager()
     stop->setParam(stopArray);
 
     addSection(one);
+    */
 
     /* SimpleWalkerテスト
     SimpleWalker* walker = (SimpleWalker*)sc->selectWalker(Section::WALKER);
