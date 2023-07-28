@@ -9,34 +9,35 @@ SpeedSectionManager::SpeedSectionManager()
 #else
       const int _EDGE = LineTracer::RIGHTEDGE;
 #endif
-    Section *sc = new Section();
     
      //LineTracer テスト
+    Section *sc = new Section();
+    
     LineTracer* tracer = (LineTracer*)sc->selectWalker(Section::TRACER);
+    double lineArray[] = {50, 0 ,  30, 0.3, 0.1 ,0 , 0, _EDGE};
+    tracer->setParam(lineArray);
 
-    tracer->setParam(25, 0 ,  30, 0.3, 0.1 );
-    tracer->setEdgeMode(_EDGE);
-
-    double array[1] = {50.0};
 
     Judge* length = sc->selectJudge(Section::LENGTH);
+    double array[] = {30.0};
     length->setParam(array);
 
     addSection(sc);
 
+    //SimpleWalker 用
+
     Section *one = new Section();
 
     SimpleWalker* walker = (SimpleWalker*)one->selectWalker(Section::WALKER);
-    walker->setCommand(0,0);
-
+    double simArray[] = {0,0};
+    walker->setParam(simArray);
+        
     Judge* stop = one->selectJudge(Section::LENGTH);
-    stop->setParam(array);
+    double stopArray[] = {100,0};
+    stop->setParam(stopArray);
 
     addSection(one);
 
-    
-
-    
     /* SimpleWalkerテスト
     SimpleWalker* walker = (SimpleWalker*)sc->selectWalker(Section::WALKER);
     walker->setCommand(10,10);
@@ -47,7 +48,17 @@ SpeedSectionManager::SpeedSectionManager()
 bool SpeedSectionManager::run()
 {
     if(mSection[mSectionIdx]->run())
-        return true;
-
+    {
+        //printf("mscetion%d\n", mSectionIdx);
+        //printf("mlast%d\n", mLastIdx);
+        if(mSectionIdx == mLastIdx)
+        {
+            return true;
+        }
+        else
+        {
+            mSectionIdx++;
+        }
+    }
     return false;
 }

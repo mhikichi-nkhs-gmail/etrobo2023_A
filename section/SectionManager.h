@@ -11,10 +11,24 @@ class SectionManager {
         void addSection(Section *);
         void reset();
 
+        typedef struct Number_1
+        {
+            enum WALKER_NO
+            {
+                WALKER,
+                TRACER
+            };
+
+            double secList[10];
+
+        };
+    
+        
+
     protected:
         Section *mSection[100];
         int mSectionIdx;
-        int mLastIdx;
+        int mLastIdx;  //ç≈å„
     private:
 
 

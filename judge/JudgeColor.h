@@ -11,5 +11,10 @@ class JudgeColor : public Judge
         void init();
         bool judgement();
 
+    private:
+        double mHRange;
+        double mSRange;
+
+
 };
 #endif

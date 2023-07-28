@@ -41,7 +41,7 @@ void LineTracer::run()
     sprintf(buf,"LT %2.3f, %d,%d",brightness,mTargetSpeed,mTurn);
     msg_log(buf);*/
 
-    setCommandV((int)mTargetSpeed, (int)mTurn);
+    setCommand((int)mTargetSpeed, (int)mTurn);
 
     SimpleWalker::run();
 
@@ -64,7 +64,7 @@ double LineTracer::calcTurn(double val1) {
   //  mPid->debug=true;
 
     if(mLeftEdge) val1_turn = -val1_turn;
-    setBias(-mForward*(1-mCurve)/(1+mCurve)*mAngleKp);
+    setBias(mCurve);
     double turn =  val1_turn+mBias;
    
     return turn;
@@ -100,6 +100,12 @@ void LineTracer::setParam(double speed,double target,double kp, double ki, doubl
     mCurve = angleTarget;
     mAngleKp = angleKp;
 
+}
+
+void LineTracer::setParam(double lineArray[])
+{
+    setParam(lineArray[0],lineArray[1],lineArray[2],lineArray[3],lineArray[4],lineArray[5],lineArray[6]);
+    setEdgeMode(lineArray[7]);
 }
 
 

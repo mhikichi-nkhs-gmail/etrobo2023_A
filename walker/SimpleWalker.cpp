@@ -37,9 +37,11 @@ SimpleWalker::SimpleWalker(
 
 
 void SimpleWalker::run() {
+
+    //printf("runcheck\n");
     static double speed=0;
 
-    mForward = mSpeedControl->getPwm();
+    //mForward = mSpeedControl->getPwm();
 
     double pwm_l = mForward + mTurn;      // <2>
     double pwm_r = mForward - mTurn;      // <2>
@@ -68,6 +70,8 @@ void SimpleWalker::run() {
     if(pwm_r<-100) pwm_r=-100;
     if(pwm_l<-100) pwm_l=-100;
 
+    //printf("pwm_l%fpwm_r%f\n", pwm_l,pwm_r);
+    //printf("MFORWARD_%f\n", mForward);
     mMotor->setPwm(pwm_l,pwm_r);
 }
 
@@ -83,6 +87,8 @@ void SimpleWalker::setCommand(int forward, int turn) {
     mTurn    = turn;
     //mMode_flag = false;
     mSpeedControl->setMode(false);
+
+    //printf("forward%f\n",mForward);
 
 }
 
@@ -100,6 +106,12 @@ void SimpleWalker::setCommandV(double forward, int turn)
     mSpeedControl->setMode(true);
 }
 
+void SimpleWalker::setParam(double simArray[])
+{
+    //printf("AAAAAAA\n");
+    setCommand(simArray[0],simArray[1]);
+}
+
 void SimpleWalker::resetParam()
 {
     mSpeedControl->resetParam();
@@ -107,12 +119,12 @@ void SimpleWalker::resetParam()
 
 void SimpleWalker::init()
 {
-
+    //printf("mForward%f\n", mForward);
 }
 
 void SimpleWalker::execStart()
 {
-    run();
+    SimpleWalker::run();
 }
 
 

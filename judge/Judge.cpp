@@ -28,7 +28,6 @@ bool Judge::run()
         case INIT:
             init();
             mState = JUDGEMENT;
-            break;
         case JUDGEMENT:
             bool result = judgement();
             return result;

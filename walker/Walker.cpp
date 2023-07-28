@@ -15,14 +15,18 @@ void Walker::run()
         case INIT:
             init();
             mState = RUN;
-            break;
         case RUN:
             execStart();
             break;
     }
 }
 
-void Walker::init()
+void Walker::setParam(double Array[])
+{
+
+}
+
+/*void Walker::init()
 {
 
 }
@@ -31,3 +35,4 @@ void Walker::execStart()
 {
 
 }
+*/

@@ -15,6 +15,8 @@
 
 class Section {
     public:
+
+        Walker *mWalker;
         Section();
         ~Section();
         virtual bool run();
@@ -34,7 +36,7 @@ class Section {
             //TIME
         };
     protected:
-        Walker *mWalker;
+        //Walker *mWalker;
         Judge *mJudge;
         Judge *mMissJudge;
 
