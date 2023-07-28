@@ -57,7 +57,7 @@ Judge *Section::selectJudge(int no)
     //printf("selectjudge%d\n", no);
     switch(no) {
         case LENGTH:
-            mJudge = (Judge*)(new LengthCondition());
+            mJudge = (Judge*)(new JudgeLength());
             break;
     }
 

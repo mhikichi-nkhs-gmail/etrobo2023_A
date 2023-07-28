@@ -1,12 +1,12 @@
-#ifndef TURNAMGLE_CONDITION
-#define TURNAMGLE_CONDITION
+#ifndef JUDGE_TURNANGLE
+#define JUDGE_TURNANGLE
 
 #include "Judge.h"
 
-class TurnAngleCondition : public Judge
+class JudgeTurnAngle : public Judge
 {
     public:
-        TurnAngleCondition();
+        JudgeTurnAngle();
         void setParam(double tucn);
         void init();
         bool judgement();

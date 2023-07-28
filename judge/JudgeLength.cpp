@@ -1,17 +1,17 @@
-#include "LengthCondition.h"
+#include "JudgeLength.h"
 
-LengthCondition::LengthCondition():
+JudgeLength::JudgeLength():
     Judge()
 {
     //printf("const%d\n",mState);
 }
 
-void LengthCondition::setParam(double lencn[])
+void JudgeLength::setParam(double lencn[])
 {
     mLengthkids = lencn[0];
 }
 
-void LengthCondition::init()
+void JudgeLength::init()
 {
     mdirect = true;
     mLengthkids = mLength->getValue() + mLengthkids;
@@ -26,7 +26,7 @@ void LengthCondition::init()
 
 }
 
-bool LengthCondition::judgement()
+bool JudgeLength::judgement()
 {
     //printf("mdirect%d\n",mdirect);
     //printf("mlengthkids%f\n",mLengthkids);

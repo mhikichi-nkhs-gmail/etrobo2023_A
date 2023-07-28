@@ -6,7 +6,7 @@
 
 #include "Walker.h"
 #include "Judge.h"
-#include "LengthCondition.h"
+#include "JudgeLength.h"
 
 
 class Section {

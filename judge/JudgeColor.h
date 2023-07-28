@@ -1,12 +1,12 @@
-#ifndef COLOR_CONDITION
-#define COLOR_CONDITION
+#ifndef JUDGE_COLOR
+#define JUDGE_COLOR
 
 #include "Judge.h"
 
-class ColorCondition : public Judge
+class JudgeColor : public Judge
 {
     public:
-        ColorCondition();
+        JudgeColor();
         void setParam(double cocn);
         void init();
         bool judgement();

@@ -25,11 +25,11 @@ APPL_CXXOBJS += \
 	SpeedSectionManager.o \
 	MotorManager.o \
 	Judge.o \
-	LengthCondition.o \
-	ColorCondition.o \
-	TimeCondition.o \
-	BrightnessCondition.o \
-	TurnAngleCondition.o \
+	JudgeLength.o \
+	JudgeColor.o \
+	JudgeTime.o \
+	JudgeBrightness.o \
+	JudgeTurnAngle.o \
 	XPosition.o \
 	YPosition.o \
 	TurnWalker.o \

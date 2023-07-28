@@ -1,12 +1,12 @@
-#ifndef BRIGHTNESS_CONDITION
-#define BRIGHTNESS_CONDITION
+#ifndef JUDGE_BRIGHTNESS
+#define JUDGE_BRIGHTNESS
 
 #include "Judge.h"
 
-class BrightnessCondition : public Judge
+class JudgeBrightness : public Judge
 {
     public:
-        BrightnessCondition();
+        JudgeBrightness();
         void setParam(double brcn);
         void init();
         bool judgement();   

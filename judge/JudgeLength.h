@@ -1,13 +1,13 @@
-#ifndef DISTANCE_CONDITION
-#define DISTANCE_CONDITION
+#ifndef JUDGE_LENGTH
+#define JUDGE_LENGTH
 
 #include "Judge.h"
 
 
-class LengthCondition : public Judge
+class JudgeLength : public Judge
 {
     public:
-        LengthCondition();
+        JudgeLength();
         void setParam(double lencn[]);
         void init();
         bool judgement();

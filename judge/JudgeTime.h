@@ -1,12 +1,12 @@
-#ifndef TIME_CONDITION
-#define TIME_CONDITION
+#ifndef JUDGE_TIME
+#define JUDGE_TIME
 
 #include "Judge.h"
 
-class TimeCondition : public Judge
+class JudgeTime : public Judge
 {
     public:
-        TimeCondition();
+        JudgeTime();
         void setParam(double ticn);
         void init();
         bool judgement();
