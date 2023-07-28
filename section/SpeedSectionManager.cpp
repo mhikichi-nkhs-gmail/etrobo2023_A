@@ -17,10 +17,10 @@ SpeedSectionManager::SpeedSectionManager()
     tracer->setParam(25, 0 ,  30, 0.3, 0.1 );
     tracer->setEdgeMode(_EDGE);
 
-    double retu[1] = {50.0};
+    double array[1] = {50.0};
 
     Judge* length = sc->selectJudge(Section::LENGTH);
-    length->setParam(retu);
+    length->setParam(array);
 
     addSection(sc);
 
@@ -30,7 +30,7 @@ SpeedSectionManager::SpeedSectionManager()
     walker->setCommand(0,0);
 
     Judge* stop = one->selectJudge(Section::LENGTH);
-    stop->setParam(retu);
+    stop->setParam(array);
 
     addSection(one);
 

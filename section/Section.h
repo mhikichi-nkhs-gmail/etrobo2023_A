@@ -7,6 +7,10 @@
 #include "Walker.h"
 #include "Judge.h"
 #include "JudgeLength.h"
+#include "JudgeBrightness.h"
+#include "JudgeColor.h"
+#include "JudgeTime.h"
+#include "JudgeTurnAngle.h"
 
 
 class Section {

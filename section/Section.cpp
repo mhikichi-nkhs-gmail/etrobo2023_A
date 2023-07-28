@@ -59,6 +59,19 @@ Judge *Section::selectJudge(int no)
         case LENGTH:
             mJudge = (Judge*)(new JudgeLength());
             break;
+        /*case COLOR:
+            mjudge = (Judge*)(new JudgeColor());
+            break;
+        case BRIGHTNESS:
+            mJudge = (Judge*)(new JudgeBrightness());
+            break;
+        case TURNANGLE:
+            mjudge = (Judge*)(new JudgeTurnAngle());
+            break;
+        case TIME:
+            mjudge = (Judge*)(new JudgeTime());
+            break;
+        */
     }
 
     return mJudge;
