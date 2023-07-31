@@ -1,6 +1,10 @@
 #include "Judge.h"
 #include "Measure.h"
 
+double Judge::MEMOLEN = 0;
+double Judge::MEMOANGLE = 0;
+
+
 extern Length *gLength;
 extern Brightness *gBrightness;
 extern HsvHue *gHsvHue;

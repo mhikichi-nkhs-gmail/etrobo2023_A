@@ -38,10 +38,10 @@ class SectionManager {
 
         //sample
         SecParam sample[10] = {
-            {Section::TRACER,{60, 0 ,  40, 1.5, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{300,Section::FLNONE}, Section::EMNONE,{}},
-            {Section::TRACER,{30, 0 ,  30, 0.3, 0.1 ,0 , 0, _EDGE},Section::TURNANGLE,{-30.0, Section::FLNONE}, Section::EMNONE,{}},
-            //{Section::TRACER,{60, 0 ,  30, 0.3, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{150.0}, Section::EMNONE,{},Section::FLNONE},
-            //{Section::TRACER,{10, 0 ,  30, 0.3, 0.1 ,0 , 0, _EDGE},Section::COLOR,{200,0.5}, Section::EMNONE,{},Section::FLNONE},
+            {Section::TRACER,{80, 0 ,  40, 1.5, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{50, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::TRACER,{40, 0 ,  30, 0.3, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{20, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::WALKER,{-30,0},Section::LENGTH,{-70, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{50, 0 ,  30, 0.3, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{30, Section::RESETLEN}, Section::EMNONE,{}},
             //{Section::WALKER,{10,10},Section::TURNANGLE,{30}, Section::EMNONE,{},Section::FLNONE},
         
             {Section::WALKER,{0,0},Section::TURNANGLE,{10, Section::FLNONE}, Section::EMNONE,{}},

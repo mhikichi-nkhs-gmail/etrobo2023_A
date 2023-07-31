@@ -9,13 +9,18 @@ JudgeLength::JudgeLength():
 void JudgeLength::setParam(double lencn[])
 {
     mLengthkids = lencn[0];
+    memoLen = lencn[1];
 }
 
 void JudgeLength::init()
 {
-    
+    if(memoLen == Section::RESETLEN)
+    {
+        printf("check\n");
+        Judge::MEMOLEN = mLength->getValue();
+    }
     mdirect = true;
-    mLengthkids = mLength->getValue() + mLengthkids;
+    mLengthkids = mLengthkids + MEMOLEN;
 
     //printf("mdirect%d\n",mdirect);
     //printf("mlengthkids%f\n",mLengthkids);
@@ -33,9 +38,12 @@ bool JudgeLength::judgement()
     //printf("mlengthkids%f\n",mLengthkids);
     //printf("Lastmlengthget%f\n",mLength->getValue());
 
+    printf("mLengthkids%f\n", mLengthkids);
+    printf("mLength->getValue%f\n", mLength->getValue());
+
     if(mdirect)
     {
-        if(mLengthkids<=mLength->getValue())
+        if(mLengthkids <= mLength->getValue())
         {
             return true;
         }
@@ -46,7 +54,7 @@ bool JudgeLength::judgement()
     }
     else
     {
-        if(mLengthkids>=mLength->getValue())
+        if(mLengthkids >= mLength->getValue())
         {
             return true;
         }

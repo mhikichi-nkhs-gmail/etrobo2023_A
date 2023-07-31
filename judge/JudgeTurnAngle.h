@@ -13,6 +13,7 @@ class JudgeTurnAngle : public Judge
 
     private:
         double mTurnkids;
+        double memoAng;
         bool mdirect;
 };
 #endif

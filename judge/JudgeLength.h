@@ -2,6 +2,7 @@
 #define JUDGE_LENGTH
 
 #include "Judge.h"
+#include "Section.h"
 
 
 class JudgeLength : public Judge
@@ -14,6 +15,7 @@ class JudgeLength : public Judge
 
     private:
         double mLengthkids;
+        double memoLen;
         bool mdirect;
 
 };
