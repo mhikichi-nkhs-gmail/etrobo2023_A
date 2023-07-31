@@ -8,10 +8,10 @@ HsvHue::HsvHue()
 
 double HsvHue::getValue()
 {
-    return mHue;
+    return mHsvHue;
 }
 
 void HsvHue::update(double h)
 {
-    mHue = h;
+    mHsvHue = h;
 }

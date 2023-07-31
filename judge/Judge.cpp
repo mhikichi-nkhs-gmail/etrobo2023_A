@@ -11,10 +11,10 @@ extern YPosition *gYPosition;
 
 Judge::Judge():
     mState(INIT),
-    mLength(gLength)
+    mLength(gLength),
     //mBrightness(gBrightness),
-    //mHsvHue(gHsvHue),
-    //mHsvSatu(gHsvSatu),
+    mHsvHue(gHsvHue),
+    mHsvSatu(gHsvSatu)
     //mTurnAngle(gTurnAngle),
     //mXPosition(gXPosition),
     //mYposition(gYPosition)

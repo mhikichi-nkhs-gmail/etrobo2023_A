@@ -7,7 +7,7 @@ class JudgeColor : public Judge
 {
     public:
         JudgeColor();
-        void setParam(double cocn);
+        void setParam(double cocn[]);
         void init();
         bool judgement();
 

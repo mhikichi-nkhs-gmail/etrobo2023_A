@@ -29,8 +29,8 @@ void JudgeLength::init()
 bool JudgeLength::judgement()
 {
     //printf("mdirect%d\n",mdirect);
-    //printf("mlengthkids%f\n",mLengthkids);
-    //printf("Lastmlengthget%f\n",mLength->getValue());
+    printf("mlengthkids%f\n",mLengthkids);
+    printf("Lastmlengthget%f\n",mLength->getValue());
 
     if(mdirect)
     {

@@ -24,8 +24,8 @@ class Judge
 
         Length *mLength;
         //Brightness *mBrightness;
-        //HsvHue *mHsvHue;
-        //HsvSatu *mHsvSatu;
+        HsvHue *mHsvHue;
+        HsvSatu *mHsvSatu;
         //TurnAngle *mTurnAngle;
         //XPosition *mXPosition;
         //YPosition *mYposition;
