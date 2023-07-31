@@ -7,7 +7,7 @@ class JudgeTime : public Judge
 {
     public:
         JudgeTime();
-        void setParam(double ticn);
+        void setParam(double ticn[]);
         void init();
         bool judgement();
 

@@ -32,9 +32,9 @@ class Section {
         enum JUDGE_NO{
             LENGTH,
             COLOR,
-            //BRIGHTNESS,
-            //TURNANGLE,
-            //TIME
+            BRIGHTNESS,
+            TURNANGLE,
+            TIME,
             JUNONE
         };
 
@@ -43,8 +43,9 @@ class Section {
         };
 
         enum FLAG_NO{
+            RESETLEN,
+            RESETANG,
             FLNONE
-
         };
 
 

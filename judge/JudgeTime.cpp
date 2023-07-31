@@ -1,23 +1,30 @@
 #include "JudgeTime.h"
 
+double time;
+
 JudgeTime::JudgeTime():
     Judge()
 {
 
 }
 
-void JudgeTime::setParam(double ticn)
+void JudgeTime::setParam(double ticn[])
 {
-
+    mTime = ticn[0];
 }
 
 void JudgeTime::init()
 {
-
+    time = 0.0;
 }
 
 bool JudgeTime::judgement()
 {
-    return false;
 
+    if(mTime <= time)
+    {
+        return true;
+    }
+    time = time + 1.0;
+    return false;
 }

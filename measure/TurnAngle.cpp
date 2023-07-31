@@ -1,4 +1,5 @@
 #include "TurnAngle.h"
+#include "stdio.h"
 
 TurnAngle::TurnAngle()
     : Measure(),
@@ -8,12 +9,14 @@ TurnAngle::TurnAngle()
 
 double TurnAngle::getValue()
 {
-    return mAngleDeg?mAngle*180/M_PI:mAngle;
+    printf("angle%f\n", mAngleDeg?mTurnAngle*180/M_PI:mTurnAngle);
+    return mAngleDeg?mTurnAngle*180/M_PI:mTurnAngle;
 }
 
 void TurnAngle::update(double angle)
 {
-    mAngle = angle;
+    //printf("angle%f\n", angle);
+    mTurnAngle = angle;
 }
 
 void TurnAngle::reset()

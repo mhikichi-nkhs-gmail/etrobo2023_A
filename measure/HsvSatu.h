@@ -7,7 +7,7 @@ class HsvSatu : public Measure
     public:
         HsvSatu();
         virtual double getValue();
-        virtual void update(double h);
+        virtual void update(double s);
 
     private:
         double mHsvSatu;

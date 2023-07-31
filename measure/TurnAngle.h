@@ -13,7 +13,7 @@ class TurnAngle : public Measure
         void reset();
 
     private:
-        double mAngle;
+        double mTurnAngle;
         bool mAngleDeg;
 };
 

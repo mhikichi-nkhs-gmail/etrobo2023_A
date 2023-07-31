@@ -50,6 +50,7 @@ void MyColorSensor::update()
         mRgb.r = normColor(raw.r,mMin_R,mMax_R);
         mRgb.g = normColor(raw.g,mMin_G,mMax_G);
         mRgb.b = normColor(raw.b,mMin_B,mMax_B);
+        //printf("r,g,b%f%f%f\n", mRgb.r, mRgb.g, mRgb.b);
         getHSV(mRgb,mHsv);
         mHue->update(mHsv.h);
         mSatu->update(mHsv.s);

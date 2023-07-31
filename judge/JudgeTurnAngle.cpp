@@ -6,18 +6,45 @@ JudgeTurnAngle::JudgeTurnAngle():
 
 }
 
-void JudgeTurnAngle::setParam(double tucn)
+void JudgeTurnAngle::setParam(double tucn[])
 {
-
+    mTurnkids = tucn[0];
 }
 
 void JudgeTurnAngle::init()
 {
+    mdirect = true;
+    mTurnkids = mTurnAngle->getValue() + mTurnkids;
 
+    if(mTurnkids < mTurnAngle->getValue())
+    {
+        mdirect = false;
+    }
 }
 
 bool JudgeTurnAngle::judgement()
 {
-    return false;
+    if(mdirect)
+    {
+        if(mTurnkids<=mTurnAngle->getValue())
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    else
+    {
+        if(mTurnkids>=mTurnAngle->getValue())
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
 }

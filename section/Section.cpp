@@ -62,21 +62,20 @@ Judge *Section::selectJudge(int no)
             mJudge = (Judge*)(new JudgeLength());
             break;
         case COLOR:
-            printf("color\n");
+            //printf("color\n");
             mJudge = (Judge*)(new JudgeColor());
-            printf("mJudge%d", mJudge);
+            //printf("mJudge%d", mJudge);
             break;
-        /*
         case BRIGHTNESS:
             mJudge = (Judge*)(new JudgeBrightness());
             break;
         case TURNANGLE:
-            mjudge = (Judge*)(new JudgeTurnAngle());
+            mJudge = (Judge*)(new JudgeTurnAngle());
+            break;    
+        case TIME: 
+            mJudge = (Judge*)(new JudgeTime());
             break;
-        case TIME:
-            mjudge = (Judge*)(new JudgeTime());
-            break;
-        */
+    
         case JUNONE:
             break;
     }

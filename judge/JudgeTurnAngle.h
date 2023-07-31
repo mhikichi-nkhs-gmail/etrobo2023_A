@@ -7,11 +7,12 @@ class JudgeTurnAngle : public Judge
 {
     public:
         JudgeTurnAngle();
-        void setParam(double tucn);
+        void setParam(double tucn[]);
         void init();
         bool judgement();
 
     private:
-        double mturnAngle;
+        double mTurnkids;
+        bool mdirect;
 };
 #endif
