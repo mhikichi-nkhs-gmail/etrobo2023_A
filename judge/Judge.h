@@ -20,7 +20,7 @@ class Judge
         virtual void init();
         virtual bool judgement();
         static double MEMOLEN;
-        static double MEMOANGLE;
+        static double MEMOANG;
 
     protected:
 

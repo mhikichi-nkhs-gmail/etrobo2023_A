@@ -38,8 +38,8 @@ bool JudgeLength::judgement()
     //printf("mlengthkids%f\n",mLengthkids);
     //printf("Lastmlengthget%f\n",mLength->getValue());
 
-    printf("mLengthkids%f\n", mLengthkids);
-    printf("mLength->getValue%f\n", mLength->getValue());
+    //printf("mLengthkids%f\n", mLengthkids);
+    //printf("mLength->getValue%f\n", mLength->getValue());
 
     if(mdirect)
     {

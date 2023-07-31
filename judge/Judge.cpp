@@ -2,7 +2,7 @@
 #include "Measure.h"
 
 double Judge::MEMOLEN = 0;
-double Judge::MEMOANGLE = 0;
+double Judge::MEMOANG = 0;
 
 
 extern Length *gLength;

@@ -2,6 +2,7 @@
 #define JUDGE_TURNANGLE
 
 #include "Judge.h"
+#include "Section.h"
 
 class JudgeTurnAngle : public Judge
 {
