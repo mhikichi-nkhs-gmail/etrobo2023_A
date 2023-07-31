@@ -31,7 +31,7 @@ class Section {
 
         enum JUDGE_NO{
             LENGTH,
-            //COLOR,
+            COLOR,
             //BRIGHTNESS,
             //TURNANGLE,
             //TIME

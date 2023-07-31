@@ -34,8 +34,8 @@ Motor       *gArm = new Motor(PORT_A,true,LARGE_MOTOR);
 Polling *gPolling;
 MyColorSensor *gColor;
 Brightness *gBrightness;
-HsvHue *gHue;
-HsvSatu *gSatu;
+HsvHue *gHsvHue;
+HsvSatu *gHsvSatu;
 
 Odometry *gOdo;
 Length *gLength;
@@ -53,10 +53,10 @@ MotorManager *gMotor;
 static void user_system_create() {
 
   gBrightness = new Brightness();
-  gHue = new HsvHue();
-  gSatu = new HsvSatu();
+  gHsvHue = new HsvHue();
+  gHsvSatu = new HsvSatu();
 
-  gColor = new MyColorSensor(PORT_2,gBrightness,gHue,gSatu);
+  gColor = new MyColorSensor(PORT_2,gBrightness,gHsvHue,gHsvSatu);
   gLength = new Length();
   gTurnAngle = new TurnAngle();
   gMotor = new MotorManager(gLeftWheel, gRightWheel);
@@ -106,8 +106,8 @@ void polling_task(intptr_t unused) {
     double br = m->getValue(); 
     double len = gLength->getValue();
     double turn = gTurnAngle->getValue();
-    double h = gHue->getValue();
-    double s = gSatu->getValue();
+    double h = gHsvHue->getValue();
+    double s = gHsvSatu->getValue();
 
     rgb_raw_t rgb = gColor->getRgb();
     static char buf[100];

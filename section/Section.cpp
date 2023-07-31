@@ -61,9 +61,12 @@ Judge *Section::selectJudge(int no)
         case LENGTH:
             mJudge = (Judge*)(new JudgeLength());
             break;
-        /*case COLOR:
-            mjudge = (Judge*)(new JudgeColor());
+        case COLOR:
+            printf("color\n");
+            mJudge = (Judge*)(new JudgeColor());
+            printf("mJudge%d", mJudge);
             break;
+        /*
         case BRIGHTNESS:
             mJudge = (Judge*)(new JudgeBrightness());
             break;

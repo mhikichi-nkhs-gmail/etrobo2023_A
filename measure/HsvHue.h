@@ -10,7 +10,7 @@ class HsvHue : public Measure
         virtual void update(double h);
 
     private:
-        double mHue;
+        double mHsvHue;
 };
 
 #endif

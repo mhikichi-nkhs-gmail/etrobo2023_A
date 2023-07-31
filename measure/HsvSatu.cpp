@@ -14,5 +14,5 @@ double HsvSatu::getValue()
 void HsvSatu::update(double s)
 {
     mLpf->addValue(s);
-    mSatu = s;
+    mHsvSatu = s;
 }

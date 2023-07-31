@@ -10,7 +10,7 @@ class HsvSatu : public Measure
         virtual void update(double h);
 
     private:
-        double mSatu;
+        double mHsvSatu;
 };
 
 #endif
