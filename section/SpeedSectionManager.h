@@ -12,14 +12,28 @@ class SpeedSectionManager : public SectionManager {
 
     private:
 
+<<<<<<< Updated upstream
         SecParam sample[10] = {
             //{Section::TRACER,{80, 0 ,  40, 1.5, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{50, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WALKER,{0,30},Section::TURNANGLE,{-70, Section::RESETANG}, Section::EMNONE,{}},
             {Section::WALKER,{0,-30},Section::TURNANGLE,{70, Section::RESETANG}, Section::EMNONE,{}},
             {Section::TRACER,{50, 0 ,  30, 0.3, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{30, Section::RESETLEN}, Section::EMNONE,{}},
+=======
+        SecParam sample[30] = {
+            {Section::TRACER,{70, 0 ,  40, 1.5, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{330, Section::FLNONE}, Section::EMNONE,{}},
+            /*{Section::TRACER,{30, 0 ,  40, 1.5, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{50, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{70, 0 ,  40, 1.5, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{150, Section::RESETLEN}, Section::EMNONE,{}},
+            
+            {Section::TRACER,{30, 0 ,  40, 0.3, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{90, Section::RESETLEN}, Section::EMNONE,{}},*/
+            {Section::TRACER,{70, 0 ,  40, 0.3, 0.1 ,0 , 0, _EDGE},Section::COLOR,{240}, Section::EMNONE,{}},
+            //{Section::TRACER,{30, 0 ,  40, 0.3, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{300, Section::RESETLEN}, Section::EMNONE,{}},
+            //{Section::TRACER,{40, 0 ,  40, 0.3, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{90, Section::RESETLEN}, Section::EMNONE,{}},
+            //{Section::TRACER,{50, 0 ,  40, 0.3, 0.1 ,0 , 0, _EDGE},Section::COLOR,{200}, Section::EMNONE,{}},
+            //{Section::TRACER,{50, 0 ,  40, 0.3, 0.1 ,0 , 0, LineTracer::LEFTEDGE},Section::LENGTH,{350, Section::RESETLEN}, Section::EMNONE,{}},
+>>>>>>> Stashed changes
             //{Section::WALKER,{10,10},Section::TURNANGLE,{30}, Section::EMNONE,{},Section::FLNONE},
         
-            {Section::WALKER,{0,0},Section::TURNANGLE,{10, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::WALKER,{0,0},Section::LENGTH,{0, Section::FLNONE}, Section::EMNONE,{}},
             /*
             {Section::TRACER,{50, 0 ,  30, 0.3, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{100.0}, Section::EMNONE,{},Section::FLNONE},
             {Section::TRACER,{40, 0 ,  30, 0.3, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{1000.0}, Section::EMNONE,{},Section::FLNONE},

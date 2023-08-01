@@ -17,6 +17,7 @@ void JudgeLength::init()
     if(memoLen == Section::RESETLEN)
     {
         printf("check\n");
+
         Judge::MEMOLEN = mLength->getValue();
     }
     mdirect = true;
