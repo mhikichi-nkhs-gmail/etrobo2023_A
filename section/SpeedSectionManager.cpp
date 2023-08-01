@@ -3,6 +3,7 @@
 
 SpeedSectionManager::SpeedSectionManager()
 {
+    set(sample);
     /* test用初期化
  #if defined(MAKE_RIGHT)
       const int _EDGE = LineTracer::LEFTEDGE;

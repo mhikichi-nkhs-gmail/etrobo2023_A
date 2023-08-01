@@ -82,8 +82,9 @@ void Odometry::calc()
 
 }
 
-void Odometry::setPwm(int left,int right)
+/*void Odometry::setPwm(int left,int right)
 {
 	mLeftMotor->setPWM(left);
 	mRightMotor->setPWM(right);
 }
+*/

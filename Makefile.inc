@@ -34,7 +34,9 @@ APPL_CXXOBJS += \
 	YPosition.o \
 	TurnWalker.o \
 	VirCurveLine.o \
-	VirStraightLine.o
+	VirStraightLine.o \
+	DoubleSection.o \
+	BlockSection.o
 
 SRCLANG := c++
 

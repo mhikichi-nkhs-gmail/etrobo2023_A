@@ -6,6 +6,8 @@ SectionManager::SectionManager()
     mSectionIdx=0;
     mLastIdx=0;
 
+    /*
+
     for(int i=0;; i++)
     {
         if(sample[i].walker_no == Section::WANONE)
@@ -24,6 +26,7 @@ SectionManager::SectionManager()
         addSection(sc);
         
     }
+    */
  
 }
 
@@ -33,6 +36,29 @@ SectionManager::~SectionManager()
 
     for(int i=0;i<mLastIdx;i++) {
         delete mSection[i];
+    }
+}
+
+void SectionManager::set(SecParam* array)
+{
+
+    for(int i=0;; i++)
+    {
+        if(array[i].walker_no == Section::WANONE)
+        {
+            break;
+        }
+        
+        Section *sc = new Section();
+
+        Walker* walker = sc->selectWalker(array[i].walker_no);
+        walker->setParam(array[i].secList); 
+
+        Judge* judge = sc->selectJudge(array[i].judge_no); 
+        judge->setParam(array[i].judList);
+
+        addSection(sc);
+        
     }
 }
 

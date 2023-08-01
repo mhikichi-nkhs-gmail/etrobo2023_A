@@ -23,7 +23,7 @@ public:
 	void reset();
 	void resetLength();
 	void resetAngle();
-	void setPwm(int left,int right);
+	//void setPwm(int left,int right);
 
 private:
 	Motor *mLeftMotor;
