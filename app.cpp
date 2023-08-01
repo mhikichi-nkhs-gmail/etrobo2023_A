@@ -100,7 +100,7 @@ void main_task(intptr_t unused) {
 
 void polling_task(intptr_t unused) {
 
-  gPolling->run();
+    gPolling->run();
 
     Measure *m = gBrightness;
     double br = m->getValue(); 
@@ -115,14 +115,25 @@ void polling_task(intptr_t unused) {
     //msg_log(buf);
     //printf("h,s %f%f\n", h,s);
 
-  ext_tsk();
+    ext_tsk();
 }
 
 void tracer_task(intptr_t unused) {
 
-  if (ev3_button_is_pressed(BACK_BUTTON)) {
-    wup_tsk(MAIN_TASK);  // 左ボタン押下でメインを起こす
-  } else {
+#if defined(MAKE_SIM)
+
+    if(ev3_button_is_pressed(BACK_BUTTON)) 
+    {
+        wup_tsk(MAIN_TASK);  // 左ボタン押下でメインを起こす
+    }
+#else
+    ev3_sensor_config(EV3_PORT_1, TOUCH_SENSOR);
+    if(ev3_touch_sensor_is_pressed(EV3_PORT_1) == 1) 
+    {
+      wup_tsk(MAIN_TASK);
+    }
+#endif
+    else{
 
     // とりあえずここで、アームの固定。設計に基づいて変えるべし
     int arm_cnt = gArm->getCount();

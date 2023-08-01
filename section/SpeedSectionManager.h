@@ -17,7 +17,7 @@ class SpeedSectionManager : public SectionManager {
 
     private:
 
-        SecParam sampleR[10] = {
+        SecParam sample[10] = {
             //{Section::TRACER,{80, 0 ,  40, 1.5, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{50, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WALKER,{0,30},Section::TURNANGLE,{-70, Section::RESETANG}, Section::EMNONE,{}},
             {Section::WALKER,{0,-30},Section::TURNANGLE,{70, Section::RESETANG}, Section::EMNONE,{}},
