@@ -8,11 +8,16 @@ class SpeedSectionManager : public SectionManager {
         bool run();
 
     protected:
+#if defined(MAKE_RIGHT)
+    const int _EDGE = LineTracer::LEFTEDGE;
+#else
+    const int _EDGE = LineTracer::RIGHTEDGE;
+#endif
 
 
     private:
 
-        SecParam sample[10] = {
+        SecParam sampleR[10] = {
             //{Section::TRACER,{80, 0 ,  40, 1.5, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{50, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WALKER,{0,30},Section::TURNANGLE,{-70, Section::RESETANG}, Section::EMNONE,{}},
             {Section::WALKER,{0,-30},Section::TURNANGLE,{70, Section::RESETANG}, Section::EMNONE,{}},
