@@ -4,6 +4,12 @@
 
 class SpeedSectionManager : public SectionManager {
     public:
+
+        enum Course{
+            RCOURSE,
+            LCOURSE
+        };
+
         SpeedSectionManager();
         bool run();
 
@@ -14,10 +20,12 @@ class SpeedSectionManager : public SectionManager {
     const int _EDGE = LineTracer::RIGHTEDGE;
 #endif
 
+    Course mCourse;
+
 
     private:
 
-        SecParam sample[10] = {
+        SecParam Rcourse[10] = {
             //{Section::TRACER,{80, 0 ,  40, 1.5, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{50, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WALKER,{0,30},Section::TURNANGLE,{-70, Section::RESETANG}, Section::EMNONE,{}},
             {Section::WALKER,{0,-30},Section::TURNANGLE,{70, Section::RESETANG}, Section::EMNONE,{}},
@@ -36,6 +44,13 @@ class SpeedSectionManager : public SectionManager {
 
             //h , s 赤色 353,0.74 青色　210,0.83 緑　137,0.55 黄色　0~60,0.05
             //旋回の右が負の値
+
+        SecParam Lcourse[10] = {
+
+        {Section::WALKER,{0,30},Section::TURNANGLE,{-70, Section::RESETANG}, Section::EMNONE,{}},
+        {Section::WALKER,{0,-30},Section::TURNANGLE,{70, Section::RESETANG}, Section::EMNONE,{}},
+        {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
+
 
 };
 
