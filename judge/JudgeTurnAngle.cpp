@@ -29,6 +29,8 @@ void JudgeTurnAngle::init()
 
 bool JudgeTurnAngle::judgement()
 {
+    printf("mTurnkids%f\n", mTurnkids);
+    printf("mTurnAngle->getValue()%f\n", mTurnAngle->getValue());
     if(mdirect)
     {
         if(mTurnkids<=mTurnAngle->getValue())

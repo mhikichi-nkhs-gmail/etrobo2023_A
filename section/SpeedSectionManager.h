@@ -7,20 +7,31 @@ class SpeedSectionManager : public SectionManager {
         SpeedSectionManager();
         bool run();
 
+        enum Course {
+            LCOURSE,
+            RCOURSE
+        };
+
     protected:
+
+        Course mCourse;
+#if defined(MAKE_RIGHT)
+    const int _EDGE = LineTracer::LEFTEDGE;
+#else
+    const int _EDGE = LineTracer::RIGHTEDGE;
+#endif
+
 
 
     private:
-
-<<<<<<< Updated upstream
-        SecParam sample[10] = {
+        SecParam Rcourse[10] = {
             //{Section::TRACER,{80, 0 ,  40, 1.5, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{50, Section::FLNONE}, Section::EMNONE,{}},
-            {Section::WALKER,{0,30},Section::TURNANGLE,{-70, Section::RESETANG}, Section::EMNONE,{}},
-            {Section::WALKER,{0,-30},Section::TURNANGLE,{70, Section::RESETANG}, Section::EMNONE,{}},
-            {Section::TRACER,{50, 0 ,  30, 0.3, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{30, Section::RESETLEN}, Section::EMNONE,{}},
-=======
-        SecParam sample[30] = {
-            {Section::TRACER,{70, 0 ,  40, 1.5, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{330, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::WALKER,{0,30},Section::TURNANGLE,{-700, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::WALKER,{0,-30},Section::TURNANGLE,{700, Section::RESETANG}, Section::EMNONE,{}},
+            {Section::WALKER,{0,30},Section::TURNANGLE,{-700, Section::RESETANG}, Section::EMNONE,{}},
+            
+            //{Section::TRACER,{50, 0 ,  30, 0.3, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{30, Section::RESETLEN}, Section::EMNONE,{}},
+            //{Section::TRACER,{70, 0 ,  40, 1.5, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{330, Section::FLNONE}, Section::EMNONE,{}},
             /*{Section::TRACER,{30, 0 ,  40, 1.5, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{50, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TRACER,{70, 0 ,  40, 1.5, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{150, Section::RESETLEN}, Section::EMNONE,{}},
             
@@ -30,7 +41,6 @@ class SpeedSectionManager : public SectionManager {
             //{Section::TRACER,{40, 0 ,  40, 0.3, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{90, Section::RESETLEN}, Section::EMNONE,{}},
             //{Section::TRACER,{50, 0 ,  40, 0.3, 0.1 ,0 , 0, _EDGE},Section::COLOR,{200}, Section::EMNONE,{}},
             //{Section::TRACER,{50, 0 ,  40, 0.3, 0.1 ,0 , 0, LineTracer::LEFTEDGE},Section::LENGTH,{350, Section::RESETLEN}, Section::EMNONE,{}},
->>>>>>> Stashed changes
             //{Section::WALKER,{10,10},Section::TURNANGLE,{30}, Section::EMNONE,{},Section::FLNONE},
         
             {Section::WALKER,{0,0},Section::LENGTH,{0, Section::FLNONE}, Section::EMNONE,{}},
@@ -45,6 +55,11 @@ class SpeedSectionManager : public SectionManager {
 
             //h , s 赤色 353,0.74 青色　210,0.83 緑　137,0.55 黄色　0~60,0.05
             //旋回の右が負の値
+
+        SecParam Lcourse[10] = {
+        {Section::TRACER,{80, 0 ,  40, 1.5, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{50, Section::FLNONE}, Section::EMNONE,{}},  
+        {Section::WALKER,{0,0},Section::TURNANGLE,{10, Section::FLNONE},Section::EMNONE,{}}, 
+        {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
 };
 
