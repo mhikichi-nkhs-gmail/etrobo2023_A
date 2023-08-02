@@ -38,14 +38,21 @@ void Scene::execUndefined()
 }
 void Scene::execStart()
 {
-
-    // とりあえず動かすだけなので、設計に基づいて書き直そう
+#if defined(MAKE_SIM)
+// とりあえず動かすだけなので、設計に基づいて書き直そう
     //msg_log("Press Touch Button to start.");
     ev3_sensor_config(EV3_PORT_1, TOUCH_SENSOR);
     if (ev3_touch_sensor_is_pressed(EV3_PORT_1) == 1)
     {
             mState=SPEED;
     }
+#else
+    if (ev3_button_is_pressed(ENTER_BUTTON))
+    {
+            mState=SPEED;
+    }
+#endif
+    
 }
 void Scene::execSpeed()
 {

@@ -7,16 +7,5 @@ DoubleSection::DoubleSection()
 
 bool DoubleSection::run()
 {
-    if(mSection[mSectionIdx]->run())
-    {
-        if(mSectionIdx == mLastIdx)
-        {
-            return true;
-        }
-        else
-        {
-            mSectionIdx++;
-        }
-    }
-    return false;
+    
 }

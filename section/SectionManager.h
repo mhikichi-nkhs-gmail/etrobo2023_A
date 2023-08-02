@@ -28,11 +28,7 @@ class SectionManager {
         
 
     protected:
-#if defined(MAKE_RIGHT)
-    const int _EDGE = LineTracer::LEFTEDGE;
-#else
-    const int _EDGE = LineTracer::RIGHTEDGE;
-#endif
+
         Section *mSection[100];
         int mSectionIdx;
         int mLastIdx;  //ç≈å„

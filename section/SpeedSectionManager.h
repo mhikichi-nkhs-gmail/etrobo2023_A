@@ -4,6 +4,12 @@
 
 class SpeedSectionManager : public SectionManager {
     public:
+
+        enum Course{
+            RCOURSE,
+            LCOURSE
+        };
+
         SpeedSectionManager();
         bool run();
 
@@ -13,6 +19,13 @@ class SpeedSectionManager : public SectionManager {
         };
 
     protected:
+#if defined(MAKE_RIGHT)
+    const int _EDGE = LineTracer::LEFTEDGE;
+#else
+    const int _EDGE = LineTracer::RIGHTEDGE;
+#endif
+
+    Course mCourse;
 
         Course mCourse;
 #if defined(MAKE_RIGHT)

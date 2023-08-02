@@ -3,13 +3,15 @@
 
 #include "SectionManager.h"
 
-class DoubleSection : public SectionManager
-{
+class DoubleSection
+{  
     public:
         DoubleSection();
         bool run();
+
     protected:
 
     private:
+
 };
 #endif
