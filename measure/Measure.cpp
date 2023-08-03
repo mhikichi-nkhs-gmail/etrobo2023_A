@@ -9,3 +9,8 @@ double Measure::getValue()
 {
     return 0;
 }
+
+void Measure::update(double value)
+{
+
+}

@@ -47,6 +47,9 @@ protected:
 
 private:
 
+    double mInitForword;
+    double mInitTurn;
+
 };
 
 #endif  // EV3_UNIT_SimpleWaker_H_

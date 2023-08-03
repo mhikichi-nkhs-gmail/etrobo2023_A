@@ -111,7 +111,9 @@ void SimpleWalker::setCommandV(double forward, int turn)
 void SimpleWalker::setParam(double simArray[])
 {
     //printf("AAAAAAA\n");
-    setCommand(simArray[0],simArray[1]);
+    //setCommand(simArray[0],simArray[1]);
+    mInitForword = simArray[0];
+    mInitTurn = simArray[1];
 }
 
 void SimpleWalker::resetParam()
@@ -121,6 +123,7 @@ void SimpleWalker::resetParam()
 
 void SimpleWalker::init()
 {
+    setCommand(mInitForword,mInitTurn);
     //printf("mForward%f\n", mForward);
 }
 

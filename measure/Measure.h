@@ -7,7 +7,8 @@ class Measure
 {
     public:
         Measure();
-        double getValue();
+        virtual double getValue();
+        virtual void update(double value);
 
     protected:
             LowPassFilter *mLpf;

@@ -47,9 +47,9 @@ class SpeedSectionManager : public SectionManager {
 
         SecParam Rcourse[10] = {
 
-        {Section::WALKER,{0,30},Section::TURNANGLE,{-700, Section::RESETANG}, Section::EMNONE,{}},
-        {Section::WALKER,{0,-30},Section::TURNANGLE,{700, Section::RESETANG}, Section::EMNONE,{}},
-        {Section::TRACER,{50, 0 ,  30, 0.3, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{300, Section::RESETLEN}, Section::EMNONE,{}},
+        {Section::WALKER,{0,90},Section::TURNANGLE,{-700, Section::RESETANG}, Section::EMNONE,{}},
+        {Section::WALKER,{0,-90},Section::TURNANGLE,{700, Section::RESETANG}, Section::EMNONE,{}},
+        //{Section::TRACER,{50, 0 ,  30, 0.3, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{300, Section::RESETLEN}, Section::EMNONE,{}},
         {Section::WALKER,{0,0},Section::LENGTH,{0, Section::FLNONE}, Section::EMNONE,{}},
         {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 

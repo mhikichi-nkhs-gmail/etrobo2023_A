@@ -28,11 +28,11 @@ MyColorSensor::MyColorSensor(ePortS port,
     mMax_B  = 165;
     mMin_B  = 8;
 #else
-    mMax_R  = 95;
+    mMax_R  = 217;
     mMin_R  = 0;
-    mMax_G  = 85;
+    mMax_G  = 228;
     mMin_G  = 0;
-    mMax_B  = 100;
+    mMax_B  = 235;
     mMin_B  = 0;  
 #endif 
 }
