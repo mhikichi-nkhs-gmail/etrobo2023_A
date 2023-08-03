@@ -29,9 +29,7 @@ class Judge
         HsvHue *mHsvHue;
         HsvSatu *mHsvSatu;
         TurnAngle *mTurnAngle;
-        //XPosition *mXPosition;
-        //YPosition *mYposition;
-
+        
         enum State {
             INIT,
             JUDGEMENT,

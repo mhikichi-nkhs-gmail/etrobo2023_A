@@ -39,7 +39,7 @@ SectionManager::~SectionManager()
     }
 }
 
-void SectionManager::set(SecParam* array)
+void SectionManager::set(SecParam* array) //‹æŠÔ‚ğì¬‚·‚é
 {
 
     for(int i=0;; i++)
@@ -49,7 +49,7 @@ void SectionManager::set(SecParam* array)
             break;
         }
         
-        Section *sc = new Section();
+        Section *sc = new Section(); //create
 
         Walker* walker = sc->selectWalker(array[i].walker_no);
         walker->setParam(array[i].secList); 
@@ -62,17 +62,17 @@ void SectionManager::set(SecParam* array)
     }
 }
 
-bool SectionManager::run()
+bool SectionManager::run() //Às‚·‚é
 {
     return true;
 }
 
-void SectionManager::addSection(Section *sec)
+void SectionManager::addSection(Section *sec) //‹æŠÔ’Ç‰Á
 {
     mSection[mLastIdx++]=sec;
 }
 
-void SectionManager::reset()
+void SectionManager::reset() //‰Šú‰»
 {
     for(int i=0;i<mLastIdx;i++) {
         delete mSection[i];

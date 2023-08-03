@@ -6,8 +6,8 @@ class HsvHue : public Measure
 {
     public:
         HsvHue();
-        virtual double getValue();
-        virtual void update(double h);
+        double getValue();
+        void update(double h);
 
     private:
         double mHsvHue;

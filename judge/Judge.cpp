@@ -20,8 +20,6 @@ Judge::Judge():
     mHsvHue(gHsvHue),
     mHsvSatu(gHsvSatu),
     mTurnAngle(gTurnAngle)
-    //mXPosition(gXPosition),
-    //mYposition(gYPosition)
 {   
 }
 
