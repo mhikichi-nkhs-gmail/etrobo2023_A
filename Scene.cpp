@@ -35,9 +35,25 @@ bool Scene::run()
 void Scene::execUndefined()
 {
     mState=START;
+    printf("AAAAAA\n");
+    mSsm->course(1);
+
 }
 void Scene::execStart()
 {
+    ev3_sensor_config(EV3_PORT_1, TOUCH_SENSOR);
+    if(ev3_button_is_pressed(LEFT_BUTTON))
+    {
+        mSsm->course(0);
+        printf("left\n");
+    }
+    ev3_sensor_config(EV3_PORT_1, TOUCH_SENSOR);
+    if(ev3_button_is_pressed(RIGHT_BUTTON))
+    {
+        mSsm->course(1);
+        printf("right\n");
+    }
+
 #if defined(MAKE_SIM)
 // とりあえず動かすだけなので、設計に基づいて書き直そう
     //msg_log("Press Touch Button to start.");

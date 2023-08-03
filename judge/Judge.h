@@ -33,7 +33,7 @@ class Judge
         enum State {
             INIT,
             JUDGEMENT,
-            END
+            //END
         };
 
         State mState;

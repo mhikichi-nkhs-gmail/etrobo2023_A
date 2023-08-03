@@ -4,6 +4,7 @@
 SpeedSectionManager::SpeedSectionManager()
 {
     //set(sample);
+    /*
     switch(mCourse) {
         case RCOURSE:
             set(Rcourse);
@@ -12,6 +13,7 @@ SpeedSectionManager::SpeedSectionManager()
             set(Lcourse);
             break;
     }
+    */
     /* test用初期化
  #if defined(MAKE_RIGHT)
       const int _EDGE = LineTracer::LEFTEDGE;
@@ -71,4 +73,17 @@ bool SpeedSectionManager::run()
         }
     }
     return false;
+}
+
+void SpeedSectionManager::course(int direct)
+{
+    //printf("BBBBB\n");
+    if(direct == 0)
+    {
+        set(Lcourse);
+    }
+    else
+    {
+        set(Rcourse);
+    }
 }

@@ -1,7 +1,6 @@
 #include "JudgeLength.h"
 
-JudgeLength::JudgeLength():
-    Judge()
+JudgeLength::JudgeLength()
 {
     //printf("const%d\n",mState);
 }

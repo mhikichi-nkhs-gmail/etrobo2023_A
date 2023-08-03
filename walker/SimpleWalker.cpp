@@ -47,7 +47,7 @@ void SimpleWalker::run() {
     double pwm_r = mForward - mTurn;      // <2>
     static const int MAXPWM=85;
     int diff = 0;
-    printf("pwm_l,pwm_r%f,,%f\n", pwm_l, pwm_r);
+    //printf("pwm_l,pwm_r%f,,%f\n", pwm_l, pwm_r);
 
     if(pwm_l>MAXPWM) {
         pwm_r = (int)((double)MAXPWM*pwm_r/pwm_l);

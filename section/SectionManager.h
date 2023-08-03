@@ -6,6 +6,7 @@
 class SectionManager {
     public:
 
+
         typedef struct SecParam_
         {
             enum Section::WALKER_NO walker_no;
@@ -18,6 +19,8 @@ class SectionManager {
             double emgList[10];
 
         }SecParam;
+
+
         SectionManager();
         ~SectionManager();
         void set(SecParam* array);

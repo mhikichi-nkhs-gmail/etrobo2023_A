@@ -5,13 +5,18 @@
 class SpeedSectionManager : public SectionManager {
     public:
 
+        SpeedSectionManager();
+        bool run();
+        void course(int direct);
+
+        /*
         enum Course{
             RCOURSE,
             LCOURSE
         };
+        */
+        //Course mCourse;
 
-        SpeedSectionManager();
-        bool run();
 
     protected:
 #if defined(MAKE_RIGHT)
@@ -20,13 +25,11 @@ class SpeedSectionManager : public SectionManager {
     const int _EDGE = LineTracer::RIGHTEDGE;
 #endif
 
-    Course mCourse;
-
 
     private:
 
         SecParam Lcourse[10] = {
-            //{Section::TRACER,{80, 0 ,  40, 1.5, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{50, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::TRACER,{80, 0 ,  40, 1.5, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{50, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WALKER,{0,90},Section::TURNANGLE,{-700, Section::RESETANG}, Section::EMNONE,{}},
             {Section::WALKER,{0,-90},Section::TURNANGLE,{700, Section::RESETANG}, Section::EMNONE,{}},
             //{Section::TRACER,{50, 0 ,  30, 0.3, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{300, Section::RESETLEN}, Section::EMNONE,{}},

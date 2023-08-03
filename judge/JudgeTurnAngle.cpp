@@ -1,7 +1,6 @@
 #include "JudgeTurnAngle.h"
 
-JudgeTurnAngle::JudgeTurnAngle():
-    Judge()
+JudgeTurnAngle::JudgeTurnAngle()
 {
 
 }
