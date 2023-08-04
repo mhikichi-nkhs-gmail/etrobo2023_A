@@ -40,6 +40,8 @@ HsvSatu *gHsvSatu;
 Odometry *gOdo;
 Length *gLength;
 TurnAngle *gTurnAngle;
+XPosition *gXPosition;
+YPosition *gYPosition;
 
 SpeedControl *gSpeed;
 SimpleWalker *gWalker;
@@ -60,8 +62,10 @@ static void user_system_create() {
   gLength = new Length();
   gTurnAngle = new TurnAngle();
   gMotor = new MotorManager(gLeftWheel, gRightWheel);
+  gXPosition = new XPosition();
+  gYPosition = new YPosition();
 
-  gOdo = new Odometry(gLeftWheel,gRightWheel,gLength,gTurnAngle);
+  gOdo = new Odometry(gLeftWheel,gRightWheel,gLength,gTurnAngle,gXPosition,gYPosition);
   gSpeed = new SpeedControl(gOdo);  
   gWalker = new SimpleWalker(gOdo,gSpeed); 
   gTracer = new LineTracer(gOdo,gSpeed);
@@ -108,6 +112,8 @@ void polling_task(intptr_t unused) {
     double turn = gTurnAngle->getValue();
     double h = gHsvHue->getValue();
     double s = gHsvSatu->getValue();
+    double x = gXPosition->getValue();
+    double y = gYPosition->getValue();
 
     rgb_raw_t rgb = gColor->getRgb();
     static char buf[100];

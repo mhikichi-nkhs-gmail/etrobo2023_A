@@ -36,7 +36,6 @@ void Scene::execUndefined()
 {
     mState=START;
     printf("AAAAAA\n");
-    mSsm->course(1);
 
 }
 void Scene::execStart()
