@@ -7,7 +7,7 @@ class XPosition : public Measure
     public:
         XPosition();
         double getValue();
-        void update(double xpos);
+        void update(double x);
         void reset();
 
     private:

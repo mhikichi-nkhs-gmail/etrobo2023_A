@@ -1,7 +1,6 @@
 #include "JudgeBrightness.h"
 
-JudgeBrightness::JudgeBrightness():
-    Judge()
+JudgeBrightness::JudgeBrightness()
 {
 
 }

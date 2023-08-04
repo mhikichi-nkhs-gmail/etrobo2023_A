@@ -1,7 +1,6 @@
 #include "JudgeColor.h"
 
-JudgeColor::JudgeColor():
-    Judge()
+JudgeColor::JudgeColor()
 {
 
 }

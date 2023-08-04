@@ -2,8 +2,7 @@
 
 double time;
 
-JudgeTime::JudgeTime():
-    Judge()
+JudgeTime::JudgeTime()
 {
 
 }

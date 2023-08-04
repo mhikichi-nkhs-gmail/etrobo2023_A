@@ -3,8 +3,8 @@
 
 SpeedSectionManager::SpeedSectionManager()
 {
-
-    //set(Rcourse);
+    //set(sample);
+    /*
     switch(mCourse) {
         case LCOURSE:
             set(Lcourse);
@@ -13,6 +13,7 @@ SpeedSectionManager::SpeedSectionManager()
             set(Rcourse);
             break;
     }
+    */
     /* test用初期化
  #if defined(MAKE_RIGHT)
       const int _EDGE = LineTracer::LEFTEDGE;

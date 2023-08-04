@@ -7,7 +7,7 @@ class YPosition : public Measure
     public:
         YPosition();
         double getValue();
-        void update(double ypos);
+        void update(double y);
         void reset();
 
     private:
