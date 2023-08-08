@@ -2,6 +2,7 @@
  
 extern SimpleWalker *gWalker;
 extern LineTracer *gTracer;
+extern VirCurveLine *gVerCLine;
 extern Odometry *gOdo;
 extern SpeedControl *gSpeed;
 extern Judge *mJudge;
@@ -44,6 +45,9 @@ Walker *Section::selectWalker(int no)
         case TRACER:
             mWalker = (Walker*)(new LineTracer(gOdo,gSpeed));
            break;
+        case VIRCLINE:
+            mWalker = (Walker*)(new VirCurveLine(gOdo,gSpeed));
+            break;
         //default:
             //msg_log("selectWalker error!!");
         case WANONE:

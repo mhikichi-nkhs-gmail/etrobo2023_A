@@ -4,8 +4,15 @@
 #include "Odometry.h"
 #include "Brightness.h"
 #include "PID.h"
+#include "Measure.h"
+#include "TurnAngle.h"
+#include "XPosition.h"
+#include "YPosition.h"
 
 extern Brightness *gBrightness;
+extern XPosition *gXPosition;
+extern YPosition *gYPosition;
+extern TurnAngle *gTurnAngle;
 
 class Walker
 {
@@ -20,6 +27,9 @@ class Walker
         Odometry *mOdo;
         PID *mPid;
 
+        XPosition *mXpos;
+        YPosition *mYpos;
+        TurnAngle *mAngle;
         Brightness *mBright;
 
         enum State {
