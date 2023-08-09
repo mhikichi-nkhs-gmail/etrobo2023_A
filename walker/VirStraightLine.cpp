@@ -14,7 +14,6 @@ void VirStraightLine::run()
     calcSenoer();
     val1 = targetLine();
     mTurn = calcTurn();
-
     setCommand((int)mTargetSpeed, (int)mTurn);
 
     SimpleWalker::run();
@@ -22,14 +21,8 @@ void VirStraightLine::run()
 
 double VirStraightLine::calcTurn()
 {
-    
-    //printf("val2,,%f,,\n", val2);
-    //printf("val1%f,,\n",val1);
     double val2_turn = mPid->getOperation(val1);
-
-    //if(mSetAngle) val2_turn = -val2_turn;
     setBias(mCurve);
-    //double turn =  val1_turn+mBias;
    
     return val2_turn;
 }
@@ -57,9 +50,6 @@ void VirStraightLine::setBias(double curve) //カーブパラム
 
 void VirStraightLine::init()
 {
-    //targetPoint();
-    //calcSenoer();
-    //val1 = targetLine();
     mSetAngle = mSetAngle + (mAngle->getValue());
     printf("Angle%f,,\n",(mAngle->getValue()));
 }
@@ -74,16 +64,12 @@ void VirStraightLine::targetPoint() //進行方向
     mx = mXpos->getValue();
     my = mYpos->getValue();
     double angle1 = mSetAngle*(M_PI/180);
-    //printf("angle1,,%f\n",angle1);
     mtx = cos(angle1) + mx; 
     mty = sin(angle1) + my;
-
-    //printf("mtx,mty%f,,%f\n", mtx, mty);
 }
 
 void VirStraightLine::calcSenoer() //センサー位置
 {
-    //printf("Angle2,,%f\n",(mAngle->getValue()));
     double angle2 = (mAngle->getValue())*(M_PI/180);
     maddsensor = 5;
 
@@ -99,7 +85,6 @@ void VirStraightLine::calcSenoer() //センサー位置
 double VirStraightLine::targetLine()
 {
     mLine = (mty - my) * msx - (mtx - mx) * msy + (mtx * my) - (mty * mx);  
-    //printf("msx,msy%f,,%f\n", msx, msy);
 
     return mLine;
 }
