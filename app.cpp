@@ -47,7 +47,8 @@ YPosition *gYPosition;
 SpeedControl *gSpeed;
 SimpleWalker *gWalker;
 LineTracer *gTracer;
-VirCurveLine *gVerCLine;
+VirCurveLine *gVirCLine;
+VirStraightLine *gVirSLine;
 
 Scene *gScene;
 
@@ -71,8 +72,8 @@ static void user_system_create() {
   gSpeed = new SpeedControl(gOdo);  
   gWalker = new SimpleWalker(gOdo,gSpeed); 
   gTracer = new LineTracer(gOdo,gSpeed);
-  gVerCLine = new VirCurveLine(gOdo,gSpeed);
-
+  gVirCLine = new VirCurveLine(gOdo,gSpeed);
+  gVirSLine = new VirStraightLine(gOdo,gSpeed);
 
   gPolling = new Polling(gColor,gOdo);
 

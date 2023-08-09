@@ -26,8 +26,6 @@ class VirCurveLine : public SimpleWalker
         void calcLength();
         void calcSenoer();
 
-        double mSpeed;
-
         double mradius;
         double maddsensor;
         double R;

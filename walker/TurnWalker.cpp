@@ -14,10 +14,10 @@ void TurnWalker::run()
 
 void TurnWalker::init()
 {
-
+    
 }
 
 void TurnWalker::execStart()
 {
-
+    run();
 }

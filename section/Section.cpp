@@ -3,6 +3,7 @@
 extern SimpleWalker *gWalker;
 extern LineTracer *gTracer;
 extern VirCurveLine *gVerCLine;
+extern VirStraightLine *gVerSLine;
 extern Odometry *gOdo;
 extern SpeedControl *gSpeed;
 extern Judge *mJudge;
@@ -48,6 +49,12 @@ Walker *Section::selectWalker(int no)
         case VIRCLINE:
             mWalker = (Walker*)(new VirCurveLine(gOdo,gSpeed));
             break;
+        case VIRSLINE:
+            mWalker = (Walker*)(new VirStraightLine(gOdo,gSpeed));
+            break;
+        case TWALKER:
+            mWalker = (Walker*)(new TurnWalker(gOdo,gSpeed));
+            break;
         //default:
             //msg_log("selectWalker error!!");
         case WANONE:
@@ -66,9 +73,7 @@ Judge *Section::selectJudge(int no)
             mJudge = (Judge*)(new JudgeLength());
             break;
         case COLOR:
-            //printf("color\n");
             mJudge = (Judge*)(new JudgeColor());
-            //printf("mJudge%d", mJudge);
             break;
         case BRIGHTNESS:
             mJudge = (Judge*)(new JudgeBrightness());

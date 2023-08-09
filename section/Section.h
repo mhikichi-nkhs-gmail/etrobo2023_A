@@ -4,6 +4,7 @@
 #include "LineTracer.h"
 #include "SimpleWalker.h"
 #include "VirCurveLine.h"
+#include "VirStraightLine.h"
 
 
 #include "Walker.h"
@@ -29,6 +30,8 @@ class Section {
             WALKER,
             TRACER,
             VIRCLINE,
+            VIRSLINE,
+            TWALKER,
             WANONE
         };
 

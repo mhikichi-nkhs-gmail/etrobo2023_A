@@ -4,7 +4,6 @@
 VirCurveLine::VirCurveLine(Odometry *odo,
                         SpeedControl *scon):
     SimpleWalker(odo,scon),
-    mSpeed(0),
     mBias(0)
 {
 }
@@ -86,16 +85,8 @@ void VirCurveLine::calcSenter() //’†SÀ•W‚Ì“Á’è
     mx = mXpos->getValue();
     my = mYpos->getValue();
 
-    if(mradius > 0)
-    {
-        centerx = (mradius * -sin(angle1)) +  mx;
-        centery = (mradius * cos(angle1)) +  my;
-    }
-    else
-    {
-        centerx = (mradius * -sin(angle1)) +  mx;
-        centery = ((mradius * cos(angle1)) +  my);
-    }
+    centerx = (mradius * -sin(angle1)) +  mx;
+    centery = (mradius * cos(angle1)) +  my;
 
     printf("X,,%f\n", centerx);
     printf("Y,,%f\n", centery);
