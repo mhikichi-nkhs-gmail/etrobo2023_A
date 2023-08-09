@@ -5,17 +5,12 @@ VirCurveLine::VirCurveLine(Odometry *odo,
                         SpeedControl *scon):
     SimpleWalker(odo,scon),
     mSpeed(0),
-    mLeftEdge(true),
-    mLimit(100),
     mBias(0)
 {
-
 }
 
 void VirCurveLine::run()
 {
-    //calcSenoer();
-    //calcSenter();
     calcSenoer();
     calcLength();
     mTurn = calcTurn();
@@ -27,17 +22,19 @@ void VirCurveLine::run()
 
 double VirCurveLine::calcTurn()
 {
-     double val2;
+    double val2;
     //printf("RRR%f\n",R);
-    if(mradius > 0)
+    if(mradius < 0)
     {
-        val2 = mradius - R;
+        val2 = mradius + R;
+        printf("minas\n");
     }
     else
     {
-        val2 = mradius + R;
+        val2 = mradius - R;
+        printf("plus\n");
     }
-
+    
     printf("val2,,%f,,\n", val2);
     double val2_turn = mPid->getOperation(val2);
 
@@ -52,17 +49,12 @@ double VirCurveLine::calcTurn()
 
 void VirCurveLine::setParam(double vcurve[])
 {
-    //setParam(vcurve[0],vcurve[1],vcurve[2],vcurve[3],vcurve[4],vcurve[5]);  //速さ,半径,旋回角度,P,I,D
-    //printf("XXXXXX\n");
     mradius = vcurve[1];
-
     mTargetSpeed = vcurve[0];
     mTarget = 0;
-    mCurve = vcurve[2];
-    mPFactor = vcurve[3];
-    mIFactor = vcurve[4];
-    mDFactor = vcurve[5];
-
+    mPFactor = vcurve[2];
+    mIFactor = vcurve[3];
+    mDFactor = vcurve[4];
   
     mPid->setTarget(mTarget);
     mPid->setKp(mPFactor); 
@@ -71,40 +63,9 @@ void VirCurveLine::setParam(double vcurve[])
    
 }
 
-void VirCurveLine::setEdgeMode(bool isLeftEdge)
-{
-    mLeftEdge = isLeftEdge;
-}
-
-bool VirCurveLine::getEdgeMode()
-{
-    return mLeftEdge;
-}
-
-void VirCurveLine::setLimit(double limit)
-{
-    mLimit=limit;
-    mPid->setLimit(limit);
-}
-
-bool VirCurveLine::isLeftEdge()
-{
-    return mLeftEdge;
-}
-
 void VirCurveLine::setBias(double curve) //カーブパラム
 {
     mBias = curve;
-}
-
-void VirCurveLine::addBias(double add) //カーブパラム
-{
-    mBias += add;
-}
-
-void VirCurveLine::printInfo()
-{
-    msg_log("VirCurveLineTracer");
 }
 
 void VirCurveLine::init()
@@ -133,8 +94,7 @@ void VirCurveLine::calcSenter() //中心座標の特定
     else
     {
         centerx = (mradius * -sin(angle1)) +  mx;
-        centery = ((mradius * cos(angle1)) +  my) * -1;
-
+        centery = ((mradius * cos(angle1)) +  my);
     }
 
     printf("X,,%f\n", centerx);
@@ -144,8 +104,6 @@ void VirCurveLine::calcSenter() //中心座標の特定
 
 void VirCurveLine::calcLength() //走行体と中心座標との半径
 {
-    //mx = mXpos->getValue();
-    //my = mYpos->getValue();
     R = sqrt((centerx - xsensor) * (centerx - xsensor) + (centery - ysensor) * (centery - ysensor));
     printf("R%f\n", R);
 }
@@ -159,6 +117,4 @@ void VirCurveLine::calcSenoer() //センサーの場所
     my = mYpos->getValue();
     xsensor = maddsensor * cos(angle2) + mx;
     ysensor = maddsensor * sin(angle2) + my;
-    //printf("xsensor,,%f\n", xsensor);
-    //printf("ysensor,,%f\n", ysensor);
 }

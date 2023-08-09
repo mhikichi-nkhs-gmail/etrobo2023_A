@@ -13,17 +13,8 @@ class VirCurveLine : public SimpleWalker
             SpeedControl *scon);
         void run();
         void setParam(double vcurve[]);
-        void setEdgeMode(bool isLeftEdge);
-        bool getEdgeMode();
-        void changeEdgeMode();
-        void setLimit(double limit);
-
-        bool isLeftEdge();
-  
         void setBias(double curve);
-        void addBias(double add);
 
-        void printInfo();
         void init();
         void execStart();
 
@@ -54,15 +45,10 @@ class VirCurveLine : public SimpleWalker
         double mDFactor;
 
         double mAngleKp;
-        bool mLeftEdge;
         double mCurve;
 
 
-        double mBias;
-
-        int mLimit;  
-
-        
+        double mBias;    
 };
 
 #endif  
