@@ -14,7 +14,7 @@ double YPosition::getValue()
 void YPosition::update(double y)
 {
     mYPosition = y;
-    printf("mY%f\n", mYPosition);
+    //printf("mY%f\n", mYPosition);
 }
 
 void YPosition::reset()

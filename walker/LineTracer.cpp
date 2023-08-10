@@ -51,6 +51,7 @@ void LineTracer::run()
    
 double LineTracer::calcTurn(double val1) {
 
+    /*
     double bai = 1.0;   //CompositeSection用？
     if(mSpeedControl->getCurrentSpeed()<15) {  //12
         bai=0.5;
@@ -58,8 +59,9 @@ double LineTracer::calcTurn(double val1) {
     mPid->setKp(mPFactor*bai); //0.376
     mPid->setKi(mIFactor*bai);
     mPid->setKd(mDFactor*bai);
+    */
 
-    double val1_turn =  mPid->getOperation(val1);
+    double val1_turn =  mPid->getOperation(val1); 
 
   //  mPid->debug=true;
 
@@ -130,12 +132,12 @@ bool LineTracer::isLeftEdge()
     return mLeftEdge;
 }
 
-void LineTracer::setBias(double curve)
+void LineTracer::setBias(double curve) //カーブパラム
 {
-     mBias = curve;
+    mBias = curve;
 }
 
-void LineTracer::addBias(double add)
+void LineTracer::addBias(double add) //カーブパラム
 {
     mBias += add;
 }

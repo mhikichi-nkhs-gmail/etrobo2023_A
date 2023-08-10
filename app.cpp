@@ -12,9 +12,14 @@
 #include "Odometry.h"
 #include "HsvHue.h"
 #include "HsvSatu.h"
+#include "XPosition.h"
+#include "YPosition.h"
 #include "SimpleWalker.h"
 #include "SpeedControl.h"
 #include "LineTracer.h"
+#include "VirCurveLine.h"
+#include "VirStraightLine.h"
+#include "TurnWalker.h"
 
 #include "Scene.h"
 #include "MotorManager.h"
@@ -46,6 +51,9 @@ YPosition *gYPosition;
 SpeedControl *gSpeed;
 SimpleWalker *gWalker;
 LineTracer *gTracer;
+VirCurveLine *gVirCLine;
+VirStraightLine *gVirSLine;
+TurnWalker *gTWalker;
 
 Scene *gScene;
 
@@ -69,6 +77,9 @@ static void user_system_create() {
   gSpeed = new SpeedControl(gOdo);  
   gWalker = new SimpleWalker(gOdo,gSpeed); 
   gTracer = new LineTracer(gOdo,gSpeed);
+  gVirCLine = new VirCurveLine(gOdo,gSpeed);
+  gVirSLine = new VirStraightLine(gOdo,gSpeed);
+  gTWalker = new TurnWalker(gOdo,gSpeed);
 
   gPolling = new Polling(gColor,gOdo);
 

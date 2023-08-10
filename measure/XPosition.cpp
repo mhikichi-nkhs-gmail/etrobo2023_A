@@ -14,7 +14,7 @@ double XPosition::getValue()
 void XPosition::update(double x)
 {
     mXPosition = x;
-    printf("mX%f\n", mXPosition);
+    //printf("mX%f\n", mXPosition);
 }
 
 void XPosition::reset()
