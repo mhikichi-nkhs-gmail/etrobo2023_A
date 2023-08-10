@@ -50,8 +50,16 @@ void VirStraightLine::setBias(double curve) //カーブパラム
 
 void VirStraightLine::init()
 {
-    mSetAngle = mSetAngle + (mAngle->getValue());
-    printf("Angle%f,,\n",(mAngle->getValue()));
+    if(mTargetSpeed > 0)
+    {
+        mSetAngle = mSetAngle + (mAngle->getValue());
+        printf("Angle%f,,\n",(mAngle->getValue()));
+    }
+    else
+    {
+        mSetAngle = mSetAngle + ((mAngle->getValue()) * -1);
+        printf("Angle%f,,\n",(mAngle->getValue()));
+    }
 }
 
 void VirStraightLine::execStart()
@@ -72,6 +80,12 @@ void VirStraightLine::calcSenoer() //センサー位置
 {
     double angle2 = (mAngle->getValue())*(M_PI/180);
     maddsensor = 5;
+
+    if(mTargetSpeed < 0)
+    {   
+        angle2 = angle2 * -1;
+        maddsensor = maddsensor * -1;
+    }
 
     //printf("angle2,,%f\n",angle2);
 

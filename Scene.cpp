@@ -118,7 +118,7 @@ void Scene::execStart()
             mState=SPEED;
     }
 #endif
-printf("Start_Finish\n");
+//printf("Start_Finish\n");
 }
 void Scene::execSpeed()
 {
