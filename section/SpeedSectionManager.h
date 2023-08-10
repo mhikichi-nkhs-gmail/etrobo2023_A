@@ -42,7 +42,7 @@ class SpeedSectionManager : public SectionManager {
 
 
     private:
-        SecParam Rcourse[10] = {
+        SecParam Lcourse[10] = {
             //{Section::TRACER,{80, 0 ,  40, 1.5, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{50, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WALKER,{0,30},Section::TURNANGLE,{-700, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WALKER,{0,-30},Section::TURNANGLE,{700, Section::RESETANG}, Section::EMNONE,{}},
