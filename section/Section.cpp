@@ -4,6 +4,7 @@ extern SimpleWalker *gWalker;
 extern LineTracer *gTracer;
 extern VirCurveLine *gVerCLine;
 extern VirStraightLine *gVerSLine;
+extern TurnWalker *gTWalker;
 extern Odometry *gOdo;
 extern SpeedControl *gSpeed;
 extern Judge *mJudge;

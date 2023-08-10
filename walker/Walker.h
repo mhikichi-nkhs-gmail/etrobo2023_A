@@ -13,6 +13,7 @@ extern Brightness *gBrightness;
 extern XPosition *gXPosition;
 extern YPosition *gYPosition;
 extern TurnAngle *gTurnAngle;
+extern Length *gLength;
 
 class Walker
 {
@@ -29,6 +30,7 @@ class Walker
 
         XPosition *mXpos;
         YPosition *mYpos;
+        Length *mLength;
         TurnAngle *mAngle;
         Brightness *mBright;
 

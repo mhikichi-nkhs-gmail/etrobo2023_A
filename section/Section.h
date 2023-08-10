@@ -5,6 +5,7 @@
 #include "SimpleWalker.h"
 #include "VirCurveLine.h"
 #include "VirStraightLine.h"
+#include "TurnWalker.h"
 
 
 #include "Walker.h"
