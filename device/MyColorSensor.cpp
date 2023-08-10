@@ -176,6 +176,20 @@ void MyColorSensor::getHSV(rgb_f_t rgb, hsv_t& hsv)
 
 }
 
+void MyColorSensor::setRGB()
+{
+    mColor->getRawColor(raw);
+    /*
+    printf("raw.r = %d\n",raw.r);
+    printf("raw.g = %d\n",raw.g);
+    printf("raw.b = %d\n",raw.b);
+    */
+    mMax_R = raw.r;
+    mMax_G = raw.g;
+    mMax_B = raw.b;
+    printf("r,g,b %d %d %d\n",mMax_R,mMax_G,mMax_B);
+}
+
 // debug用
 rgb_raw_t MyColorSensor::getRgb()
 {

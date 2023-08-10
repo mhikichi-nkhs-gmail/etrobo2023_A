@@ -22,7 +22,7 @@ class SpeedSectionManager : public SectionManager {
         SecParam Lcourse[10] = {
             {Section::TRACER,{50, 0.05, 43, 2.5, 5.0 ,0 , 0, _EDGE},Section::LENGTH,{200, Section::FLNONE}, Section::EMNONE,{}},
             //{Section::TRACER,{80, 0.1 ,  40, 1.5, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{150, Section::FLNONE}, Section::EMNONE,{}},
-            //{Section::VIRCLINE,{50, 40 ,  70, 1.5, 0.1 ,0 , 0},Section::TURNANGLE,{50, Section::RESETANG}, Section::EMNONE,{}}, //‘¬‚³A”¼ŒaAŠp“xƒpƒ‰ƒ€APAIAD
+            //{Section::VIRCLINE,{50, 40 ,  70, 1.5, 0.1 ,0 , 0},Section::TURNANGLE,{50, Section::RESETANG}, Section::EMNONE,{}}, //ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½aï¿½Aï¿½pï¿½xï¿½pï¿½ï¿½ï¿½ï¿½ï¿½APï¿½AIï¿½AD
             //{Section::TRACER,{50, 0 ,  40, 1.5, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{20, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{1, Section::FLNONE}, Section::EMNONE,{}},
             //{Section::WALKER,{30,0},Section::LENGTH,{50, Section::FLNONE}, Section::EMNONE,{}},
@@ -45,8 +45,8 @@ class SpeedSectionManager : public SectionManager {
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
 
-            //h , s ÔF 353,0.74 ÂF@210,0.83 —Î@137,0.55 ‰©F@0~60,0.05
-            //ù‰ñ‚Ì‰E‚ª•‰‚Ì’l
+            //h , s ï¿½ÔF 353,0.74 ï¿½ÂFï¿½@210,0.83 ï¿½Î@137,0.55 ï¿½ï¿½ï¿½Fï¿½@0~60,0.05
+            //ï¿½ï¿½ï¿½ï¿½Ì‰Eï¿½ï¿½ï¿½ï¿½ï¿½Ì’l
 
         SecParam Rcourse[10] = {
 

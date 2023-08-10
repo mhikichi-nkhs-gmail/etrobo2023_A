@@ -77,13 +77,15 @@ bool SpeedSectionManager::run()
 
 void SpeedSectionManager::course(int direct)
 {
-    //printf("BBBBB\n");
+    printf("BBBBB\n");
     if(direct == 0)
     {
+        printf("通った\n");
         set(Lcourse);
     }
     else
     {
+        printf("通らなかった\n");
         set(Rcourse);
     }
 }
