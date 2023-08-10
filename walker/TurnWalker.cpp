@@ -37,6 +37,7 @@ double TurnWalker::calcTurn()
 
     setBias(mCurve);
     double turn =  val1_turn+mBias;
+    printf("turn%f,,\n", turn);
    
     return turn;
 }
