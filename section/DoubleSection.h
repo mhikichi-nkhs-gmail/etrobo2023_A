@@ -15,9 +15,9 @@ class DoubleSection : public SectionManager
     private:
 
         SecParam Lcourse[10] = {
-            {Section::VIRCLINE,{40, -20 , 43, 2.5 ,5.0},Section::LENGTH,{50, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TRACER,{80, 0.05, 43, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{100, Section::RESETLEN}, Section::EMNONE,{}},
-            //{Section::WALKER,{0,30},Section::TIME,{20, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::VIRCLINE,{40, -45 , 43, 2.5 ,5.0},Section::LENGTH,{23, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{80, 0.05, 52, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{130, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::WALKER,{0,0},Section::LENGTH,{0, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
         SecParam Rcourse[10] = {
