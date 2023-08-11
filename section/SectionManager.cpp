@@ -60,7 +60,6 @@ void SectionManager::set(SecParam* array) //��Ԃ��쐬����
         Judge* judge = sc->selectJudge(array[i].judge_no); 
         judge->setParam(array[i].judList);
 
-        //mLastIdx = i;
         addSection(sc);
         
     }

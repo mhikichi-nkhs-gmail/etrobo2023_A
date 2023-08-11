@@ -27,11 +27,9 @@ bool Scene::run()
         case UNDEFINED:
             execUndefined();
             break;
-        /*
         case CALIBRATION:
             execCalibration();
             break;
-        */
         case START:
             execStart();
             break;
@@ -58,14 +56,33 @@ bool Scene::run()
 void Scene::execUndefined()
 {
     //printf("Undefined_Start\n");
-    mState=START;
-    //mState=CALIBRATION;
+    //mState=START;
+    mState=CALIBRATION;
     printf("Undefined\n");
 
 }
-/*
+
 void Scene::execCalibration()
 {
+    ev3_sensor_config(EV3_PORT_1, TOUCH_SENSOR);
+    if(ev3_button_is_pressed(LEFT_BUTTON))
+    {
+        printf("left\n");
+        mSsm->course(0);
+        mDs->course(0);
+        gColor->setRGB();
+        mState=START;
+    }
+    ev3_sensor_config(EV3_PORT_1, TOUCH_SENSOR);
+    if(ev3_button_is_pressed(RIGHT_BUTTON))
+    {
+        printf("right\n");
+        mSsm->course(1);
+        mDs->course(1);
+        gColor->setRGB();
+        mState=START;
+    }
+    /*
     printf("Calibration_Start\n");
     gColor->setRGB();
 #if defined(MAKE_SIM)
@@ -82,13 +99,13 @@ void Scene::execCalibration()
         printf("Calibration_Finish\n");
     }
 #endif
-
-}
 */
+}
+
 void Scene::execStart()
 {
     //printf("Start_Start\n");
-    ev3_sensor_config(EV3_PORT_1, TOUCH_SENSOR);
+    /*ev3_sensor_config(EV3_PORT_1, TOUCH_SENSOR);
     if(ev3_button_is_pressed(LEFT_BUTTON))
     {
         printf("left\n");
@@ -103,7 +120,7 @@ void Scene::execStart()
         mSsm->course(1);
         mDs->course(1);
         gColor->setRGB();
-    }
+    }*/
 
 #if defined(MAKE_SIM)
 // とりあえず動かすだけなので、設計に基づいて書き直そう

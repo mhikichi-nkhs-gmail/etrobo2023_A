@@ -63,15 +63,16 @@ bool SpeedSectionManager::run()
 {
     if(mSection[mSectionIdx]->run())
     {
+        mSectionIdx++;
         if(mSectionIdx == mLastIdx)
         {
             printf("speed終わった\n");
             return true;
         }
-        else
+        /*else
         {
             mSectionIdx++;
-        }
+        }*/
         printf("mscetion%d\n", mSectionIdx);
         printf("mlast%d\n", mLastIdx);
         

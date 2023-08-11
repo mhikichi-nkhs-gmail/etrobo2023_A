@@ -11,17 +11,18 @@ bool DoubleSection::run()
 {
     if(mSection[mSectionIdx]->run())
     {
-        printf("a");
-        printf("mscetion%d\n", mSectionIdx);
-        printf("mlast%d\n", mLastIdx);
+        printf("a\n");
+        mSectionIdx++;
         if(mSectionIdx == mLastIdx)
         {
             return true;
         }
-        else
+        /*else
         {
             mSectionIdx++;
-        }
+        }*/
+        printf("mscetion%d\n", mSectionIdx);
+        printf("mlast%d\n", mLastIdx);
     }
     return false;
 }

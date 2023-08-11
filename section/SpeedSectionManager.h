@@ -19,11 +19,12 @@ class SpeedSectionManager : public SectionManager {
 
     private:
 
-        SecParam Lcourse[6] = {
+        SecParam Lcourse[7] = {
             
             {Section::TRACER,{100, 0.05, 43, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{290, Section::FLNONE}, Section::EMNONE,{}},
             {Section::TRACER,{80, 0.1, 43, 2.5, 5.0 ,28 , 0, 'LEFTEDGE'},Section::TURNANGLE,{-78, Section::FLNONE}, Section::EMNONE,{}},
             {Section::TRACER,{80, 0.05, 43, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{167.5, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{80, 0.1, 43, 2.5, 5.0 ,28 , 0, 'LEFTEDGE'},Section::TURNANGLE,{-78, Section::RESETANG}, Section::EMNONE,{}},
             {Section::TRACER,{80, 0.1, 43, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::COLOR,{205,0.138, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::WALKER,{0,30},Section::TIME,{10, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
