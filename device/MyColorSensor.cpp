@@ -187,7 +187,7 @@ void MyColorSensor::setRGB()
     mMax_R = raw.r;
     mMax_G = raw.g;
     mMax_B = raw.b;
-    printf("r,g,b %d %d %d\n",mMax_R,mMax_G,mMax_B);
+    //printf("r,g,b %d %d %d\n",mMax_R,mMax_G,mMax_B);
 }
 
 // debug用

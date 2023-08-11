@@ -6,12 +6,15 @@ class Process
     public:
         Process();
         void load();
-        void writing();
+        int writing();
+
 
     protected:
 
     private:
         char pipe[1024]; 
+
+        
 };
 
 #endif

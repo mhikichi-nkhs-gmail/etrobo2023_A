@@ -8,12 +8,14 @@
 #include "TurnAngle.h"
 #include "XPosition.h"
 #include "YPosition.h"
+#include "Process.h"
 
 extern Brightness *gBrightness;
 extern XPosition *gXPosition;
 extern YPosition *gYPosition;
 extern TurnAngle *gTurnAngle;
 extern Length *gLength;
+extern Process *gProcess;
 
 class Walker
 {
@@ -33,6 +35,8 @@ class Walker
         Length *mLength;
         TurnAngle *mAngle;
         Brightness *mBright;
+
+        Process *mPro;
 
         enum State {
             INIT,

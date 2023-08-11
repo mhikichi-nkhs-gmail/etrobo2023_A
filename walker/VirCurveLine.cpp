@@ -26,15 +26,15 @@ double VirCurveLine::calcTurn()
     if(mradius < 0)
     {
         val2 = mradius + R;
-        printf("minas\n");
+        //printf("minas\n");
     }
     else
     {
         val2 = mradius - R;
-        printf("plus\n");
+        //printf("plus\n");
     }
     
-    printf("val2,,%f,,\n", val2);
+    //printf("val2,,%f,,\n", val2);
     double val2_turn = mPid->getOperation(val2);
 
     //printf("val2_turn,,%f,,", val2_turn);
@@ -69,7 +69,6 @@ void VirCurveLine::setBias(double curve) //カーブパラム
 
 void VirCurveLine::init()
 {
-    printf("ABC\n");
     calcSenter();
 }
 
@@ -88,15 +87,15 @@ void VirCurveLine::calcSenter() //中心座標の特定
     centerx = (mradius * -sin(angle1)) +  mx;
     centery = (mradius * cos(angle1)) +  my;
 
-    printf("X,,%f\n", centerx);
-    printf("Y,,%f\n", centery);
+    //printf("X,,%f\n", centerx);
+    //printf("Y,,%f\n", centery);
 
 }
 
 void VirCurveLine::calcLength() //走行体と中心座標との半径
 {
     R = sqrt((centerx - xsensor) * (centerx - xsensor) + (centery - ysensor) * (centery - ysensor));
-    printf("R%f\n", R);
+    //printf("R%f\n", R);
 }
 
 void VirCurveLine::calcSenoer() //センサーの場所

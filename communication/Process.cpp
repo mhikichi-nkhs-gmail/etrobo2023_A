@@ -10,11 +10,20 @@ void Process::load()
 
 }
 
-void Process::writing()
+int Process::writing()
 {
-    FILE * fp = NULL;
+    //const int 
+    FILE * fp;
+    fp = fopen("sample.txt", "w");
+    if(fp == NULL)
+    {
+        printf("Ž¸”s\n");
+        return 1;
+    }
 
-    fp = fopen("memo.txt", "w");
-
+    fprintf(fp,"START\n");
+    printf("finish");
     fclose(fp);
+
+    return 0;
 }

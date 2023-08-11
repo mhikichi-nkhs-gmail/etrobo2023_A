@@ -2,16 +2,15 @@
 #define FILEWALKER
 
 #include "Walker.h"
+#include "Process.h"
 
 class FileWalker : Walker {
 public:
-    Walker( Odometry *odo );
+    FileWalker( Odometry *odo );
     void run();
-    void setParam(double pipe[]);
     void init();
+    void setParam(char comment[]);
     void execStart();
-
-
 };
 
 #endif

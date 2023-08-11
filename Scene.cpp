@@ -91,14 +91,14 @@ void Scene::execStart()
     if(ev3_button_is_pressed(LEFT_BUTTON))
     {
         mSsm->course(0);
-        printf("left\n");
+        //printf("left\n");
         gColor->setRGB();
     }
     ev3_sensor_config(EV3_PORT_1, TOUCH_SENSOR);
     if(ev3_button_is_pressed(RIGHT_BUTTON))
     {
         mSsm->course(1);
-        printf("right\n");
+        //printf("right\n");
         gColor->setRGB();
     }
 

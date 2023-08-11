@@ -5,6 +5,7 @@ extern LineTracer *gTracer;
 extern VirCurveLine *gVerCLine;
 extern VirStraightLine *gVerSLine;
 extern TurnWalker *gTWalker;
+extern FileWalker *gFile;
 extern Odometry *gOdo;
 extern SpeedControl *gSpeed;
 extern Judge *mJudge;
@@ -24,7 +25,7 @@ bool Section::run()
 {
 
     //printf("check\n");
-    //判定
+    //判�?
     if(mJudge->run())
     {
         //printf("check1\n");
@@ -32,7 +33,7 @@ bool Section::run()
     }
     
 
-    //走法
+    //走�?
     mWalker->run();
     
     return false;
@@ -55,6 +56,9 @@ Walker *Section::selectWalker(int no)
             break;
         case TWALKER:
             mWalker = (Walker*)(new TurnWalker(gOdo,gSpeed));
+            break;
+        case FILE:
+            mWalker = (Walker*)(new FileWalker(gOdo));
             break;
         //default:
             //msg_log("selectWalker error!!");
