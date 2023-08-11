@@ -3,6 +3,8 @@
 
 SpeedSectionManager::SpeedSectionManager()
 {
+    mSectionIdx=0;
+    mLastIdx=0;
     //set(sample);
     /*
     switch(mCourse) {
@@ -61,31 +63,34 @@ bool SpeedSectionManager::run()
 {
     if(mSection[mSectionIdx]->run())
     {
-        //printf("mscetion%d\n", mSectionIdx);
-        //printf("mlast%d\n", mLastIdx);
         if(mSectionIdx == mLastIdx)
         {
+            printf("speed終わった\n");
             return true;
         }
         else
         {
             mSectionIdx++;
         }
+        printf("mscetion%d\n", mSectionIdx);
+        printf("mlast%d\n", mLastIdx);
+        
     }
     return false;
 }
 
 void SpeedSectionManager::course(int direct)
 {
-    printf("BBBBB\n");
+    printf("BBBBBB\n");
     if(direct == 0)
     {
-        printf("通った\n");
+        printf("e\n");
         set(Lcourse);
     }
     else
     {
-        printf("通らなかった\n");
+        printf("f\n");
         set(Rcourse);
     }
 }
+

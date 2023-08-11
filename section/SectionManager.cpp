@@ -1,4 +1,5 @@
 #include "SectionManager.h"
+#include "Section.h"
 
 SectionManager::SectionManager()
 {
@@ -44,9 +45,10 @@ void SectionManager::set(SecParam* array) //��Ԃ��쐬����
 
     for(int i=0;; i++)
     {
-        printf("通ったかも\n");
+        printf("配列\n");
         if(array[i].walker_no == Section::WANONE)
         {
+            printf("break\n");
             break;
         }
         
@@ -58,6 +60,7 @@ void SectionManager::set(SecParam* array) //��Ԃ��쐬����
         Judge* judge = sc->selectJudge(array[i].judge_no); 
         judge->setParam(array[i].judList);
 
+        //mLastIdx = i;
         addSection(sc);
         
     }
@@ -71,6 +74,7 @@ bool SectionManager::run() //���s����
 void SectionManager::addSection(Section *sec) //��Ԓǉ�
 {
     mSection[mLastIdx++]=sec;
+    printf("mLast %d\n",mLastIdx);
 }
 
 void SectionManager::reset() //������

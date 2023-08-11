@@ -31,11 +31,17 @@ class SectionManager {
         
 
     protected:
+#if defined(MAKE_RIGHT)
+    const int _EDGE = LineTracer::LEFTEDGE;
+#else
+    const int _EDGE = LineTracer::RIGHTEDGE;
+#endif
 
         Section *mSection[100];
         int mSectionIdx;
-        int mLastIdx;  //ÅŒã
+        int mLastIdx;  //ï¿½ÅŒï¿½
 
+        
         /*sample
         SecParam sample[10] = {
             //{Section::TRACER,{80, 0 ,  40, 1.5, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{50, Section::FLNONE}, Section::EMNONE,{}},
@@ -53,8 +59,8 @@ class SectionManager {
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
 
-            //h , s ÔF 353,0.74 ÂF@210,0.83 —Î@137,0.55 ‰©F@0~60,0.05
-            //ù‰ñ‚Ì‰E‚ª•‰‚Ì’l
+            //h , s ï¿½ÔF 353,0.74 ï¿½ÂFï¿½@210,0.83 ï¿½Î@137,0.55 ï¿½ï¿½ï¿½Fï¿½@0~60,0.05
+            //ï¿½ï¿½ï¿½ï¿½Ì‰Eï¿½ï¿½ï¿½ï¿½ï¿½Ì’l
             */
 
     private:

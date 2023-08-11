@@ -17,6 +17,7 @@ Scene::Scene():
 
     gColor = new MyColorSensor(PORT_2,gBrightness,gHsvHue,gHsvSatu);
     mSsm = new SpeedSectionManager();
+    mDs = new DoubleSection();
     printf("作った\n");
 }
 
@@ -56,10 +57,10 @@ bool Scene::run()
 
 void Scene::execUndefined()
 {
-    printf("Undefined_Start\n");
+    //printf("Undefined_Start\n");
     mState=START;
     //mState=CALIBRATION;
-    printf("Undefined_Finish\n");
+    printf("Undefined\n");
 
 }
 /*
@@ -90,15 +91,17 @@ void Scene::execStart()
     ev3_sensor_config(EV3_PORT_1, TOUCH_SENSOR);
     if(ev3_button_is_pressed(LEFT_BUTTON))
     {
-        mSsm->course(0);
         printf("left\n");
+        mSsm->course(0);
+        mDs->course(0);
         gColor->setRGB();
     }
     ev3_sensor_config(EV3_PORT_1, TOUCH_SENSOR);
     if(ev3_button_is_pressed(RIGHT_BUTTON))
     {
-        mSsm->course(1);
         printf("right\n");
+        mSsm->course(1);
+        mDs->course(1);
         gColor->setRGB();
     }
 
@@ -108,17 +111,17 @@ void Scene::execStart()
     ev3_sensor_config(EV3_PORT_1, TOUCH_SENSOR);
     if (ev3_touch_sensor_is_pressed(EV3_PORT_1) == 1)
     {
-        printf("mState=SPEED\n");
+        printf("SPEED\n");
             mState=SPEED;
     }
 #else
     if (ev3_button_is_pressed(ENTER_BUTTON))
     {
-        printf("mState=SPEED\n");
+        printf("SPEED\n");
             mState=SPEED;
     }
 #endif
-printf("Start_Finish\n");
+//printf("Start_Finish\n");
 }
 void Scene::execSpeed()
 {
@@ -126,15 +129,17 @@ void Scene::execSpeed()
     if(mSsm->run()) {
         delete mSsm;
         mState=DOUBLELOOP;
+        //printf("speed終わった");
         //mState = END;
     }
     //printf("Speed_Finish\n");
 }
 void Scene::execDoubleloop()
 {
-    if(mBs->run())
+    if(mDs->run())
     {
-        delete mBs;
+        printf("double終わった\n");
+        delete mDs;
         mState=END;
     }
 }
