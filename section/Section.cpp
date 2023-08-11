@@ -85,7 +85,6 @@ Judge *Section::selectJudge(int no)
         case TIME: 
             mJudge = (Judge*)(new JudgeTime());
             break;
-    
         case JUNONE:
             break;
     }

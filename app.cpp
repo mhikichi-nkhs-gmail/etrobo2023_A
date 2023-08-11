@@ -20,7 +20,9 @@
 #include "VirCurveLine.h"
 #include "VirStraightLine.h"
 #include "TurnWalker.h"
+#include "FileWalker.h"
 
+#include "Process.h"
 #include "Scene.h"
 #include "MotorManager.h"
 
@@ -54,8 +56,10 @@ LineTracer *gTracer;
 VirCurveLine *gVirCLine;
 VirStraightLine *gVirSLine;
 TurnWalker *gTWalker;
+FileWalker *gFile;
 
 Scene *gScene;
+Process *gProcess;
 
 MotorManager *gMotor;
 
@@ -80,8 +84,10 @@ static void user_system_create() {
   gVirCLine = new VirCurveLine(gOdo,gSpeed);
   gVirSLine = new VirStraightLine(gOdo,gSpeed);
   gTWalker = new TurnWalker(gOdo,gSpeed);
+  gFile = new Filewalker();
 
   gPolling = new Polling(gColor,gOdo);
+  gProcess = new Process();
 
   gScene = new Scene();
 
