@@ -19,37 +19,10 @@ class SpeedSectionManager : public SectionManager {
 
     private:
 
-        SecParam Lcourse[10] = {
-            {Section::TRACER,{80, 0.05, 43, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{80, Section::FLNONE}, Section::EMNONE,{}},
-            /*
-            {Section::TRACER,{80, 0.1, 43, 2.5, 5.0 ,31 , 0, 'LEFTEDGE'},Section::TURNANGLE,{-90, Section::FLNONE}, Section::EMNONE,{}},
-            {Section::TRACER,{80, 0.05, 43, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{165, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TRACER,{80, 0.1, 43, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::TURNANGLE,{-90, Section::RESETANG}, Section::EMNONE,{}},
-            {Section::TRACER,{80, 0.1, 43, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::COLOR,{205,0.18, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TRACER,{50, 0.05, 43, 2.5, 5.0 ,0 , 0, _EDGE},Section::LENGTH,{200, Section::FLNONE}, Section::EMNONE,{}},
-            */
-            //{Section::TRACER,{80, 0.1 ,  40, 1.5, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{150, Section::FLNONE}, Section::EMNONE,{}},
-            //{Section::VIRCLINE,{50, 40 ,  70, 1.5, 0.1 ,0 , 0},Section::TURNANGLE,{50, Section::RESETANG}, Section::EMNONE,{}}, //?øΩ?øΩ?øΩ?øΩ?øΩA?øΩ?øΩ?øΩa?øΩA?øΩp?øΩx?øΩp?øΩ?øΩ?øΩ?øΩ?øΩAP?øΩAI?øΩAD
-            //{Section::TRACER,{50, 0 ,  40, 1.5, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{20, Section::FLNONE}, Section::EMNONE,{}},
-            //{Section::WALKER,{0,0},Section::TIME,{1, Section::FLNONE}, Section::EMNONE,{}},
-            //{Section::WALKER,{30,0},Section::LENGTH,{50, Section::FLNONE}, Section::EMNONE,{}},
-            //{Section::VIRCLINE,{40, -20 , 43, 2.5 ,5.0},Section::LENGTH,{1000, Section::RESETLEN}, Section::EMNONE,{}},
-            /*
-            {Section::TRACER,{80, 0 ,  40, 1.5, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{50, Section::FLNONE}, Section::EMNONE,{}},
-            {Section::WALKER,{0,90},Section::TURNANGLE,{-700, Section::RESETANG}, Section::EMNONE,{}},
-            {Section::WALKER,{0,-90},Section::TURNANGLE,{700, Section::RESETANG}, Section::EMNONE,{}},
-            {Section::TRACER,{50, 0 ,  30, 0.3, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{300, Section::RESETLEN}, Section::EMNONE,{}},
-            */
-            //{Section::WALKER,{10,10},Section::TURNANGLE,{30}, Section::EMNONE,{},Section::FLNONE},
-            //{Section::VIRSLINE,{30, -45, 0, 25, 2.5 ,2.0},Section::LENGTH,{50, Section::RESETLEN}, Section::EMNONE,{}}, //ë¨ìxÅAäpìx,ÇOÅAP,I,D
-            {Section::VIRSLINE,{-30, 90, 0, 25, 2.5 ,2.0},Section::LENGTH,{-50, Section::RESETLEN}, Section::EMNONE,{}}, //ë¨ìxÅAäpìx,ÇOÅAP,I,D
-            {Section::VIRSLINE,{-30, 90, 0, 25, 2.5 ,2.0},Section::LENGTH,{-50, Section::RESETLEN}, Section::EMNONE,{}}, //ë¨ìxÅAäpìx,ÇOÅAP,I,D
-            {Section::WALKER,{0,0},Section::LENGTH,{0, Section::FLNONE}, Section::EMNONE,{}},
-            {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
             //{Section::TWALKER,{-45},Section::TURNANGLE,{9000, Section::FLNONE}, Section::EMNONE,{}},
-            //{Section::VIRCLINE,{50, 40 ,  70, 1.5, 0.1 ,0 , 0},Section::TURNANGLE,{50, Section::RESETANG}, Section::EMNONE,{}}, //ë¨Ç≥ÅAîºåaÅAPÅAIÅAD
+            //{Section::VIRCLINE,{50, 40 ,  70, 1.5, 0.1 ,0 , 0},Section::TURNANGLE,{50, Section::RESETANG}, Section::EMNONE,{}}, //ÔøΩÔøΩÔøΩÔøΩÔøΩAÔøΩÔøΩÔøΩaÔøΩAPÔøΩAIÔøΩAD
            
-            //{Section::VIRSLINE,{30, -45, 0, 25, 2.5 ,2.0},Section::LENGTH,{50, Section::RESETLEN}, Section::EMNONE,{}}, //ë¨ìxÅAäpìx,ÇOÅAP,I,D
+            //{Section::VIRSLINE,{30, -45, 0, 25, 2.5 ,2.0},Section::LENGTH,{50, Section::RESETLEN}, Section::EMNONE,{}}, //ÔøΩÔøΩÔøΩxÔøΩAÔøΩpÔøΩx,ÔøΩOÔøΩAP,I,D
         SecParam Lcourse[7] = {
             
             {Section::TRACER,{100, 0.05, 43, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{290, Section::FLNONE}, Section::EMNONE,{}},
@@ -60,8 +33,8 @@ class SpeedSectionManager : public SectionManager {
             {Section::WALKER,{0,30},Section::TIME,{10, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
-            //h , s ?øΩ‘êF 353,0.74 ?øΩ¬êF?øΩ@210,0.83 ?øΩŒÅ@137,0.55 ?øΩ?øΩ?øΩF?øΩ@0~60,0.05
-            //?øΩ?øΩ?øΩ?øΩÃâE?øΩ?øΩ?øΩ?øΩ?øΩÃíl
+            //h , s ?ÔøΩÔøΩ‘êF 353,0.74 ?ÔøΩÔøΩ¬êF?ÔøΩÔøΩ@210,0.83 ?ÔøΩÔøΩŒÅ@137,0.55 ?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩF?ÔøΩÔøΩ@0~60,0.05
+            //?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩÃâE?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩÃíl
 
         SecParam Rcourse[10] = {
 

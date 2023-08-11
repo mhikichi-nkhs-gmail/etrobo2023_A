@@ -5,7 +5,7 @@
 
 class FileWalker : Walker {
 public:
-    Walker( Odometry *odo );
+    //Walker( Odometry *odo );
     void run();
     void setParam(double pipe[]);
     void init();
