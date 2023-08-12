@@ -62,7 +62,7 @@ void DoubleSection::scircle(int direct)
             set(Seast);
             break;
         case 4:
-            printf("南"\n);
+            printf("南\n");
             set(South);
             break;
         case 5:
