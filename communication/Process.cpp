@@ -14,7 +14,7 @@ int Process::writing()
 {
     //const int 
     FILE * fp;
-    fp = fopen("sample.txt", "w");
+    fp = fopen("StartPipe", "w");
     if(fp == NULL)
     {
         printf("Ž¸”s\n");
@@ -27,3 +27,5 @@ int Process::writing()
 
     return 0;
 }
+
+void init

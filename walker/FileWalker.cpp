@@ -17,7 +17,7 @@ void FileWalker::run()
 
 void FileWalker::init()
 {
-
+    int check = mPro->writing();
 }
 
 void FileWalker::setParam(char comment[])
