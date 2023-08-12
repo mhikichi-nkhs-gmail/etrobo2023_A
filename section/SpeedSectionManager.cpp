@@ -3,6 +3,8 @@
 
 SpeedSectionManager::SpeedSectionManager()
 {
+    mSectionIdx=0;
+    mLastIdx=0;
     //set(sample);
     /*
     switch(mCourse) {
@@ -14,24 +16,24 @@ SpeedSectionManager::SpeedSectionManager()
             break;
     }
     */
-    /* test用初期化
+    /* test用初期�?
  #if defined(MAKE_RIGHT)
       const int _EDGE = LineTracer::LEFTEDGE;
 #else
       const int _EDGE = LineTracer::RIGHTEDGE;
 #endif
     
-     //LineTracer テスト
+     //LineTracer �?ス�?
     Section *sc = new Section();
     
     Walker* tracer = sc->selectWalker(Section::TRACER); //ライントレーサーのオブジェクトを作る
     double lineArray[] = {50, 0 ,  30, 0.3, 0.1 ,0 , 0, _EDGE}; //値を作る
-    tracer->setParam(lineArray); //値を渡す
+    tracer->setParam(lineArray); //値を渡�?
 
 
-    Judge* length = sc->selectJudge(Section::LENGTH); //距離判定のオブジェクトを作る
+    Judge* length = sc->selectJudge(Section::LENGTH); //距離判定�?�オブジェクトを作る
     double array[] = {30.0}; //値を作る
-    length->setParam(array); //値を渡す
+    length->setParam(array); //値を渡�?
 
     addSection(sc);
 
@@ -50,7 +52,7 @@ SpeedSectionManager::SpeedSectionManager()
     addSection(one);
     */
 
-    /* SimpleWalkerテスト
+    /* SimpleWalker�?ス�?
     SimpleWalker* walker = (SimpleWalker*)sc->selectWalker(Section::WALKER);
     walker->setCommand(10,10);
     */
@@ -61,31 +63,35 @@ bool SpeedSectionManager::run()
 {
     if(mSection[mSectionIdx]->run())
     {
-        //printf("mscetion%d\n", mSectionIdx);
-        //printf("mlast%d\n", mLastIdx);
+        mSectionIdx++;
         if(mSectionIdx == mLastIdx)
         {
+            printf("speed終わった\n");
             return true;
         }
-        else
+        /*else
         {
             mSectionIdx++;
-        }
+        }*/
+        printf("mscetion%d\n", mSectionIdx);
+        printf("mlast%d\n", mLastIdx);
+        
     }
     return false;
 }
 
 void SpeedSectionManager::course(int direct)
 {
-    //printf("BBBBB\n");
+    printf("BBBBBB\n");
     if(direct == 0)
     {
-        //printf("通った\n");
+        printf("e\n");
         set(Lcourse);
     }
     else
     {
-        //printf("通らなかった\n");
+        printf("f\n");
         set(Rcourse);
     }
 }
+

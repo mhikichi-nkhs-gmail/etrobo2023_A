@@ -17,6 +17,7 @@ Scene::Scene():
 
     gColor = new MyColorSensor(PORT_2,gBrightness,gHsvHue,gHsvSatu);
     mSsm = new SpeedSectionManager();
+    mDs = new DoubleSection();
     printf("作った\n");
 }
 
@@ -26,11 +27,9 @@ bool Scene::run()
         case UNDEFINED:
             execUndefined();
             break;
-        /*
         case CALIBRATION:
             execCalibration();
             break;
-        */
         case START:
             execStart();
             break;
@@ -56,15 +55,36 @@ bool Scene::run()
 
 void Scene::execUndefined()
 {
-    printf("Undefined_Start\n");
-    mState=START;
-    //mState=CALIBRATION;
-    printf("Undefined_Finish\n");
+    //printf("Undefined_Start\n");
+    //mState=START;
+    mState=CALIBRATION;
+    printf("Undefined\n");
 
 }
-/*
+
 void Scene::execCalibration()
 {
+    ev3_sensor_config(EV3_PORT_1, TOUCH_SENSOR);
+    if(ev3_button_is_pressed(LEFT_BUTTON))
+    {
+        printf("left\n");
+        mSsm->course(0);
+        mDs->course(0);
+        mDs->scircle(0);
+        gColor->setRGB();
+        mState=START;
+    }
+    ev3_sensor_config(EV3_PORT_1, TOUCH_SENSOR);
+    if(ev3_button_is_pressed(RIGHT_BUTTON))
+    {
+        printf("right\n");
+        mSsm->course(1);
+        mDs->course(1);
+        mDs->scircle(0);
+        gColor->setRGB();
+        mState=START;
+    }
+    /*
     printf("Calibration_Start\n");
     gColor->setRGB();
 #if defined(MAKE_SIM)
@@ -81,40 +101,42 @@ void Scene::execCalibration()
         printf("Calibration_Finish\n");
     }
 #endif
-
-}
 */
+}
+
 void Scene::execStart()
 {
     //printf("Start_Start\n");
-    ev3_sensor_config(EV3_PORT_1, TOUCH_SENSOR);
+    /*ev3_sensor_config(EV3_PORT_1, TOUCH_SENSOR);
     if(ev3_button_is_pressed(LEFT_BUTTON))
     {
+        printf("left\n");
         mSsm->course(0);
-        //printf("left\n");
+        mDs->course(0);
         gColor->setRGB();
     }
     ev3_sensor_config(EV3_PORT_1, TOUCH_SENSOR);
     if(ev3_button_is_pressed(RIGHT_BUTTON))
     {
+        printf("right\n");
         mSsm->course(1);
-        //printf("right\n");
+        mDs->course(1);
         gColor->setRGB();
-    }
+    }*/
 
 #if defined(MAKE_SIM)
-// とりあえず動かすだけなので、設計に基づいて書き直そう
+// とりあえず動かすだけなので、設計に基づ�?て書き直そう
     //msg_log("Press Touch Button to start.");
     ev3_sensor_config(EV3_PORT_1, TOUCH_SENSOR);
     if (ev3_touch_sensor_is_pressed(EV3_PORT_1) == 1)
     {
-        printf("mState=SPEED\n");
+        printf("SPEED\n");
             mState=SPEED;
     }
 #else
     if (ev3_button_is_pressed(ENTER_BUTTON))
     {
-        printf("mState=SPEED\n");
+        printf("SPEED\n");
             mState=SPEED;
     }
 #endif
@@ -126,15 +148,17 @@ void Scene::execSpeed()
     if(mSsm->run()) {
         delete mSsm;
         mState=DOUBLELOOP;
+        //printf("speed終わっ�?");
         //mState = END;
     }
     //printf("Speed_Finish\n");
 }
 void Scene::execDoubleloop()
 {
-    if(mBs->run())
+    if(mDs->run())
     {
-        delete mBs;
+        printf("double終わった\n");
+        delete mDs;
         mState=END;
     }
 }

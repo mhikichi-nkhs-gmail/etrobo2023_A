@@ -36,9 +36,9 @@ class Scene{
 
         SpeedSectionManager *mSsm;
 
-        ColorSensor *mColor;
+        MyColorSensor *mColor;
 
-        DoubleSection *mBs;
+        DoubleSection *mDs;
 
         
 };
