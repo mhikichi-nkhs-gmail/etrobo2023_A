@@ -70,6 +70,7 @@ void Scene::execCalibration()
         printf("left\n");
         mSsm->course(0);
         mDs->course(0);
+        mDs->scircle(0);
         gColor->setRGB();
         mState=START;
     }
@@ -79,6 +80,7 @@ void Scene::execCalibration()
         printf("right\n");
         mSsm->course(1);
         mDs->course(1);
+        mDs->scircle(0);
         gColor->setRGB();
         mState=START;
     }
@@ -123,7 +125,7 @@ void Scene::execStart()
     }*/
 
 #if defined(MAKE_SIM)
-// とりあえず動かすだけなので、設計に基づいて書き直そう
+// とりあえず動かすだけなので、設計に基づ�?て書き直そう
     //msg_log("Press Touch Button to start.");
     ev3_sensor_config(EV3_PORT_1, TOUCH_SENSOR);
     if (ev3_touch_sensor_is_pressed(EV3_PORT_1) == 1)
@@ -146,7 +148,7 @@ void Scene::execSpeed()
     if(mSsm->run()) {
         delete mSsm;
         mState=DOUBLELOOP;
-        //printf("speed終わった");
+        //printf("speed終わっ�?");
         //mState = END;
     }
     //printf("Speed_Finish\n");

@@ -9,6 +9,7 @@ class DoubleSection : public SectionManager
         DoubleSection();
         bool run();
         void course(int direct);
+        void scircle(int direct);
 
     protected:
 
@@ -55,6 +56,16 @@ class DoubleSection : public SectionManager
             {Section::TRACER,{70, 0.05, 48, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{63, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::LENGTH,{0, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
+
+        SecParam North[10] = {{Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
+        SecParam Neast[10] = {{Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
+        SecParam East[10] = {{Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
+        SecParam Seast[10] = {{Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
+        SecParam South[10] = {{Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
+        SecParam Swest[10] = {{Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
+        SecParam West[10] = {{Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
+        SecParam Nwest[10] = {{Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
+
 
 };
 #endif

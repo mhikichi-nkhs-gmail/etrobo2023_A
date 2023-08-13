@@ -84,7 +84,7 @@ static void user_system_create() {
   gVirCLine = new VirCurveLine(gOdo,gSpeed);
   gVirSLine = new VirStraightLine(gOdo,gSpeed);
   gTWalker = new TurnWalker(gOdo,gSpeed);
-  //gFile = new Filewalker();
+  gFile = new FileWalker(gOdo);
 
   gPolling = new Polling(gColor,gOdo);
   gProcess = new Process();

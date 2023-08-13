@@ -10,14 +10,14 @@ void Process::load()
 
 }
 
-void Process::writing()
+int Process::writing()
 {
     //const int 
     FILE * fp;
     fp = fopen("StartPipe", "w");
     if(fp == NULL)
     {
-        printf("Ž¸”s\n");
+        printf("���s\n");
         return 1;
     }
 

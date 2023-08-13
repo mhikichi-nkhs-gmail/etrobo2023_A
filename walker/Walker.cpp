@@ -10,6 +10,7 @@ Walker::Walker( Odometry *odo):
     mAngle = gTurnAngle;
     mXpos = gXPosition;
     mYpos = gYPosition;
+    mPro = gProcess;
 }
 
 void Walker::run()

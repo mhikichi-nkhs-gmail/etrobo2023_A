@@ -40,12 +40,12 @@ SectionManager::~SectionManager()
     }
 }
 
-void SectionManager::set(SecParam* array) //ï¿½ï¿½Ô‚ï¿½ï¿½ì¬ï¿½ï¿½ï¿½ï¿½
+void SectionManager::set(SecParam* array) //?¿½?¿½Ô‚ï¿½?¿½?¬?¿½?¿½?¿½?¿½
 {
 
     for(int i=0;; i++)
     {
-        printf("é…åˆ—\n");
+        printf("é…å?—\n");
         if(array[i].walker_no == Section::WANONE)
         {
             printf("break\n");
@@ -65,18 +65,18 @@ void SectionManager::set(SecParam* array) //ï¿½ï¿½Ô‚ï¿½ï¿½ì¬ï¿½ï¿½ï¿½ï¿½
     }
 }
 
-bool SectionManager::run() //ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½
+bool SectionManager::run() //?¿½?¿½?¿½s?¿½?¿½?¿½?¿½
 {
     return true;
 }
 
-void SectionManager::addSection(Section *sec) //ï¿½ï¿½Ô’Ç‰ï¿½
+void SectionManager::addSection(Section *sec) //?¿½?¿½Ô’Ç‰ï¿½
 {
     mSection[mLastIdx++]=sec;
     printf("mLast %d\n",mLastIdx);
 }
 
-void SectionManager::reset() //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+void SectionManager::reset() //?¿½?¿½?¿½?¿½?¿½?¿½
 {
     for(int i=0;i<mLastIdx;i++) {
         delete mSection[i];
