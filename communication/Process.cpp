@@ -14,14 +14,14 @@ int Process::writing()
 {
     //const int 
     FILE * fp;
-    fp = fopen("StartPipe", "w");
+    fp = fopen("SnapPipe", "w");
     if(fp == NULL)
     {
         printf("���s\n");
         return 1;
     }
 
-    fprintf(fp,"START\n");
+    fprintf(fp,"snap\n");
     printf("finish");
     fclose(fp);
 
