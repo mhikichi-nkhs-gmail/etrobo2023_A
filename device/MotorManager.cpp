@@ -11,50 +11,57 @@ MotorManager::MotorManager(Motor *left, Motor *right):
 	mRightMotor(right)
 {
 }
+
 void MotorManager::setPwm(int left,int right)
 {
 	mLeftMotor->setPWM(left);
 	mRightMotor->setPWM(right);
+	
+	printf("left,,%d\n", left);
+	printf("right,,%d\n", right);
 
-	current_lmotor = mLeftMotor->getCount();
-	current_rmotor = mRightMotor->getCount();
-
-	if(current_lmotor == prev_lmotor)
+	if(left != 0 && right != 0)
 	{
-		if(mlCount >= 10)
+		current_lmotor = mLeftMotor->getCount();
+		current_rmotor = mRightMotor->getCount();
+
+		if(current_lmotor == prev_lmotor)
 		{
-			mLeftMotor->setPWM(90);
-			printf("ABCD\n");
+			if(mlCount >= 10)
+			{
+				mLeftMotor->setPWM(90);
+				printf("ABCD\n");
+			}
+			else
+			{
+				mlCount = mlCount + 1.0;
+				//printf("mlc,,%f\n", mlCount);
+			}
 		}
 		else
 		{
-			mlCount = mlCount + 1.0;
-			printf("mlc,,%f\n", mlCount);
+			prev_lmotor = current_lmotor;
+			mlCount = 0.0;
 		}
-	}
-	else
-	{
-		prev_lmotor = current_lmotor;
-		mlCount = 0.0;
-	}
 
-	if(current_rmotor == prev_rmotor)
-	{
-		if(mrCount >= 10)
+		if(current_rmotor == prev_rmotor)
 		{
-			mRightMotor->setPWM(90);
-			printf("HIJK\n");
+			if(mrCount >= 10)
+			{
+				mRightMotor->setPWM(90);
+				printf("HIJK\n");
+			}
+			else
+			{
+				mrCount = mrCount + 1.0;
+				//printf("mrc,,%f\n", mrCount);
+			}
 		}
 		else
 		{
-			mrCount = mrCount + 1.0;
-			printf("mrc,,%f\n", mrCount);
+			prev_rmotor = current_rmotor;
+			mrCount = 0.0;
 		}
-	}
-	else
-	{
-		prev_rmotor = current_rmotor;
-		mrCount = 0.0;
 	}
 }
 
@@ -62,8 +69,8 @@ void MotorManager::init()
 {
 	mlCount = 0.0;
 	mrCount = 0.0;
-	prev_lmotor = mLeftMotor->getCount();;
-	prev_rmotor = mRightMotor->getCount();;
+	prev_lmotor = mLeftMotor->getCount();
+	prev_rmotor = mRightMotor->getCount();
 }
 	
 
