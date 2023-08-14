@@ -5,14 +5,18 @@ class Process
 {
     public:
         Process();
+        void run(int no, int use, char comm[1024]);
         void load();
-        int writing();
+        void writing();
 
 
     protected:
 
+        //enum no {
+
+
     private:
-        char pipe[1024]; 
+        //char pipe[1024]; 
 
         
 };

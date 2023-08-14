@@ -20,8 +20,9 @@ class SpeedSectionManager : public SectionManager {
     private:
 
         SecParam Lcourse[10] = {
-            {Section::FILE,{},Section::TIME,{1, Section::FLNONE}, Section::EMNONE,{}},
-            {Section::TRACER,{80, 0.05, 43, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{290, Section::FLNONE}, Section::EMNONE,{}},
+            //{Section::FILE,{},Section::TIME,{1, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::TRACER,{80, 0.05, 43, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{100, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::WALKER,{0,0},Section::LENGTH,{1000, Section::FLNONE}, Section::EMNONE,{}},
             {Section::TRACER,{80, 0.1, 43, 2.5, 5.0 ,31 , 0, 'LEFTEDGE'},Section::TURNANGLE,{-90, Section::FLNONE}, Section::EMNONE,{}},
             {Section::TRACER,{80, 0.05, 43, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{165, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TRACER,{80, 0.1, 43, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::TURNANGLE,{-90, Section::RESETANG}, Section::EMNONE,{}},
@@ -29,7 +30,7 @@ class SpeedSectionManager : public SectionManager {
             //{Section::WALKER,{0,90},Section::TIME,{1, Section::FLNONE}, Section::EMNONE,{}},
             //{Section::TRACER,{50, 0.05, 43, 2.5, 5.0 ,0 , 0, _EDGE},Section::LENGTH,{200, Section::FLNONE}, Section::EMNONE,{}},
             //{Section::TRACER,{80, 0.1 ,  40, 1.5, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{150, Section::FLNONE}, Section::EMNONE,{}},
-            //{Section::VIRCLINE,{20, 10 ,  43, 2.5, 5.0 },Section::LENGTH,{50, Section::RESETANG}, Section::EMNONE,{}}, //?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩA?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩa?ÔøΩÔøΩA?ÔøΩÔøΩp?ÔøΩÔøΩx?ÔøΩÔøΩp?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩAP?ÔøΩÔøΩAI?ÔøΩÔøΩAD
+            //{Section::VIRCLINE,{20, 10 ,  43, 2.5, 5.0 },Section::LENGTH,{50, Section::RESETANG}, Section::EMNONE,{}}, //??øΩ?øΩ??øΩ?øΩ??øΩ?øΩ??øΩ?øΩ??øΩ?øΩA??øΩ?øΩ??øΩ?øΩ??øΩ?øΩa??øΩ?øΩA??øΩ?øΩp??øΩ?øΩx??øΩ?øΩp??øΩ?øΩ??øΩ?øΩ??øΩ?øΩ??øΩ?øΩ??øΩ?øΩAP??øΩ?øΩAI??øΩ?øΩAD
             //{Section::TRACER,{50, 0 ,  40, 1.5, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{20, Section::FLNONE}, Section::EMNONE,{}},
             //{Section::WALKER,{0,0},Section::TIME,{1, Section::FLNONE}, Section::EMNONE,{}},
             //{Section::WALKER,{30,0},Section::LENGTH,{50, Section::FLNONE}, Section::EMNONE,{}},
@@ -41,29 +42,19 @@ class SpeedSectionManager : public SectionManager {
             {Section::TRACER,{50, 0 ,  30, 0.3, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{300, Section::RESETLEN}, Section::EMNONE,{}},
             */
             //{Section::WALKER,{10,10},Section::TURNANGLE,{30}, Section::EMNONE,{},Section::FLNONE},
-            //{Section::VIRSLINE,{30, -45, 0, 25, 2.5 ,2.0},Section::LENGTH,{50, Section::RESETLEN}, Section::EMNONE,{}}, //ÔøΩÔøΩÔøΩxÔøΩAÔøΩpÔøΩx,ÔøΩOÔøΩAP,I,D
-            //{Section::VIRSLINE,{-30, 90, 0, 25, 2.5 ,2.0},Section::LENGTH,{-50, Section::RESETLEN}, Section::EMNONE,{}}, //ÔøΩÔøΩÔøΩxÔøΩAÔøΩpÔøΩx,ÔøΩOÔøΩAP,I,D
-            //{Section::VIRSLINE,{-30, 90, 0, 25, 2.5 ,2.0},Section::LENGTH,{-50, Section::RESETLEN}, Section::EMNONE,{}}, //ÔøΩÔøΩÔøΩxÔøΩAÔøΩpÔøΩx,ÔøΩOÔøΩAP,I,D
+            //{Section::VIRSLINE,{30, -45, 0, 25, 2.5 ,2.0},Section::LENGTH,{50, Section::RESETLEN}, Section::EMNONE,{}}, //?øΩ?øΩ?øΩx?øΩA?øΩp?øΩx,?øΩO?øΩAP,I,D
+            //{Section::VIRSLINE,{-30, 90, 0, 25, 2.5 ,2.0},Section::LENGTH,{-50, Section::RESETLEN}, Section::EMNONE,{}}, //?øΩ?øΩ?øΩx?øΩA?øΩp?øΩx,?øΩO?øΩAP,I,D
+            //{Section::VIRSLINE,{-30, 90, 0, 25, 2.5 ,2.0},Section::LENGTH,{-50, Section::RESETLEN}, Section::EMNONE,{}}, //?øΩ?øΩ?øΩx?øΩA?øΩp?øΩx,?øΩO?øΩAP,I,D
             //{Section::WALKER,{0,0},Section::LENGTH,{0, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
             //{Section::TWALKER,{-45},Section::TURNANGLE,{9000, Section::FLNONE}, Section::EMNONE,{}},
-            //{Section::VIRCLINE,{50, 40 ,  70, 1.5, 0.1 ,0 , 0},Section::TURNANGLE,{50, Section::RESETANG}, Section::EMNONE,{}}, //ÔøΩÔøΩÔøΩÔøΩÔøΩAÔøΩÔøΩÔøΩaÔøΩAPÔøΩAIÔøΩAD
+            //{Section::VIRCLINE,{50, 40 ,  70, 1.5, 0.1 ,0 , 0},Section::TURNANGLE,{50, Section::RESETANG}, Section::EMNONE,{}}, //?øΩ?øΩ?øΩ?øΩ?øΩA?øΩ?øΩ?øΩa?øΩAP?øΩAI?øΩAD
            
-            //{Section::VIRSLINE,{30, -45, 0, 25, 2.5 ,2.0},Section::LENGTH,{50, Section::RESETLEN}, Section::EMNONE,{}}, //ÔøΩÔøΩÔøΩxÔøΩAÔøΩpÔøΩx,ÔøΩOÔøΩAP,I,D
-        /*SecParam Lcourse[7] = {
-            
-            {Section::TRACER,{100, 0.05, 43, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{290, Section::FLNONE}, Section::EMNONE,{}},
-            //{Section::VIRSLINE,{80, 0, 0, 25, 2.5 ,2.0},Section::LENGTH,{290, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TRACER,{80, 0.1, 43, 2.5, 5.0 ,28 , 0, 'LEFTEDGE'},Section::TURNANGLE,{-78, Section::FLNONE}, Section::EMNONE,{}},
-            {Section::TRACER,{80, 0.05, 43, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{167.5, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TRACER,{80, 0.1, 43, 2.5, 5.0 ,28 , 0, 'LEFTEDGE'},Section::TURNANGLE,{-78, Section::RESETANG}, Section::EMNONE,{}},
-            {Section::TRACER,{80, 0.1, 43, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::COLOR,{201,0.219, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::WALKER,{0,30},Section::TIME,{10, Section::FLNONE}, Section::EMNONE,{}},
-            {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};*/
+            //{Section::VIRSLINE,{30, -45, 0, 25, 2.5 ,2.0},Section::LENGTH,{50, Section::RESETLEN}, Section::EMNONE,{}}, //?øΩ?øΩ?øΩx?øΩA?øΩp?øΩx,?øΩO?øΩAP,I,D
 
-            //h , s ?ÔøΩÔøΩ‘êF 353,0.74 ?ÔøΩÔøΩ¬êF?ÔøΩÔøΩ@210,0.83 ?ÔøΩÔøΩŒÅ@137,0.55 ?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩF?ÔøΩÔøΩ@0~60,0.05
-            //?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩÃâE?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩÃíl
-            //{Section::VIRSLINE,{30, -45, 0, 25, 2.5 ,2.0},Section::LENGTH,{50, Section::RESETLEN}, Section::EMNONE,{}}, //ÔøΩÔøΩÔøΩxÔøΩAÔøΩpÔøΩx,ÔøΩOÔøΩAP,I,D
+            //h , s ??øΩ?øΩ‘êF 353,0.74 ??øΩ?øΩ¬êF??øΩ?øΩ@210,0.83 ??øΩ?øΩŒÅ@137,0.55 ??øΩ?øΩ??øΩ?øΩ??øΩ?øΩF??øΩ?øΩ@0~60,0.05
+            //??øΩ?øΩ??øΩ?øΩ??øΩ?øΩ??øΩ?øΩÃâE??øΩ?øΩ??øΩ?øΩ??øΩ?øΩ??øΩ?øΩ??øΩ?øΩÃíl
+            //{Section::VIRSLINE,{30, -45, 0, 25, 2.5 ,2.0},Section::LENGTH,{50, Section::RESETLEN}, Section::EMNONE,{}}, //?øΩ?øΩ?øΩx?øΩA?øΩp?øΩx,?øΩO?øΩAP,I,D
 
         SecParam Rcourse[10] = {
 

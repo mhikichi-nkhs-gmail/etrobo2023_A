@@ -21,7 +21,7 @@ bool JudgeColor::judgement()
     double value = mHsvHue->getValue() - mHRange;
 
     value = fabs(value);//�Ԃւ̑Ή�
-    printf("colorvalue%f\n",value);
+    //printf("colorvalue%f\n",value);
 
     if(value >=180)
     {

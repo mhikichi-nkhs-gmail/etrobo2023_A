@@ -5,25 +5,22 @@ Process::Process()
 {
 }
 
+void Process::run(int no, int use, char comm[1024])
+{
+    
+}
+
 void Process::load()
 {
 
 }
 
-int Process::writing()
+void Process::writing()
 {
-    //const int 
     FILE * fp;
     fp = fopen("SnapPipe", "w");
-    if(fp == NULL)
-    {
-        printf("���s\n");
-        return 1;
-    }
 
     fprintf(fp,"snap\n");
     printf("finish");
     fclose(fp);
-
-    return 0;
 }
