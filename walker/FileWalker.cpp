@@ -12,18 +12,33 @@ void FileWalker::run()
 {
     printf("GO\n");
     //int check = mPro->writing();
-    //printf("check%f,,\n", check);
 }
 
 void FileWalker::init()
 {
-    mPro->run(mNo,mUse,mComment);
+    switch(mNo){
+        case SNAP1:
+            mPro->writing1();
+            break;
+        case SNAP2:
+            mPro->load1();
+            break;
+        case BLOCK1:
+            mPro->writing2();
+            break;
+        case BLOCK2:
+            mPro->load2();
+            break;
+        case IOT1:
+            mPro->writing3();
+            break;
+    }
+    //mPro->writing();
 }
 
-void FileWalker::setParam(int no, int use, char comment[1024]) //送りたい相手、送信か受信、内容
+void FileWalker::setParam(int no,char comment[1024]) //使いたいパイプ、内容
 {
     mNo = no;
-    mUse = use;
     mComment[1024] = comment[1024];
 }
 

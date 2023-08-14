@@ -9,12 +9,20 @@ public:
     FileWalker( Odometry *odo );
     void run();
     void init();
-    void setParam(int no, int use, char comment[1024]);
+    void setParam(int no, char comment[1024]);
     void execStart();
+
+protected:
+    enum FILE_NO{
+        SNAP1,
+        SNAP2,
+        BLOCK1,
+        BLOCK2,
+        IOT1
+    };
 
 private:
     int mNo;
-    int mUse;
     char mComment[1024];
 };
 

@@ -3,6 +3,8 @@
 
 extern Motor *gLeftWheel;
 extern Motor *gRightWheel;
+double mlCount;
+double mrCount;
 
 MotorManager::MotorManager(Motor *left, Motor *right):
 	mLeftMotor(left),
@@ -17,14 +19,9 @@ void MotorManager::setPwm(int left,int right)
 	current_lmotor = mLeftMotor->getCount();
 	current_rmotor = mRightMotor->getCount();
 
-	prev_lmotor = current_lmotor;
-	prev_rmotor = current_rmotor;
-
-	current_lmotor = mLeftMotor->getCount();
-
 	if(current_lmotor == prev_lmotor)
 	{
-		if(mlCount >= 500.0)
+		if(mlCount >= 10)
 		{
 			mLeftMotor->setPWM(90);
 			printf("ABCD\n");
@@ -40,11 +37,10 @@ void MotorManager::setPwm(int left,int right)
 		prev_lmotor = current_lmotor;
 		mlCount = 0.0;
 	}
-	current_rmotor = mRightMotor->getCount();
 
 	if(current_rmotor == prev_rmotor)
 	{
-		if(mrCount >= 500.0)
+		if(mrCount >= 10)
 		{
 			mRightMotor->setPWM(90);
 			printf("HIJK\n");
@@ -64,8 +60,10 @@ void MotorManager::setPwm(int left,int right)
 
 void MotorManager::init()
 {
-	double mlCount = 0.0;
-	double mrCount = 0.0;
+	mlCount = 0.0;
+	mrCount = 0.0;
+	prev_lmotor = mLeftMotor->getCount();;
+	prev_rmotor = mRightMotor->getCount();;
 }
 	
 
