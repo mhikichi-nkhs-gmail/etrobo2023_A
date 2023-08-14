@@ -17,7 +17,7 @@ int Process::writing()
     fp = fopen("StartPipe", "w");
     if(fp == NULL)
     {
-        printf("Ž¸”s\n");
+        printf("ï¿½ï¿½ï¿½s\n");
         return 1;
     }
 
@@ -28,4 +28,4 @@ int Process::writing()
     return 0;
 }
 
-void init
+//void init
