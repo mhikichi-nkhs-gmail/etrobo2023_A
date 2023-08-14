@@ -40,6 +40,8 @@ class Scene{
 
         DoubleSection *mDs;
 
+        DoubleSection *mDs2;
+
         
 };
 #endif
