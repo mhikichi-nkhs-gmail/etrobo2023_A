@@ -162,7 +162,7 @@ void Scene::execDoubleloop()
     {
         if(mDs->run())
         {
-            printf("顔検知できた");
+            printf("大円終わった\n");
             flag = true;
         }
     }
