@@ -29,8 +29,14 @@ void MotorManager::setPwm(int left,int right)
 		{
 			if(mlCount >= 10)
 			{
-				mLeftMotor->setPWM(90);
-				printf("ABCD\n");
+				if(current_lmotor >= 0)
+				{
+					mLeftMotor->setPWM(90);
+				}
+				else
+				{
+					mLeftMotor->setPWM(-90);
+				}
 			}
 			else
 			{
@@ -48,8 +54,15 @@ void MotorManager::setPwm(int left,int right)
 		{
 			if(mrCount >= 10)
 			{
-				mRightMotor->setPWM(90);
-				printf("HIJK\n");
+				if(current_rmotor >= 0)
+				{
+					mRightMotor->setPWM(90);
+				}
+				else
+				{
+					mRightMotor->setPWM(-90);
+				}
+				
 			}
 			else
 			{
