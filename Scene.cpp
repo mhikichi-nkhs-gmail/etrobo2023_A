@@ -43,6 +43,9 @@ bool Scene::run()
             execDoubleloop();
             break;
         /*
+        case TREASURE:
+            execTreasure();
+            break;
         case BINGO:
             execBingo();
             break;
@@ -163,6 +166,7 @@ void Scene::execDoubleloop()
         if(mDs->run())
         {
             printf("大円終わった\n");
+            delete mDs;
             flag = true;
         }
     }
@@ -171,8 +175,9 @@ void Scene::execDoubleloop()
         if(mDs2->run())
         {
             printf("double終わった\n");
-            delete mDs;
+            delete mDs2;
             mState=END;
+            //mState=TREASURE;
         }
     }
 
@@ -185,6 +190,15 @@ void Scene::execDoubleloop()
         }
     }*/
 }
+/*void Scene::execTreasure()
+{
+    if(mTs->run())
+    {
+        printf("treasure終わった");
+        delete mTs;
+        mState=END;
+    }
+}*/
 /*void Scene::execBingo()
 {
 

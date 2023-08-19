@@ -5,6 +5,7 @@
 #include "ColorSensor.h"
 #include "MyColorSensor.h"
 #include "DoubleSection.h"
+//#include "TreasureSection.h"
 
 
 
@@ -17,6 +18,7 @@ class Scene{
         void execStart();
         void execSpeed();
         void execDoubleloop();
+        //void execTreasure();
         //void execBingo();
         //void execGarage();
 
@@ -27,6 +29,7 @@ class Scene{
             START,
             SPEED,
             DOUBLELOOP,
+            //TREASURE,
             //BINGO,
             //GARAGE,
             END
@@ -41,6 +44,8 @@ class Scene{
         DoubleSection *mDs;
 
         DoubleSection *mDs2;
+
+        //TreasureSection *mTs;
 
         
 };

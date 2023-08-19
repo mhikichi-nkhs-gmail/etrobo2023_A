@@ -94,8 +94,13 @@ void MyColorSensor::getHSV(rgb_f_t rgb, hsv_t& hsv)
     double g = rgb.g;
     double b = rgb.b;
                
+    double mr = mMin_R;
+    double mg = mMin_G;
+    double mb = mMin_B;
+    
     double h=0, s=0, v=0;
 
+    /*
     if (r-0.5 < 0)
     {
         r = 0;
@@ -125,6 +130,11 @@ void MyColorSensor::getHSV(rgb_f_t rgb, hsv_t& hsv)
         b = b - 0.5;
         b = b * 2;
     }
+    */
+
+    r = (r - mr)*2;
+    g = (g - mg)*2;
+    b = (b - mb)*2;
         
     if (r >= g && g >= b) { 
         
