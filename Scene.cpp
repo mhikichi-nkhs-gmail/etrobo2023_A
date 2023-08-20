@@ -21,6 +21,7 @@ Scene::Scene():
     mSsm = new SpeedSectionManager();
     mDs = new DoubleSection();
     mDs2 = new DoubleSection();
+    //mBs = new BlockSection();
     printf("作った\n");
 }
 
@@ -43,8 +44,8 @@ bool Scene::run()
             execDoubleloop();
             break;
         /*
-        case TREASURE:
-            execTreasure();
+        case BLOCK:
+            execBlock();
             break;
         case BINGO:
             execBingo();
@@ -77,6 +78,7 @@ void Scene::execCalibration()
         mSsm->course(0);
         mDs->course(0);
         mDs2->scircle(0);
+        //mBs->course(0);
         gColor->setRGB();
         mState=START;
     }
@@ -87,6 +89,7 @@ void Scene::execCalibration()
         mSsm->course(1);
         mDs->course(1);
         mDs2->scircle(1);
+        //mBs->course(1);
         gColor->setRGB();
         mState=START;
     }
@@ -177,25 +180,16 @@ void Scene::execDoubleloop()
             printf("double終わった\n");
             delete mDs2;
             mState=END;
-            //mState=TREASURE;
+            //mState=BLOCK;
         }
     }
-
-    /*if(mDs->run())
-    {
-        printf("double終わった\n");
-        {
-            delete mDs;
-            mState=END;
-        }
-    }*/
 }
-/*void Scene::execTreasure()
+/*void Scene::execBlock()
 {
-    if(mTs->run())
+    if(mBs->run())
     {
-        printf("treasure終わった");
-        delete mTs;
+        printf("block終わった");
+        delete mBs;
         mState=END;
     }
 }*/

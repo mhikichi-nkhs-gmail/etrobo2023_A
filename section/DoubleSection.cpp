@@ -21,8 +21,8 @@ bool DoubleSection::run()
         {
             mSectionIdx++;
         }*/
-        printf("mscetion%d\n", mSectionIdx);
-        printf("mlast%d\n", mLastIdx);
+        printf("mScetion%d\n", mSectionIdx);
+        printf("mLast%d\n", mLastIdx);
     }
     return false;
 }
