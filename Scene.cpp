@@ -21,7 +21,7 @@ Scene::Scene():
     mSsm = new SpeedSectionManager();
     mDs = new DoubleSection();
     mDs2 = new DoubleSection();
-    //mBs = new BlockSection();
+    mBs = new BlockSection();
     printf("作った\n");
 }
 
@@ -43,10 +43,10 @@ bool Scene::run()
         case DOUBLELOOP:
             execDoubleloop();
             break;
-        /*
         case BLOCK:
             execBlock();
             break;
+        /*
         case BINGO:
             execBingo();
             break;
@@ -184,7 +184,7 @@ void Scene::execDoubleloop()
         }
     }
 }
-/*void Scene::execBlock()
+void Scene::execBlock()
 {
     if(mBs->run())
     {
@@ -192,7 +192,7 @@ void Scene::execDoubleloop()
         delete mBs;
         mState=END;
     }
-}*/
+}
 /*void Scene::execBingo()
 {
 
