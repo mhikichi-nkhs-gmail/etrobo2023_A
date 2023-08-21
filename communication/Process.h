@@ -5,12 +5,12 @@ class Process
 {
     public:
         Process();
-        void run(int no, int use, char comm[1024]);
-        void load1();
-        void load2();
-        void writing1();
-        void writing2();
-        void writing3();
+        void run();
+        void load1(char pass[1024]);
+        void load2(char pass[1024]);
+        void writing1(char pass[1024]);
+        void writing2(char pass[1024]);
+        void writing3(char pass[1024]);
 
     protected:
 

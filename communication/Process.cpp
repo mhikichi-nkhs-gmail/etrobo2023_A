@@ -5,44 +5,66 @@ Process::Process()
 {
 }
 
-void Process::run(int no, int use, char comm[1024])
+void Process::run()
 {
     
 }
 
-void Process::load1()
+void Process::load1(char pass[1024]) //snap
 {
+    FILE * fp;
+    fp = fopen("SnapPipe2", "r");
+
+    //	NULLポインタの終端までファイルから文字を1行ずつ読み込む
+	while (fgets(pass, 1024, fp) != NULL)
+	{
+		//	読み込んだ1行を画面に出力する
+		printf("%s", pass);
+	}
+
+	fclose(fp);
 
 }
 
-void Process::load2()
+void Process::load2(char pass[1024]) //block
 {
-    
+    FILE * fp;
+    fp = fopen("BlockPipe2", "r");
+
+    //	NULLポインタの終端までファイルから文字を1行ずつ読み込む
+	while (fgets(pass, 1024, fp) != NULL)
+	{
+		//	読み込んだ1行を画面に出力する
+		printf("%s", pass);
+	}
+
+	fclose(fp);
+
 }
 
-void Process::writing1() //snap
+void Process::writing1(char pass[1024]) //snap
 {
     FILE * fp;
     fp = fopen("SnapPipe", "w");
 
-    fprintf(fp,"snap\n");
+    fprintf(fp,"%s\n", pass[1024]);
     fclose(fp);
 }
 
-void Process::writing2() //Block
+void Process::writing2(char pass[1024]) //Block
 {
     FILE * fp;
     fp = fopen("BlockPipe", "w");
 
-    fprintf(fp,"Block\n");
+    fprintf(fp,"%s\n", pass[1024]);
     fclose(fp);
 }
 
-void Process::writing3() //Iot
+void Process::writing3(char pass[1024]) //Iot
 {
     FILE * fp;
     fp = fopen("IotPipe", "w");
 
-    fprintf(fp,"Iot\n");
+    fprintf(fp,"%s\n", pass[1024]);
     fclose(fp);
 }

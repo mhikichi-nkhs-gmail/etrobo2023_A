@@ -18,19 +18,19 @@ void FileWalker::init()
 {
     switch(mNo){
         case SNAP1:
-            mPro->writing1();
+            mPro->writing1(mComment);
             break;
         case SNAP2:
-            mPro->load1();
+            mPro->load1(mComment);
             break;
         case BLOCK1:
-            mPro->writing2();
+            mPro->writing2(mComment);
             break;
         case BLOCK2:
-            mPro->load2();
+            mPro->load2(mComment);
             break;
         case IOT1:
-            mPro->writing3();
+            mPro->writing3(mComment);
             break;
     }
     //mPro->writing();
