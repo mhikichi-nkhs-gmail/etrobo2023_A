@@ -17,8 +17,8 @@ void MotorManager::setPwm(int left,int right)
 	mLeftMotor->setPWM(left);
 	mRightMotor->setPWM(right);
 	
-	printf("left,,%d\n", left);
-	printf("right,,%d\n", right);
+	//printf("left,,%d\n", left);
+	//printf("right,,%d\n", right);
 
 	if(left != 0 && right != 0)
 	{

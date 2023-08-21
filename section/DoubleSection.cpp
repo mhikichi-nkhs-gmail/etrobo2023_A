@@ -33,12 +33,19 @@ void DoubleSection::course(int direct)
     if(direct == 0)
     {
         printf("c\n");
-        set(Lcourse);
+        set(Lpoint);
+        set(Lnext);
+        set(Lnext);
+        set(Lnext);
+        set(Lnext);
+        set(LLast);
+        set(LGoal);
+
     }
     else
     {
         printf("d\n");
-        set(Rcourse);
+        set(Rpoint);
     }
 }
 
