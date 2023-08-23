@@ -8,6 +8,7 @@ class DoubleSection : public SectionManager
 
         DoubleSection();
         bool run();
+        bool count();
         void course(int direct);
         void scircle(int direct);
 
@@ -22,21 +23,44 @@ class DoubleSection : public SectionManager
             {Section::TRACER,{80, 0.05, 48, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{130, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::LENGTH,{0, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
-        */
+        */  
+        int lno;
+        int rno;
+
+        enum L_NO{
+            LPOINT,
+            LNEXT,
+            L1ST,
+            L2ND,
+            L3RD,
+            L4TH,
+            LLAST,
+            LGOAL
+        };
+
+        enum R_NO{
+            RPOINT,
+            RNEXT,
+            R1ST,
+            R2ND,
+            R3RD,
+            R4TH,
+            RLAST,
+            RGOAL
+        };
 
        SecParam Lpoint[100] = {    //ç≈èâÇÃéBâeÉ|ÉCÉìÉgÇ‹Ç≈
             //4kaimedekaokenchisitatoki
-            {Section::VIRSLINE,{55, 20, 0, 28, 2.5 ,1.2},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},/*RESETLEN*/
+            {Section::VIRSLINE,{55, -20, 0, 28, 2.5 ,1.2},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},/*RESETLEN*/
             {Section::TRACER,{60, 0.05, 48, 2.5, 7.5 ,0 , 0, _EDGE},Section::LENGTH,{115, Section::RESETLEN}, Section::EMNONE,{}},/*RESETLEN*/
             {Section::TRACER,{60, 0.05, 48, 2.5, 7.5 ,0 , 0, _EDGE},Section::COLOR,{208,0.3, Section::RESETLEN}, Section::EMNONE,{}},/*RESETLEN*/
-            {Section::TWALKER,{57.5},Section::TURNANGLE,{-86, Section::RESETANG}, Section::EMNONE,{}},/*RESETANG*/
+            {Section::TWALKER,{-57.5},Section::TURNANGLE,{86, Section::RESETANG}, Section::EMNONE,{}},/*RESETANG*/
             {Section::WALKER,{0,0},Section::TIME,{10, Section::FLNONE}, Section::EMNONE,{}},
             {Section::VIRSLINE,{-55, 0, 0, 25, 2.5 ,2.0},Section::LENGTH,{-15, Section::RESETLEN}, Section::EMNONE,{}},/*RESETLEN*/
             {Section::WALKER,{0,0},Section::TIME,{300, Section::FLNONE}, Section::EMNONE,{}},
             //{Section::FILE,{},Section::TIME,{1, Section::FLNONE}, Section::EMNONE,{}},
             {Section::VIRSLINE,{75, 0, 0, 25, 2.5 ,2.0},Section::LENGTH,{15.5, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TWALKER,{-60},Section::TURNANGLE,{87.9, Section::RESETANG}, Section::EMNONE,{}},
-            {Section::WALKER,{0,0},Section::LENGTH,{0, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::TWALKER,{60},Section::TURNANGLE,{-87.9, Section::RESETANG}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
         SecParam Lnext[100] = {  //ìØÇ∂ìÆçÏÇÃåJÇËï‘Çµ
@@ -47,8 +71,7 @@ class DoubleSection : public SectionManager
             {Section::WALKER,{0,0},Section::TIME,{300, Section::FLNONE}, Section::EMNONE,{}},
             //{Section::FILE,{},Section::TIME,{1, Section::FLNONE}, Section::EMNONE,{}},
             {Section::VIRSLINE,{55, 0, 0, 25, 2.5 ,2.0},Section::LENGTH,{15, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TWALKER,{-65},Section::TURNANGLE,{73.8, Section::RESETANG}, Section::EMNONE,{}},
-            {Section::WALKER,{0,0},Section::LENGTH,{0, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::TWALKER,{65},Section::TURNANGLE,{-73.8, Section::RESETANG}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
         SecParam L1st[100] = {  //1âÒñ⁄Ç≈ê¨å˜
@@ -79,7 +102,7 @@ class DoubleSection : public SectionManager
             {Section::WALKER,{0,0},Section::LENGTH,{0, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
-        SecParam LLast[100] = {  //è¨â~ÇÃéBâe
+        SecParam Llast[100] = {  //è¨â~ÇÃéBâe
             {Section::TRACER,{70, 0.05, 48, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{63, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TWALKER,{65},Section::TURNANGLE,{-75, Section::RESETANG}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{300, Section::FLNONE}, Section::EMNONE,{}}, 
@@ -88,9 +111,8 @@ class DoubleSection : public SectionManager
             {Section::TWALKER,{-60},Section::TURNANGLE,{87.9, Section::RESETANG}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
         
-        SecParam LGoal[100] = {  //ÉãÅ[ÉvÇî≤ÇØÇÈ
+        SecParam Lgoal[100] = {  //ÉãÅ[ÉvÇî≤ÇØÇÈ
             {Section::TRACER,{70, 0.05, 48, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{63, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::WALKER,{0,0},Section::LENGTH,{0, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
 
@@ -149,7 +171,7 @@ class DoubleSection : public SectionManager
             {Section::WALKER,{0,0},Section::LENGTH,{0, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
-        SecParam RLast[100] = {  //è¨â~ÇÃéBâe
+        SecParam Rlast[100] = {  //è¨â~ÇÃéBâe
             {Section::TRACER,{70, 0.05, 48, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{63, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TWALKER,{65},Section::TURNANGLE,{-75, Section::RESETANG}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{300, Section::FLNONE}, Section::EMNONE,{}}, 
@@ -158,7 +180,7 @@ class DoubleSection : public SectionManager
             {Section::TWALKER,{-60},Section::TURNANGLE,{87.9, Section::RESETANG}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
         
-        SecParam RGoal[100] = {  //ÉãÅ[ÉvÇî≤ÇØÇÈ
+        SecParam Rgoal[100] = {  //ÉãÅ[ÉvÇî≤ÇØÇÈ
             {Section::TRACER,{70, 0.05, 48, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{63, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::LENGTH,{0, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};

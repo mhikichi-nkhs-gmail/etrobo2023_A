@@ -67,7 +67,23 @@ void SectionManager::set(SecParam* array) //?¿½?¿½Ô‚ï¿½?¿½?¬?¿½?¿½?¿½?¿½
 
 bool SectionManager::run() //?¿½?¿½?¿½s?¿½?¿½?¿½?¿½
 {
-    return true;
+    if(mSection[mSectionIdx]->run())
+    {
+        mSectionIdx++;
+        if(mSectionIdx == mLastIdx)
+        {
+            printf("speed????????????\n");
+            return true;
+        }
+        /*else
+        {
+            mSectionIdx++;
+        }*/
+        printf("mscetion%d\n", mSectionIdx);
+        printf("mlast%d\n", mLastIdx);
+        
+    }
+    return false;
 }
 
 void SectionManager::addSection(Section *sec) //?¿½?¿½Ô’Ç‰ï¿½
