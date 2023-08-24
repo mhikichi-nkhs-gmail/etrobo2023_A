@@ -9,7 +9,7 @@ public:
     FileWalker( Odometry *odo );
     void run();
     void init();
-    void setParam(int no, char comment[1024]);
+    void setParam(int no, int comment);
     void execStart();
 
 protected:
@@ -23,7 +23,7 @@ protected:
 
 private:
     int mNo;
-    char mComment[1024];
+    int mComment;
 };
 
 #endif

@@ -18,17 +18,18 @@ class SpeedSectionManager : public SectionManager {
 
     private:
 
-        SecParam Lcourse[10] = {
+        SecParam Lcourse[20] = {
             //{Section::FILE,{},Section::TIME,{1, Section::FLNONE}, Section::EMNONE,{}},
             //{Section::TRACER,{80, 0.05, 43, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{100, Section::FLNONE}, Section::EMNONE,{}},
             //{Section::TWALKER,{-45},Section::TURNANGLE,{900, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::FILE,{0,0},Section::TIME,{1, Section::FLNONE}, Section::EMNONE,{}},
             {Section::TRACER,{70, 0.05, 43, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{290, Section::FLNONE}, Section::EMNONE,{}},
             {Section::TRACER,{70, 0.1, 43, 2.5, 5.0 ,28 , 0, 'LEFTEDGE'},Section::TURNANGLE,{-78, Section::FLNONE}, Section::EMNONE,{}},
             {Section::TRACER,{70, 0.05, 43, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{167.5, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TRACER,{70, 0.1, 43, 2.5, 5.0 ,28 , 0, 'LEFTEDGE'},Section::TURNANGLE,{-78, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::TRACER,{70, 0.1, 43, 2.5, 5.0 ,28 , 0, 'LEFTEDGE'},Section::TURNANGLE,{-78, Section::RESETANG}, Section::EMNONE,{}},
             //{Section::TRACER,{70, 0.05, 43, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{30, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TRACER,{70, 0.1, 43, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::COLOR,{208,0.3, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::WALKER,{0,0},Section::TIME,{1, Section::FLNONE}, Section::EMNONE,{}},
+        /*    {Section::WALKER,{0,0},Section::TIME,{1, Section::FLNONE}, Section::EMNONE,{}},
             {Section::TRACER,{70, 0.05, 43, 2.5, 5.0 ,0 , 0, _EDGE},Section::LENGTH,{290, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TRACER,{70, 0.1, 43, 2.5, 5.0 ,28 , 0, _EDGE},Section::TURNANGLE,{-78, Section::RESETANG}, Section::EMNONE,{}},
             {Section::TRACER,{70, 0.05, 43, 2.5, 5.0 ,0 , 0, _EDGE},Section::LENGTH,{167.5, Section::RESETLEN}, Section::EMNONE,{}},
@@ -36,7 +37,7 @@ class SpeedSectionManager : public SectionManager {
             {Section::TRACER,{70, 0.05, 43, 2.5, 5.0 ,0 , 0, _EDGE},Section::LENGTH,{30, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TRACER,{70, 0.1, 43, 2.5, 5.0 ,0 , 0, _EDGE},Section::COLOR,{208,0.3, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{10, Section::FLNONE}, Section::EMNONE,{}},
-            {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
+        */    {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
             
 
         SecParam Rcourse[10] = {
