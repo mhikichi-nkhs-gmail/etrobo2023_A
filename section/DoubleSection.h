@@ -8,7 +8,7 @@ class DoubleSection : public SectionManager
 
         DoubleSection();
         bool run();
-        bool count();
+        bool init();
         void course(int direct);
         void scircle(int direct);
 
@@ -28,13 +28,21 @@ class DoubleSection : public SectionManager
         int rno;
 
         enum L_NO{
+            SET_LPOINT,
             LPOINT,
+            SET_LNEXT,
             LNEXT,
+            SET_L1ST,
             L1ST,
+            SET_L2ND,
             L2ND,
+            SET_L3RD,
             L3RD,
+            SET_L4TH,
             L4TH,
+            SET_LLAST,
             LLAST,
+            SET_LGOAL,
             LGOAL
         };
 

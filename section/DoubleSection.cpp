@@ -13,7 +13,7 @@ bool DoubleSection::run()
     if(lno == 0)
     {
         switch(lno) {
-            case LPOINT:
+            case SET_LPOINT:
                 printf("WWWWWW\n");
                 set(Lpoint);
                 lno = LNEXT;
@@ -73,10 +73,10 @@ bool DoubleSection::run()
     return false;
 }
 
-bool DoubleSection::count()
+/*bool DoubleSection::init()
 {
-   
-}
+   if(SectionManager::run())
+}*/
 
 void DoubleSection::course(int direct)
 {
