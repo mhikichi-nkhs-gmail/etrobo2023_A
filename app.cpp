@@ -172,3 +172,21 @@ void tracer_task(intptr_t unused) {
 
   ext_tsk();
 }
+
+int cnt = 0;
+
+void judge_task(intptr_t unused) {
+  FILE * fp;
+  
+  if (cnt == 0)
+  {
+    fp = fopen("BlockPipe2", "r");
+  }
+  else
+  {
+    fp = fopen("SnapPipe2", "r");
+  }
+  cnt++;
+ 
+  ext_tsk();
+}
