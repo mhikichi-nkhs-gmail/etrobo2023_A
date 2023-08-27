@@ -36,7 +36,7 @@ SimpleWalker::SimpleWalker(
 }
 
 
-void SimpleWalker::run() {
+void SimpleWalker::execStart() {
 
     //printf("runcheck\n");
     static double speed=0;
@@ -125,11 +125,6 @@ void SimpleWalker::init()
 {
     setCommand(mInitForword,mInitTurn);
     //printf("mForward%f\n", mForward);
-}
-
-void SimpleWalker::execStart()
-{
-    SimpleWalker::run();
 }
 
 

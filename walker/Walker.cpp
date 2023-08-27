@@ -31,7 +31,7 @@ void Walker::setParam(double Array[])
 
 }
 
-/*void Walker::init()
+void Walker::init()
 {
 
 }
@@ -40,4 +40,4 @@ void Walker::execStart()
 {
 
 }
-*/
+
