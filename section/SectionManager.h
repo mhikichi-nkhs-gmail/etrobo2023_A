@@ -24,7 +24,7 @@ class SectionManager {
         SectionManager();
         ~SectionManager();
         void set(SecParam* array);
-        virtual bool run();
+        bool run();
         void addSection(Section *);
         void reset();
     
@@ -39,7 +39,7 @@ class SectionManager {
 
         Section *mSection[100];
         int mSectionIdx;
-        int mLastIdx;  //ï¿½ÅŒï¿½
+        int mLastIdx;  //?¿½ÅŒï¿½
 
         
         /*sample
@@ -59,8 +59,8 @@ class SectionManager {
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
 
-            //h , s ï¿½ÔF 353,0.74 ï¿½ÂFï¿½@210,0.83 ï¿½Î@137,0.55 ï¿½ï¿½ï¿½Fï¿½@0~60,0.05
-            //ï¿½ï¿½ï¿½ï¿½Ì‰Eï¿½ï¿½ï¿½ï¿½ï¿½Ì’l
+            //h , s ?¿½ÔF 353,0.74 ?¿½ÂF?¿½@210,0.83 ?¿½Î@137,0.55 ?¿½?¿½?¿½F?¿½@0~60,0.05
+            //?¿½?¿½?¿½?¿½Ì‰E?¿½?¿½?¿½?¿½?¿½Ì’l
             */
 
     private:

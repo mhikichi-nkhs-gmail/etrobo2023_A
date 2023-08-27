@@ -8,6 +8,7 @@ class DoubleSection : public SectionManager
 
         DoubleSection();
         //bool run();
+        bool start();
         void course(int direct);
         void scircle(int direct);
 
