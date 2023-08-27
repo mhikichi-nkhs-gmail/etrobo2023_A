@@ -6,26 +6,12 @@ DoubleSection::DoubleSection()
     mSectionIdx=0;
     mLastIdx=0;
 }
-
+/*
 bool DoubleSection::run()
 {
-    if(mSection[mSectionIdx]->run())
-    {
-        printf("a\n");
-        mSectionIdx++;
-        if(mSectionIdx == mLastIdx)
-        {
-            return true;
-        }
-        /*else
-        {
-            mSectionIdx++;
-        }*/
-        printf("mScetion%d\n", mSectionIdx);
-        printf("mLast%d\n", mLastIdx);
-    }
     return false;
 }
+*/
 
 void DoubleSection::course(int direct)
 {

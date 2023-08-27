@@ -59,27 +59,6 @@ SpeedSectionManager::SpeedSectionManager()
 
 }
 
-bool SpeedSectionManager::run()
-{
-    if(mSection[mSectionIdx]->run())
-    {
-        mSectionIdx++;
-        if(mSectionIdx == mLastIdx)
-        {
-            printf("speed終わった\n");
-            return true;
-        }
-        /*else
-        {
-            mSectionIdx++;
-        }*/
-        printf("mscetion%d\n", mSectionIdx);
-        printf("mlast%d\n", mLastIdx);
-        
-    }
-    return false;
-}
-
 void SpeedSectionManager::course(int direct)
 {
     printf("BBBBBB\n");
