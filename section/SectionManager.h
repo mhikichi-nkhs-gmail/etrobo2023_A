@@ -10,13 +10,13 @@ class SectionManager {
         typedef struct SecParam_
         {
             enum Section::WALKER_NO walker_no;
-            double secList[10];
+            double secList[100];
 
             enum Section::JUDGE_NO judge_no;
-            double judList[10];
+            double judList[100];
 
             enum Section::EMGJUDGE_NO emgjudge_no;
-            double emgList[10];
+            double emgList[100];
 
         }SecParam;
 
@@ -37,7 +37,7 @@ class SectionManager {
     const int _EDGE = LineTracer::RIGHTEDGE;
 #endif
 
-        Section *mSection[100];
+        Section *mSection[300];
         int mSectionIdx;
         int mLastIdx;  //?¿½ÅŒï¿½
 

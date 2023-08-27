@@ -9,34 +9,35 @@ DoubleSection::DoubleSection()
 /*
 bool DoubleSection::run()
 {
-    switch(LNO)
+    switch(NO)
     {
     case SET_LBLUE_MARKER:
         set(Lcourse);
+        NO = END;
         printf("YAHOO\n");
-        return true;
         break; 
-    default:
-        break;
+    case END:
+        printf("YAHOO2\n");
+        return true;
     }
     return false;
 }
 */
 
-
 void DoubleSection::course(int direct)
 {
-    printf("BBBBB\n");
     if(direct == 0)
     {
+        printf("BBBBBX\n");
         printf("c\n");
         set(Lcourse);
-        NO = SET_LBLUE_MARKER;
+        set(Lnextpoint);
+        //NO = SET_LBLUE_MARKER;
     }
     else
     {
         printf("d\n");
-        LNO = SET_LBLUE_MARKER;
+        //NO = SET_LBLUE_MARKER;
     
     }
 }
