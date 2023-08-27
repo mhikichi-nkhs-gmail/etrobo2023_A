@@ -50,6 +50,7 @@ bool SectionManager::run() //?申?申?申s?申?申?申?申
         if(mSectionIdx == mLastIdx)
         {
             printf("speed????????????\n");
+            reset();
             return true;
         }
         /*else
