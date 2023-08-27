@@ -23,7 +23,7 @@ Section::~Section()
 
 bool Section::run()
 {
-
+    printf("run_mWalker...%d\n",mWalker);
     //printf("check\n");
     //åˆ¤å®?
     if(mJudge->run())
@@ -56,6 +56,10 @@ Walker *Section::selectWalker(int no)
             break;
         case TWALKER:
             mWalker = (Walker*)(new TurnWalker(gOdo,gSpeed));
+            printf("SelectWalker‚¾‚æ\n");
+            printf("mWalker...%d\n",mWalker);
+            mWalker->run();
+    
             break;
         case FILE:
             mWalker = (Walker*)(new FileWalker(gOdo));

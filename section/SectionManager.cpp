@@ -6,28 +6,6 @@ SectionManager::SectionManager()
     
     mSectionIdx=0;
     mLastIdx=0;
-
-    /*
-
-    for(int i=0;; i++)
-    {
-        if(sample[i].walker_no == Section::WANONE)
-        {
-            break;
-        }
-        
-        Section *sc = new Section();
-
-        Walker* walker = sc->selectWalker(sample[i].walker_no);
-        walker->setParam(sample[i].secList); 
-
-        Judge* judge = sc->selectJudge(sample[i].judge_no); 
-        judge->setParam(sample[i].judList);
-
-        addSection(sc);
-        
-    }
-    */
  
 }
 
@@ -43,9 +21,9 @@ SectionManager::~SectionManager()
 void SectionManager::set(SecParam* array) //?¿½?¿½Ô‚ï¿½?¿½?¬?¿½?¿½?¿½?¿½
 {
 
+    printf("SETKO\n");
     for(int i=0;; i++)
     {
-        printf("é…å?—\n");
         if(array[i].walker_no == Section::WANONE)
         {
             printf("break\n");
@@ -65,20 +43,19 @@ void SectionManager::set(SecParam* array) //?¿½?¿½Ô‚ï¿½?¿½?¬?¿½?¿½?¿½?¿½
     }
 }
 
-bool SectionManager::run() //?¿½?¿½?¿½s?¿½?¿½?¿½?¿½
+bool SectionManager::run() 
 {
+    printf("mSectionIdx,,%d\n", mSectionIdx);
     if(mSection[mSectionIdx]->run())
     {
         mSectionIdx++;
         if(mSectionIdx == mLastIdx)
         {
             printf("speed????????????\n");
+            reset();
             return true;
         }
-        /*else
-        {
-            mSectionIdx++;
-        }*/
+        
         printf("mscetion%d\n", mSectionIdx);
         printf("mlast%d\n", mLastIdx);
         
