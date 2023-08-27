@@ -7,10 +7,19 @@ class DoubleSection : public SectionManager
     public:
 
         DoubleSection();
-        //bool run();
-        bool start();
+        bool run();
         void course(int direct);
         void scircle(int direct);
+
+        enum LCOURSE_NO{
+            SET_BLUE_MARKER,
+            BLUE_MARKER,
+            SET_NEXT_POINT,
+            NEXT_POINT,
+            END
+
+
+        }
 
     protected:
 

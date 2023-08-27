@@ -6,29 +6,6 @@ SectionManager::SectionManager()
     
     mSectionIdx=0;
     mLastIdx=0;
-
-    /*
-
-    for(int i=0;; i++)
-    {
-        if(sample[i].walker_no == Section::WANONE)
-        {
-            break;
-        }
-        
-        Section *sc = new Section();
-
-        Walker* walker = sc->selectWalker(sample[i].walker_no);
-        walker->setParam(sample[i].secList); 
-
-        Judge* judge = sc->selectJudge(sample[i].judge_no); 
-        judge->setParam(sample[i].judList);
-
-        addSection(sc);
-        
-    }
-    */
- 
 }
 
 SectionManager::~SectionManager()

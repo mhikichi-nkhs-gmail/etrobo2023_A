@@ -6,12 +6,13 @@ DoubleSection::DoubleSection()
     mSectionIdx=0;
     mLastIdx=0;
 }
-/*
+
 bool DoubleSection::run()
 {
+    
     return false;
 }
-*/
+
 
 void DoubleSection::course(int direct)
 {
