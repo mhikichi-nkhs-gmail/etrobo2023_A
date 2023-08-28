@@ -115,6 +115,23 @@ void Scene::execCalibration()
 
 void Scene::execStart()
 {
+    //printf("Start_Start\n");
+    /*ev3_sensor_config(EV3_PORT_1, TOUCH_SENSOR);
+    if(ev3_button_is_pressed(LEFT_BUTTON))
+    {
+        printf("left\n");
+        mSsm->course(0);
+        mDs->course(0);
+        gColor->setRGB();
+    }
+    ev3_sensor_config(EV3_PORT_1, TOUCH_SENSOR);
+    if(ev3_button_is_pressed(RIGHT_BUTTON))
+    {
+        printf("right\n");
+        mSsm->course(1);
+        mDs->course(1);
+        gColor->setRGB();
+    }*/
 
 #if defined(MAKE_SIM)
 // とりあえず動かすだけなので、設計に基づ�?て書き直そう
@@ -132,7 +149,7 @@ void Scene::execStart()
             mState=SPEED;
     }
 #endif
-
+//printf("Start_Finish\n");
 }
 void Scene::execSpeed()
 {

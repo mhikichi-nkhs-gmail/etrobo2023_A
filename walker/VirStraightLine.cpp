@@ -32,7 +32,7 @@ void VirStraightLine::setParam(double vstraight[]) //‘¬“x,Šp“x,0,P,I,D
 {
     //printf("Angle%f,,\n",(mAngle->getValue()));
     mTargetSpeed = vstraight[0];
-    mSetAngle = vstraight[1] + JudgeTurnAngle::MEMOANG;
+    mSetAngle = vstraight[1];
     mTarget = vstraight[2];
     mPFactor = vstraight[3];
     mIFactor = vstraight[4];

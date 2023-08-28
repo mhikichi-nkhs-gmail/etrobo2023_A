@@ -9,7 +9,7 @@ TurnWalker::TurnWalker(Odometry *odo,
 
 void TurnWalker::execStart()
 {
-    printf("TWAKER\n");
+    //printf("Twalker_Doing\n");
     mCurrentLen = mLength->getValue();
     //printf("current%f\n", mCurrentLen);
     val1 = mTargetLen - mCurrentLen;
