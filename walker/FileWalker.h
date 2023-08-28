@@ -9,7 +9,7 @@ public:
     FileWalker( Odometry *odo );
     void run();
     void init();
-    void setParam(int no, int comment);
+    void setParam(double flwk[]);
     void execStart();
 
 protected:

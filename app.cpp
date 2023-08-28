@@ -174,19 +174,24 @@ void tracer_task(intptr_t unused) {
 }
 
 int cnt = 0;
+char pipe[1024];
 
 void judge_task(intptr_t unused) {
   FILE * fp;
   
-  if (cnt == 0)
+  if (fp == NULL)
   {
-    fp = fopen("BlockPipe2", "r");
+    printf("fopen error\n");
+    
   }
   else
   {
-    fp = fopen("SnapPipe2", "r");
+    while (fgets(pipe, 1024, fp) != NULL)
+    {
+      //読み込んだ1行を画面に出力する
+      printf("%s", pipe);
+    }
   }
-  cnt++;
  
   ext_tsk();
 }
