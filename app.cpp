@@ -174,7 +174,7 @@ void tracer_task(intptr_t unused) {
 }
 
 int cnt = 0;
-char pipe[1024];
+char pipe[20];
 
 void judge_task(intptr_t unused) {
   FILE * fp;
@@ -182,11 +182,10 @@ void judge_task(intptr_t unused) {
   if (fp == NULL)
   {
     printf("fopen error\n");
-    
   }
   else
   {
-    while (fgets(pipe, 1024, fp) != NULL)
+    while (fgets(pipe, 1, fp) != NULL)
     {
       //読み込んだ1行を画面に出力する
       printf("%s", pipe);
