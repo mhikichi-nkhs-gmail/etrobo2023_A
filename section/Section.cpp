@@ -23,7 +23,7 @@ Section::~Section()
 
 bool Section::run()
 {
-
+    printf("run_mWalker...%d\n",mWalker);
     //printf("check\n");
     //åˆ¤?¿½?
     if(mJudge->run())

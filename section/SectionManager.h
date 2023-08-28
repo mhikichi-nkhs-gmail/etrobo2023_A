@@ -10,13 +10,13 @@ class SectionManager {
         typedef struct SecParam_
         {
             enum Section::WALKER_NO walker_no;
-            double secList[100];
+            double secList[300];
 
             enum Section::JUDGE_NO judge_no;
-            double judList[100];
+            double judList[300];
 
             enum Section::EMGJUDGE_NO emgjudge_no;
-            double emgList[100];
+            double emgList[300];
 
         }SecParam;
 

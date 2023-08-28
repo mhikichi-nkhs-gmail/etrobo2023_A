@@ -17,12 +17,13 @@ SectionManager::~SectionManager()
     }
 }
 
-void SectionManager::set(SecParam* array) //?¿½?¿½Ô‚ï¿½?¿½?¬?¿½?¿½?¿½?¿½
+void SectionManager::set(SecParam* array) //?¿½?¿½Ô‚ï¿½?¿½?¬?¿½?¿½?¿½?¿½
 {
 
+    printf("SETKO\n");
     for(int i=0;; i++)
     {
-        //printf("é…å?—\n");
+        //printf("é…å?—\n");
         if(array[i].walker_no == Section::WANONE)
         {
             printf("breakSet\n");
@@ -42,7 +43,7 @@ void SectionManager::set(SecParam* array) //?¿½?¿½Ô‚ï¿½?¿½?¬?¿½?¿½?¿½?¿½
     }
 }
 
-bool SectionManager::run() //?¿½?¿½?¿½s?¿½?¿½?¿½?¿½
+bool SectionManager::run() 
 {
     if(mSection[mSectionIdx]->run())
     {
