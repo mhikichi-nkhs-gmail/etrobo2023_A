@@ -3,6 +3,8 @@
 
 extern Motor *gLeftWheel;
 extern Motor *gRightWheel;
+double mlCount;
+double mrCount;
 
 MotorManager::MotorManager(Motor *left, Motor *right):
 	mLeftMotor(left),

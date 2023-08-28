@@ -39,22 +39,15 @@ bool DoubleSection::run()
     return false;
 }
 
-
 void DoubleSection::course(int direct)
 {
     if(direct == 0)
     {
-        printf("DoubleCourse\n");
-        //printf("c\n");
-        //set(Lcourse);
-        //set(Lnextpoint);
         NO = SET_LBLUE_MARKER;
     }
     else
     {
-        //printf("d\n");
         NO = SET_LBLUE_MARKER;
-    
     }
 }
 
@@ -72,7 +65,6 @@ void DoubleSection::lnextpoint()
     if(SectionManager::run())
     {
         NO = SET_LFINISHE1;
-        printf("lbluemarker\n");
     }
 }
 
@@ -81,7 +73,6 @@ void DoubleSection::lfinishe1()
     if(SectionManager::run())
     {
         NO = END;
-        printf("lbluemarker\n");
     }
 }
 
