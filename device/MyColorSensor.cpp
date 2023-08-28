@@ -132,9 +132,9 @@ void MyColorSensor::getHSV(rgb_f_t rgb, hsv_t& hsv)
     }
     */
 
-    r = (r - mr)*2;
-    g = (g - mg)*2;
-    b = (b - mb)*2;
+    r = r + 30;
+    g = g + 30;
+    b = b + 30;
         
     if (r >= g && g >= b) { 
         
