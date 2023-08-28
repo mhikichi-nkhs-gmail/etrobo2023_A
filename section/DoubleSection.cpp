@@ -10,14 +10,11 @@ DoubleSection::DoubleSection()
 
 bool DoubleSection::run()
 {
-    //printf("point,,%d\n", point);
-    printf("lno,,%d\n", lno);
     if(point == 0)
     {
-        printf("msec,,%d\n", mSectionIdx);
         switch(lno) {
             case SET_LBLUE_MARKER:
-                printf("SET_LBLUE_MARKER\n");
+                //printf("SET_LBLUE_MARKER\n");
                 set(Lpoint);
                 lno = LBLUE_MARKER;
                 break;
@@ -83,7 +80,7 @@ bool DoubleSection::run()
     }
     else
     {
-        /*
+        
         switch(rno) {
             case SET_RBLUE_MARKER:
                 set(Rpoint);
@@ -142,7 +139,7 @@ bool DoubleSection::run()
                 rescape();
                 return true;
         }
-        */
+        
         
     }
     return false;
@@ -167,14 +164,11 @@ void DoubleSection::course(int direct)
 
 void DoubleSection::lbluemarker()
 {
-    //printf("clear0\n");
     if(SectionManager::run()){
-        //lno = SET_LNEXT_TAKE_POINT;
-        lno = LESCAPE;
-        printf("clear1\n");
+        lno = SET_LNEXT_TAKE_POINT;
+        //lno = LESCAPE;
     }
 }
-/*
 void DoubleSection::lnexttakepoint()
 {
     if(SectionManager::run()){
@@ -183,17 +177,13 @@ void DoubleSection::lnexttakepoint()
     }
 }
 
-
-
 void DoubleSection::lmovesmalll()
 {
     if(SectionManager::run()){
         lno = SET_LLAST_TAKE_POINT;
     }
 }
-*/
 
-/*
 void DoubleSection::lmovesmall2()
 {
     if(SectionManager::run()){
@@ -228,9 +218,8 @@ void DoubleSection::lescape()
         lno = SET_LNEXT_TAKE_POINT;
     }
 }
-*/
 
-/*
+
 void DoubleSection::rbluemarker()
 {
     if(SectionManager::run()){
@@ -286,4 +275,3 @@ void DoubleSection::rescape()
         rno = SET_RNEXT_TAKE_POINT;
     }
 }
-*/

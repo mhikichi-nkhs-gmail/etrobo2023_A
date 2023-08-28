@@ -20,8 +20,6 @@ SectionManager::~SectionManager()
 
 void SectionManager::set(SecParam* array) //?¿½?¿½Ô‚ï¿½?¿½?¬?¿½?¿½?¿½?¿½
 {
-
-    printf("SETKO\n");
     for(int i=0;; i++)
     {
         if(array[i].walker_no == Section::WANONE)
@@ -45,7 +43,6 @@ void SectionManager::set(SecParam* array) //?¿½?¿½Ô‚ï¿½?¿½?¬?¿½?¿½?¿½?¿½
 
 bool SectionManager::run() 
 {
-    printf("mSectionIdx,,%d\n", mSectionIdx);
     if(mSection[mSectionIdx]->run())
     {
         mSectionIdx++;

@@ -1,7 +1,8 @@
 #include "Walker.h"
 
 Walker::Walker( Odometry *odo):
-    mOdo(odo)
+    mOdo(odo),
+    mState(INIT)
 {
     mPid = new PID();
 
@@ -31,7 +32,7 @@ void Walker::setParam(double Array[])
 
 }
 
-/*void Walker::init()
+void Walker::init()
 {
 
 }
@@ -40,4 +41,3 @@ void Walker::execStart()
 {
 
 }
-*/

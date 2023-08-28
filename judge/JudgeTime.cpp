@@ -19,7 +19,6 @@ void JudgeTime::init()
 
 bool JudgeTime::judgement()
 {
-    printf("time judge\n");
     if(mTime <= time)
     {
         return true;

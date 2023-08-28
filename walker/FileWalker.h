@@ -7,7 +7,6 @@
 class FileWalker : Walker {
 public:
     FileWalker( Odometry *odo );
-    void run();
     void init();
     void setParam(int no, char comment[1024]);
     void execStart();
