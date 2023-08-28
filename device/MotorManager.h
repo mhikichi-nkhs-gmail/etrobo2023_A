@@ -20,11 +20,11 @@ class MotorManager
 		Motor *mLeftMotor;
 		Motor *mRightMotor;
 
-		int32_t current_rs1;
-		int32_t current_rs2;
+		int32_t current_lmotor;
+		int32_t current_rmotor;
 	
-		int32_t prev_rs1;
-		int32_t prev_rs2;
+		int32_t prev_lmotor;
+		int32_t prev_rmotor;
 
 };
 
