@@ -38,7 +38,7 @@ SimpleWalker::SimpleWalker(
 
 void SimpleWalker::execStart() {
 
-    //printf("runcheck\n");
+    //printf("SimpleWalker_check\n");
     static double speed=0;
 
     //mForward = mSpeedControl->getPwm();

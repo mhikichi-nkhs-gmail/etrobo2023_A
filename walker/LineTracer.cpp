@@ -34,6 +34,7 @@ void LineTracer::execStart()
 {
     double  brightness;
     double direction;
+    //printf("LineTracer\n");
     brightness=mBright->getValue();
     mTurn = calcTurn(brightness);
 

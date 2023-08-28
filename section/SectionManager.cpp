@@ -22,10 +22,10 @@ void SectionManager::set(SecParam* array) //?øΩ?øΩ‘ÇÔøΩ?øΩ?ê¨?øΩ?øΩ?øΩ?øΩ
 
     for(int i=0;; i++)
     {
-        printf("ÈÖçÂ?ó\n");
+        //printf("ÈÖçÂ?ó\n");
         if(array[i].walker_no == Section::WANONE)
         {
-            printf("break\n");
+            printf("breakSet\n");
             break;
         }
         

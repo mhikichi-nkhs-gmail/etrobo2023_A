@@ -16,7 +16,7 @@ Section::Section()
 
 Section::~Section()
 {
-    msg_log("destruct Section");
+    msg_log("destruct Section\n");
     delete mWalker;
 }
 
@@ -53,9 +53,11 @@ Walker *Section::selectWalker(int no)
             break;
         case VIRSLINE:
             mWalker = (Walker*)(new VirStraightLine(gOdo,gSpeed));
+            printf("mVirSline\n");
             break;
         case TWALKER:
             mWalker = (Walker*)(new TurnWalker(gOdo,gSpeed));
+            printf("mTWalker\n");
             break;
         case FILE:
             mWalker = (Walker*)(new FileWalker(gOdo));

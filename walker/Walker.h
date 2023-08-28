@@ -23,8 +23,8 @@ class Walker
         Walker( Odometry *odo );
         void run();
         virtual void setParam(double Array[]);
-        virtual void init() = 0;
-        virtual void execStart() = 0;
+        virtual void init();
+        virtual void execStart();
         
     protected:
         Odometry *mOdo;
