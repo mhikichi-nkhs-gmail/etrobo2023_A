@@ -32,6 +32,27 @@ bool DoubleSection::run()
     case LFINISHE1:
         lfinishe1();
         break;
+    case SET_LFINISHE2:
+        set(Lbluemarker2);
+        NO = LFINISHE2;
+        break;
+    case LFINISHE2:
+        lfinishe2();
+        break;
+    case SET_LFINISHE3:
+        set(Lbluemarker3);
+        NO = LFINISHE3;
+        break;
+    case LFINISHE3:
+        lfinishe3();
+        break;
+    case SET_LFINISHE4:
+        set(Lbluemarker4);
+        NO = LFINISHE4;
+        break;
+    case LFINISHE4:
+        lfinishe4();
+        break;    
     case END:
         printf("END\n");
         return true;
@@ -51,12 +72,12 @@ void DoubleSection::course(int direct)
     }
 }
 
+
 void DoubleSection::lbluemarker()
 {
     if(SectionManager::run())
     {
         NO = SET_LNEXT_POINT;
-        printf("lbluemarker\n");
     }
 }
 
@@ -69,6 +90,29 @@ void DoubleSection::lnextpoint()
 }
 
 void DoubleSection::lfinishe1()
+{
+    if(SectionManager::run())
+    {
+        NO = END;
+    }
+}
+void DoubleSection::lfinishe2()
+{
+    if(SectionManager::run())
+    {
+        NO = END;
+    }
+}
+
+void DoubleSection::lfinishe3()
+{
+    if(SectionManager::run())
+    {
+        NO = END;
+    }
+}
+
+void DoubleSection::lfinishe4()
 {
     if(SectionManager::run())
     {

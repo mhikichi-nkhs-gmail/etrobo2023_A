@@ -12,6 +12,9 @@ class DoubleSection : public SectionManager
         void lbluemarker();
         void lnextpoint();
         void lfinishe1();
+        void lfinishe2();
+        void lfinishe3();
+        void lfinishe4();
         void scircle(int direct);
 
         enum COURSNO{
@@ -47,15 +50,14 @@ class DoubleSection : public SectionManager
         int len = 136;
 
         SecParam Lcourse[15] = {
-            {Section::VIRSLINE,{55, -20, 0, 28, 2.5 ,1.2},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{55, -25, 0, 28, 2.5 ,1.2},Section::LENGTH,{20, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TRACER,{30, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::LENGTH,{130, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TRACER,{30, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::COLOR,{208,0.1, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{10, Section::FLNONE}, Section::EMNONE,{}},
             {Section::TWALKER,{-60},Section::TURNANGLE,{75, Section::RESETANG}, Section::EMNONE,{}},
-            {Section::WALKER,{0,0},Section::TIME,{10, Section::FLNONE}, Section::EMNONE,{}},
-            {Section::VIRSLINE,{-75, 0, 0, 25, 2.5 ,2.0},Section::LENGTH,{-15, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{-55, 0, 0, 25, 2.5 ,2.0},Section::LENGTH,{-15, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{300, Section::FLNONE}, Section::EMNONE,{}},
-            {Section::VIRSLINE,{75, 0, 0, 25, 2.5 ,2.0},Section::LENGTH,{15, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{55, 0, 0, 25, 2.5 ,2.0},Section::LENGTH,{15, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TWALKER,{60},Section::TURNANGLE,{-75, Section::RESETANG}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{1, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
@@ -73,25 +75,25 @@ class DoubleSection : public SectionManager
 
         SecParam Lbluemarker1[10] = { 
             {Section::TRACER,{80, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::LENGTH,{200, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TRACER,{80, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::COLOR,{208,0.38, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{80, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::COLOR,{208,0.1, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{1, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
         SecParam Lbluemarker2[10] = { 
             {Section::TRACER,{80, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::LENGTH,{150, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TRACER,{80, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::COLOR,{208,0.38, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{80, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::COLOR,{208,0.1, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{1, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
         SecParam Lbluemarker3[10] = { 
             {Section::TRACER,{80, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::LENGTH,{100, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TRACER,{80, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::COLOR,{208,0.38, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{80, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::COLOR,{208,0.1, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{1, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
         SecParam Lbluemarker4[10] = { 
             {Section::TRACER,{80, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::LENGTH,{50, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TRACER,{80, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::COLOR,{208,0.38, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{80, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::COLOR,{208,0.1, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{1, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
