@@ -6,7 +6,6 @@ extern void judge_task(intptr_t exinf);
 
 Process::Process()
 {
-    
 }
 
 void Process::run()
@@ -14,32 +13,36 @@ void Process::run()
     
 }
 
-void Process::load(int pass)
+void Process::load(int pass) //snap
 {
     FILE * fp;
     act_tsk(JUDGE_TASK);   
 	fclose(fp);
 }
 
-void Process::writing(int pass)
+void Process::writing1(int pass) //snap
 {
     FILE * fp;
-    switch (pass)
-    {
-    case SNAP:
-        fp = fopen("SnapPipe", "w");
-        fprintf(fp,"snap\n");
-        fclose(fp);
-        break;
-    case BLOCK:
-        fp = fopen("BlockPipe", "w");
-        fprintf(fp,"start\n");
-        fclose(fp);
-        break;
-    case IOT:
-        fp = fopen("IotPipe", "w");
-        fprintf(fp,"start\n");
-        fclose(fp);
-        break;
-    }   
+    fp = fopen("SnapPipe", "w");
+
+    fprintf(fp,"snap\n");
+    fclose(fp);
+}
+
+void Process::writing2(int pass) //Block
+{
+    FILE * fp;
+    fp = fopen("BlockPipe", "w");
+
+    fprintf(fp,"start\n");
+    fclose(fp);
+}
+
+void Process::writing3(int pass) //Iot
+{
+    FILE * fp;
+    fp = fopen("IotPipe", "w");
+
+    fprintf(fp,"start\n");
+    fclose(fp);
 }

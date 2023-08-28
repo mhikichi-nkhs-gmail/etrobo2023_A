@@ -7,17 +7,17 @@ class Process
         Process();
         void run();
         void load(int pass);
-        void writing(int pass);
+        void writing1(int pass);
+        void writing2(int pass);
+        void writing3(int pass);
 
     protected:
-        enum SECTION_NO{
-            SNAP,
-            BLOCK,
-            IOT
-        };
+
 
     private:
-          
+        
+
+        
 };
 
 #endif

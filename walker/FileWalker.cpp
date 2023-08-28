@@ -17,35 +17,27 @@ void FileWalker::run()
 void FileWalker::init()
 {
     printf("a\n");
-    if(mComment == 0)
-    {
-        switch(mNo){
-            case SNAP:
-                printf("snap1\n");
-                mPro->writing(mComment);
-                break;
-            case BLOCK:
-                printf("block1\n");
-                mPro->writing(mComment);
-                break;
-            case IOT:
-                printf("iot1\n");
-                mPro->writing(mComment);
-                break;
-        }
-    }
-    else
-    {
-        switch(mNo){
-            case SNAP:
-                printf("snap2\n");
-                mPro->load(mComment);
-                break;
-            case BLOCK:
-                printf("block2\n");
-                mPro->load(mComment);
-                break;
-        }
+    switch(mNo){
+        case SNAP1:
+            printf("snap1\n");
+            mPro->writing1(mComment);
+            break;
+        case SNAP2:
+            printf("snap2\n");
+            mPro->load(mComment);
+            break;
+        case BLOCK1:
+            printf("block1\n");
+            mPro->writing2(mComment);
+            break;
+        case BLOCK2:
+            printf("block2\n");
+            mPro->load(mComment);
+            break;
+        case IOT1:
+            printf("iot1\n");
+            mPro->writing3(mComment);
+            break;
     }
     //mPro->writing();
 }
