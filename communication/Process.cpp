@@ -13,40 +13,11 @@ void Process::run()
     
 }
 
-void Process::load(int pass)
-{
-    act_tsk(JUDGE_TASK);
-}
-
-void Process::load1(int pass) //snap
+void Process::load(int pass) //snap
 {
     FILE * fp;
-    //fp = fopen("SnapPipe2", "r");   
-    //	NULLポインタの終端までファイルから文字を1行ずつ読み込む
-	while (fgets(pipe, 1024, fp) != NULL)
-	{
-		//	読み込んだ1行を画面に出力する
-		printf("%s", pipe);
-	}
-
+    act_tsk(JUDGE_TASK);   
 	fclose(fp);
-
-}
-
-void Process::load2(int pass) //block
-{
-    FILE * fp;
-    //fp = fopen("BlockPipe2", "r");
-
-    //	NULLポインタの終端までファイルから文字を1行ずつ読み込む
-	while (fgets(pipe, 1024, fp) != NULL)
-	{
-		//	読み込んだ1行を画面に出力する
-		printf("%s", pipe);
-	}
-
-	fclose(fp);
-
 }
 
 void Process::writing1(int pass) //snap
