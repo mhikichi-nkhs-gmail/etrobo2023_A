@@ -7,7 +7,7 @@ TurnWalker::TurnWalker(Odometry *odo,
 
 }
 
-void TurnWalker::run()
+void TurnWalker::execStart()
 {
     mCurrentLen = mLength->getValue();
     //printf("current%f\n", mCurrentLen);
@@ -17,7 +17,7 @@ void TurnWalker::run()
 
     setCommand((int)mTargetSpeed, (int)mTurn);
 
-    SimpleWalker::run();
+    SimpleWalker::execStart();
 }
 
 void TurnWalker::setParam(double power[])
@@ -53,7 +53,3 @@ void TurnWalker::init()
     //printf("target%f\n", mTargetLen);
 }
 
-void TurnWalker::execStart()
-{
-    run();
-}

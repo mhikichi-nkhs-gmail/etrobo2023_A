@@ -23,7 +23,6 @@ Section::~Section()
 
 bool Section::run()
 {
-
     //printf("check\n");
     //åˆ¤å®?
     if(mJudge->run())
