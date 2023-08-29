@@ -171,8 +171,6 @@ void tracer_task(intptr_t unused) {
   }
 
   ext_tsk();
-<<<<<<< Updated upstream
-=======
 }
 
 int cnt = 0;
@@ -189,5 +187,4 @@ void judge_task(intptr_t unused) {
   
   fclose(fp);
   ext_tsk();
->>>>>>> Stashed changes
 }
