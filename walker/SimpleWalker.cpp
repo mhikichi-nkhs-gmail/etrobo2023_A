@@ -123,6 +123,7 @@ void SimpleWalker::resetParam()
 
 void SimpleWalker::init()
 {
+    mMotor->init();
     setCommand(mInitForword,mInitTurn);
     //printf("mForward%f\n", mForward);
 }

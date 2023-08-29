@@ -5,27 +5,44 @@ Process::Process()
 {
 }
 
-void Process::load()
+void Process::run(int no, int use, char comm[1024])
+{
+    
+}
+
+void Process::load1()
 {
 
 }
 
-int Process::writing()
+void Process::load2()
 {
-    //const int 
+    
+}
+
+void Process::writing1() //snap
+{
     FILE * fp;
-    fp = fopen("StartPipe", "w");
-    if(fp == NULL)
-    {
-        printf("���s\n");
-        return 1;
-    }
+    fp = fopen("SnapPipe", "w");
 
-    fprintf(fp,"START\n");
-    printf("finish");
+    fprintf(fp,"snap\n");
     fclose(fp);
-
-    return 0;
 }
 
-//void init
+void Process::writing2() //Block
+{
+    FILE * fp;
+    fp = fopen("BlockPipe", "w");
+
+    fprintf(fp,"Block\n");
+    fclose(fp);
+}
+
+void Process::writing3() //Iot
+{
+    FILE * fp;
+    fp = fopen("IotPipe", "w");
+
+    fprintf(fp,"Iot\n");
+    fclose(fp);
+}
