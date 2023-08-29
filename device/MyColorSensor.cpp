@@ -94,8 +94,48 @@ void MyColorSensor::getHSV(rgb_f_t rgb, hsv_t& hsv)
     double g = rgb.g;
     double b = rgb.b;
                
-    double h=0, s=0, v=0;
+    double mr = mMin_R;
+    double mg = mMin_G;
+    double mb = mMin_B;
     
+    double h=0, s=0, v=0;
+
+    /*
+    if (r-0.5 < 0)
+    {
+        r = 0;
+    }
+    else
+    {
+        r = r - 0.5;
+        r = r * 2;
+    }
+
+    if (g-0.5 < 0)
+    {
+        g = 0;
+    }
+    else
+    {
+        g = g - 0.5;
+        g = g * 2;
+    }
+
+    if (b-0.5 < 0)
+    {
+        b = 0;
+    }
+    else
+    {
+        b = b - 0.5;
+        b = b * 2;
+    }
+    */
+
+    r = r + 30;
+    g = g + 30;
+    b = b + 30;
+        
     if (r >= g && g >= b) { 
         
         if(r!=0)
@@ -174,6 +214,20 @@ void MyColorSensor::getHSV(rgb_f_t rgb, hsv_t& hsv)
     hsv.s = s;
     hsv.v = v;
 
+}
+
+void MyColorSensor::setRGB()
+{
+    mColor->getRawColor(raw);
+    /*
+    printf("raw.r = %d\n",raw.r);
+    printf("raw.g = %d\n",raw.g);
+    printf("raw.b = %d\n",raw.b);
+    */
+    mMax_R = raw.r;
+    mMax_G = raw.g;
+    mMax_B = raw.b;
+    //printf("r,g,b %d %d %d\n",mMax_R,mMax_G,mMax_B);
 }
 
 // debug用

@@ -11,7 +11,6 @@ class VirStraightLine : public SimpleWalker
     public:
         VirStraightLine(Odometry *odo,
             SpeedControl *scon);
-        void run();
         void init();
         void setParam(double vstraight[]);
         void setBias(double curve);

@@ -33,6 +33,7 @@ class MyColorSensor
         double normBrightness(double br,double min,double max);
         double normColor(double br,double min,double max);
         void getHSV(rgb_f_t rgb, hsv_t& hsv);
+        void setRGB();
 
         static const int BRIGHT;
         static const int COLOR;

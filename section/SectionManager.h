@@ -10,13 +10,13 @@ class SectionManager {
         typedef struct SecParam_
         {
             enum Section::WALKER_NO walker_no;
-            double secList[10];
+            double secList[100];
 
             enum Section::JUDGE_NO judge_no;
-            double judList[10];
+            double judList[100];
 
             enum Section::EMGJUDGE_NO emgjudge_no;
-            double emgList[10];
+            double emgList[100];
 
         }SecParam;
 
@@ -24,18 +24,24 @@ class SectionManager {
         SectionManager();
         ~SectionManager();
         void set(SecParam* array);
-        virtual bool run();
+        bool run();
         void addSection(Section *);
         void reset();
     
         
 
     protected:
+#if defined(MAKE_RIGHT)
+    const int _EDGE = LineTracer::LEFTEDGE;
+#else
+    const int _EDGE = LineTracer::RIGHTEDGE;
+#endif
 
-        Section *mSection[100];
+        Section *mSection[300];
         int mSectionIdx;
-        int mLastIdx;  //最後
+        int mLastIdx;  //?ｿｽﾅ鯉ｿｽ
 
+        
         /*sample
         SecParam sample[10] = {
             //{Section::TRACER,{80, 0 ,  40, 1.5, 0.1 ,0 , 0, _EDGE},Section::LENGTH,{50, Section::FLNONE}, Section::EMNONE,{}},
@@ -53,8 +59,8 @@ class SectionManager {
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
 
-            //h , s 赤色 353,0.74 青色　210,0.83 緑　137,0.55 黄色　0~60,0.05
-            //旋回の右が負の値
+            //h , s ?ｿｽﾔ色 353,0.74 ?ｿｽﾂ色?ｿｽ@210,0.83 ?ｿｽﾎ　137,0.55 ?ｿｽ?ｿｽ?ｿｽF?ｿｽ@0~60,0.05
+            //?ｿｽ?ｿｽ?ｿｽ?ｿｽﾌ右?ｿｽ?ｿｽ?ｿｽ?ｿｽ?ｿｽﾌ値
             */
 
     private:

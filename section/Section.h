@@ -6,6 +6,7 @@
 #include "VirCurveLine.h"
 #include "VirStraightLine.h"
 #include "TurnWalker.h"
+#include "FileWalker.h"
 
 
 #include "Walker.h"
@@ -33,6 +34,7 @@ class Section {
             VIRCLINE,
             VIRSLINE,
             TWALKER,
+            FILE,
             WANONE
         };
 

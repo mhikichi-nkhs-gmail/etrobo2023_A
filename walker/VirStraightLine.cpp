@@ -8,15 +8,16 @@ VirStraightLine::VirStraightLine(Odometry *odo,
 {
 }
 
-void VirStraightLine::run()
+void VirStraightLine::execStart()
 {
+    //printf("VirStraight\n");
     targetPoint();
     calcSenoer();
     val1 = targetLine();
     mTurn = calcTurn();
     setCommand((int)mTargetSpeed, (int)mTurn);
 
-    SimpleWalker::run();
+    SimpleWalker::execStart();
 }
 
 double VirStraightLine::calcTurn()
@@ -50,13 +51,16 @@ void VirStraightLine::setBias(double curve) //カーブパラム
 
 void VirStraightLine::init()
 {
-    mSetAngle = mSetAngle + (mAngle->getValue());
-    printf("Angle%f,,\n",(mAngle->getValue()));
-}
-
-void VirStraightLine::execStart()
-{
-    run();
+    if(mTargetSpeed > 0)
+    {
+        mSetAngle = mSetAngle + (mAngle->getValue());
+        //printf("Angle%f,,\n",(mAngle->getValue()));
+    }
+    else
+    {
+        mSetAngle = mSetAngle + ((mAngle->getValue()) * -1);
+        //printf("Angle%f,,\n",(mAngle->getValue()));
+    }
 }
 
 void VirStraightLine::targetPoint() //進行方向
@@ -72,6 +76,12 @@ void VirStraightLine::calcSenoer() //センサー位置
 {
     double angle2 = (mAngle->getValue())*(M_PI/180);
     maddsensor = 5;
+
+    if(mTargetSpeed < 0)
+    {   
+        angle2 = angle2 * -1;
+        maddsensor = maddsensor * -1;
+    }
 
     //printf("angle2,,%f\n",angle2);
 

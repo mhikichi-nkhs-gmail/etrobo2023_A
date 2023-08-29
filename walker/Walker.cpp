@@ -1,15 +1,18 @@
 #include "Walker.h"
 
 Walker::Walker( Odometry *odo):
-    mOdo(odo)
+    mOdo(odo),
+    mState(INIT)
 {
     mPid = new PID();
+
 
     mBright = gBrightness;
     mLength = gLength;
     mAngle = gTurnAngle;
     mXpos = gXPosition;
     mYpos = gYPosition;
+    mPro = gProcess;
 }
 
 void Walker::run()
@@ -27,16 +30,16 @@ void Walker::run()
 
 void Walker::setParam(double Array[])
 {
-
+    
 }
 
-/*void Walker::init()
+void Walker::init()
 {
-
+    
 }
 
 void Walker::execStart()
 {
 
 }
-*/
+
