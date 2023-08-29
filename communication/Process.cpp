@@ -8,10 +8,6 @@ Process::Process()
 {
 }
 
-void Process::load()
-{
-    
-}
 
 void Process::load(int pass) //snap
 {
@@ -27,8 +23,6 @@ void Process::writing1(int pass) //snap
 
     fprintf(fp,"snap\n");
     fclose(fp);
-
-    return 0;
 }
 
 void Process::writing2(int pass) //Block

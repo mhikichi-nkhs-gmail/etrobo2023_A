@@ -115,7 +115,7 @@ void DoubleSection::course(int direct)
     }
     else
     {
-        NO = SET_LBLUE_MARKER;
+        NO = SET_RBLUE_MARKER;
     }
 }
 
