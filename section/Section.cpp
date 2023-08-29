@@ -9,6 +9,7 @@ extern FileWalker *gFile;
 extern Odometry *gOdo;
 extern SpeedControl *gSpeed;
 extern Judge *mJudge;
+extern JudgeReception *mJr;
 
 Section::Section()
 {
@@ -88,6 +89,10 @@ Judge *Section::selectJudge(int no)
             break;    
         case TIME: 
             mJudge = (Judge*)(new JudgeTime());
+            break;
+        case RECEPTION:
+            mJr = (new JudgeReception());
+            mJudge = mJr;
             break;
         case JUNONE:
             break;
