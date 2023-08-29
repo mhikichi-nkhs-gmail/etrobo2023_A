@@ -25,6 +25,7 @@
 #include "Process.h"
 #include "Scene.h"
 #include "MotorManager.h"
+#include "JudgeReception.h"
 
 using namespace ev3api;
 
@@ -174,23 +175,17 @@ void tracer_task(intptr_t unused) {
 }
 
 int cnt = 0;
-char pipe[20];
+JudgeReception * mJr;
 
 void judge_task(intptr_t unused) {
+  char pipe[256];
   FILE * fp;
+  fp = fopen("SnapPipe2", "r");
+  fgets(pipe, 1, fp);
   
-  if (fp == NULL)
-  {
-    printf("fopen error\n");
-  }
-  else
-  {
-    while (fgets(pipe, 1, fp) != NULL)
-    {
-      //読み込んだ1行を画面に出力する
-      printf("%s", pipe);
-    }
-  }
- 
+  //読み込んだ1行を画面に出力する
+  printf("%s", pipe);
+  
+  fclose(fp);
   ext_tsk();
 }

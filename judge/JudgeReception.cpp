@@ -13,6 +13,7 @@ JudgeReception::JudgeReception()
 void JudgeReception::init()
 {
     rtime = 0.0;
+    act_tsk(JUDGE_TASK);
 }
 
 bool JudgeReception::judgement()
@@ -45,10 +46,10 @@ void JudgeReception::setParam(double recn[])
     FILE * fp;
     if (recn[0] == 0.0)
     {
-        fp = fopen("SnapPipe2", "r");
+        //fp = fopen("SnapPipe2", "r");
     }
     else
     {     
-        fp = fopen("BlockPipe2", "r");
+        //fp = fopen("BlockPipe2", "r");
     }
 }
