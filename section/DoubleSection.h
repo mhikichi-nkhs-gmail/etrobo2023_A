@@ -10,18 +10,7 @@ class DoubleSection : public SectionManager
         DoubleSection();
         bool run();
         void course(int direct);
-        void lbluemarker();
-        void lnextpoint();
-        void lfinishe1();
-        void lfinishe2();
-        void lfinishe3();
-        void lfinishe4();
-        void rbluemarker();
-        void rnextpoint();
-        void rfinishe1();
-        void rfinishe2();
-        void rfinishe3();
-        void rfinishe4();
+        void bluemarker();
         void scircle(int direct);
 
         enum COURSNO{
