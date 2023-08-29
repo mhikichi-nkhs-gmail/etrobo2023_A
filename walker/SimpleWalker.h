@@ -24,6 +24,7 @@ public:
                 SpeedControl *scon
                 );
 
+    virtual void run();
     void setCommand(int forward, int turn);
     void setCommandV(double forward, int turn);
     virtual void setParam(double simArray[]);

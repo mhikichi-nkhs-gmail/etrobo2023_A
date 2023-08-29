@@ -8,7 +8,7 @@ VirCurveLine::VirCurveLine(Odometry *odo,
 {
 }
 
-void VirCurveLine::execStart()
+void VirCurveLine::run()
 {
     calcSenoer();
     calcLength();
@@ -16,7 +16,7 @@ void VirCurveLine::execStart()
 
     setCommand((int)mTargetSpeed, (int)mTurn);
 
-    SimpleWalker::execStart();
+    SimpleWalker::run();
 }
 
 double VirCurveLine::calcTurn()
@@ -70,6 +70,11 @@ void VirCurveLine::setBias(double curve) //カーブパラム
 void VirCurveLine::init()
 {
     calcSenter();
+}
+
+void VirCurveLine::execStart()
+{
+    run();
 }
 
 void VirCurveLine::calcSenter() //中心座標の特定

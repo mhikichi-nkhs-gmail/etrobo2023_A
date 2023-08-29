@@ -5,273 +5,128 @@ DoubleSection::DoubleSection()
 {
     mSectionIdx=0;
     mLastIdx=0;
-    printf("double\n");
 }
 
 bool DoubleSection::run()
 {
-    if(point == 0)
+    printf("HELLO\n");
+    if(lno == 0)
     {
         switch(lno) {
-            case SET_LBLUE_MARKER:
-                //printf("SET_LBLUE_MARKER\n");
+            case SET_LPOINT:
+                printf("WWWWWW\n");
                 set(Lpoint);
-                lno = LBLUE_MARKER;
+                lno = LNEXT;
                 break;
-            case LBLUE_MARKER:
-                //printf("LBLUE_MARKER\n");
-                lbluemarker();
-                break;
-            case SET_LNEXT_TAKE_POINT:
-                //printf("SET_LNEXT_TAKE_POINT\n");
+            case LNEXT:
                 set(Lnext);
-                //lno = LNEXT_TAKE_POINT;
-                lno = LESCAPE;
                 break;
-            case LNEXT_TAKE_POINT:
-                //printf("LNEXT_TAKE_POINT1\n");
-                //lnexttakepoint();
+            case L1ST:
+                set(L1st);
                 break;
-            case SET_LMOVE_SMALL1:
-                //printf("SET_LMOVE_SMALL1\n");
-                //set(L1st);
-                lno = LMOVE_SMALL1;
+            case L2ND:
+                set(L2nd);
                 break;
-            case LMOVE_SMALL1:
-                //printf("LMOVE_SMALL1\n");
-                //lmovesmalll();
+            case L3RD:
+                set(L3rd);
                 break;
-            case SET_LMOVE_SMALL2:
-                //set(L2nd);
-                lno = LMOVE_SMALL2;
+            case L4TH:
+                set(L4th);
                 break;
-            case LMOVE_SMALL2:
-                //lmovesmall2();
+            case LLAST:
+                set(Llast);
                 break;
-            case SET_LMOVE_SMALL3:
-                //set(L3rd);
-                lno = LMOVE_SMALL3;
-                break;
-            case LMOVE_SMALL3:
-                //lmovesmall3();
-                break;
-            case SET_LMOVE_SMALL4:
-                //set(L4th);
-                lno = LMOVE_SMALL4;
-                break;
-            case LMOVE_SMALL4:
-                //lmovesmall4();
-                break;
-            case SET_LLAST_TAKE_POINT:
-                //set(Llast);
-                lno = LLAST_TAKE_POINT;
-                break;
-            case LLAST_TAKE_POINT:
-                //llasttakepoint();
-                break;
-            case SET_LESCAPE:
-                //set(Lgoal);
-                lno = LESCAPE;
-                break;
-            case LESCAPE:
-                //lescape();
+            case LGOAL:
+                set(Lgoal);
                 return true;
         }
     }
     else
     {
-        
         switch(rno) {
-            case SET_RBLUE_MARKER:
+            case RPOINT:
                 set(Rpoint);
-                rno = RBLUE_MARKER;
                 break;
-            case RBLUE_MARKER:
-                rbluemarker();
-                break;
-            case SET_RNEXT_TAKE_POINT:
+            case RNEXT:
                 set(Rnext);
-                rno = RNEXT_TAKE_POINT;
                 break;
-            case RNEXT_TAKE_POINT:
-                rnexttakepoint();
-                break;
-            case SET_RMOVE_SMALL1:
+            case R1ST:
                 set(R1st);
-                rno = RMOVE_SMALL1;
                 break;
-            case RMOVE_SMALL1:
-                rmovesmalll();
-                break;
-            case SET_RMOVE_SMALL2:
+            case R2ND:
                 set(R2nd);
-                rno = RMOVE_SMALL2;
                 break;
-            case RMOVE_SMALL2:
-                rmovesmall2();
-                break;
-            case SET_RMOVE_SMALL3:
+            case R3RD:
                 set(R3rd);
-                rno = RMOVE_SMALL3;
                 break;
-            case RMOVE_SMALL3:
-                rmovesmall3();
-                break;
-            case SET_RMOVE_SMALL4:
+            case R4TH:
                 set(R4th);
-                rno = RMOVE_SMALL4;
                 break;
-            case RMOVE_SMALL4:
-                rmovesmall4();
-                break;
-            case SET_RLAST_TAKE_POINT:
+            case RLAST:
                 set(Rlast);
-                rno = RLAST_TAKE_POINT;
                 break;
-            case RLAST_TAKE_POINT:
-                rlasttakepoint();
-                break;
-            case SET_RESCAPE:
+            case RGOAL:
                 set(Rgoal);
-                rno = RESCAPE;
-                break;
-            case RESCAPE:
-                rescape();
                 return true;
         }
-        
-        
     }
     return false;
 }
 
+/*bool DoubleSection::init()
+{
+   if(SectionManager::run())
+}*/
+
 void DoubleSection::course(int direct)
 {
-    lno = SET_LBLUE_MARKER;
-    rno = SET_RBLUE_MARKER;
-    printf("doublesection\n");
+    printf("ZZZZZZZ\n");
     if(direct == 0)
     {
-        point = 0;
+        lno = LPOINT;
     }
     else
     {
-        point = 1;
+        rno = RPOINT;
     }
 }
 
-
-
-void DoubleSection::lbluemarker()
+void DoubleSection::scircle(int direct)
 {
-    if(SectionManager::run()){
-        lno = SET_LNEXT_TAKE_POINT;
-        //lno = LESCAPE;
-    }
-}
-void DoubleSection::lnexttakepoint()
-{
-    if(SectionManager::run()){
-        lno = SET_LMOVE_SMALL1;
-        printf("clear2\n");
-    }
-}
-
-void DoubleSection::lmovesmalll()
-{
-    if(SectionManager::run()){
-        lno = SET_LLAST_TAKE_POINT;
-    }
-}
-
-void DoubleSection::lmovesmall2()
-{
-    if(SectionManager::run()){
-        lno = SET_LLAST_TAKE_POINT;
-    }
-}
-
-void DoubleSection::lmovesmall3()
-{
-    if(SectionManager::run()){
-        lno = SET_LLAST_TAKE_POINT;
-    }
-}
-
-void DoubleSection::lmovesmall4()
-{
-    if(SectionManager::run()){
-        lno = SET_LLAST_TAKE_POINT;
-    }
-}
-
-void DoubleSection::llasttakepoint()
-{
-    if(SectionManager::run()){
-        lno = SET_LESCAPE;
-    }
-}
-
-void DoubleSection::lescape()
-{
-    if(SectionManager::run()){
-        lno = SET_LNEXT_TAKE_POINT;
-    }
-}
-
-
-void DoubleSection::rbluemarker()
-{
-    if(SectionManager::run()){
-        rno = SET_RNEXT_TAKE_POINT;
-    }
-}
-
-void DoubleSection::rnexttakepoint()
-{
-    if(SectionManager::run()){
-        rno = SET_RMOVE_SMALL1;
-    }
-}
-
-void DoubleSection::rmovesmalll()
-{
-    if(SectionManager::run()){
-        rno = SET_RNEXT_TAKE_POINT;
-    }
-}
-
-void DoubleSection::rmovesmall2()
-{
-    if(SectionManager::run()){
-        rno = SET_RNEXT_TAKE_POINT;
-    }
-}
-
-void DoubleSection::rmovesmall3()
-{
-    if(SectionManager::run()){
-        rno = SET_RNEXT_TAKE_POINT;
-    }
-}
-
-void DoubleSection::rmovesmall4()
-{
-    if(SectionManager::run()){
-        rno = SET_RNEXT_TAKE_POINT;
-    }
-}
-
-void DoubleSection::rlasttakepoint()
-{
-    if(SectionManager::run()){
-        rno = SET_RNEXT_TAKE_POINT;
-    }
-}
-
-void DoubleSection::rescape()
-{
-    if(SectionManager::run()){
-        rno = SET_RNEXT_TAKE_POINT;
+    switch (direct) {
+        case 0:
+            printf("北");
+            set(North);
+            break;
+        case 1:
+            printf("北東\n");
+            set(Neast);
+            break;
+        case 2:
+            printf("東\n");
+            set(East);
+            break;
+        case 3:
+            printf("南東\n");
+            set(Seast);
+            break;
+        case 4:
+            printf("南\n");
+            set(South);
+            break;
+        case 5:
+            printf("西南\n");
+            set(Swest);
+            break;
+        case 6:
+            printf("西\n");
+            set(West);
+            break;
+        case 7:
+            printf("北西\n");
+            set(Nwest);
+            break;
+        default:
+            break;
     }
 }

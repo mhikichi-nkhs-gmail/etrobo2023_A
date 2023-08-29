@@ -8,7 +8,7 @@ FileWalker::FileWalker(Odometry *odo):
 
 }
 
-void FileWalker::execStart()
+void FileWalker::run()
 {
     printf("GO\n");
     //int check = mPro->writing();
@@ -46,4 +46,9 @@ void FileWalker::setParam(double flwk[]) //�g�������p�C�v�
 {
     mNo = flwk[0];
     mComment = flwk[1];
+}
+
+void FileWalker::execStart()
+{
+    run();
 }

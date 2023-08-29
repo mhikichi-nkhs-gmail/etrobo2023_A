@@ -18,6 +18,7 @@ class LineTracer : public SimpleWalker {
 public:
     LineTracer(Odometry *odo,
             SpeedControl *scon);
+    void run();
 
     void setParam(double speed,double target,double kp, double ki, double kd);
     void setParam(double speed,double target,double kp, double ki, double kd,double angleTarget,double angleKp);

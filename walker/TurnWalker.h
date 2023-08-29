@@ -11,6 +11,7 @@ class TurnWalker : public SimpleWalker
     public:
         TurnWalker(Odometry *odo,
             SpeedControl *scon);
+        void run();
         void setParam(double power[]);
         void setBias(double curve);
         void init();

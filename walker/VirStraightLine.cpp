@@ -8,7 +8,7 @@ VirStraightLine::VirStraightLine(Odometry *odo,
 {
 }
 
-void VirStraightLine::execStart()
+void VirStraightLine::run()
 {
     targetPoint();
     calcSenoer();
@@ -16,7 +16,7 @@ void VirStraightLine::execStart()
     mTurn = calcTurn();
     setCommand((int)mTargetSpeed, (int)mTurn);
 
-    SimpleWalker::execStart();
+    SimpleWalker::run();
 }
 
 double VirStraightLine::calcTurn()
@@ -60,6 +60,11 @@ void VirStraightLine::init()
         mSetAngle = mSetAngle + ((mAngle->getValue()) * -1);
         printf("Angle%f,,\n",(mAngle->getValue()));
     }
+}
+
+void VirStraightLine::execStart()
+{
+    run();
 }
 
 void VirStraightLine::targetPoint() //is•ûŒü

@@ -30,7 +30,7 @@ LineTracer::LineTracer( Odometry *odo,
 {
 }
  
-void LineTracer::execStart()
+void LineTracer::run()
 {
     double  brightness;
     double direction;
@@ -43,7 +43,7 @@ void LineTracer::execStart()
 
     setCommand((int)mTargetSpeed, (int)mTurn);
 
-    SimpleWalker::execStart();
+    SimpleWalker::run();
 
 }
 
@@ -150,4 +150,9 @@ void LineTracer::printInfo()
 void LineTracer::init()
 {
 
+}
+
+void LineTracer::execStart()
+{
+    run();
 }

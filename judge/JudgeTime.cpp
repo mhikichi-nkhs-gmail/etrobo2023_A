@@ -19,6 +19,7 @@ void JudgeTime::init()
 
 bool JudgeTime::judgement()
 {
+
     if(mTime <= time)
     {
         return true;
