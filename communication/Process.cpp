@@ -12,6 +12,7 @@ void Process::run()
 
 void Process::load1(char pass[1024]) //snap
 {
+<<<<<<< Updated upstream
     FILE * fp;
     fp = fopen("SnapPipe2", "r");
 
@@ -24,6 +25,9 @@ void Process::load1(char pass[1024]) //snap
 
 	fclose(fp);
 
+=======
+       
+>>>>>>> Stashed changes
 }
 
 void Process::load2(char pass[1024]) //block

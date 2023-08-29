@@ -171,4 +171,23 @@ void tracer_task(intptr_t unused) {
   }
 
   ext_tsk();
+<<<<<<< Updated upstream
+=======
+}
+
+int cnt = 0;
+char pipe[20];
+
+void judge_task(intptr_t unused) {
+  FILE * fp;
+  
+  while (fgets(pipe, 1, fp) != NULL)
+  {
+    //読み込んだ1行を画面に出力する
+    printf("%s", pipe);
+  }
+  
+  fclose(fp);
+  ext_tsk();
+>>>>>>> Stashed changes
 }

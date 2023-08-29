@@ -1,7 +1,8 @@
 #ifndef JUDGE_RECEPTION
-#define JUDGE_RECEOTION
+#define JUDGE_RECEPTION
 
 #include "Judge.h"
+#include "Section.h"
 
 class JudgeReception : public Judge
 {
