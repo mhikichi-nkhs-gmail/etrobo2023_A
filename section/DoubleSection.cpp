@@ -53,6 +53,48 @@ bool DoubleSection::run()
     case LFINISHE4:
         lfinishe4();
         break;    
+    case SET_RBLUE_MARKER:
+        set(Rcourse);
+        NO = RBLUE_MARKER;
+        break;
+    case RBLUE_MARKER:
+        rbluemarker();
+        break; 
+    case SET_RNEXT_POINT:
+        set(Rnextpoint);
+        NO = RNEXT_POINT;
+        break;
+    case RNEXT_POINT:
+        rnextpoint();
+        break;
+    case SET_RFINISHE1:
+        set(Rbluemarker1);
+        NO = RFINISHE1;
+        break;
+    case RFINISHE1:
+        rfinishe1();
+        break;
+    case SET_RFINISHE2:
+        set(Rbluemarker2);
+        NO = RFINISHE2;
+        break;
+    case RFINISHE2:
+        rfinishe2();
+        break;
+    case SET_RFINISHE3:
+        set(Rbluemarker3);
+        NO = RFINISHE3;
+        break;
+    case RFINISHE3:
+        rfinishe3();
+        break;
+    case SET_RFINISHE4:
+        set(Rbluemarker4);
+        NO = RFINISHE4;
+        break;
+    case RFINISHE4:
+        rfinishe4();
+        break;    
     case END:
         printf("END\n");
         return true;
@@ -113,6 +155,53 @@ void DoubleSection::lfinishe3()
 }
 
 void DoubleSection::lfinishe4()
+{
+    if(SectionManager::run())
+    {
+        NO = END;
+    }
+}
+
+void DoubleSection::rbluemarker()
+{
+    if(SectionManager::run())
+    {
+        NO = SET_RNEXT_POINT;
+    }
+}
+
+void DoubleSection::rnextpoint()
+{
+    if(SectionManager::run())
+    {
+        NO = SET_RFINISHE1;
+    }
+}
+
+void DoubleSection::rfinishe1()
+{
+    if(SectionManager::run())
+    {
+        NO = END;
+    }
+}
+void DoubleSection::rfinishe2()
+{
+    if(SectionManager::run())
+    {
+        NO = END;
+    }
+}
+
+void DoubleSection::rfinishe3()
+{
+    if(SectionManager::run())
+    {
+        NO = END;
+    }
+}
+
+void DoubleSection::rfinishe4()
 {
     if(SectionManager::run())
     {
