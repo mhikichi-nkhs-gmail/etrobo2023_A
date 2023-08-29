@@ -182,6 +182,7 @@ void judge_task(intptr_t unused) {
   FILE * fp;
   fp = fopen("SnapPipe2", "r");
   fgets(pipe, 1, fp);
+  mJr->reception(pipe);
   
   //読み込んだ1行を画面に出力する
   printf("%s", pipe);
