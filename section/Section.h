@@ -16,6 +16,7 @@
 #include "JudgeColor.h"
 #include "JudgeTime.h"
 #include "JudgeTurnAngle.h"
+#include "JudgeReception.h"
 
 
 class Section {
@@ -44,6 +45,7 @@ class Section {
             BRIGHTNESS,
             TURNANGLE,
             TIME,
+            RECEPTION,
             JUNONE
         };
 

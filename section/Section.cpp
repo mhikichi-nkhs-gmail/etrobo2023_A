@@ -9,6 +9,7 @@ extern FileWalker *gFile;
 extern Odometry *gOdo;
 extern SpeedControl *gSpeed;
 extern Judge *mJudge;
+extern JudgeReception *mJr;
 
 Section::Section()
 {
@@ -16,7 +17,7 @@ Section::Section()
 
 Section::~Section()
 {
-    msg_log("destruct Section");
+    msg_log("destruct Section\n");
     delete mWalker;
 }
 
@@ -25,7 +26,7 @@ bool Section::run()
 {
 
     //printf("check\n");
-    //åˆ¤å®?
+    //åˆ¤?¿½?
     if(mJudge->run())
     {
         //printf("check1\n");
@@ -33,7 +34,7 @@ bool Section::run()
     }
     
 
-    //èµ°æ³?
+    //èµ°?¿½?
     mWalker->run();
     
     return false;
@@ -88,6 +89,10 @@ Judge *Section::selectJudge(int no)
             break;    
         case TIME: 
             mJudge = (Judge*)(new JudgeTime());
+            break;
+        case RECEPTION:
+            mJr = (new JudgeReception());
+            mJudge = mJr;
             break;
         case JUNONE:
             break;

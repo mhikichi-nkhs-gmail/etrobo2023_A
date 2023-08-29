@@ -1,26 +1,22 @@
 #include "Process.h"
 #include "stdio.h"
+#include "app.h"
+
+extern void judge_task(intptr_t exinf);
 
 Process::Process()
 {
 }
 
-void Process::run(int no, int use, char comm[1024])
+
+void Process::load(int pass) //snap
 {
     
+       
+	
 }
 
-void Process::load1()
-{
-
-}
-
-void Process::load2()
-{
-    
-}
-
-void Process::writing1() //snap
+void Process::writing1(int pass) //snap
 {
     FILE * fp;
     fp = fopen("SnapPipe", "w");
@@ -29,20 +25,20 @@ void Process::writing1() //snap
     fclose(fp);
 }
 
-void Process::writing2() //Block
+void Process::writing2(int pass) //Block
 {
     FILE * fp;
     fp = fopen("BlockPipe", "w");
 
-    fprintf(fp,"Block\n");
+    fprintf(fp,"start\n");
     fclose(fp);
 }
 
-void Process::writing3() //Iot
+void Process::writing3(int pass) //Iot
 {
     FILE * fp;
     fp = fopen("IotPipe", "w");
 
-    fprintf(fp,"Iot\n");
+    fprintf(fp,"start\n");
     fclose(fp);
 }

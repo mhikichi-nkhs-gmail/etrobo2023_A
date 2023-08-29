@@ -11,6 +11,8 @@ extern HsvHue *gHsvHue;
 
 extern HsvSatu *gHsvSatu;
 
+bool flag = false;
+
 Scene::Scene():
     mState(UNDEFINED)
 {
@@ -18,6 +20,8 @@ Scene::Scene():
     gColor = new MyColorSensor(PORT_2,gBrightness,gHsvHue,gHsvSatu);
     mSsm = new SpeedSectionManager();
     mDs = new DoubleSection();
+    mDs2 = new DoubleSection();
+    mBs = new BlockSection();
     printf("作った\n");
 }
 
@@ -38,6 +42,9 @@ bool Scene::run()
             break;
         case DOUBLELOOP:
             execDoubleloop();
+            break;
+        case BLOCK:
+            execBlock();
             break;
         /*
         case BINGO:
@@ -70,7 +77,8 @@ void Scene::execCalibration()
         printf("left\n");
         mSsm->course(0);
         mDs->course(0);
-        mDs->scircle(0);
+        mDs2->scircle(0);
+        //mBs->course(0);
         gColor->setRGB();
         mState=START;
     }
@@ -80,7 +88,8 @@ void Scene::execCalibration()
         printf("right\n");
         mSsm->course(1);
         mDs->course(1);
-        mDs->scircle(0);
+        mDs2->scircle(1);
+        //mBs->course(1);
         gColor->setRGB();
         mState=START;
     }
@@ -155,10 +164,32 @@ void Scene::execSpeed()
 }
 void Scene::execDoubleloop()
 {
-    if(mDs->run())
+    if(flag != true)
     {
-        printf("double終わった\n");
-        delete mDs;
+        if(mDs->run())
+        {
+            printf("大円終わった\n");
+            delete mDs;
+            flag = true;
+        }
+    }
+    else
+    {
+        if(mDs2->run())
+        {
+            printf("double終わった\n");
+            delete mDs2;
+            mState=END;
+            //mState=BLOCK;
+        }
+    }
+}
+void Scene::execBlock()
+{
+    if(mBs->run())
+    {
+        printf("block終わった");
+        delete mBs;
         mState=END;
     }
 }

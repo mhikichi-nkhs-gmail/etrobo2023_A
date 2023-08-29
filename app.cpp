@@ -25,6 +25,7 @@
 #include "Process.h"
 #include "Scene.h"
 #include "MotorManager.h"
+#include "JudgeReception.h"
 
 using namespace ev3api;
 
@@ -136,7 +137,7 @@ void polling_task(intptr_t unused) {
     static char buf[100];
     //sprintf(buf,"len , bri,H,S r,g,b, turn, v : %3.3f,  %7.4f,  %5.1f, %3.2f, %d,%d,%d  , %4.2f, %4.2f \n",len,br,h,s,  rgb.r, rgb.g,rgb.b ,turn,v);
     //msg_log(buf);
-    //printf("h,s %f,,%f\n", h,s);
+    //printf("h,s %f%f\n", h,s);
     //緑:138, 黄色:39, 赤:353, 青:214
 
     ext_tsk();
@@ -170,5 +171,22 @@ void tracer_task(intptr_t unused) {
     gScene->run();
   }
 
+  ext_tsk();
+}
+
+int cnt = 0;
+JudgeReception * mJr;
+
+void judge_task(intptr_t unused) {
+  char pipe[256];
+  FILE * fp;
+  fp = fopen("SnapPipe2", "r");
+  fgets(pipe, 1, fp);
+  mJr->reception(pipe);
+  
+  //読み込んだ1行を画面に出力する
+  printf("%s", pipe);
+  
+  fclose(fp);
   ext_tsk();
 }

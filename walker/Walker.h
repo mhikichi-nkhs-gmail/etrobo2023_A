@@ -9,7 +9,6 @@
 #include "XPosition.h"
 #include "YPosition.h"
 #include "Process.h"
-#include "MotorManager.h"
 
 extern Brightness *gBrightness;
 extern XPosition *gXPosition;
@@ -17,7 +16,6 @@ extern YPosition *gYPosition;
 extern TurnAngle *gTurnAngle;
 extern Length *gLength;
 extern Process *gProcess;
-extern MotorManager *gMotorManager;
 
 class Walker
 {
@@ -25,8 +23,8 @@ class Walker
         Walker( Odometry *odo );
         void run();
         virtual void setParam(double Array[]);
-        virtual void init() = 0;
-        virtual void execStart() = 0;
+        virtual void init();
+        virtual void execStart();
         
     protected:
         Odometry *mOdo;
@@ -39,7 +37,6 @@ class Walker
         Brightness *mBright;
 
         Process *mPro;
-        MotorManager *mMotor;
 
         enum State {
             INIT,

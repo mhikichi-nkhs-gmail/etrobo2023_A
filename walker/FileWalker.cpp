@@ -8,41 +8,43 @@ FileWalker::FileWalker(Odometry *odo):
 
 }
 
-void FileWalker::run()
+void FileWalker::execStart()
 {
     printf("GO\n");
     //int check = mPro->writing();
+    //printf("check%f,,\n", check);
 }
 
 void FileWalker::init()
 {
+    printf("a\n");
     switch(mNo){
         case SNAP1:
-            mPro->writing1();
+            printf("snap1\n");
+            //mPro->writing1(mComment);
             break;
         case SNAP2:
-            mPro->load1();
+            printf("snap2\n");
+            //mPro->load(mComment);
             break;
         case BLOCK1:
-            mPro->writing2();
+            printf("block1\n");
+            //mPro->writing2(mComment);
             break;
         case BLOCK2:
-            mPro->load2();
+            printf("block2\n");
+            //mPro->load(mComment);
             break;
         case IOT1:
-            mPro->writing3();
+            printf("iot1\n");
+            //mPro->writing3(mComment);
             break;
     }
     //mPro->writing();
 }
 
-void FileWalker::setParam(int no,char comment[1024]) //g‚¢‚½‚¢ƒpƒCƒvA“à—e
+void FileWalker::setParam(double flwk[]) //ï¿½gï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½pï¿½Cï¿½vï¿½Aï¿½ï¿½ï¿½e
 {
-    mNo = no;
-    mComment[1024] = comment[1024];
-}
-
-void FileWalker::execStart()
-{
-    run();
+    mNo = flwk[0];
+    mComment = flwk[1];
 }

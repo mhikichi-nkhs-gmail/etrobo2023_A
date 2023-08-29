@@ -5,18 +5,16 @@ class Process
 {
     public:
         Process();
-        void run(int no, int use, char comm[1024]);
-        void load1();
-        void load2();
-        void writing1();
-        void writing2();
-        void writing3();
+        void run();
+        void load(int pass);
+        void writing1(int pass);
+        void writing2(int pass);
+        void writing3(int pass);
 
     protected:
 
-
     private:
-        char pipe[1024]; 
+        
 
         
 };
