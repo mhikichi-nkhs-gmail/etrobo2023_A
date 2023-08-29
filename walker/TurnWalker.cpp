@@ -9,6 +9,7 @@ TurnWalker::TurnWalker(Odometry *odo,
 
 void TurnWalker::run()
 {
+    //printf("Twalker_Doing\n");
     mCurrentLen = mLength->getValue();
     //printf("current%f\n", mCurrentLen);
     val1 = mTargetLen - mCurrentLen;
@@ -37,7 +38,7 @@ double TurnWalker::calcTurn()
 
     setBias(mCurve);
     double turn =  val1_turn+mBias;
-    printf("turn%f,,\n", turn);
+    //printf("turn%f,,\n", turn);
    
     return turn;
 }
@@ -51,9 +52,4 @@ void TurnWalker::init()
 {
     mTargetLen = mLength->getValue();
     //printf("target%f\n", mTargetLen);
-}
-
-void TurnWalker::execStart()
-{
-    run();
 }

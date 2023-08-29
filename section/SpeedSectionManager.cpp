@@ -12,12 +12,12 @@ void SpeedSectionManager::course(int direct)
     printf("BBBBBB\n");
     if(direct == 0)
     {
-        printf("e\n");
+        //printf("e\n");
         set(Lcourse);
     }
     else
     {
-        printf("f\n");
+        //printf("f\n");
         set(Rcourse);
     }
 }

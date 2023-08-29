@@ -5,15 +5,12 @@
 #include "PID.h"
 #include "Odometry.h"
 #include "SpeedControl.h"
-#include "Judge.h"
-#include "JudgeTurnAngle.h"
 
 class VirStraightLine : public SimpleWalker 
 {
     public:
         VirStraightLine(Odometry *odo,
             SpeedControl *scon);
-        void run();
         void init();
         void setParam(double vstraight[]);
         void setBias(double curve);

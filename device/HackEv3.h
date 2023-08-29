@@ -1,6 +1,8 @@
 #ifndef __HACKEV3_H__
 #define __HACKEV3_H__
 
+#define PATARN 1//snap
+
 #if defined(MAKE_SIM)
 const double D_RIGHT=9.00;
 const double D_LEFT=9.0;

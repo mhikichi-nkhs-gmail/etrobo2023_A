@@ -11,7 +11,6 @@ class VirCurveLine : public SimpleWalker
     public:
         VirCurveLine(Odometry *odo,
             SpeedControl *scon);
-        void run();
         void setParam(double vcurve[]);
         void setBias(double curve);
 

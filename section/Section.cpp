@@ -16,7 +16,7 @@ Section::Section()
 
 Section::~Section()
 {
-    msg_log("destruct Section");
+    msg_log("destruct Section\n");
     delete mWalker;
 }
 
@@ -25,7 +25,7 @@ bool Section::run()
 {
 
     //printf("check\n");
-    //åˆ¤å®?
+    //åˆ¤?¿½?
     if(mJudge->run())
     {
         //printf("check1\n");
@@ -33,7 +33,7 @@ bool Section::run()
     }
     
 
-    //èµ°æ³?
+    //èµ°?¿½?
     mWalker->run();
     
     return false;

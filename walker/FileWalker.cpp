@@ -8,10 +8,11 @@ FileWalker::FileWalker(Odometry *odo):
 
 }
 
-void FileWalker::run()
+void FileWalker::execStart()
 {
     printf("GO\n");
     //int check = mPro->writing();
+    //printf("check%f,,\n", check);
 }
 
 void FileWalker::init()
