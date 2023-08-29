@@ -10,7 +10,7 @@ class DoubleSection : public SectionManager
         DoubleSection();
         bool run();
         void course(int direct);
-        void bluemarker();
+        void bluemarker(int num2);
         void scircle(int direct);
 
         enum COURSNO{
@@ -41,6 +41,7 @@ class DoubleSection : public SectionManager
             END
         };
 
+
     protected:
         COURSNO NO;
 
@@ -52,7 +53,7 @@ class DoubleSection : public SectionManager
 
 
     private:
-
+        int num1;
         int len = 136;
 
         SecParam Lcourse[15] = {
