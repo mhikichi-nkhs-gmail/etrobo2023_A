@@ -7,7 +7,7 @@ TurnWalker::TurnWalker(Odometry *odo,
 
 }
 
-void TurnWalker::run()
+void TurnWalker::execStart()
 {
     //printf("Twalker_Doing\n");
     mCurrentLen = mLength->getValue();
@@ -18,7 +18,7 @@ void TurnWalker::run()
 
     setCommand((int)mTargetSpeed, (int)mTurn);
 
-    SimpleWalker::run();
+    SimpleWalker::execStart();
 }
 
 void TurnWalker::setParam(double power[])
@@ -43,7 +43,7 @@ double TurnWalker::calcTurn()
     return turn;
 }
 
-void TurnWalker::setBias(double curve) //ƒJ[ƒuƒpƒ‰ƒ€
+void TurnWalker::setBias(double curve) //ï¿½Jï¿½[ï¿½uï¿½pï¿½ï¿½ï¿½ï¿½
 {
     mBias = curve;
 }

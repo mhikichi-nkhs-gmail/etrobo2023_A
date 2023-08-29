@@ -17,12 +17,12 @@ SectionManager::~SectionManager()
     }
 }
 
-void SectionManager::set(SecParam* array) //?¿½?¿½Ô‚ï¿½?¿½?¬?¿½?¿½?¿½?¿½
+void SectionManager::set(SecParam* array) //?ï¿½ï¿½?ï¿½ï¿½Ô‚ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½
 {
 
     for(int i=0;; i++)
     {
-        //printf("é…å?—\n");
+        //printf("é…ï¿½?ï¿½\n");
         if(array[i].walker_no == Section::WANONE)
         {
             printf("breakSet\n");
@@ -42,7 +42,7 @@ void SectionManager::set(SecParam* array) //?¿½?¿½Ô‚ï¿½?¿½?¬?¿½?¿½?¿½?¿½
     }
 }
 
-bool SectionManager::run() //?¿½?¿½?¿½s?¿½?¿½?¿½?¿½
+bool SectionManager::run() //?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½s?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½
 {
     if(mSection[mSectionIdx]->run())
     {
@@ -50,6 +50,7 @@ bool SectionManager::run() //?¿½?¿½?¿½s?¿½?¿½?¿½?¿½
         if(mSectionIdx == mLastIdx)
         {
             printf("speed????????????\n");
+            reset();
             return true;
         }
         /*else
@@ -63,13 +64,13 @@ bool SectionManager::run() //?¿½?¿½?¿½s?¿½?¿½?¿½?¿½
     return false;
 }
 
-void SectionManager::addSection(Section *sec) //?¿½?¿½Ô’Ç‰ï¿½
+void SectionManager::addSection(Section *sec) //?ï¿½ï¿½?ï¿½ï¿½Ô’Ç‰ï¿½
 {
     mSection[mLastIdx++]=sec;
     printf("mLast %d\n",mLastIdx);
 }
 
-void SectionManager::reset() //?¿½?¿½?¿½?¿½?¿½?¿½
+void SectionManager::reset() //?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½
 {
     for(int i=0;i<mLastIdx;i++) {
         delete mSection[i];
