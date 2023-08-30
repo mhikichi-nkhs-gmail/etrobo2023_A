@@ -1,4 +1,4 @@
-#include <string>
+#include <string.h>
 #include "JudgeReception.h"
 
 double rtime;
@@ -28,7 +28,7 @@ bool JudgeReception::judgement()
 void JudgeReception::reception(char result[])
 {
     mresult = false;
-    if(result == "0"||result == "1"||result == "2"||result == "3")
+    if(strcmp(result,"0") == 0||strcmp(result,"1") == 0||strcmp(result,"2") == 0||strcmp(result,"3") == 0)
     {
         mresult = true;   
     }

@@ -180,8 +180,33 @@ JudgeReception * mJr;
 void judge_task(intptr_t unused) {
   char pipe[256];
   FILE * fp;
-  fp = fopen("SnapPipe2", "r");
-  fgets(pipe, 1, fp);
+  switch (cnt)
+  {
+  case 0:
+    fp = fopen("BlockPipe2","r");
+    fgets(pipe, 4, fp);
+    break;
+  case 1:
+    fp = fopen("SnapPipe2", "r");
+    fgets(pipe, 2, fp);
+    break;
+  case 2:
+    fp = fopen("SnapPipe2", "r");
+    fgets(pipe, 2, fp);
+    break;
+  case 3:
+    fp = fopen("SnapPipe2", "r");
+    fgets(pipe, 2, fp);
+    break;
+  case 4:
+    fp = fopen("SnapPipe2", "r");
+    fgets(pipe, 2, fp);
+    break;
+  case 5:
+    fp = fopen("SnapPipe2", "r");
+    fgets(pipe, 2, fp);
+    break;
+  }
   mJr->reception(pipe);
   
   //読み込んだ1行を画面に出力する
