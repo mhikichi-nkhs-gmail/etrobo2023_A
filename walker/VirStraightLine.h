@@ -5,6 +5,7 @@
 #include "PID.h"
 #include "Odometry.h"
 #include "SpeedControl.h"
+#include "Judge.h"
 
 class VirStraightLine : public SimpleWalker 
 {
