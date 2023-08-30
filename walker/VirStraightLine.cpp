@@ -11,7 +11,6 @@ VirStraightLine::VirStraightLine(Odometry *odo,
 void VirStraightLine::execStart()
 {
     //printf("VirStraight\n");
-    targetPoint();
     calcSenoer();
     val1 = targetLine();
     mTurn = calcTurn();
@@ -61,6 +60,7 @@ void VirStraightLine::init()
         mSetAngle = mSetAngle + ((mAngle->getValue()) * -1);
         //printf("Angle%f,,\n",(mAngle->getValue()));
     }
+    targetPoint();
 }
 
 void VirStraightLine::targetPoint() //is•ûŒü
