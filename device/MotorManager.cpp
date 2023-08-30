@@ -15,11 +15,12 @@ void MotorManager::setPwm(int left,int right)
 	int setright;
 	current_lmotor = mLeftMotor->getCount();
 	current_rmotor = mRightMotor->getCount();
+	/*
 	if(left != 0)
 	{
 		if(current_lmotor == prev_lmotor)
 		{
-			if(mlCount >= 10)
+			if(mlCount >= 300)
 			{
 				if(current_lmotor >= 0)
 				{
@@ -46,7 +47,7 @@ void MotorManager::setPwm(int left,int right)
 	{
 		if(current_rmotor == prev_rmotor)
 		{
-			if(mrCount >= 10)
+			if(mrCount >= 300)
 			{
 				if(current_rmotor >= 0)
 				{
@@ -68,7 +69,9 @@ void MotorManager::setPwm(int left,int right)
 			mrCount = 0.0;
 		}
 
-		if(mlCount == 5)
+	}
+
+	if(mlCount == 300)
 		{
 			mLeftMotor->setPWM(setleft);
 		}
@@ -77,21 +80,20 @@ void MotorManager::setPwm(int left,int right)
 			mLeftMotor->setPWM(left);
 		}
 
-		if(mrCount == 5)
+		if(mrCount == 300)
 		{
-			mLeftMotor->setPWM(setright);
+			mRightMotor->setPWM(setright);
 		}
 		else
 		{
-			mLeftMotor->setPWM(right);
+			mRightMotor->setPWM(right);
 		}
 		prev_lmotor = current_lmotor;
 		prev_rmotor = current_rmotor;
-		mLeftMotor->setPWM(left);
-		mRightMotor->setPWM(right);
-	}
+		*/
+	mLeftMotor->setPWM(left);
+	mRightMotor->setPWM(right);
 }
-
 /*
 void MotorManager::init()
 {
