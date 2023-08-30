@@ -2,9 +2,6 @@
 
 double time;
 bool mresult;
-String pipeName;
-char array[4];
-int loopCount;
 int limtime;
 
 JudgeReception::JudgeReception()
@@ -20,7 +17,7 @@ void JudgeReception::init()
 
 bool JudgeReception::judgement()
 {
-    reception(result[]);
+    measureTime();
     if(rtime > limtime || mresult == true)
     {
         return true;
@@ -28,18 +25,12 @@ bool JudgeReception::judgement()
     return false;
 }
 
-void JudgeReception::reception(String result)
+void JudgeReception::reception(char result[])
 {
-    loopCount = 0;
     mresult = false;
-    while(loopCount < size(array))
+    if(result=='1' || result=='2' || result=='3' || result=='4')
     {
-        if(result == array[loopCount])
-        {
-            mresult = true;
-            break;
-        }
-        loopCount = loopCount + 1:
+        mresult = true;
     }
     
 }
@@ -52,13 +43,12 @@ void JudgeReception::setParam(double recn[])
 {
 
     limtime = recn[1];
-    FILE * fp;
-    switch(recn[0])
+    if(recn[0]==0.0)
     {
-        //fp = fopen("SnapPipe2", "r");
+        char pipeName = "SnapPipe2";
     }
     else
     {     
-        //fp = fopen("BlockPipe2", "r");
+        char pipeName = "BlockPipe2";
     }
 }
