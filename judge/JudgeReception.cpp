@@ -28,10 +28,11 @@ bool JudgeReception::judgement()
 void JudgeReception::reception(char result[])
 {
     mresult = false;
-    if(result=='1' || result=='2' || result=='3' || result=='4')
+    if(strcmp(result,'1') == 0)
     {
         mresult = true;
     }
+    
     
 }
 void JudgeReception::measureTime()

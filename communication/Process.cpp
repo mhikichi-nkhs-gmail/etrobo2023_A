@@ -12,22 +12,7 @@ void Process::run()
 
 void Process::load1(char pass[1024]) //snap
 {
-<<<<<<< Updated upstream
-    FILE * fp;
-    fp = fopen("SnapPipe2", "r");
-
-    //	NULLポインタの終端までファイルから文字を1行ずつ読み込む
-	while (fgets(pass, 1024, fp) != NULL)
-	{
-		//	読み込んだ1行を画面に出力する
-		printf("%s", pass);
-	}
-
-	fclose(fp);
-
-=======
        
->>>>>>> Stashed changes
 }
 
 void Process::load2(char pass[1024]) //block
