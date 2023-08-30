@@ -8,20 +8,7 @@ class SpeedSectionManager : public SectionManager {
         SpeedSectionManager();
         void course(int direct);
 
-        /*
-        enum Course{
-            RCOURSE,
-            LCOURSE
-        };
-        */
-        //Course mCourse;
-
-
-        enum Course {
-            LCOURSE,
-            RCOURSE
-        };
-
+        
     protected:
 #if defined(MAKE_RIGHT)
     const int _EDGE = LineTracer::LEFTEDGE;
@@ -29,15 +16,7 @@ class SpeedSectionManager : public SectionManager {
     const int _EDGE = LineTracer::RIGHTEDGE;
 #endif
 
-    Course mCourse;
-
-        Course mCourse;
-#if defined(MAKE_RIGHT)
-    const int _EDGE = LineTracer::LEFTEDGE;
-#else
-    const int _EDGE = LineTracer::RIGHTEDGE;
-#endif
-
+    
 
 
     private:
@@ -53,6 +32,7 @@ class SpeedSectionManager : public SectionManager {
 
         SecParam Rcourse[10] = {
             {Section::TWALKER,{-90},Section::TURNANGLE,{90, Section::FLNONE}, Section::EMNONE,{}},/*RESETANG*/
+            //{Section::TWALKER,{-90},Section::TURNANGLE,{90, Section::RESETANG}, Section::EMNONE,{}},/*RESETANG*/
             {Section::VIRSLINE,{0, 90, 0, 25, 2.5 ,2.0},Section::LENGTH,{100, Section::RESETLEN}, Section::EMNONE,{}},/*RESETLEN*/
             {Section::TRACER,{100, 0.05, 43, 2.5, 5.0 ,0 , 0, _EDGE},Section::LENGTH,{290, Section::FLNONE}, Section::EMNONE,{}},
             {Section::TRACER,{80, 0.1, 43, 2.5, 5.0 ,-28 , 0, _EDGE},Section::TURNANGLE,{78, Section::FLNONE}, Section::EMNONE,{}},

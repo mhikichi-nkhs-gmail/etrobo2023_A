@@ -31,7 +31,7 @@ void VirStraightLine::setParam(double vstraight[]) //速度,角度,0,P,I,D
 {
     //printf("Angle%f,,\n",(mAngle->getValue()));
     mTargetSpeed = vstraight[0];
-    mSetAngle = vstraight[1] + Judge::MEMOANG;
+    mSetAngle = vstraight[1];
     mTarget = vstraight[2];
     mPFactor = vstraight[3];
     mIFactor = vstraight[4];
@@ -50,16 +50,19 @@ void VirStraightLine::setBias(double curve) //カーブパラム
 
 void VirStraightLine::init()
 {
+    mSetAngle = mSetAngle + Judge::MEMOANG;
+    /*
     if(mTargetSpeed > 0)
     {
-        mSetAngle = mSetAngle + (mAngle->getValue());
+        mSetAngle = mSetAngle + Judge::MEMOANG;//(mAngle->getValue());
         //printf("Angle%f,,\n",(mAngle->getValue()));
     }
     else
     {
-        mSetAngle = mSetAngle + ((mAngle->getValue()) * -1);
+        mSetAngle = mSetAngle + Judge::MEMOANG;//((mAngle->getValue()) * -1);
         //printf("Angle%f,,\n",(mAngle->getValue()));
     }
+    */
     targetPoint();
 }
 

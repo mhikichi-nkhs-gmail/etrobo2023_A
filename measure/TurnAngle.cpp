@@ -9,7 +9,7 @@ TurnAngle::TurnAngle()
 
 double TurnAngle::getValue()
 {
-    //printf("angle%f\n", mAngleDeg?mTurnAngle*180/M_PI:mTurnAngle); //rad -> “x
+    printf("angle%f\n", mAngleDeg?mTurnAngle*180/M_PI:mTurnAngle); //rad -> “x
     return mAngleDeg?mTurnAngle*180/M_PI:mTurnAngle;
 }
 

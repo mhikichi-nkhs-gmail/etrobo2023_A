@@ -3,8 +3,6 @@
 
 extern Motor *gLeftWheel;
 extern Motor *gRightWheel;
-double mlCount;
-double mrCount;
 
 MotorManager::MotorManager(Motor *left, Motor *right):
 	mLeftMotor(left),
@@ -13,6 +11,8 @@ MotorManager::MotorManager(Motor *left, Motor *right):
 }
 void MotorManager::setPwm(int left,int right)
 {
+	int setleft;
+	int setright;
 	current_lmotor = mLeftMotor->getCount();
 	current_rmotor = mRightMotor->getCount();
 	if(left != 0)
@@ -23,11 +23,11 @@ void MotorManager::setPwm(int left,int right)
 			{
 				if(current_lmotor >= 0)
 				{
-					mLeftMotor->setPWM(90);
+					setleft = 70;
 				}
 				else
 				{
-					mLeftMotor->setPWM(-90);
+					setleft = -70;
 				}
 			} 
 			else
@@ -50,11 +50,11 @@ void MotorManager::setPwm(int left,int right)
 			{
 				if(current_rmotor >= 0)
 				{
-					mRightMotor->setPWM(90);
+					setright = 70;
 				}
 				else
 				{
-					mRightMotor->setPWM(-90);
+					setright = -70;
 				}
 			} 
 			else
@@ -68,6 +68,23 @@ void MotorManager::setPwm(int left,int right)
 			mrCount = 0.0;
 		}
 
+		if(mlCount == 5)
+		{
+			mLeftMotor->setPWM(setleft);
+		}
+		else
+		{
+			mLeftMotor->setPWM(left);
+		}
+
+		if(mrCount == 5)
+		{
+			mLeftMotor->setPWM(setright);
+		}
+		else
+		{
+			mLeftMotor->setPWM(right);
+		}
 		prev_lmotor = current_lmotor;
 		prev_rmotor = current_rmotor;
 		mLeftMotor->setPWM(left);

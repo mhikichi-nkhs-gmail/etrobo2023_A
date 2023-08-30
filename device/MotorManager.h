@@ -26,6 +26,9 @@ class MotorManager
 		int32_t prev_lmotor = 0;
 		int32_t prev_rmotor = 0;
 
+		double mlCount = 0;
+		double mrCount = 0;
+
 };
 
 #endif
