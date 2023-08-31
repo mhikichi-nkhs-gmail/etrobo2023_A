@@ -70,7 +70,6 @@ void Scene::execCalibration()
         printf("left\n");
         mSsm->course(0);
         mDs->course(0);
-        mDs->scircle(0);
         gColor->setRGB();
         mState=START;
     }
@@ -80,7 +79,6 @@ void Scene::execCalibration()
         printf("right\n");
         mSsm->course(1);
         mDs->course(1);
-        mDs->scircle(0);
         gColor->setRGB();
         mState=START;
     }
