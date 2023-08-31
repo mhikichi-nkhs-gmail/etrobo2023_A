@@ -179,7 +179,6 @@ JudgeReception * mJr;
 
 void judge_task(intptr_t unused) {
   char pipe[256];
-  mJr = new JudgeReception();
   FILE * fp;
   switch (cnt)
   {

@@ -26,7 +26,7 @@ bool Section::run()
 {
 
     //printf("check\n");
-    //åˆ¤?¿½?
+    //åˆ¤?ï¿½ï¿½?
     if(mJudge->run())
     {
         //printf("check1\n");
@@ -34,7 +34,7 @@ bool Section::run()
     }
     
 
-    //èµ°?¿½?
+    //èµ°?ï¿½ï¿½?
     mWalker->run();
     
     return false;
