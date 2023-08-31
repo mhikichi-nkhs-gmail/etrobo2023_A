@@ -30,6 +30,7 @@ APPL_CXXOBJS += \
 	JudgeTime.o \
 	JudgeBrightness.o \
 	JudgeTurnAngle.o \
+	JudgeReception.o \
 	XPosition.o \
 	YPosition.o \
 	TurnWalker.o \
