@@ -138,7 +138,7 @@ void polling_task(intptr_t unused) {
     //sprintf(buf,"len , bri,H,S r,g,b, turn, v : %3.3f,  %7.4f,  %5.1f, %3.2f, %d,%d,%d  , %4.2f, %4.2f \n",len,br,h,s,  rgb.r, rgb.g,rgb.b ,turn,v);
     //msg_log(buf);
     //printf("h,s %f,,%f\n", h,s);
-    //�?:138, �?色:39, 赤:353, �?:214
+    //�?:138, �?色:39, 赤:353, �?:214
 
     ext_tsk();
 }
@@ -160,7 +160,7 @@ void tracer_task(intptr_t unused) {
 #endif
     else{
 
-    // とりあえずここで、アー�?の固定。設計に基づ�?て変えるべ�?
+    // とりあえずここで、アー�?の固定。設計に基づ�?て変えるべ�?
     int arm_cnt = gArm->getCount();
    // syslog(LOG_NOTICE,"%d",arm_cnt);
     int diff = -50 - arm_cnt;
@@ -179,6 +179,7 @@ JudgeReception * mJr;
 
 void judge_task(intptr_t unused) {
   char pipe[256];
+  mJr = new JudgeReception();
   FILE * fp;
   switch (cnt)
   {
@@ -197,7 +198,7 @@ void judge_task(intptr_t unused) {
   }
   mJr->reception(pipe);
   
-  //読み込んだ1行を画面に出力す�?
+  //読み込んだ1行を画面に出力す�?
   printf("%s", pipe);
   
   fclose(fp);
