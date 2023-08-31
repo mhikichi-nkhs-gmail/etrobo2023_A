@@ -1,5 +1,5 @@
 #include "JudgeReception.h"
-#include "string.h"
+#include <string.h>
 
 double rtime;
 bool mresult;
@@ -30,7 +30,7 @@ bool JudgeReception::judgement()
 void JudgeReception::reception(char result[])
 {
     mresult = false;
-    if(strcmp(result,'1') == 0)
+    if(strcmp(result,"1") == 0)
     {
         mresult = true;
     }
