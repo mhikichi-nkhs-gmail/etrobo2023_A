@@ -24,26 +24,26 @@ bool BlockSection::run()
     default:
         break;
     }*/
-    if(now_position_ == -1)
+    if(now_position == -1)
     {
-        set(In_Block_);
-        now_position_=position_[pattern_][0];
+        set(In_Block);
+        now_position=position[pattern][0];
     }
     else
     {
-        if(red_position_ == now_position_)
+        if(red_position == now_position)
         {
 
         }
         else
         {
-            if(blue_position1_ == now_position_)
+            if(blue_position1 == now_position)
             {
 
             }
             else
             {
-                if(blue_position2_ == now_position_)
+                if(blue_position2 == now_position)
                 {
 
                 }
@@ -58,51 +58,51 @@ void BlockSection::course(int direct)
 {
     if(direct == 0)
     {
-        course_flag_ = 1;
+        course_flag = 1;
     }
     else
     {
-        course_flag_ = -1;
+        course_flag = -1;
     }
 }
 
-void BlockSection::next_circle__(double TA,double H_,double S_,int f_)
+void BlockSection::next_circle(double TA,double H,double S,int f)
 {
-    turn_angle_=TA;
-    hh_=H_;
-    ss_=S_;
+    turn_angle=TA;
+    hh=H;
+    ss=S;
     if(TA==0)
     {
-        in_length_=2.5;
-        out_length_=2.5;
+        in_length=2.5;
+        out_length=2.5;
     }
     else
     {
-        switch(position_edge_[pattern_][now_position_])
+        switch(position_edge[pattern][now_position])
         {
             case 1://rr
-                in_length_=2.5;
-                out_length_=2.5;
+                in_length=2.5;
+                out_length=2.5;
                 break;
             case 2://rl
-                in_length_=2.5;
-                out_length_=2.5;
+                in_length=2.5;
+                out_length=2.5;
                 break;
             case -2://lr
-                in_length_=2.5;
-                out_length_=2.5;
+                in_length=2.5;
+                out_length=2.5;
                 break;
             case -1://ll
-                in_length_=2.5;
-                out_length_=2.5;
+                in_length=2.5;
+                out_length=2.5;
                 break;
         }
     }
     if(SectionManager::run())
     {
-        set(Next_Circle_);
-        count_++;
-        now_position_=position_[pattern_][count_];
+        set(Next_Circle);
+        count++;
+        now_position=position[pattern][count];
         
     }
 }
