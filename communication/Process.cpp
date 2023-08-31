@@ -13,13 +13,6 @@ void Process::run()
     
 }
 
-void Process::load(int pass) //snap
-{
-    
-       
-	
-}
-
 void Process::writing1(int pass) //snap
 {
     FILE * fp;

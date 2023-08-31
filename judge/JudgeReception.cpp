@@ -13,6 +13,7 @@ JudgeReception::JudgeReception()
 void JudgeReception::init()
 {
     rtime = 0.0;
+    mresult = false;
     act_tsk(JUDGE_TASK);
 }
 

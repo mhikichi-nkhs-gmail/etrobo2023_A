@@ -18,23 +18,15 @@ void FileWalker::init()
 {
     printf("a\n");
     switch(mNo){
-        case SNAP1:
+        case SNAP:
             printf("snap1\n");
             mPro->writing1(mComment);
             break;
-        case SNAP2:
-            printf("snap2\n");
-            mPro->load(mComment);
-            break;
-        case BLOCK1:
+        case BLOCK:
             printf("block1\n");
             mPro->writing2(mComment);
             break;
-        case BLOCK2:
-            printf("block2\n");
-            mPro->load(mComment);
-            break;
-        case IOT1:
+        case IOT:
             printf("iot1\n");
             mPro->writing3(mComment);
             break;

@@ -184,25 +184,13 @@ void judge_task(intptr_t unused) {
   {
   case 0:
     fp = fopen("BlockPipe2","r");
-    fgets(pipe, 4, fp);
+    fgets(pipe, 9, fp);
     break;
   case 1:
-    fp = fopen("SnapPipe2", "r");
+    fp = fopen("BlockPipe2","r");
     fgets(pipe, 2, fp);
     break;
-  case 2:
-    fp = fopen("SnapPipe2", "r");
-    fgets(pipe, 2, fp);
-    break;
-  case 3:
-    fp = fopen("SnapPipe2", "r");
-    fgets(pipe, 2, fp);
-    break;
-  case 4:
-    fp = fopen("SnapPipe2", "r");
-    fgets(pipe, 2, fp);
-    break;
-  case 5:
+  default:
     fp = fopen("SnapPipe2", "r");
     fgets(pipe, 2, fp);
     break;
