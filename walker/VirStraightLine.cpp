@@ -81,15 +81,9 @@ void VirStraightLine::targetPoint() //?申i?申s?申?申?申?申
 {
     mx = mXpos->getValue();
     my = mYpos->getValue();
-<<<<<<< HEAD
-    double angle1 = mSetAngle*(M_PI/180); //+ (mAngle->getValue());
-    printf("mSetAngle,,%f\n",mSetAngle*(M_PI/180) );
-    printf("mAngle,,%f\n",(mAngle->getValue())*(M_PI/180));
-=======
     double angle1 = mSetAngle*(M_PI/180);//(mAngle->getValue())*(M_PI/180);
     //printf("mSetAngle,,%f\n",mSetAngle*(M_PI/180) );
     //printf("mAngle,,%f\n",(mAngle->getValue())*(M_PI/180));
->>>>>>> 1e036aab8c37fbf4043965336119f820034eb5b4
     mtx = cos(angle1) + mx; 
     mty = sin(angle1) + my;
     //printf("mx,,,%f\n",mx);
