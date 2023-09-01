@@ -83,7 +83,7 @@ void Odometry::calc()
 
 	mLength->update(sumlen);
 	mTurnAngle->update(th);
-	printf("mTurnAngle%f,,\n", th);
+	//printf("mTurnAngle%f,,\n", th);
 	mXPosition->update(x);
 	mYposition->update(y);
 
