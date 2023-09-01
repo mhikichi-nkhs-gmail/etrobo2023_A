@@ -82,7 +82,7 @@ class BlockSection : public SectionManager
             {Section::TWALKER,{60,0},Section::TURNANGLE,{turn_angle_,Section::RESETANG},Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
-        SecParam sisoukai[]={
+        SecParam sisoukai[11]={
             {Section::TWALKER,{60,0},Section::TURNANGLE,{course_flag*-90,Section::RESETANG},Section::EMNONE,{}},
             {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2},Section::LENGTH,{55, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TRACER,{60, 0.05, 48, 2.5, 5.0 ,0 , 0, _OPPOSITION_EDGE},Section::COLOR,{hh,ss, Section::RESETLEN}, Section::EMNONE,{}},
@@ -92,6 +92,8 @@ class BlockSection : public SectionManager
             {Section::TRACER,{60, 0.05, 48, 2.5, 5.0 ,0 , 0, _OPPOSITION_EDGE},Section::COLOR,{hh,ss, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2},Section::LENGTH,{60, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TWALKER,{60,0},Section::TURNANGLE,{course_flag*90,Section::RESETANG},Section::EMNONE,{}},
+            {Section::TRACER,{60, 0.05, 48, 2.5, 5.0 ,0 , 0, _OPPOSITION_EDGE},Section::COLOR,{hh,ss, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}
 
 
         };
