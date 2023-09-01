@@ -34,7 +34,7 @@ double VirStraightLine::calcTurn()
     return val2_turn;
 }
 
-void VirStraightLine::setParam(double vstraight[]) //ï¿½ï¿½ï¿½x,ï¿½pï¿½x,0,P,I,D
+void VirStraightLine::setParam(double vstraight[]) //?¿½?¿½?¿½x,?¿½p?¿½x,0,P,I,D
 {
     //printf("Angle%f,,\n",(mAngle->getValue()));
     mTargetSpeed = vstraight[0];
@@ -50,7 +50,7 @@ void VirStraightLine::setParam(double vstraight[]) //ï¿½ï¿½ï¿½x,ï¿½pï¿½x,0,P,I,D
     mPid->setKd(mDFactor);
 }
 
-void VirStraightLine::setBias(double curve) //ï¿½Jï¿½[ï¿½uï¿½pï¿½ï¿½ï¿½ï¿½
+void VirStraightLine::setBias(double curve) //?¿½J?¿½[?¿½u?¿½p?¿½?¿½?¿½?¿½
 {
     mBias = curve;
 }
@@ -77,24 +77,30 @@ void VirStraightLine::init()
     targetPoint();
 }
 
-void VirStraightLine::targetPoint() //ï¿½iï¿½sï¿½ï¿½ï¿½ï¿½
+void VirStraightLine::targetPoint() //?¿½i?¿½s?¿½?¿½?¿½?¿½
 {
     mx = mXpos->getValue();
     my = mYpos->getValue();
+<<<<<<< HEAD
     double angle1 = mSetAngle*(M_PI/180); //+ (mAngle->getValue());
     printf("mSetAngle,,%f\n",mSetAngle*(M_PI/180) );
     printf("mAngle,,%f\n",(mAngle->getValue())*(M_PI/180));
+=======
+    double angle1 = mSetAngle*(M_PI/180);//(mAngle->getValue())*(M_PI/180);
+    //printf("mSetAngle,,%f\n",mSetAngle*(M_PI/180) );
+    //printf("mAngle,,%f\n",(mAngle->getValue())*(M_PI/180));
+>>>>>>> 1e036aab8c37fbf4043965336119f820034eb5b4
     mtx = cos(angle1) + mx; 
     mty = sin(angle1) + my;
-    printf("mx,,,%f\n",mx);
-    printf("my,,,%f\n",my);
-    printf("angle1,,%f\n",angle1);
-    printf("mtx,,%f\n",mtx);
-    printf("mty,,%f\n",mty);
+    //printf("mx,,,%f\n",mx);
+    //printf("my,,,%f\n",my);
+    //printf("angle1,,%f\n",angle1);
+    //printf("mtx,,%f\n",mtx);
+    //printf("mty,,%f\n",mty);
 
 }
 
-void VirStraightLine::calcSenoer() //ï¿½Zï¿½ï¿½ï¿½Tï¿½[ï¿½Ê’u
+void VirStraightLine::calcSenoer() //?¿½Z?¿½?¿½?¿½T?¿½[?¿½Ê’u
 {
     double angle2 = (mAngle->getValue())*(M_PI/180);
     maddsensor = 5;
