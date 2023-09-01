@@ -31,6 +31,8 @@ void FileWalker::init()
             printf("iot1\n");
             //mPro->writing3(mComment);
             break;
+        default:
+            break;
     }
     //mPro->writing();
 }
