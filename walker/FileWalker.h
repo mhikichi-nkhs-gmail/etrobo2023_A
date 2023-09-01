@@ -13,11 +13,9 @@ public:
 
 protected:
     enum FILE_NO{
-        SNAP1,
-        SNAP2,
-        BLOCK1,
-        BLOCK2,
-        IOT1
+        SNAP,
+        BLOCK,
+        IOT
     };
 
 private:
