@@ -19,8 +19,7 @@ class Judge
         virtual void setParam(double param[]);
         virtual void init();
         virtual bool judgement();
-        static double MEMOLEN;
-        static double MEMOANG;
+
 
     protected:
 
