@@ -10,7 +10,7 @@ class JudgeReception : public Judge
         JudgeReception();
         void init();
         bool judgement();
-        void reception(String result);
+        void reception(char result[]);
         void measureTime();
         void setParam(double recn[]);
         

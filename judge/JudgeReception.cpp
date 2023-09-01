@@ -1,6 +1,7 @@
 #include "JudgeReception.h"
+#include <string.h>
 
-double time;
+double rtime;
 bool mresult;
 int limtime;
 
@@ -12,6 +13,7 @@ JudgeReception::JudgeReception()
 void JudgeReception::init()
 {
     rtime = 0.0;
+    mresult = false;
     act_tsk(JUDGE_TASK);
 }
 
@@ -28,7 +30,7 @@ bool JudgeReception::judgement()
 void JudgeReception::reception(char result[])
 {
     mresult = false;
-    if(strcmp(result,'1') == 0)
+    if(strcmp(result,"1") == 0)
     {
         mresult = true;
     }
@@ -37,7 +39,7 @@ void JudgeReception::reception(char result[])
 }
 void JudgeReception::measureTime()
 {
-    time = time + 1.0;
+    rtime = rtime + 1.0;
 }
 
 void JudgeReception::setParam(double recn[])
@@ -46,10 +48,10 @@ void JudgeReception::setParam(double recn[])
     limtime = recn[1];
     if(recn[0]==0.0)
     {
-        char pipeName = "SnapPipe2";
+        //char pipeName = "SnapPipe2";
     }
     else
     {     
-        char pipeName = "BlockPipe2";
+        //char pipeName = "BlockPipe2";
     }
 }

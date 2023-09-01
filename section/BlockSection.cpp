@@ -57,11 +57,11 @@ void BlockSection::course(int direct)
 {
     if(direct == 0)
     {
-        course_flag = 1;
+        course_flag_ = 1;
     }
     else
     {
-        course_flag = -1;
+        course_flag_ = -1;
     }
 }
 
@@ -72,16 +72,16 @@ void BlockSection::next_circle(double TA,double H,double S,int e)
     ss=S;
     if(TA==0)
     {
-        in_length=2.5;
-        out_length=2.5;
+        in_length_=2.5;
+        out_length_=2.5;
     }
     else
     {
         switch(position_edge[pattern-1][now_position-1])
         {
             case 1://rr
-                in_length=2.5;
-                out_length=2.5;
+                in_length_=2.5;
+                out_length_=2.5;
                 break;
             case 2://rl
                 in_length=2.5;

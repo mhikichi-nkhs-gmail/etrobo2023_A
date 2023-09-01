@@ -19,10 +19,10 @@ class BlockSection : public SectionManager
 
 #if defined(MAKE_RIGHT)
     const int _EDGE = LineTracer::LEFTEDGE;
-    const int _OPPOSITION_EDGE = LineTracer::RIGHTEDGE;
+    //const int _OPPOSITION_EDGE = LineTracer::RIGHTEDGE;
 #else
     const int _EDGE = LineTracer::RIGHTEDGE;
-    const int _OPPOSITION_EDGE = LineTracer::LEFTEDGE;
+    //const int _OPPOSITION_EDGE = LineTracer::LEFTEDGE;
 #endif
 
 
@@ -55,7 +55,7 @@ class BlockSection : public SectionManager
         double in_length;
         double out_length;
 
-        SecParam In_Block[15] = {
+        SecParam In_Block_[15] = {
             {Section::WALKER,{0,0},Section::TIME,{10, Section::FLNONE}, Section::EMNONE,{}},
             {Section::VIRSLINE,{55, -25, 0, 28, 2.5 ,1.2},Section::LENGTH,{2.5, Section::RESETLEN}, Section::EMNONE,{}},
             
