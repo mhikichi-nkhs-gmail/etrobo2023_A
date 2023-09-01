@@ -28,6 +28,9 @@ class Section {
         Judge *selectJudge(int no);
         //EmgJudge *selectEmgJudge(int no);
 
+        static double MEMOLEN;
+        static double MEMOANG;
+
         enum WALKER_NO{
             WALKER,
             TRACER,

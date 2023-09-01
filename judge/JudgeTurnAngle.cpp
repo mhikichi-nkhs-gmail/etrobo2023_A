@@ -15,11 +15,11 @@ void JudgeTurnAngle::init()
 {
     if(memoAng == Section::RESETANG)
     {
-        Judge::MEMOANG = mTurnAngle->getValue();
+        Section::MEMOANG = mTurnAngle->getValue();
         //printf("MEMOANG,,%f\n",Judge::MEMOANG);
     }
     mdirect = true;
-    mTurnkids = mTurnkids + Judge::MEMOANG;
+    mTurnkids = mTurnkids + Section::MEMOANG;
 
     if(mTurnkids < mTurnAngle->getValue())
     {

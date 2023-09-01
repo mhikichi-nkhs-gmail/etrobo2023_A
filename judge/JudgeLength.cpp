@@ -17,10 +17,10 @@ void JudgeLength::init()
     {
         printf("check\n");
 
-        Judge::MEMOLEN = mLength->getValue();
+        Section::MEMOLEN = mLength->getValue();
     }
     mdirect = true;
-    mLengthkids = mLengthkids + MEMOLEN;
+    mLengthkids = mLengthkids + Section::MEMOLEN;
 
     //printf("mdirect%d\n",mdirect);
     //printf("mlengthkids%f\n",mLengthkids);

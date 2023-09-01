@@ -57,9 +57,11 @@ void VirStraightLine::setBias(double curve) //�J�[�u�p����
 
 void VirStraightLine::init()
 {
-    printf("mSetAngle--,,%f\n,", mSetAngle);
-    mSetAngle = mSetAngle + Judge::MEMOANG;
-    printf("mSetAngle,,%f\n,", mSetAngle);
+    //printf("mSetAngle--,,%f\n,", mSetAngle);
+    mSetAngle = mSetAngle + Section::MEMOANG;
+    //printf("mSetAngle,,%f\n,", mSetAngle);
+
+    //printf("MEMOANG,,%f\n,", Section::MEMOANG);
     /*
     if(mTargetSpeed > 0)
     {
@@ -79,7 +81,7 @@ void VirStraightLine::targetPoint() //�i�s����
 {
     mx = mXpos->getValue();
     my = mYpos->getValue();
-    double angle1 = mSetAngle*(M_PI/180);// + (mAngle->getValue())*(M_PI/180);
+    double angle1 = mSetAngle*(M_PI/180); //+ (mAngle->getValue());
     printf("mSetAngle,,%f\n",mSetAngle*(M_PI/180) );
     printf("mAngle,,%f\n",(mAngle->getValue())*(M_PI/180));
     mtx = cos(angle1) + mx; 
@@ -99,7 +101,7 @@ void VirStraightLine::calcSenoer() //�Z���T�[�ʒu
 
     if(mTargetSpeed < 0)
     {   
-        angle2 = angle2 * -1;
+        //angle2 = angle2 * -1;
         maddsensor = maddsensor * -1;
     }
 
@@ -149,6 +151,7 @@ double VirStraightLine::targetLine()
     printf("msx,,%f\n",msx);
     printf("msy,,%f\n",msy);
     printf("mLine,,%f\n", mLine);
+    printf("MEMOANG,,%f\n,", Section::MEMOANG);
 
 
     return mLine;

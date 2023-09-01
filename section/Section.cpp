@@ -10,6 +10,9 @@ extern Odometry *gOdo;
 extern SpeedControl *gSpeed;
 extern Judge *mJudge;
 
+double Section::MEMOLEN = 0;
+double Section::MEMOANG = 0;
+
 Section::Section()
 {
 }
@@ -25,7 +28,7 @@ bool Section::run()
 {
 
     //printf("check\n");
-    //åˆ¤?¿½?
+    //åˆ¤?ï¿½ï¿½?
     if(mJudge->run())
     {
         //printf("check1\n");
@@ -33,7 +36,7 @@ bool Section::run()
     }
     
 
-    //èµ°?¿½?
+    //èµ°?ï¿½ï¿½?
     mWalker->run();
     
     return false;
