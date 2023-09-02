@@ -159,11 +159,11 @@ void DoubleSection::bluemarker(int num2/*char pass*/)
         char pass = '0';
         if(pass == '0')
         {
-            if(num2 < 4)
+            if(num2 < 3)
             {
                 NO = SET_LNEXT_POINT;
             }
-            if(num2 < 8)
+            if(num2 != 7)
             {
                 NO = SET_RNEXT_POINT;
             }
@@ -176,7 +176,7 @@ void DoubleSection::scircle(int direct)
 {
     if(direct == 0)
     {
-        printf("left\n");
+        printf("smallleft\n");
         set(SLcourse);
     }
     else
