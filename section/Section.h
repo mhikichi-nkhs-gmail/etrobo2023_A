@@ -8,7 +8,6 @@
 #include "TurnWalker.h"
 #include "FileWalker.h"
 
-
 #include "Walker.h"
 #include "Judge.h"
 #include "JudgeLength.h"
@@ -17,6 +16,7 @@
 #include "JudgeTime.h"
 #include "JudgeTurnAngle.h"
 #include "JudgeReception.h"
+
 
 
 class Section {

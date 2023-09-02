@@ -58,7 +58,7 @@ class DoubleSection : public SectionManager
         int len = 136;
 
         SecParam Lcourse[15] = {
-            {Section::VIRSLINE,{55, -15, 0, 28, 2.5 ,1.2},Section::TURNANGLE,{-15, Section::RESETANG}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{55, -20, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{15, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TRACER,{60, 0.05, 48, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{130, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TRACER,{60, 0.05, 48, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::COLOR,{210,0.1, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{10, Section::FLNONE}, Section::EMNONE,{}},

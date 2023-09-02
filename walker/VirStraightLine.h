@@ -19,6 +19,7 @@ class VirStraightLine : public SimpleWalker
 
         void execStart();
 
+    
     protected:
 
     private:
@@ -26,6 +27,8 @@ class VirStraightLine : public SimpleWalker
         void calcSenoer();
         void targetPoint();
         double targetLine();
+
+        int resetAng;
 
         double mx;
         double my;
@@ -47,7 +50,6 @@ class VirStraightLine : public SimpleWalker
         
         double mCurve;
         double mBias;  
-     
 };
 
 #endif  
