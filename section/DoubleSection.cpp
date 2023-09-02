@@ -53,6 +53,9 @@ bool DoubleSection::run()
     case LFINISHE4:
         bluemarker(8);
         break;    
+    case SLCOURSE:
+        bluemarker(8);
+        break;
     case SET_RBLUE_MARKER:
         set(Rcourse);
         NO = RBLUE_MARKER;
@@ -95,6 +98,9 @@ bool DoubleSection::run()
     case RFINISHE4:
         bluemarker(8);
         break;    
+    case SRCOURSE:
+        bluemarker(8);
+        break;        
     case END:
         printf("END\n");
         return true;
@@ -163,7 +169,7 @@ void DoubleSection::bluemarker(int num2/*char pass*/)
             {
                 NO = SET_LNEXT_POINT;
             }
-            if(num2 != 7)
+            if(num2 <= 7)
             {
                 NO = SET_RNEXT_POINT;
             }
@@ -177,11 +183,13 @@ void DoubleSection::scircle(int direct)
     if(direct == 0)
     {
         printf("smallleft\n");
+        NO = SLCOURSE;
         set(SLcourse);
     }
     else
     {
-        printf("right");
+        printf("smallright\n");
+        NO = SRCOURSE;
         set(SRcourse);
     }
 }

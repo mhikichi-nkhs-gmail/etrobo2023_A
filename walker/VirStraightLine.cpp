@@ -34,7 +34,7 @@ double VirStraightLine::calcTurn()
     return val2_turn;
 }
 
-void VirStraightLine::setParam(double vstraight[]) //?¿½?¿½?¿½x,?¿½p?¿½x,0,P,I,D
+void VirStraightLine::setParam(double vstraight[]) //?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½x,?ï¿½ï¿½p?ï¿½ï¿½x,0,P,I,D
 {
     //printf("Angle%f,,\n",(mAngle->getValue()));
     mTargetSpeed = vstraight[0];
@@ -50,7 +50,7 @@ void VirStraightLine::setParam(double vstraight[]) //?¿½?¿½?¿½x,?¿½p?¿½x,0,P,I,D
     mPid->setKd(mDFactor);
 }
 
-void VirStraightLine::setBias(double curve) //?¿½J?¿½[?¿½u?¿½p?¿½?¿½?¿½?¿½
+void VirStraightLine::setBias(double curve) //?ï¿½ï¿½J?ï¿½ï¿½[?ï¿½ï¿½u?ï¿½ï¿½p?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½
 {
     mBias = curve;
 }
@@ -77,7 +77,7 @@ void VirStraightLine::init()
     targetPoint();
 }
 
-void VirStraightLine::targetPoint() //?¿½i?¿½s?¿½?¿½?¿½?¿½
+void VirStraightLine::targetPoint() //?ï¿½ï¿½i?ï¿½ï¿½s?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½
 {
     mx = mXpos->getValue();
     my = mYpos->getValue();
@@ -94,7 +94,7 @@ void VirStraightLine::targetPoint() //?¿½i?¿½s?¿½?¿½?¿½?¿½
 
 }
 
-void VirStraightLine::calcSenoer() //?¿½Z?¿½?¿½?¿½T?¿½[?¿½Ê’u
+void VirStraightLine::calcSenoer() //?ï¿½ï¿½Z?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½T?ï¿½ï¿½[?ï¿½ï¿½Ê’u
 {
     double angle2 = (mAngle->getValue())*(M_PI/180);
     maddsensor = 5;
@@ -127,31 +127,31 @@ double VirStraightLine::targetLine()
     double mkk = mkx - mky;
     mLine = MTY - MTX + mkk;
 
-    printf("MTY,,%f\n", MTY);
-    printf("MTX,,%f\n", MTX);
-    printf("mkx,,%f\n", mkx);
-    printf("mky,,%f\n", mky);
-    printf("mkk,,%f\n", mkk);
+    //printf("MTY,,%f\n", MTY);
+    //printf("MTX,,%f\n", MTX);
+    //printf("mkx,,%f\n", mkx);
+    //printf("mky,,%f\n", mky);
+    //printf("mkk,,%f\n", mkk);
     //printf("mty * mx,,%f\n", (mty * mx));
     
 
-    printf("mty - my,,%f\n", (mty - my));
-    printf("mtx - mx,,%f\n", (mtx - mx));
+    //printf("mty - my,,%f\n", (mty - my));
+    //printf("mtx - mx,,%f\n", (mtx - mx));
     
-    printf("mtx * my,,%f\n", (mtx * my));
-    printf("mty * mx,,%f\n", (mty * mx));
+    //printf("mtx * my,,%f\n", (mtx * my));
+    //printf("mty * mx,,%f\n", (mty * mx));
 
-    printf("mx,,,%f\n",mx);
-    printf("my,,,%f\n",my);
+    //printf("mx,,,%f\n",mx);
+    //printf("my,,,%f\n",my);
     
-    printf("mtx,,%f\n",mtx);
-    printf("mty,,%f\n",mty);
+    //printf("mtx,,%f\n",mtx);
+    //printf("mty,,%f\n",mty);
     
 
-    printf("msx,,%f\n",msx);
-    printf("msy,,%f\n",msy);
-    printf("mLine,,%f\n", mLine);
-    printf("MEMOANG,,%f\n,", Section::MEMOANG);
+    //printf("msx,,%f\n",msx);
+    //printf("msy,,%f\n",msy);
+    //printf("mLine,,%f\n", mLine);
+    //printf("MEMOANG,,%f\n,", Section::MEMOANG);
 
 
     return mLine;
