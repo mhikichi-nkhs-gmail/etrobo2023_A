@@ -78,7 +78,7 @@ void Scene::execCalibration()
         mSsm->course(0);
         mDs->course(0);
         mDs2->scircle(0);
-        //mBs->course(0);
+        mBs->course(0);
         gColor->setRGB();
         mState=START;
     }
@@ -89,7 +89,7 @@ void Scene::execCalibration()
         mSsm->course(1);
         mDs->course(1);
         mDs2->scircle(1);
-        //mBs->course(1);
+        mBs->course(1);
         gColor->setRGB();
         mState=START;
     }
