@@ -102,11 +102,6 @@ bool DoubleSection::run()
     return false;
 }
 
-/*bool DoubleSection::init()
-{
-   if(SectionManager::run())
-}*/
-
 void DoubleSection::course(int direct)
 {
     if(direct == 0)

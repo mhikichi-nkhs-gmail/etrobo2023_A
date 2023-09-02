@@ -127,31 +127,31 @@ double VirStraightLine::targetLine()
     double mkk = mkx - mky;
     mLine = MTY - MTX + mkk;
 
-    printf("MTY,,%f\n", MTY);
-    printf("MTX,,%f\n", MTX);
-    printf("mkx,,%f\n", mkx);
-    printf("mky,,%f\n", mky);
-    printf("mkk,,%f\n", mkk);
+    //printf("MTY,,%f\n", MTY);
+    //printf("MTX,,%f\n", MTX);
+    //printf("mkx,,%f\n", mkx);
+    //printf("mky,,%f\n", mky);
+    //printf("mkk,,%f\n", mkk);
     //printf("mty * mx,,%f\n", (mty * mx));
     
 
-    printf("mty - my,,%f\n", (mty - my));
-    printf("mtx - mx,,%f\n", (mtx - mx));
+    //printf("mty - my,,%f\n", (mty - my));
+    //printf("mtx - mx,,%f\n", (mtx - mx));
     
-    printf("mtx * my,,%f\n", (mtx * my));
-    printf("mty * mx,,%f\n", (mty * mx));
+    //printf("mtx * my,,%f\n", (mtx * my));
+    //printf("mty * mx,,%f\n", (mty * mx));
 
-    printf("mx,,,%f\n",mx);
-    printf("my,,,%f\n",my);
+    //printf("mx,,,%f\n",mx);
+    //printf("my,,,%f\n",my);
     
-    printf("mtx,,%f\n",mtx);
-    printf("mty,,%f\n",mty);
+    //printf("mtx,,%f\n",mtx);
+    //printf("mty,,%f\n",mty);
     
 
-    printf("msx,,%f\n",msx);
-    printf("msy,,%f\n",msy);
-    printf("mLine,,%f\n", mLine);
-    printf("MEMOANG,,%f\n,", Section::MEMOANG);
+    //printf("msx,,%f\n",msx);
+    //printf("msy,,%f\n",msy);
+    //printf("mLine,,%f\n", mLine);
+    //printf("MEMOANG,,%f\n,", Section::MEMOANG);
 
 
     return mLine;
