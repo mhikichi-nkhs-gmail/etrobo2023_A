@@ -31,15 +31,8 @@ class SpeedSectionManager : public SectionManager {
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
         SecParam Rcourse[20] = {
-            //{Section::TWALKER,{-65},Section::TURNANGLE,{90, Section::FLNONE}, Section::EMNONE,{}},/*RESETANG*/
-            //{Section::WALKER,{0,0},Section::TIME,{300, Section::FLNONE}, Section::EMNONE,{}},
-            //{Section::VIRSLINE,{-60, 90, 0, 75, 2.5 ,6.0},Section::LENGTH,{-50, Section::RESETLEN}, Section::EMNONE,{}},/*RESETLEN*/
-             //{Section::WALKER,{0,0},Section::TIME,{500, Section::FLNONE}, Section::EMNONE,{}},
-            //{Section::TWALKER,{70},Section::TURNANGLE,{0, Section::FLNONE}, Section::EMNONE,{}},/*RESETANG*/
-           //{Section::VIRSLINE,{60, 0, 0, 75, 2.5 ,6.0},Section::LENGTH,{100, Section::RESETLEN}, Section::EMNONE,{}},/*RESETLEN*/
-          // {Section::WALKER,{0,0},Section::TIME,{300, Section::FLNONE}, Section::EMNONE,{}},
-            //{Section::VIRSLINE,{-60, 0, 0, 75, 2.5 ,6.0},Section::LENGTH,{-100, Section::RESETLEN}, Section::EMNONE,{}},/*RESETLEN*/
-            //{Section::WALKER,{0,0},Section::TIME,{300, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::FILE,{1,0},Section::TIME,{1, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::FILE,{2,0},Section::TIME,{1, Section::FLNONE}, Section::EMNONE,{}},
             {Section::TRACER,{80, 0.0, 25, 5.0, 8,0 , 0, _EDGE},Section::LENGTH,{290, Section::FLNONE}, Section::EMNONE,{}},
             //{Section::WALKER,{0,0},Section::TIME,{1, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TRACER,{80, 0.1, 43, 2.5, 5.0 ,-31 , 0, _EDGE},Section::TURNANGLE,{65, Section::FLNONE}, Section::EMNONE,{}},
