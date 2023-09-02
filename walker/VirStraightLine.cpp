@@ -43,6 +43,7 @@ void VirStraightLine::setParam(double vstraight[]) //?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½x,?ï¿½
     mPFactor = vstraight[3];
     mIFactor = vstraight[4];
     mDFactor = vstraight[5];
+    resetAng = vstraight[6];
   
     mPid->setTarget(mTarget);
     mPid->setKp(mPFactor); 
@@ -58,8 +59,16 @@ void VirStraightLine::setBias(double curve) //?ï¿½ï¿½J?ï¿½ï¿½[?ï¿½ï¿½u?ï¿½ï¿½p?ï
 void VirStraightLine::init()
 {
     //printf("mSetAngle--,,%f\n,", mSetAngle);
-    mSetAngle = mSetAngle + Section::MEMOANG;
     //printf("mSetAngle,,%f\n,", mSetAngle);
+
+    if(resetAng == 1)
+    {
+        printf("WWWWWWWW\n");
+        Section::MEMOANG = mAngle->getValue();
+        //printf("MEMOANG,,%f\n",Judge::MEMOANG);
+    }
+
+    mSetAngle = mSetAngle + Section::MEMOANG;
 
     //printf("MEMOANG,,%f\n,", Section::MEMOANG);
     /*
