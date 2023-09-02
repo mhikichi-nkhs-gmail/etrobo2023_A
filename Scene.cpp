@@ -146,8 +146,8 @@ void Scene::execStart()
     if (ev3_button_is_pressed(ENTER_BUTTON))
     {
         printf("SPEED\n");
-            //mState=SPEED;
-            mState=DOUBLELOOP;
+            mState=SPEED;
+            //mState=DOUBLELOOP;
     }
 #endif
 //printf("Start_Finish\n");
@@ -165,7 +165,6 @@ void Scene::execSpeed()
 }
 void Scene::execDoubleloop()
 {
-    flag =true;
     if(flag != true)
     {
         if(mDs->run())
