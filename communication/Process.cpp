@@ -14,7 +14,15 @@ void Process::writing1(int pass) //snap
     FILE * fp;
     fp = fopen("SnapPipe", "w");
 
-    fprintf(fp,"snap\n");
+    if(pass == 0)
+    {
+        fprintf(fp,"snap\n");
+    }
+    else
+    {
+        fprintf(fp,"getsnap\n");
+    }
+    
     fclose(fp);
 }
 
