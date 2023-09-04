@@ -164,7 +164,7 @@ void DoubleSection::bluemarker(int num2/*char pass*/)
             {
                 NO = SET_LNEXT_POINT;
             }
-            if(num2 < 7)
+            if(num2 > 3 && num2 < 7)
             {
                 NO = SET_RNEXT_POINT;
             }
