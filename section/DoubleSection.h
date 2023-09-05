@@ -108,29 +108,29 @@ class DoubleSection : public SectionManager
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
         SecParam Rcourse[100] = {
-            {Section::VIRSLINE,{55, 22, 0, 28, 2.5 ,5.0,1},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{55, 20, 0, 28, 2.5 ,5.0,1},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TRACER,{60, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::LENGTH,{130, Section::RESETLEN}, Section::EMNONE,{}},/*RESETLEN*/
             {Section::TRACER,{60, 0.05, 48, 2.5, 7.5 ,0 , 0, _EDGE},Section::COLOR,{210,0.1, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::WALKER,{0,0},Section::TIME,{100, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::WALKER,{0,0},Section::TIME,{50, Section::FLNONE}, Section::EMNONE,{}},
             {Section::TWALKER,{57.5},Section::TURNANGLE,{-90, Section::RESETANG}, Section::EMNONE,{}},/*RESETANG*/
             //{Section::FILE,{},Section::TIME,{1, Section::FLNONE}, Section::EMNONE,{}},
-            {Section::VIRSLINE,{-50, -95, 0, 25, 2.5 ,2.0,0},Section::LENGTH,{-12, Section::RESETLEN}, Section::EMNONE,{}},/*RESETLEN*/
+            {Section::VIRSLINE,{-50, -105, 0, 25, 2.5 ,2.0,0},Section::LENGTH,{-12, Section::RESETLEN}, Section::EMNONE,{}},/*RESETLEN*/
             //{Section::FILE,{},Section::TIME,{1, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{300, Section::FLNONE}, Section::EMNONE,{}},
-            {Section::VIRSLINE,{50, -95, 0, 75, 2.5 ,2.0,0},Section::LENGTH,{-4, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{50, -105, 0, 75, 2.5 ,2.0,0},Section::LENGTH,{-3, Section::FLNONE}, Section::EMNONE,{}},
             //{Section::WALKER,{0,0},Section::TIME,{3000000, Section::FLNONE}, Section::EMNONE,{}},
             {Section::TWALKER,{-58},Section::TURNANGLE,{0, Section::FLNONE}, Section::EMNONE,{}},
             //{Section::WALKER,{0,0},Section::TIME,{300, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
         SecParam Rnextpoint[15] = {
-            {Section::TRACER,{60, 0.05, 48, 2.5, 7.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{63, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{60, -0.3, 48, 2.5, 7.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{70, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TWALKER,{57.5},Section::TURNANGLE,{-85, Section::RESETANG}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{10, Section::FLNONE}, Section::EMNONE,{}},
             {Section::VIRSLINE,{-50, -95, 0, 25, 2.5 ,2.0,0},Section::LENGTH,{-10, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{300, Section::FLNONE}, Section::EMNONE,{}},
-            {Section::VIRSLINE,{50, -95, 0, 75, 2.5 ,2.0,0},Section::LENGTH,{-1.3, Section::FLNONE}, Section::EMNONE,{}},
-            {Section::TWALKER,{-58},Section::TURNANGLE,{0, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{50, -95, 0, 75, 2.5 ,2.0,0},Section::LENGTH,{-1, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::TWALKER,{-70},Section::TURNANGLE,{0, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{10, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
@@ -177,6 +177,7 @@ class DoubleSection : public SectionManager
             {Section::TRACER,{60, 0.05, 50, 2.5, 5.0 ,0 , 0, _EDGE},Section::LENGTH,{len, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TWALKER,{-57.5},Section::TURNANGLE,{75, Section::RESETANG}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{300, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{50, -85, 0, 25, 2.5 ,2.0,0},Section::LENGTH,{1, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TWALKER,{58},Section::TURNANGLE,{0, Section::FLNONE}, Section::EMNONE,{}},
             {Section::TRACER,{60, 0.05, 50, 2.5, 5.0 ,0 , 0, _EDGE},Section::LENGTH,{169-len, Section::RESETLEN}, Section::EMNONE,{}},
             //{Section::WALKER,{0,0},Section::TIME,{300000000, Section::FLNONE}, Section::EMNONE,{}},

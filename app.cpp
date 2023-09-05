@@ -185,7 +185,7 @@ void judge_task(intptr_t unused) {
   {
   case 0:
     fp = fopen("BlockPipe2","r");
-    fgets(pipe, 9, fp);
+    fgets(pipe, 11, fp);
     break;
   case 1:
     fp = fopen("BlockPipe2","r");

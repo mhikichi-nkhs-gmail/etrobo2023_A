@@ -71,6 +71,7 @@ bool BlockSection::run()
         COURSE = GREEN_MARKER_LEFTEDGE;
         break;
     case GREEN_MARKER_LEFTEDGE:
+        printf("LEFT\n");
         change(num1);
         break;
     case INIT_GREEN_MARKER_RIGHTEDGE:
@@ -78,6 +79,7 @@ bool BlockSection::run()
         COURSE = GREEN_MARKER_RIGHTEDGE;
         break;
     case GREEN_MARKER_RIGHTEDGE:
+        printf("RIGHT\n");
         change(num1);
         break;
     case INIT_LEFTTURN_LEFTEDGE_RED:
@@ -207,7 +209,7 @@ bool BlockSection::run()
         COURSE = LAST;
         break;
     case LAST:
-        //printf("LAST\n");
+        printf("LAST\n");
         change(num1);
         break;
     case END:
@@ -241,7 +243,7 @@ void BlockSection::change(int num2)
             break;
             case 1:
             COURSE = INIT_RED_MARKER_RIGHTEDGE;
-            num1 = 8;
+            num1 = 9;
             break;
             case 2:
             COURSE = INIT_BLUE_MARKER_LEFTEDGE;
@@ -257,22 +259,27 @@ void BlockSection::change(int num2)
             break;
             case 6:
             COURSE = INIT_GREEN_MARKER_LEFTEDGE;
+            num1 = 24;
             break;
             case 7:
             COURSE = INIT_GREEN_MARKER_RIGHTEDGE;
+            num1 = 24;
             break;
             case 8:
             COURSE = INIT_LEFTTURN_LEFTEDGE_RED;
-            num1 = 14;
+            //num1 = 14;
             break;
             case 9:
             COURSE = INIT_LEFTTURN_RIGHTEDGE_RED;
+            num1 = 11;
             break;
             case 10:
             COURSE = INIT_LEFTTURN_LEFTEDGE_BLUE;
+            num1 = 15;
             break;
             case 11:
             COURSE = INIT_LEFTTURN_RIGHTEDGE_BLUE;
+            num1 = 22;
             break;
             case 12:
             COURSE = INIT_LEFTTURN_LEFTEDGE_YELLOW;
@@ -292,6 +299,7 @@ void BlockSection::change(int num2)
             break;
             case 17:
             COURSE = INIT_RIGHTTURN_RIGHTEDGE_RED;
+            printf("SSS\n");
             num1 = 24;
             break;
             case 18:
@@ -308,15 +316,18 @@ void BlockSection::change(int num2)
             break;
             case 22:
             COURSE = INIT_RIGHTTURN_LEFTEDGE_GREEN;
+            num1 = 7;
             break;
             case 23:
             COURSE = INIT_RIGHTTURN_RIGHTEDGE_GREEN;
             break;
             case 24:
-            COURSE = LAST;
+            COURSE = INIT_LAST;
             num1 = 25;
+            break;
             case 25:
             COURSE = END;
+            break;
             
         }
     }
