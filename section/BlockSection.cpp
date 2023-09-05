@@ -5,96 +5,65 @@ BlockSection::BlockSection()
     mSectionIdx=0;
     mLastIdx=0;
 }
+
 bool BlockSection::run()
 {
-    /*switch(now_position)
+    switch(COURSE)
     {
-    case -1:
-        set(In_Block);
-        now_position=position[pattern][0];
+    case INIT_FIRST_LCOURSE:
+        set(Lfirst);
+        COURSE = FIRST_LCOURSE;
         break;
-    case red_position:
+    case FIRST_LCOURSE:
+        change(num1);
+        break; 
+    case INIT_FIRST_RCOURSE:
+        set(Rfirst);
+        COURSE = FIRST_RCOURSE;
         break;
-    case blue_position1:
+    case FIRST_RCOURSE:
+        change(num1);
         break;
-    case blue_position2:
+    case INIT_BLUE_MARKER:
+        set(Go_blue_sircle);
         break;
-    default:
+    case BLUE_MARKER:
+        change(1);
         break;
-    }*/
-    if(now_position == -1)
-    {
-        set(sisoukai);
-        now_position=position[pattern-1][0];
+    case END:
+        printf("END\n");
         return true;
-    }
-    else
-    {
-        if(red_position == now_position)
-        {
-        }
-        else
-        {
-            if(blue_position1 == now_position || blue_position2 == now_position)
-            {
-                set(Move_Block);
-            }
-            else
-            {
-                //next_circle(position_angle[pattern-1][position-1],position_h[pattern-1][position-1],position_s[pattern-1][position-1],position_angle[pattern-1][position-1]);
-            }
-        }
     }
     return false;
 }
+
 void BlockSection::course(int direct)
 {
     if(direct == 0)
     {
-        course_flag = 1;
+        COURSE = INIT_FIRST_LCOURSE;
+        num1 = 0;
     }
     else
     {
-        course_flag = -1;
-    }
-}
-void BlockSection::next_circle(double TA,double H,double S,int e)
-{
-    turn_angle=TA;
-    hh=H;
-    ss=S;
-    if(TA==0)
-    {
-        in_length=2.5;
-        out_length=2.5;
-    }
-    else
-    {
-        switch(position_edge[pattern-1][now_position-1])
-        {
-            case 1://rr
-                in_length=2.5;
-                out_length=2.5;
-                break;
-            case 2://rl
-                in_length=2.5;
-                out_length=2.5;
-                break;
-            case -2://lr
-                in_length=2.5;
-                out_length=2.5;
-                break;
-            case -1://ll
-                in_length=2.5;
-                out_length=2.5;
-                break;
-        }
-    }
-    if(SectionManager::run())
-    {
-        set(Next_Circle);
-        count++;
-        now_position=position[pattern-1][count];
+        COURSE = INIT_FIRST_RCOURSE;
+        num1 = 0;
     }
 }
 
+void BlockSection::change(int num2)
+{
+    if(SectionManager::run())
+    {
+        switch(num2){
+            case 0:
+            COURSE = INIT_BLUE_MARKER;
+            break;
+            case 1:
+            COURSE = END;
+            break;
+        }
+    }
+}
+
+    
