@@ -18,39 +18,66 @@ bool BlockSection::run()
         change(num1);
         break; 
     case INIT_FIRST_RCOURSE:
-        //printf("INIT_FIRST\n");
         set(Rfirst);
         COURSE = FIRST_RCOURSE;
         break;
     case FIRST_RCOURSE:
-        //printf("FIRST\n");
         change(num1);
         break;
-    case INIT_RED_MARKER:
-        //printf("INIT_BLUE\n");
-        set(Go_red_sircle);
-        COURSE = RED_MARKER;
+    case INIT_RED_MARKER_LEFTEDGE:
+        set(Go_red_sircle_leftedge);
+        COURSE = RED_MARKER_LEFTEDGE;
         break;
-    case RED_MARKER:
-        printf("BLUE\n");
+    case RED_MARKER_LEFTEDGE:
         change(num1);
         break;
-    case INIT_BLUE_MARKER:
-        //printf("INIT_RED\n");
-        set(Go_blue_sircle);
-        COURSE = BLUE_MARKER;
+    case INIT_RED_MARKER_RIGHTEDGE:
+        set(Go_red_sircle_rightedge);
+        COURSE = RED_MARKER_RIGHTEDGE;
         break;
-    case BLUE_MARKER:
-        //printf("RED\n");
+    case RED_MARKER_RIGHTEDGE:
         change(num1);
         break;
-    case INIT_YELLOW_MARKER:
-        //printf("INIT_YELLOW\n");
-        set(Go_yellow_sircle);
-        COURSE = YELLOW_MARKER;
+    case INIT_BLUE_MARKER_LEFTEDGE:
+        set(Go_blue_sircle_leftedge);
+        COURSE = BLUE_MARKER_LEFTEDGE;
         break;
-    case YELLOW_MARKER:
-        //printf("YELLOW\n");
+    case BLUE_MARKER_LEFTEDGE:
+        change(num1);
+        break;
+    case INIT_BLUE_MARKER_RIGHTEDGE:
+        set(Go_blue_sircle_rightedge);
+        COURSE = BLUE_MARKER_RIGHTEDGE;
+        break;
+    case BLUE_MARKER_RIGHTEDGE:
+        change(num1);
+        break;
+    case INIT_YELLOW_MARKER_LEFTEDGE:
+        set(Go_yellow_sircle_leftedge);
+        COURSE = YELLOW_MARKER_LEFTEDGE;
+        break;
+    case YELLOW_MARKER_LEFTEDGE:
+        change(num1);
+        break;
+    case INIT_YELLOW_MARKER_RIGHTEDGE:
+        set(Go_yellow_sircle_rightedge);
+        COURSE = YELLOW_MARKER_RIGHTEDGE;
+        break;
+    case YELLOW_MARKER_RIGHTEDGE:
+        change(num1);
+        break;
+    case INIT_GREEN_MARKER_LEFTEDGE:
+        set(Go_green_sircle_leftedge);
+        COURSE = GREEN_MARKER_LEFTEDGE;
+        break;
+    case GREEN_MARKER_LEFTEDGE:
+        change(num1);
+        break;
+    case INIT_GREEN_MARKER_RIGHTEDGE:
+        set(Go_green_sircle_rightedge);
+        COURSE = GREEN_MARKER_RIGHTEDGE;
+        break;
+    case GREEN_MARKER_RIGHTEDGE:
         change(num1);
         break;
     case INIT_LEFTTURN_LEFTEDGE_RED:
@@ -200,7 +227,7 @@ void BlockSection::course(int direct)
     else
     {
         COURSE = INIT_FIRST_RCOURSE;
-        num1 = 0;
+        num1 = 1;
     }
 }
 
@@ -210,41 +237,87 @@ void BlockSection::change(int num2)
     {
         switch(num2){
             case 0:
-            COURSE = INIT_RED_MARKER;
+            COURSE = INIT_RED_MARKER_LEFTEDGE;
             break;
             case 1:
-            COURSE = INIT_BLUE_MARKER;
+            COURSE = INIT_RED_MARKER_RIGHTEDGE;
+            num1 = 8;
             break;
             case 2:
-            COURSE = INIT_YELLOW_MARKER;
+            COURSE = INIT_BLUE_MARKER_LEFTEDGE;
             break;
             case 3:
-            COURSE = INIT_GRREN_MARKER;
+            COURSE = INIT_BLUE_MARKER_RIGHTEDGE;
             break;
             case 4:
-            COURSE = INIT_LEFTTURN_LEFTEDGE_RED;
+            COURSE = INIT_YELLOW_MARKER_LEFTEDGE;
             break;
             case 5:
-            COURSE = INIT_LEFTTURN_RIGHTEDGE_RED;
+            COURSE = INIT_YELLOW_MARKER_RIGHTEDGE;
             break;
             case 6:
-            COURSE = INIT_LEFTTURN_LEFTEDGE_BLUE;
+            COURSE = INIT_GREEN_MARKER_LEFTEDGE;
             break;
             case 7:
-            COURSE = INIT_LEFTTURN_RIGHTEDGE_BLUE;
+            COURSE = INIT_GREEN_MARKER_RIGHTEDGE;
             break;
             case 8:
-            COURSE = INIT_LEFTTURN_LEFTEDGE_YELLOW;
+            COURSE = INIT_LEFTTURN_LEFTEDGE_RED;
+            num1 = 14;
             break;
             case 9:
-            COURSE = INIT_LEFTTURN_RIGHTEDGE_YELLOW;
+            COURSE = INIT_LEFTTURN_RIGHTEDGE_RED;
             break;
             case 10:
-            COURSE = INIT_LEFTTURN_LEFTEDGE_GREEN;
+            COURSE = INIT_LEFTTURN_LEFTEDGE_BLUE;
             break;
             case 11:
+            COURSE = INIT_LEFTTURN_RIGHTEDGE_BLUE;
+            break;
+            case 12:
+            COURSE = INIT_LEFTTURN_LEFTEDGE_YELLOW;
+            break;
+            case 13:
+            COURSE = INIT_LEFTTURN_RIGHTEDGE_YELLOW;
+            break;
+            case 14:
+            COURSE = INIT_LEFTTURN_LEFTEDGE_GREEN;
+            num1 = 17;
+            break;
+            case 15:
             COURSE = INIT_LEFTTURN_RIGHTEDGE_GREEN;
             break;
+            case 16:
+            COURSE = INIT_RIGHTTURN_LEFTEDGE_RED;
+            break;
+            case 17:
+            COURSE = INIT_RIGHTTURN_RIGHTEDGE_RED;
+            num1 = 24;
+            break;
+            case 18:
+            COURSE = INIT_RIGHTTURN_LEFTEDGE_BLUE;
+            break;
+            case 19:
+            COURSE = INIT_RIGHTTURN_RIGHTEDGE_BLUE;
+            break;
+            case 20:
+            COURSE = INIT_RIGHTTURN_LEFTEDGE_YELLOW;
+            break;
+            case 21:
+            COURSE = INIT_RIGHTTURN_RIGHTEDGE_YELLOW;
+            break;
+            case 22:
+            COURSE = INIT_RIGHTTURN_LEFTEDGE_GREEN;
+            break;
+            case 23:
+            COURSE = INIT_RIGHTTURN_RIGHTEDGE_GREEN;
+            break;
+            case 24:
+            COURSE = LAST;
+            num1 = 25;
+            case 25:
+            COURSE = END;
+            
         }
     }
 }

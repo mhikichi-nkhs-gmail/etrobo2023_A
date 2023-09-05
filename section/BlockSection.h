@@ -14,50 +14,85 @@ class BlockSection : public SectionManager
         enum BLOCK{
             INIT_FIRST_LCOURSE,
             FIRST_LCOURSE,
+
             INIT_FIRST_RCOURSE,
             FIRST_RCOURSE,
-            INIT_RED_MARKER,
-            RED_MARKER,
-            INIT_BLUE_MARKER,
-            BLUE_MARKER,
-            INIT_YELLOW_MARKER,
-            YELLOW_MARKER,
-            INIT_GRREN_MARKER,
-            GRREN_MARKER,
+
+            INIT_RED_MARKER_LEFTEDGE,
+            RED_MARKER_LEFTEDGE,
+
+            INIT_RED_MARKER_RIGHTEDGE,
+            RED_MARKER_RIGHTEDGE,
+
+            INIT_BLUE_MARKER_LEFTEDGE,
+            BLUE_MARKER_LEFTEDGE,
+
+            INIT_BLUE_MARKER_RIGHTEDGE,
+            BLUE_MARKER_RIGHTEDGE,
+
+            INIT_YELLOW_MARKER_LEFTEDGE,
+            YELLOW_MARKER_LEFTEDGE,
+
+            INIT_YELLOW_MARKER_RIGHTEDGE,
+            YELLOW_MARKER_RIGHTEDGE,
+
+            INIT_GREEN_MARKER_LEFTEDGE,
+            GREEN_MARKER_LEFTEDGE,
+
+            INIT_GREEN_MARKER_RIGHTEDGE,
+            GREEN_MARKER_RIGHTEDGE,
+
             INIT_LEFTTURN_LEFTEDGE_RED,
             LEFTTURN_LEFTEDGE_RED,
+
             INIT_LEFTTURN_RIGHTEDGE_RED,
             LEFTTURN_RIGHTEDGE_RED,
+
             INIT_LEFTTURN_LEFTEDGE_BLUE,
             LEFTTURN_LEFTEDGE_BLUE,
+
             INIT_LEFTTURN_RIGHTEDGE_BLUE,
             LEFTTURN_RIGHTEDGE_BLUE,
+
             INIT_LEFTTURN_LEFTEDGE_YELLOW,
             LEFTTURN_LEFTEDGE_YELLOW,
+
             INIT_LEFTTURN_RIGHTEDGE_YELLOW,
             LEFTTURN_RIGHTEDGE_YELLOW,
+
             INIT_LEFTTURN_LEFTEDGE_GREEN,
             LEFTTURN_LEFTEDGE_GREEN,
+
             INIT_LEFTTURN_RIGHTEDGE_GREEN,
             LEFTTURN_RIGHTEDGE_GREEN,
+
             INIT_RIGHTTURN_LEFTEDGE_RED,
             RIGHTTURN_LEFTEDGE_RED,
+
             INIT_RIGHTTURN_RIGHTEDGE_RED,
             RIGHTTURN_RIGHTEDGE_RED,
+
             INIT_RIGHTTURN_LEFTEDGE_BLUE,
             RIGHTTURN_LEFTEDGE_BLUE,
+
             INIT_RIGHTTURN_RIGHTEDGE_BLUE,
             RIGHTTURN_RIGHTEDGE_BLUE,
+
             INIT_RIGHTTURN_LEFTEDGE_YELLOW,
             RIGHTTURN_LEFTEDGE_YELLOW,
+
             INIT_RIGHTTURN_RIGHTEDGE_YELLOW,
             RIGHTTURN_RIGHTEDGE_YELLOW,
+
             INIT_RIGHTTURN_LEFTEDGE_GREEN,
             RIGHTTURN_LEFTEDGE_GREEN,
+
             INIT_RIGHTTURN_RIGHTEDGE_GREEN,
             RIGHTTURN_RIGHTEDGE_GREEN,
+
             INIT_LAST,
             LAST,
+
             END
         };
 
@@ -94,7 +129,16 @@ class BlockSection : public SectionManager
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}
         };
 
-        SecParam Go_red_sircle[10] = {
+        SecParam Go_red_sircle_leftedge[10] = {
+            {Section::VIRSLINE,{45, 0, 0, 28, 2.5 ,5.0,1},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},
+            //{Section::VIRSLINE,{45, 0, 0, 28, 2.5 ,5.0,1},Section::COLOR,{210,0.1, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::TRACER,{45, 0.05, 48, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{20, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{45, 0.05, 48, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::COLOR,{350,0.2, Section::FLNONE}, Section::EMNONE,{}},
+            //{Section::WALKER,{0,0},Section::TIME,{100, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}
+        };
+
+        SecParam Go_red_sircle_rightedge[10] = {
             {Section::VIRSLINE,{45, 0, 0, 28, 2.5 ,5.0,1},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},
             //{Section::VIRSLINE,{45, 0, 0, 28, 2.5 ,5.0,1},Section::COLOR,{210,0.1, Section::FLNONE}, Section::EMNONE,{}},
             {Section::TRACER,{45, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::LENGTH,{20, Section::RESETLEN}, Section::EMNONE,{}},
@@ -103,7 +147,16 @@ class BlockSection : public SectionManager
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}
         };
 
-        SecParam Go_blue_sircle[10] = {
+        SecParam Go_blue_sircle_leftedge[10] = {
+            {Section::VIRSLINE,{45, 0, 0, 28, 2.5 ,5.0,1},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},
+            //{Section::VIRSLINE,{45, 0, 0, 28, 2.5 ,5.0,1},Section::COLOR,{30,0.2, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::TRACER,{50, 0.05, 48, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{20, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{50, 0.05, 48, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::COLOR,{220,0.2, Section::FLNONE}, Section::EMNONE,{}},
+            //{Section::WALKER,{0,0},Section::TIME,{1000, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}
+        };
+
+        SecParam Go_blue_sircle_rightedge[10] = {
             {Section::VIRSLINE,{45, 0, 0, 28, 2.5 ,5.0,1},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},
             //{Section::VIRSLINE,{45, 0, 0, 28, 2.5 ,5.0,1},Section::COLOR,{30,0.2, Section::FLNONE}, Section::EMNONE,{}},
             {Section::TRACER,{50, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::LENGTH,{20, Section::RESETLEN}, Section::EMNONE,{}},
@@ -112,16 +165,33 @@ class BlockSection : public SectionManager
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}
         };
 
-        SecParam Go_yellow_sircle[10] = {
+        SecParam Go_yellow_sircle_leftedge[10] = {
             {Section::VIRSLINE,{45, 0, 0, 28, 2.5 ,5.0,1},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},
             //{Section::VIRSLINE,{45, 0, 0, 28, 2.5 ,5.0,1},Section::COLOR,{350,0.2, Section::FLNONE}, Section::EMNONE,{}},
             {Section::TRACER,{45, 0.05, 48, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{20, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TRACER,{45, 0.05, 48, 2.5, 5.0 ,0 , 0,'LEFTEDGE' },Section::COLOR,{40,0.2, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::TRACER,{45, 0.05, 48, 2.5, 5.0 ,0 , 0, 'LEFTEDGE' },Section::COLOR,{40,0.2, Section::FLNONE}, Section::EMNONE,{}},
             //{Section::WALKER,{0,0},Section::TIME,{1000, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}
         };
 
-        SecParam Go_green_sircle[10] = {
+        SecParam Go_yellow_sircle_rightedge[10] = {
+            {Section::VIRSLINE,{45, 0, 0, 28, 2.5 ,5.0,1},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},
+            //{Section::VIRSLINE,{45, 0, 0, 28, 2.5 ,5.0,1},Section::COLOR,{350,0.2, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::TRACER,{45, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::LENGTH,{20, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{45, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE },Section::COLOR,{40,0.2, Section::FLNONE}, Section::EMNONE,{}},
+            //{Section::WALKER,{0,0},Section::TIME,{1000, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}
+        };
+
+        SecParam Go_green_sircle_leftedge[10] = {
+            {Section::VIRSLINE,{45, 0, 0, 28, 2.5 ,5.0,1},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{50, 0.05, 48, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{20, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{50, 0.05, 48, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::COLOR,{140,0.2, Section::FLNONE}, Section::EMNONE,{}},
+            //{Section::WALKER,{0,0},Section::TIME,{1000, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}
+        };
+
+        SecParam Go_green_sircle_rightedge[10] = {
             {Section::VIRSLINE,{45, 0, 0, 28, 2.5 ,5.0,1},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TRACER,{50, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::LENGTH,{20, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TRACER,{50, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::COLOR,{140,0.2, Section::FLNONE}, Section::EMNONE,{}},
@@ -266,6 +336,5 @@ class BlockSection : public SectionManager
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}
 
         };
-
 };
 #endif
