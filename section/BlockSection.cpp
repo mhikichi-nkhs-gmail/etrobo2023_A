@@ -53,12 +53,12 @@ bool BlockSection::run()
         printf("YELLOW\n");
         change(3);
         break;
-    case INIT_RIGHT_LEFT:
+    case INIT_LEFTTURN_RIGHTEDGE_RED:
         printf("INIT_RIGHT_LEFT\n");
         set(leftturn_from_rightedge_for_red);
-        COURSE = RIGHT_LEFT;
+        COURSE = LEFTTURN_RIGHTEDGE_RED;
         break;
-    case RIGHT_LEFT:
+    case LEFTTURN_RIGHTEDGE_RED:
         printf("RIGHT_LEFT\n");
         change(1);
         break;
@@ -104,7 +104,7 @@ void BlockSection::change(int num2)
             COURSE = INIT_YELLOW_MARKER;
             break;
             case 2:
-            COURSE = INIT_RIGHT_LEFT;
+            COURSE = INIT_LEFTTURN_RIGHTEDGE_RED;
             break;
             case 3:
             COURSE = INIT_LAST;
