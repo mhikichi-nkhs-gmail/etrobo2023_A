@@ -65,17 +65,17 @@ class BlockSection : public SectionManager
         };
 
         SecParam Go_red_sircle[10] = {
-            {Section::VIRSLINE,{45, 0, 0, 28, 2.5 ,5.0,1},Section::LENGTH,{5, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::VIRSLINE,{45, 0, 0, 28, 2.5 ,5.0,1},Section::COLOR,{210,0.1, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{45, 0, 0, 28, 2.5 ,5.0,1},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},
+            //{Section::VIRSLINE,{45, 0, 0, 28, 2.5 ,5.0,1},Section::COLOR,{210,0.1, Section::FLNONE}, Section::EMNONE,{}},
             {Section::TRACER,{45, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::LENGTH,{20, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TRACER,{45, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::COLOR,{350,0.2, Section::FLNONE}, Section::EMNONE,{}},
-            {Section::WALKER,{0,0},Section::TIME,{100, Section::FLNONE}, Section::EMNONE,{}},
+            //{Section::WALKER,{0,0},Section::TIME,{100, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}
         };
 
         SecParam Go_blue_sircle[10] = {
-            {Section::VIRSLINE,{45, 0, 0, 28, 2.5 ,5.0,1},Section::LENGTH,{5, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::VIRSLINE,{45, 0, 0, 28, 2.5 ,5.0,1},Section::COLOR,{30,0.2, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{45, 0, 0, 28, 2.5 ,5.0,1},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},
+            //{Section::VIRSLINE,{45, 0, 0, 28, 2.5 ,5.0,1},Section::COLOR,{30,0.2, Section::FLNONE}, Section::EMNONE,{}},
             {Section::TRACER,{50, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::LENGTH,{20, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TRACER,{50, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::COLOR,{220,0.2, Section::FLNONE}, Section::EMNONE,{}},
             //{Section::WALKER,{0,0},Section::TIME,{1000, Section::FLNONE}, Section::EMNONE,{}},
@@ -92,16 +92,137 @@ class BlockSection : public SectionManager
         };
 
         SecParam Go_green_sircle[10] = {
+            {Section::VIRSLINE,{45, 0, 0, 28, 2.5 ,5.0,1},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TRACER,{50, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::LENGTH,{20, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TRACER,{50, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::COLOR,{150,0.2, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::TRACER,{50, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::COLOR,{140,0.2, Section::FLNONE}, Section::EMNONE,{}},
             //{Section::WALKER,{0,0},Section::TIME,{1000, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}
         };
 
-        SecParam Right_to_left[10] = {
+        SecParam leftturn_from_leftedge_for_red[10] = {
+            {Section::VIRCLINE,{30, 5,70, 10 ,20},Section::TURNANGLE,{90, Section::RESETANG}, Section::EMNONE,{}},
+            {Section::TRACER,{40, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{45, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::COLOR,{350,0.2, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::WALKER,{0,0},Section::TIME,{100, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}
+        };
+
+        SecParam leftturn_from_rightedge_for_red[10] = {
             {Section::VIRCLINE,{30, 5,70, 10 ,20},Section::TURNANGLE,{90, Section::RESETANG}, Section::EMNONE,{}},
             {Section::TRACER,{40, 0.05, 48, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TRACER,{45, 0.05, 48, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::COLOR,{350,0.2, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::WALKER,{0,0},Section::TIME,{100, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}
+        };
+
+        SecParam rightturn_from_leftedge_for_red[10] = {
+            {Section::VIRCLINE,{30, -5,70, 10 ,20},Section::TURNANGLE,{-90, Section::RESETANG}, Section::EMNONE,{}},
+            {Section::TRACER,{40, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{45, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::COLOR,{350,0.2, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::WALKER,{0,0},Section::TIME,{100, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}
+        };
+
+        SecParam rightturn_from_rightedge_for_red[10] = {
+            {Section::VIRCLINE,{30, -5,70, 10 ,20},Section::TURNANGLE,{-90, Section::RESETANG}, Section::EMNONE,{}},
+            {Section::TRACER,{40, 0.05, 48, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{45, 0.05, 48, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::COLOR,{350,0.2, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::WALKER,{0,0},Section::TIME,{100, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}
+        };
+
+        SecParam leftturn_from_leftedge_for_blue[10] = {
+            {Section::VIRCLINE,{30, 5,70, 10 ,20},Section::TURNANGLE,{90, Section::RESETANG}, Section::EMNONE,{}},
+            {Section::TRACER,{40, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{45, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::COLOR,{210,0.2, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::WALKER,{0,0},Section::TIME,{100, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}
+        };
+
+        SecParam leftturn_from_rightedge_for_blue[10] = {
+            {Section::VIRCLINE,{30, 5,70, 10 ,20},Section::TURNANGLE,{90, Section::RESETANG}, Section::EMNONE,{}},
+            {Section::TRACER,{40, 0.05, 48, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{45, 0.05, 48, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::COLOR,{210,0.2, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::WALKER,{0,0},Section::TIME,{100, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}
+        };
+
+        SecParam rightturn_from_leftedge_for_blue[10] = {
+            {Section::VIRCLINE,{30, -5,70, 10 ,20},Section::TURNANGLE,{-90, Section::RESETANG}, Section::EMNONE,{}},
+            {Section::TRACER,{40, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{45, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::COLOR,{210,0.2, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::WALKER,{0,0},Section::TIME,{100, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}
+        };
+
+        SecParam rightturn_from_rightedge_for_blue[10] = {
+            {Section::VIRCLINE,{30, -5,70, 10 ,20},Section::TURNANGLE,{-90, Section::RESETANG}, Section::EMNONE,{}},
+            {Section::TRACER,{40, 0.05, 48, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{45, 0.05, 48, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::COLOR,{210,0.2, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::WALKER,{0,0},Section::TIME,{100, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}
+        };
+
+        SecParam leftturn_from_leftedge_for_yellow[10] = {
+            {Section::VIRCLINE,{30, 5,70, 10 ,20},Section::TURNANGLE,{90, Section::RESETANG}, Section::EMNONE,{}},
+            {Section::TRACER,{40, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{45, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::COLOR,{40,0.2, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::WALKER,{0,0},Section::TIME,{100, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}
+        };
+
+        SecParam leftturn_from_rightedge_for_yellow[10] = {
+            {Section::VIRCLINE,{30, 5,70, 10 ,20},Section::TURNANGLE,{90, Section::RESETANG}, Section::EMNONE,{}},
+            {Section::TRACER,{40, 0.05, 48, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{45, 0.05, 48, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::COLOR,{40,0.2, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::WALKER,{0,0},Section::TIME,{100, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}
+        };
+
+        SecParam rightturn_from_leftedge_for_yellow[10] = {
+            {Section::VIRCLINE,{30, -5,70, 10 ,20},Section::TURNANGLE,{-90, Section::RESETANG}, Section::EMNONE,{}},
+            {Section::TRACER,{40, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{45, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::COLOR,{40,0.2, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::WALKER,{0,0},Section::TIME,{100, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}
+        };
+
+        SecParam rightturn_from_rightedge_for_yellow[10] = {
+            {Section::VIRCLINE,{30, -5,70, 10 ,20},Section::TURNANGLE,{-90, Section::RESETANG}, Section::EMNONE,{}},
+            {Section::TRACER,{40, 0.05, 48, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{45, 0.05, 48, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::COLOR,{40,0.2, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::WALKER,{0,0},Section::TIME,{100, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}
+        };
+
+        SecParam leftturn_from_leftedge_for_green[10] = {
+            {Section::VIRCLINE,{30, 5,70, 10 ,20},Section::TURNANGLE,{90, Section::RESETANG}, Section::EMNONE,{}},
+            {Section::TRACER,{40, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{45, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::COLOR,{140,0.2, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::WALKER,{0,0},Section::TIME,{100, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}
+        };
+
+        SecParam leftturn_from_rightedge_for_green[10] = {
+            {Section::VIRCLINE,{30, 5,70, 10 ,20},Section::TURNANGLE,{90, Section::RESETANG}, Section::EMNONE,{}},
+            {Section::TRACER,{40, 0.05, 48, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{45, 0.05, 48, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::COLOR,{140,0.2, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::WALKER,{0,0},Section::TIME,{100, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}
+        };
+
+        SecParam rightturn_from_leftedge_for_green[10] = {
+            {Section::VIRCLINE,{30, -5,70, 10 ,20},Section::TURNANGLE,{-90, Section::RESETANG}, Section::EMNONE,{}},
+            {Section::TRACER,{40, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{45, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::COLOR,{140,0.2, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::WALKER,{0,0},Section::TIME,{100, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}
+        };
+
+        SecParam rightturn_from_rightedge_for_green[10] = {
+            {Section::VIRCLINE,{30, -5,70, 10 ,20},Section::TURNANGLE,{-90, Section::RESETANG}, Section::EMNONE,{}},
+            {Section::TRACER,{40, 0.05, 48, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{45, 0.05, 48, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::COLOR,{140,0.2, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{100, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}
         };

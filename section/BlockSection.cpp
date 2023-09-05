@@ -55,7 +55,7 @@ bool BlockSection::run()
         break;
     case INIT_RIGHT_LEFT:
         printf("INIT_RIGHT_LEFT\n");
-        set(Right_to_left);
+        set(leftturn_from_rightedge_for_red);
         COURSE = RIGHT_LEFT;
         break;
     case RIGHT_LEFT:
