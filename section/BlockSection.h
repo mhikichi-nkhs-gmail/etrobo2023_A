@@ -11,8 +11,8 @@ class BlockSection : public SectionManager
         bool run();
         void course(int direct);
         void next_circle(double TA,double H,double S,int e);
-
-
+        void goal(double t,double l);
+        void move_block();
 
     protected:
         
@@ -32,6 +32,7 @@ class BlockSection : public SectionManager
         int blue_position1 = 3;
         int blue_position2 = 4;
         int course_flag;
+        int set_flag=0;
         int count=0;
         int pattern=0;
         int position[4][16] =
@@ -82,6 +83,13 @@ class BlockSection : public SectionManager
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
         SecParam Move_Block[5]={
+            {Section::TWALKER,{60,0},Section::TURNANGLE,{turn_angle,Section::RESETANG},Section::EMNONE,{}},
+            {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2},Section::LENGTH,{in_length, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{-55, 0, 0, 28, 2.5 ,1.2},Section::LENGTH,{in_length, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TWALKER,{60,0},Section::TURNANGLE,{turn_angle_,Section::RESETANG},Section::EMNONE,{}},
+            {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
+        
+        SecParam Goal[5]={
             {Section::TWALKER,{60,0},Section::TURNANGLE,{turn_angle,Section::RESETANG},Section::EMNONE,{}},
             {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2},Section::LENGTH,{in_length, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::VIRSLINE,{-55, 0, 0, 28, 2.5 ,1.2},Section::LENGTH,{in_length, Section::RESETLEN}, Section::EMNONE,{}},
