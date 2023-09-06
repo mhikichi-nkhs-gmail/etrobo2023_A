@@ -22,8 +22,8 @@ bool BlockSection::run()
         }
         else
         {
+            in_block();
             now_position=position[pattern-1][0];
-            set_flag=0;
         }
         
     }
@@ -39,7 +39,6 @@ bool BlockSection::run()
             else
             {
                 goal();
-                now_position=0;
             }
 
         }
@@ -166,6 +165,13 @@ void BlockSection::move_block()
     {
         count++;
         now_position=position[pattern-1][count];
+        set_flag=0;
+    }
+}
+void BlockSection::in_block()
+{
+    if(SectionManager::run())
+    {
         set_flag=0;
     }
 }

@@ -13,6 +13,7 @@ class BlockSection : public SectionManager
         void next_circle(double TA,double H,double S,int e);
         void goal(double t,double l);
         void move_block();
+        void in_block();
 
     protected:
         
