@@ -10,18 +10,32 @@ bool BlockSection::run()
 {
     switch(COURSE)
     {
-    case INIT_FIRST_LCOURSE:
-        set(Lfirst);
-        COURSE = FIRST_LCOURSE;
+    case INIT_FIRST_LCOURSE1:
+        set(Lfirst_left);
+        COURSE = FIRST_LCOURSE1;
         break;
-    case FIRST_LCOURSE:
+    case FIRST_LCOURSE1:
         change(num1);
         break; 
-    case INIT_FIRST_RCOURSE:
-        set(Rfirst_left);
-        COURSE = FIRST_RCOURSE;
+    case INIT_FIRST_LCOURSE2:
+        set(Lfirst_right);
+        COURSE = FIRST_LCOURSE2;
         break;
-    case FIRST_RCOURSE:
+    case FIRST_LCOURSE2:
+        change(num1);
+        break;
+    case INIT_FIRST_RCOURSE1:
+        set(Rfirst_left);
+        COURSE = FIRST_RCOURSE1;
+        break;
+    case FIRST_RCOURSE1:
+        change(num1);
+        break;
+    case INIT_FIRST_RCOURSE2:
+        set(Rfirst_right);
+        COURSE = FIRST_RCOURSE2;
+        break;
+    case FIRST_RCOURSE2:
         change(num1);
         break;
     case INIT_RED_MARKER_LEFTEDGE:
@@ -204,12 +218,65 @@ bool BlockSection::run()
     case RIGHTTURN_RIGHTEDGE_GREEN:
         change(num1);
         break;
-    case INIT_LAST1:
-        set(Last);
-        COURSE = LAST1;
+    case INIT_LLAST1:
+        set(LLast1);
+        COURSE = LLAST1;
         break;
-    case LAST1:
+    case LLAST1:
         printf("LAST\n");
+        change(num1);
+        break;
+    case INIT_LLAST2:
+        set(LLast2);
+        COURSE = LLAST1;
+        break;
+    case LLAST2:
+        printf("LAST\n");
+        change(num1);
+        break;
+    case INIT_LLAST3:
+        set(LLast3);
+        COURSE = LLAST3;
+        break;
+    case LLAST3:
+        printf("LAST\n");
+        change(num1);
+        break;
+    case INIT_LLAST4:
+        set(LLast4);
+        COURSE = LLAST4;
+        break;
+    case LLAST4:
+        printf("LAST\n");
+        change(num1);
+        break;
+    case INIT_RLAST1:
+        set(RLast1);
+        COURSE = RLAST1;
+        break;
+    case RLAST1:
+        printf("LAST\n");
+        change(num1);
+        break;
+    case INIT_RLAST2:
+        set(RLast2);
+        COURSE = RLAST2;
+        break;
+    case RLAST2:
+        change(num1);
+        break;
+    case INIT_RLAST3:
+        set(RLast3);
+        COURSE = RLAST3;
+        break;
+    case RLAST3:
+        change(num1);
+        break;
+    case INIT_RLAST4:
+        set(RLast4);
+        COURSE = RLAST4;
+        break;
+    case RLAST4:
         change(num1);
         break;
     case END:
@@ -223,13 +290,14 @@ void BlockSection::course(int direct)
 {
     if(direct == 0)
     {
-        COURSE = INIT_FIRST_LCOURSE;
+        //COURSE = INIT_FIRST_LCOURSE;
         num1 = 0;
     }
     else
     {
-        COURSE = INIT_FIRST_RCOURSE;
+        //COURSE = INIT_FIRST_RCOURSE;
         num1 = 1;
+        master = 5;
     }
 }
 
@@ -237,163 +305,483 @@ void BlockSection::change(int num2)
 {
     if(SectionManager::run())
     {
-        switch (root)
+        if(master == 0)
         {
-        case 0:
-            COURSE = INIT_RIGHTTURN_LEFTEDGE_BLUE;
-            break;
-        case 1:
-            COURSE = INIT_BLUE_MARKER_RIGHTEDGE;
-            break;
-        case 2:
-            COURSE = INIT_GREEN_MARKER_RIGHTEDGE;
-            break;
-        case 3:
-            COURSE = INIT_GREEN_MARKER_RIGHTEDGE;
-            break;
-        case 4:
-            COURSE = INIT_RIGHTTURN_RIGHTEDGE_GREEN;
-            break;
-        case 5:
-            COURSE = INIT_YELLOW_MARKER_LEFTEDGE;
-            break;
-        case 6:
-            COURSE = INIT_YELLOW_MARKER_LEFTEDGE;
-            break;
-        case 7:
-            COURSE = INIT_RIGHTTURN_LEFTEDGE_YELLOW;
-            break;
-        case 8:
-            COURSE = INIT_RED_MARKER_RIGHTEDGE;
-            break;
-        case 9:
-            COURSE = INIT_RED_MARKER_RIGHTEDGE;
-            break;
-        case 10:
-            COURSE = INIT_RIGHTTURN_RIGHTEDGE_RED;
-            break;
-        case 11:
-            COURSE = INIT_BLUE_MARKER_LEFTEDGE;
-            break;
-        case 12:
-            COURSE = INIT_RIGHTTURN_LEFTEDGE_BLUE;
-            break;
-        case 13:
-            COURSE = INIT_GREEN_MARKER_RIGHTEDGE;
-            break;
-        case 14:
-            COURSE = INIT_RIGHTTURN_RIGHTEDGE_YELLOW;
-            break;
-        case 15:
-            COURSE = INIT_RIGHTTURN_LEFTEDGE_RED;
-            break;
-        case 16:
-            COURSE = INIT_LAST1;
-            break;
-        case 17:
-            COURSE = END;
-            break;
-        }
-        root++;
-
-
-        /*
-        switch(num2){
+            switch (root)
+            {
             case 0:
-            COURSE = INIT_RED_MARKER_LEFTEDGE;
-            break;
+                COURSE = INIT_FIRST_LCOURSE1;
+                break;
             case 1:
-            COURSE = INIT_RED_MARKER_RIGHTEDGE;
-            //num1 = 9;
-            break;
+                COURSE = INIT_LEFTTURN_RIGHTEDGE_BLUE;
+                break;
             case 2:
-            COURSE = INIT_BLUE_MARKER_LEFTEDGE;
-            break;
+                COURSE = INIT_GREEN_MARKER_LEFTEDGE;
+                break;
             case 3:
-            COURSE = INIT_BLUE_MARKER_RIGHTEDGE;
-            break;
+                COURSE = INIT_GREEN_MARKER_LEFTEDGE;
+                break;
             case 4:
-            COURSE = INIT_YELLOW_MARKER_LEFTEDGE;
-            break;
+                COURSE = INIT_LEFTTURN_LEFTEDGE_GREEN;
+                break;
             case 5:
-            COURSE = INIT_YELLOW_MARKER_RIGHTEDGE;
-            break;
+                COURSE = INIT_YELLOW_MARKER_RIGHTEDGE;
+                break;
             case 6:
-            COURSE = INIT_GREEN_MARKER_LEFTEDGE;
-            //num1 = 24;
-            break;
+                COURSE = INIT_YELLOW_MARKER_RIGHTEDGE;
+                break;
             case 7:
-            COURSE = INIT_GREEN_MARKER_RIGHTEDGE;
-            //num1 = 24;
-            break;
+                COURSE = INIT_LEFTTURN_RIGHTEDGE_YELLOW;
+                break;
             case 8:
-            COURSE = INIT_LEFTTURN_LEFTEDGE_RED;
-            //num1 = 14;
-            break;
+                COURSE = INIT_RED_MARKER_LEFTEDGE;
+                break;
             case 9:
-            COURSE = INIT_LEFTTURN_RIGHTEDGE_RED;
-            //num1 = 11;
-            break;
+                COURSE = INIT_RED_MARKER_LEFTEDGE;
+                break;
             case 10:
-            COURSE = INIT_LEFTTURN_LEFTEDGE_BLUE;
-            //num1 = 15;
-            break;
+                COURSE = INIT_LEFTTURN_LEFTEDGE_RED;
+                break;
             case 11:
-            COURSE = INIT_LEFTTURN_RIGHTEDGE_BLUE;
-            //num1 = 22;
-            break;
+                COURSE = INIT_BLUE_MARKER_RIGHTEDGE;
+                break;
             case 12:
-            COURSE = INIT_LEFTTURN_LEFTEDGE_YELLOW;
-            break;
+                COURSE = INIT_LEFTTURN_RIGHTEDGE_BLUE;
+                break;
             case 13:
-            COURSE = INIT_LEFTTURN_RIGHTEDGE_YELLOW;
-            break;
+                COURSE = INIT_GREEN_MARKER_LEFTEDGE;
+                break;
             case 14:
-            COURSE = INIT_LEFTTURN_LEFTEDGE_GREEN;
-            //num1 = 17;
-            break;
+                COURSE = INIT_LEFTTURN_RIGHTEDGE_YELLOW;
+                break;
             case 15:
-            COURSE = INIT_LEFTTURN_RIGHTEDGE_GREEN;
-            break;
+                COURSE = INIT_LEFTTURN_LEFTEDGE_RED;
+                break;
             case 16:
-            COURSE = INIT_RIGHTTURN_LEFTEDGE_RED;
-            break;
+                COURSE = INIT_LLAST1;
+                break;
             case 17:
-            COURSE = INIT_RIGHTTURN_RIGHTEDGE_RED;
-            printf("SSS\n");
-            //num1 = 24;
-            break;
-            case 18:
-            COURSE = INIT_RIGHTTURN_LEFTEDGE_BLUE;
-            break;
-            case 19:
-            COURSE = INIT_RIGHTTURN_RIGHTEDGE_BLUE;
-            break;
-            case 20:
-            COURSE = INIT_RIGHTTURN_LEFTEDGE_YELLOW;
-            break;
-            case 21:
-            COURSE = INIT_RIGHTTURN_RIGHTEDGE_YELLOW;
-            break;
-            case 22:
-            COURSE = INIT_RIGHTTURN_LEFTEDGE_GREEN;
-            //num1 = 7;
-            break;
-            case 23:
-            COURSE = INIT_RIGHTTURN_RIGHTEDGE_GREEN;
-            break;
-            case 24:
-            COURSE = INIT_LAST;
-            //num1 = 25;
-            break;
-            case 25:
-            COURSE = END;
-            break;    
+                COURSE = END;
+                break;
+            }
         }
-        */
-    }
+        else if (master == 1)
+        {
+            switch(root)
+            {
+            case 0:
+                COURSE = INIT_FIRST_LCOURSE2;
+                break;
+            case 1:
+                COURSE = INIT_RED_MARKER_LEFTEDGE;
+                break;
+            case 2:
+                COURSE = INIT_RED_MARKER_LEFTEDGE;
+                break;
+            case 3:
+                COURSE = INIT_RIGHTTURN_LEFTEDGE_RED;
+                break;
+            case 4:
+                COURSE = INIT_YELLOW_MARKER_RIGHTEDGE;
+                break;
+            case 5:
+                COURSE = INIT_YELLOW_MARKER_RIGHTEDGE;
+                break;
+            case 6:
+                COURSE = INIT_RIGHTTURN_RIGHTEDGE_YELLOW;
+                break;
+            case 7:
+                COURSE = INIT_GREEN_MARKER_LEFTEDGE;
+                break;
+            case 8:
+                COURSE = INIT_GREEN_MARKER_LEFTEDGE;
+                break;
+            case 9:
+                COURSE = INIT_RIGHTTURN_LEFTEDGE_GREEN;
+                break;
+            case 10:
+                COURSE = INIT_BLUE_MARKER_RIGHTEDGE;
+                break;
+            case 11:
+                COURSE = INIT_RIGHTTURN_RIGHTEDGE_BLUE;
+                break;
+            case 12:
+                COURSE = INIT_RED_MARKER_LEFTEDGE;
+                break;
+            case 13:
+                COURSE = INIT_RIGHTTURN_LEFTEDGE_YELLOW;
+                break;
+            case 14:
+                COURSE = INIT_RIGHTTURN_RIGHTEDGE_GREEN;
+                break;
+            case 15:
+                COURSE = INIT_LLAST2;
+                break;
+            case 16:
+                COURSE = END;
+                break;
+            }
+        }
+        else if(master == 2)
+        {
+            switch (root)
+            {
+            case 0:
+                COURSE = INIT_FIRST_LCOURSE1;
+                break;
+            case 1:
+                COURSE = INIT_LEFTTURN_RIGHTEDGE_BLUE;
+                break;
+            case 2:
+                COURSE = INIT_GREEN_MARKER_LEFTEDGE;
+                break;
+            case 3:
+                COURSE = INIT_GREEN_MARKER_LEFTEDGE;
+                break;
+            case 4:
+                COURSE = INIT_LEFTTURN_LEFTEDGE_GREEN;
+                break;
+            case 5:
+                COURSE = INIT_LEFTTURN_RIGHTEDGE_GREEN;
+                break;
+            case 6:
+                COURSE = INIT_BLUE_MARKER_LEFTEDGE;
+                break;
+            case 7:
+                COURSE = INIT_BLUE_MARKER_LEFTEDGE;
+                break;
+            case 8:
+                COURSE = INIT_RIGHTTURN_LEFTEDGE_RED;
+                break;
+            case 9:
+                COURSE = INIT_RIGHTTURN_RIGHTEDGE_RED;
+                break;
+            case 10:
+                COURSE = INIT_YELLOW_MARKER_LEFTEDGE;
+                break;
+            case 11:
+                COURSE = INIT_YELLOW_MARKER_LEFTEDGE;
+                break;
+            case 12:
+                COURSE = INIT_LEFTTURN_LEFTEDGE_YELLOW;
+                break;
+            case 13:
+                COURSE = INIT_LEFTTURN_LEFTEDGE_YELLOW;
+                break;
+            case 14:
+                COURSE = INIT_RED_MARKER_LEFTEDGE;
+                break;
+            case 15:
+                COURSE = INIT_RED_MARKER_LEFTEDGE;
+                break;
+            case 16:
+                COURSE = INIT_LLAST3;
+                break;
+            case 17:
+                COURSE = END;
+                break;
+            }
+        }
+        else if (master == 3)
+        {
+            switch(root)
+            {
+            case 0:
+                COURSE = INIT_FIRST_LCOURSE2;
+                break;
+            case 1:
+                COURSE = INIT_RED_MARKER_LEFTEDGE;
+                break;
+            case 2:
+                COURSE = INIT_RED_MARKER_LEFTEDGE;
+                break;
+            case 3:
+                COURSE = INIT_RIGHTTURN_LEFTEDGE_RED;
+                break;
+            case 4:
+                COURSE = INIT_RIGHTTURN_RIGHTEDGE_RED;
+                break;
+            case 5:
+                COURSE = INIT_BLUE_MARKER_LEFTEDGE;
+                break;
+            case 6:
+                COURSE = INIT_BLUE_MARKER_LEFTEDGE;
+                break;
+            case 7:
+                COURSE = INIT_LEFTTURN_LEFTEDGE_GREEN;
+                break;
+            case 8:
+                COURSE = INIT_LEFTTURN_RIGHTEDGE_GREEN;
+                break;
+            case 9:
+                COURSE = INIT_YELLOW_MARKER_LEFTEDGE;
+                break;
+            case 10:
+                COURSE = INIT_YELLOW_MARKER_LEFTEDGE;
+                break;
+            case 11:
+                COURSE = INIT_RIGHTTURN_LEFTEDGE_YELLOW;
+                break;
+            case 12:
+                COURSE = INIT_RIGHTTURN_RIGHTEDGE_YELLOW;
+                break;
+            case 13:
+                COURSE = INIT_GREEN_MARKER_LEFTEDGE;
+                break;
+            case 14:
+                COURSE = INIT_GREEN_MARKER_LEFTEDGE;
+                break;
+            case 15:
+                COURSE = INIT_LLAST4;
+                break;
+            case 16:
+                COURSE = END;
+                break;
+            }
+        }
+        else if(master == 4)
+        {
+            switch (root)
+            {
+            case 0:
+                COURSE = INIT_FIRST_RCOURSE1;
+                break;
+            case 1:
+                COURSE = INIT_RIGHTTURN_LEFTEDGE_BLUE;
+                break;
+            case 2:
+                COURSE = INIT_GREEN_MARKER_RIGHTEDGE;
+                break;
+            case 3:
+                COURSE = INIT_GREEN_MARKER_RIGHTEDGE;
+                break;
+            case 4:
+                COURSE = INIT_RIGHTTURN_RIGHTEDGE_GREEN;
+                break;
+            case 5:
+                COURSE = INIT_YELLOW_MARKER_LEFTEDGE;
+                break;
+            case 6:
+                COURSE = INIT_YELLOW_MARKER_LEFTEDGE;
+                break;
+            case 7:
+                COURSE = INIT_RIGHTTURN_LEFTEDGE_YELLOW;
+                break;
+            case 8:
+                COURSE = INIT_RED_MARKER_RIGHTEDGE;
+                break;
+            case 9:
+                COURSE = INIT_RED_MARKER_RIGHTEDGE;
+                break;
+            case 10:
+                COURSE = INIT_RIGHTTURN_RIGHTEDGE_RED;
+                break;
+            case 11:
+                COURSE = INIT_BLUE_MARKER_LEFTEDGE;
+                break;
+            case 12:
+                COURSE = INIT_RIGHTTURN_LEFTEDGE_BLUE;
+                break;
+            case 13:
+                COURSE = INIT_GREEN_MARKER_RIGHTEDGE;
+                break;
+            case 14:
+                COURSE = INIT_RIGHTTURN_RIGHTEDGE_YELLOW;
+                break;
+            case 15:
+                COURSE = INIT_RIGHTTURN_LEFTEDGE_RED;
+                break;
+            case 16:
+                COURSE = INIT_RLAST1;
+                break;
+            case 17:
+                COURSE = END;
+                break;
+            }
+        }
+        else if (master == 5)
+        {
+            switch(root)
+            {
+            case 0:
+                COURSE = INIT_FIRST_RCOURSE2;
+                break;
+            case 1:
+                COURSE = INIT_RED_MARKER_RIGHTEDGE;
+                break;
+            case 2:
+                COURSE = INIT_RED_MARKER_RIGHTEDGE;
+                break;
+            case 3:
+                COURSE = INIT_LEFTTURN_RIGHTEDGE_RED;
+                break;
+            case 4:
+                COURSE = INIT_YELLOW_MARKER_LEFTEDGE;
+                break;
+            case 5:
+                COURSE = INIT_YELLOW_MARKER_LEFTEDGE;
+                break;
+            case 6:
+                COURSE = INIT_LEFTTURN_LEFTEDGE_YELLOW;
+                break;
+            case 7:
+                COURSE = INIT_GREEN_MARKER_RIGHTEDGE;
+                break;
+            case 8:
+                COURSE = INIT_GREEN_MARKER_RIGHTEDGE;
+                break;
+            case 9:
+                COURSE = INIT_LEFTTURN_RIGHTEDGE_GREEN;
+                break;
+            case 10:
+                COURSE = INIT_BLUE_MARKER_LEFTEDGE;
+                break;
+            case 11:
+                COURSE = INIT_LEFTTURN_LEFTEDGE_BLUE;
+                break;
+            case 12:
+                COURSE = INIT_RED_MARKER_RIGHTEDGE;
+                break;
+            case 13:
+                COURSE = INIT_LEFTTURN_RIGHTEDGE_YELLOW;
+                break;
+            case 14:
+                COURSE = INIT_LEFTTURN_LEFTEDGE_GREEN;
+                break;
+            case 15:
+                COURSE = INIT_RLAST2;
+                break;
+            case 16:
+                COURSE = END;
+                break;
+            }
+        }
+        else if(master == 6)
+        {
+            switch (root)
+            {
+            case 0:
+                COURSE = INIT_FIRST_RCOURSE1;
+                break;
+            case 1:
+                COURSE = INIT_RIGHTTURN_LEFTEDGE_BLUE;
+                break;
+            case 2:
+                COURSE = INIT_GREEN_MARKER_RIGHTEDGE;
+                break;
+            case 3:
+                COURSE = INIT_GREEN_MARKER_RIGHTEDGE;
+                break;
+            case 4:
+                COURSE = INIT_RIGHTTURN_RIGHTEDGE_GREEN;
+                break;
+            case 5:
+                COURSE = INIT_RIGHTTURN_LEFTEDGE_GREEN;
+                break;
+            case 6:
+                COURSE = INIT_BLUE_MARKER_RIGHTEDGE;
+                break;
+            case 7:
+                COURSE = INIT_BLUE_MARKER_RIGHTEDGE;
+                break;
+            case 8:
+                COURSE = INIT_LEFTTURN_RIGHTEDGE_RED;
+                break;
+            case 9:
+                COURSE = INIT_LEFTTURN_LEFTEDGE_RED;
+                break;
+            case 10:
+                COURSE = INIT_YELLOW_MARKER_RIGHTEDGE;
+                break;
+            case 11:
+                COURSE = INIT_YELLOW_MARKER_RIGHTEDGE;
+                break;
+            case 12:
+                COURSE = INIT_RIGHTTURN_RIGHTEDGE_YELLOW;
+                break;
+            case 13:
+                COURSE = INIT_RIGHTTURN_RIGHTEDGE_YELLOW;
+                break;
+            case 14:
+                COURSE = INIT_RED_MARKER_RIGHTEDGE;
+                break;
+            case 15:
+                COURSE = INIT_RED_MARKER_RIGHTEDGE;
+                break;
+            case 16:
+                COURSE = INIT_RLAST3;
+                break;
+            case 17:
+                COURSE = END;
+                break;
+            }
+        }
+        else if (master == 7)
+        {
+            switch(root)
+            {
+            case 0:
+                COURSE = INIT_FIRST_RCOURSE2;
+                break;
+            case 1:
+                COURSE = INIT_RED_MARKER_RIGHTEDGE;
+                break;
+            case 2:
+                COURSE = INIT_RED_MARKER_RIGHTEDGE;
+                break;
+            case 3:
+                COURSE = INIT_LEFTTURN_RIGHTEDGE_RED;
+                break;
+            case 4:
+                COURSE = INIT_LEFTTURN_LEFTEDGE_RED;
+                break;
+            case 5:
+                COURSE = INIT_BLUE_MARKER_RIGHTEDGE;
+                break;
+            case 6:
+                COURSE = INIT_BLUE_MARKER_RIGHTEDGE;
+                break;
+            case 7:
+                COURSE = INIT_RIGHTTURN_RIGHTEDGE_GREEN;
+                break;
+            case 8:
+                COURSE = INIT_RIGHTTURN_LEFTEDGE_GREEN;
+                break;
+            case 9:
+                COURSE = INIT_YELLOW_MARKER_RIGHTEDGE;
+                break;
+            case 10:
+                COURSE = INIT_YELLOW_MARKER_RIGHTEDGE;
+                break;
+            case 11:
+                COURSE = INIT_LEFTTURN_RIGHTEDGE_YELLOW;
+                break;
+            case 12:
+                COURSE = INIT_LEFTTURN_LEFTEDGE_YELLOW;
+                break;
+            case 13:
+                COURSE = INIT_GREEN_MARKER_RIGHTEDGE;
+                break;
+            case 14:
+                COURSE = INIT_GREEN_MARKER_RIGHTEDGE;
+                break;
+            case 15:
+                COURSE = INIT_RLAST4;
+                break;
+            case 16:
+                COURSE = END;
+                break;
+            }
+        }
+        
+        
+
+        
+    }      
+    root++;
 
 
+        
 }
 
     
