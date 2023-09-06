@@ -157,8 +157,7 @@ class DoubleSection : public SectionManager
             {Section::TRACER,{60, -0.5, 48, 2.5, 7.0 ,0 , 0, 'LEFTEDGE'},Section::COLOR,{210,0.1, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{300, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
-
-#if PATARN == 1      
+  
         SecParam SLcourse[10] = {
             {Section::TRACER,{80, 0.05, 50, 2.5, 5.0 ,0 , 0, _EDGE},Section::LENGTH,{256-len, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TWALKER,{-75},Section::TURNANGLE,{89, Section::RESETANG}, Section::EMNONE,{}},
@@ -193,7 +192,6 @@ class DoubleSection : public SectionManager
             {Section::WALKER,{0,0},Section::TIME,{100, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}
             };
-            #endif
 
 #if PATARN == 2      
         SecParam SLcourse[10] = {

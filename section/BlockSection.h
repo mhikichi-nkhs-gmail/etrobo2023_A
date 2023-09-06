@@ -11,7 +11,7 @@ class BlockSection : public SectionManager
         bool run();
         void course(int direct);
         void next_circle(double TA,double H,double S,int e);
-        void goal(double t,double l);
+        void goal();
         void move_block();
 
     protected:
@@ -19,10 +19,10 @@ class BlockSection : public SectionManager
 
 #if defined(MAKE_RIGHT)
     const int _EDGE = LineTracer::LEFTEDGE;
-    //const int _OPPOSITION_EDGE = LineTracer::RIGHTEDGE;
+    const int _OPPOSITION_EDGE = LineTracer::RIGHTEDGE;
 #else
     const int _EDGE = LineTracer::RIGHTEDGE;
-    //const int _OPPOSITION_EDGE = LineTracer::LEFTEDGE;
+    const int _OPPOSITION_EDGE = LineTracer::LEFTEDGE;
 #endif
 
 
@@ -56,13 +56,27 @@ class BlockSection : public SectionManager
                              {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
                              {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
                             };
+        double position_h[4][16]=
+                            {
+                             {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+                             {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+                             {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+                             {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
+                            };
+        double position_s[4][16]=
+                            {
+                             {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+                             {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+                             {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+                             {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
+                            };
         double hh;
         double ss;
         double turn_angle;
         double in_length;
         double out_length;
 
-        SecParam In_Block_[15] = {
+        SecParam In_Block[15] = {
             {Section::WALKER,{0,0},Section::TIME,{10, Section::FLNONE}, Section::EMNONE,{}},
             {Section::VIRSLINE,{55, -25, 0, 28, 2.5 ,1.2},Section::LENGTH,{2.5, Section::RESETLEN}, Section::EMNONE,{}},
             
@@ -85,15 +99,15 @@ class BlockSection : public SectionManager
         SecParam Move_Block[5]={
             {Section::TWALKER,{60,0},Section::TURNANGLE,{turn_angle,Section::RESETANG},Section::EMNONE,{}},
             {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2},Section::LENGTH,{in_length, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::VIRSLINE,{-55, 0, 0, 28, 2.5 ,1.2},Section::LENGTH,{in_length, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TWALKER,{60,0},Section::TURNANGLE,{turn_angle_,Section::RESETANG},Section::EMNONE,{}},
+            {Section::VIRSLINE,{-55, 0, 0, 28, 2.5 ,1.2},Section::LENGTH,{out_length, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TWALKER,{60,0},Section::TURNANGLE,{turn_angle,Section::RESETANG},Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
         
         SecParam Goal[5]={
-            {Section::TWALKER,{60,0},Section::TURNANGLE,{turn_angle,Section::RESETANG},Section::EMNONE,{}},
             {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2},Section::LENGTH,{in_length, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::VIRSLINE,{-55, 0, 0, 28, 2.5 ,1.2},Section::LENGTH,{in_length, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TWALKER,{60,0},Section::TURNANGLE,{turn_angle_,Section::RESETANG},Section::EMNONE,{}},
+            {Section::TWALKER,{60,0},Section::TURNANGLE,{turn_angle,Section::RESETANG},Section::EMNONE,{}},
+            {Section::VIRSLINE,{-55, 0, 0, 28, 2.5 ,1.2},Section::LENGTH,{out_length, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TWALKER,{60,0},Section::TURNANGLE,{turn_angle,Section::RESETANG},Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
         SecParam sisoukai[11]={

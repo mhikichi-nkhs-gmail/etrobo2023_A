@@ -62,7 +62,7 @@ bool BlockSection::run()
                 }
                 else
                 {
-                    next_circle(position_angle[pattern-1][position-1],position_h[pattern-1][position-1],position_s[pattern-1][position-1],position_angle[pattern-1][position-1]);
+                    next_circle(position_angle[pattern-1][now_position-1],position_h[pattern-1][now_position-1],position_s[pattern-1][now_position-1],position_angle[pattern-1][now_position-1]);
                 }
                 
             }
@@ -125,28 +125,9 @@ void BlockSection::next_circle(double TA,double H,double S,int e)
     }
 }
 
-void BlockSection::goal(double t,double l)
+void BlockSection::goal()
 {
-    turn_angle=t;
-    switch(e)
-    {
-        case 1://rr
-            in_length=2.5;
-            out_length=2.5;
-            break;
-        case 2://rl
-            in_length=2.5;
-            out_length=2.5;
-            break;
-        case -2://lr
-            in_length=2.5;
-            out_length=2.5;
-            break;
-        case -1://ll
-            in_length=2.5;
-            out_length=2.5;
-            break;
-    }
+
     if(SectionManager::run())
     {
         
