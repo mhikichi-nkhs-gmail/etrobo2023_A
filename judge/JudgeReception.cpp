@@ -33,7 +33,8 @@ void JudgeReception::init()
 
 bool JudgeReception::judgement()
 {
-    if(rtime < limtime && mresult == true)
+    measureTime();
+    if(rtime > limtime || mresult == true)
     {
         return true;
     }
