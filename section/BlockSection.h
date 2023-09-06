@@ -90,8 +90,8 @@ class BlockSection : public SectionManager
             INIT_RIGHTTURN_RIGHTEDGE_GREEN,
             RIGHTTURN_RIGHTEDGE_GREEN,
 
-            INIT_LAST,
-            LAST,
+            INIT_LAST1,
+            LAST1,
 
             END
         };
@@ -108,6 +108,7 @@ class BlockSection : public SectionManager
 
     private:
         int num1;
+        int root = 0;
 
         SecParam Lfirst[10] = {
             {Section::TWALKER,{60},Section::TURNANGLE,{-60, Section::RESETANG}, Section::EMNONE,{}},
@@ -118,7 +119,18 @@ class BlockSection : public SectionManager
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}
         };
 
-        SecParam Rfirst[10] = {
+        SecParam Rfirst_left[10] = {
+            {Section::TWALKER,{-60},Section::TURNANGLE,{60, Section::RESETANG}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{45, 70, 0, 28, 2.5 ,5.0,0},Section::LENGTH,{55, Section::RESETLEN}, Section::EMNONE,{}},
+            //{Section::WALKER,{0,0},Section::TIME,{300, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{45, 70, 0, 28, 2.5 ,5.0,0},Section::BRIGHTNESS,{-1, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::TWALKER,{-60},Section::TURNANGLE,{180, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::TRACER,{45, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::COLOR,{210,0.1, Section::FLNONE}, Section::EMNONE,{}},
+            //{Section::WALKER,{0,0},Section::TIME,{300, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}
+        };
+
+        SecParam Rfirst_right[10] = {
             {Section::TWALKER,{-60},Section::TURNANGLE,{60, Section::RESETANG}, Section::EMNONE,{}},
             {Section::VIRSLINE,{45, 70, 0, 28, 2.5 ,5.0,0},Section::LENGTH,{55, Section::RESETLEN}, Section::EMNONE,{}},
             //{Section::WALKER,{0,0},Section::TIME,{300, Section::FLNONE}, Section::EMNONE,{}},
@@ -327,9 +339,12 @@ class BlockSection : public SectionManager
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}
         };
 
-        SecParam Last[10] = {
-            {Section::VIRSLINE,{45, 10, 0, 28, 2.5 ,5.0,0},Section::LENGTH,{20, Section::RESETLEN}, Section::EMNONE,{}},
+        SecParam Last[20] = {
+            {Section::VIRCLINE,{30, 5,70, 10 ,20},Section::TURNANGLE,{90, Section::RESETANG}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{45, 10, 0, 28, 2.5 ,5.0,0},Section::LENGTH,{5, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::VIRCLINE,{30, 5,70, 10 ,20},Section::TURNANGLE,{90, Section::RESETANG}, Section::EMNONE,{}},
             //{Section::WALKER,{0,0},Section::TIME,{100, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{45, 0, 0, 28, 2.5 ,5.0,0},Section::LENGTH,{50, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::VIRSLINE,{45, 0, 0, 28, 2.5 ,5.0,1},Section::BRIGHTNESS,{-1, Section::FLNONE}, Section::EMNONE,{}},
             {Section::VIRCLINE,{30, -5,70, 10 ,20},Section::TURNANGLE,{-90, Section::RESETANG}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{100, Section::FLNONE}, Section::EMNONE,{}},
