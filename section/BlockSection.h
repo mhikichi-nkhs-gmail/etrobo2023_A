@@ -43,12 +43,18 @@ class BlockSection : public SectionManager
                             };
         double position_angle[4][16] =
                             {
-                             {-90,0,0,-90,0,-90,-90,0,0,0,0,0,0,-90,0,-90},
-                             {90,0,0,90,0,0,90,0,90,0,90,0,-90,0,0,90},
-                             {-90,-90,-90-90,0,0,0,0,0,0,0,0,0,90,90,0},
-                             {0,0,0,90,-90,0,0,90,-90,0,0,90,-90,0,0,90},
+                             {-90,0,0,-90,0,-90,-90,0,0,0,0,0,-90,-90,0,-90},
+                             {90,0,0,90,0,0,90,0,90,0,90,0,-180,0,0,90},
+                             {-90,-90,-90-90,0,0,0,0,0,0,0,0,-90,90,90,0},
+                             {0,0,0,90,-90,0,0,90,-90,0,0,90,-180,0,0,90}
                             };
-        int position_edge[4][16];
+        int position_edge[4][16]=
+                            {
+                             {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+                             {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+                             {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+                             {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
+                            };
         double hh;
         double ss;
         double turn_angle;
@@ -93,13 +99,6 @@ class BlockSection : public SectionManager
             {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2},Section::LENGTH,{60, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TWALKER,{60,0},Section::TURNANGLE,{course_flag*90,Section::RESETANG},Section::EMNONE,{}},
             {Section::TRACER,{60, 0.05, 48, 2.5, 5.0 ,0 , 0, _OPPOSITION_EDGE},Section::COLOR,{hh,ss, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}
-
-
-        };
-
-        
-
-        
+            {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};        
 };
 #endif

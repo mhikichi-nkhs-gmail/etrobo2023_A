@@ -26,9 +26,8 @@ bool BlockSection::run()
     }*/
     if(now_position == -1)
     {
-        set(sisoukai);
+        
         now_position=position[pattern-1][0];
-        return true;
     }
     else
     {
@@ -58,6 +57,7 @@ void BlockSection::course(int direct)
     if(direct == 0)
     {
         course_flag_ = 1;
+        set(sisoukai);
     }
     else
     {
@@ -77,7 +77,7 @@ void BlockSection::next_circle(double TA,double H,double S,int e)
     }
     else
     {
-        switch(position_edge[pattern-1][now_position-1])
+        switch(e)
         {
             case 1://rr
                 in_length_=2.5;
