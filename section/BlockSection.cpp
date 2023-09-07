@@ -43,7 +43,7 @@ bool BlockSection::run()
             switch(set_flag)
             {
                 case 0:
-                    switch(position_direction)
+                    switch(position_direction[pattern-1][count])
                     {
                         case left:
                             set(Goal_left);
@@ -66,6 +66,7 @@ bool BlockSection::run()
                 case 2:
                     break;
                 case 3:
+                    break;
             }
 
         }
@@ -228,7 +229,14 @@ void BlockSection::move_block()
 {
     if(SectionManager::run())
     {
-        if()
+        if(blue_position1 == now_position)
+        {
+            blue_position1=-2;
+        }
+        else
+        {
+            blue_position2=-2;
+        }
         set_flag=0;
     }
 }
