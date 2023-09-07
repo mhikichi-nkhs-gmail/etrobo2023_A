@@ -45,7 +45,6 @@ class BlockSection : public SectionManager
             BLUE,
             YELLOW
         };
-
         enum direction{
             front,
             behind,
@@ -190,8 +189,6 @@ class BlockSection : public SectionManager
             {Section::TWALKER,{45,0},Section::TURNANGLE,{-45,Section::RESETANG},Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
         
-        
-
         SecParam Goal_left[5]={
             {Section::VIRSLINE,{40, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{5, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TWALKER,{-60},Section::TURNANGLE,{83, Section::RESETANG}, Section::EMNONE,{}},
@@ -222,30 +219,36 @@ class BlockSection : public SectionManager
             //130,90,50,20
         SecParam RGoal_row1[10]={
             {Section::VIRSLINE,{40, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{130, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::VIRSLINE,{40, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{130, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::VIRSLINE,{40, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{130, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TWALKER,{-60},Section::TURNANGLE,{-83, Section::RESETANG}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{40, 0, 0, 28, 2.5 ,1.2,1},Section::BRIGHTNESS,{-1, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{40, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{4, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TWALKER,{-60},Section::TURNANGLE,{-85, Section::RESETANG}, Section::EMNONE,{}},
             {Section::TRACER,{40, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::COLOR,{203,0.13, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{10, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
-        SecParam RGoal_row2[5]={
-            {Section::VIRSLINE,{40, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{5, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TWALKER,{-60},Section::TURNANGLE,{83, Section::RESETANG}, Section::EMNONE,{}},
-            {Section::VIRSLINE,{40, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{5, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::WALKER,{0,0},Section::TIME,{10, Section::FLNONE}, Section::EMNONE,{}},
-            {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
-
-        SecParam RGoal_row3[5]={
-            {Section::VIRSLINE,{40, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{5, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TWALKER,{-60},Section::TURNANGLE,{83, Section::RESETANG}, Section::EMNONE,{}},
+        SecParam RGoal_row2[7]={
+            {Section::VIRSLINE,{40, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{90, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{40, 0, 0, 28, 2.5 ,1.2,1},Section::BRIGHTNESS,{-1, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{40, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{4, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TWALKER,{-60},Section::TURNANGLE,{-85, Section::RESETANG}, Section::EMNONE,{}},
             {Section::VIRSLINE,{40, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{5, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{10, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
-        SecParam RGoal_row4[5]={
+        SecParam RGoal_row3[7]={
+            {Section::VIRSLINE,{40, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{50, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{40, 0, 0, 28, 2.5 ,1.2,1},Section::BRIGHTNESS,{-1, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{40, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{4, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TWALKER,{-60},Section::TURNANGLE,{-85, Section::RESETANG}, Section::EMNONE,{}},
             {Section::VIRSLINE,{40, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{5, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TWALKER,{-60},Section::TURNANGLE,{83, Section::RESETANG}, Section::EMNONE,{}},
+            {Section::WALKER,{0,0},Section::TIME,{10, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
+
+        SecParam RGoal_row4[7]={
+            {Section::VIRSLINE,{40, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{20, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{40, 0, 0, 28, 2.5 ,1.2,1},Section::BRIGHTNESS,{-1, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{40, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{4, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TWALKER,{-60},Section::TURNANGLE,{-85, Section::RESETANG}, Section::EMNONE,{}},
             {Section::VIRSLINE,{40, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{5, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{10, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
