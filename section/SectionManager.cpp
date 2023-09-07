@@ -25,7 +25,7 @@ void SectionManager::set(SecParam* array) //?��?��Ԃ�?��?��?�
         //printf("酝�?�\n");
         if(array[i].walker_no == Section::WANONE)
         {
-            printf("breakSet\n");
+            //printf("breakSet\n");
             break;
         }
         
@@ -49,7 +49,7 @@ bool SectionManager::run() //?��?��?��s?��?��?��?��
         mSectionIdx++;
         if(mSectionIdx == mLastIdx)
         {
-            printf("speed????????????\n");
+            //printf("speed????????????\n");
             reset();
             return true;
         }
@@ -57,8 +57,8 @@ bool SectionManager::run() //?��?��?��s?��?��?��?��
         {
             mSectionIdx++;
         }*/
-        printf("mscetion%d\n", mSectionIdx);
-        printf("mlast%d\n", mLastIdx);
+        //printf("mscetion%d\n", mSectionIdx);
+        //printf("mlast%d\n", mLastIdx);
         
     }
     return false;
@@ -67,7 +67,7 @@ bool SectionManager::run() //?��?��?��s?��?��?��?��
 void SectionManager::addSection(Section *sec) //?��?��Ԓǉ�
 {
     mSection[mLastIdx++]=sec;
-    printf("mLast %d\n",mLastIdx);
+    //printf("mLast %d\n",mLastIdx);
 }
 
 void SectionManager::reset() //?��?��?��?��?��?��

@@ -75,9 +75,9 @@ void Scene::execCalibration()
     if(ev3_button_is_pressed(LEFT_BUTTON))
     {
         printf("left\n");
-        //mSsm->course(0);
-        //mDs->course(0);
-        //mDs2->scircle(0);
+        mSsm->course(0);
+        mDs->course(0);
+        mDs2->scircle(0);
         mBs->course(0);
         gColor->setRGB();
         mState=START;
@@ -86,9 +86,9 @@ void Scene::execCalibration()
     if(ev3_button_is_pressed(RIGHT_BUTTON))
     {
         printf("right\n");
-        //mSsm->course(1);
-        //mDs->course(1);
-        //mDs2->scircle(1);
+        mSsm->course(1);
+        mDs->course(1);
+        mDs2->scircle(1);
         mBs->course(1);
         gColor->setRGB();
         mState=START;
@@ -140,14 +140,15 @@ void Scene::execStart()
     if (ev3_touch_sensor_is_pressed(EV3_PORT_1) == 1)
     {
         printf("SPEED\n");
-            mState=BLOCK;
+            mState=SPEED;
     }
 #else
     if (ev3_button_is_pressed(ENTER_BUTTON))
     {
         printf("SPEED\n");
-            mState=BLOCK;
-            //mState=DOUBLELOOP;
+        //mState=SPEED;
+        mState=SPEED;
+        //mState=DOUBLELOOP;
     }
 #endif
 //printf("Start_Finish\n");

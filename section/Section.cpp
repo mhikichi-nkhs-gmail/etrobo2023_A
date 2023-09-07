@@ -20,7 +20,7 @@ Section::Section()
 
 Section::~Section()
 {
-    msg_log("destruct Section\n");
+    //msg_log("destruct Section\n");
     delete mWalker;
 }
 

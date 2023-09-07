@@ -175,7 +175,7 @@ void tracer_task(intptr_t unused) {
   ext_tsk();
 }
 
-int cnt = 0;
+int cnt = 2;
 JudgeReception * mJr;
 
 void judge_task(intptr_t unused) {
