@@ -1,3 +1,4 @@
+#include <string.h>
 // tag::walker_def[]
 #include "app.h"
 #include "util.h"
@@ -174,31 +175,36 @@ void tracer_task(intptr_t unused) {
   ext_tsk();
 }
 
-int cnt = 0;
+int cnt = 1;
 JudgeReception * mJr;
 
 void judge_task(intptr_t unused) {
+  printf("task\n");
   char pipe[256];
   FILE * fp;
   switch (cnt)
   {
   case 0:
-    fp = fopen("BlockPipe2","r");
-    fgets(pipe, 9, fp);
-    break;
-  case 1:
-    fp = fopen("BlockPipe2","r");
-    fgets(pipe, 2, fp);
+    fp = fopen("/home/pi/work/RasPike/sdk/workspace/etrobo2023_A/BlockPipe2","r");
+    printf("BlockPipe2\n");
+    fgets(pipe, 11, fp);
     break;
   default:
-    fp = fopen("SnapPipe2", "r");
+    printf("SnapPipe2\n");
+    fp = fopen("/home/pi/work/RasPike/sdk/workspace/etrobo2023_A//SnapPipe2", "r");
+    printf("SnapPipe2\n");
     fgets(pipe, 2, fp);
+    /*while(!strcmp(pipe,"") == 0)
+    {
+      fgets(pipe, 2, fp);
+    }*/
     break;
   }
-  mJr->reception(pipe);
+  
   
   //読み込んだ1行を画面に出力する
-  printf("%s", pipe);
+  printf("%s\n", pipe);
+  mJr->reception(pipe);
   
   fclose(fp);
   ext_tsk();

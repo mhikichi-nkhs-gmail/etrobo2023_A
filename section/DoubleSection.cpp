@@ -157,8 +157,10 @@ void DoubleSection::bluemarker(int num2/*char pass*/)
         }
         num1++;
 
-        char pass = '0';
-        if(pass == '0')
+        //extern JudgeReception *mJr;
+        //int pass = mJr->mini;
+        extern int mini;
+        if(mini == 0)
         {
             if(num2 < 3)
             {

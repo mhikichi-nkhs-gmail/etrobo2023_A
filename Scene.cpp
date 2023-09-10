@@ -22,6 +22,8 @@ Scene::Scene():
     mDs = new DoubleSection();
     mDs2 = new DoubleSection();
     mBs = new BlockSection();
+    int mv = ev3_battery_voltage_mV();
+    printf("%d\n",mv);
     printf("作った\n");
 }
 
