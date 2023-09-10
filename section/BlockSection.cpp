@@ -42,7 +42,7 @@ bool BlockSection::run()
             switch(set_flag)
             {
                 case 0:
-                    switch(position_direction[pattern-1][count])
+                    switch(goal_direction[pattern-1][count])
                     {
                         case left:
                             set(Goal_left);
@@ -63,8 +63,65 @@ bool BlockSection::run()
                     preparation_goal();
                     break;
                 case 2:
+                    if(course_flag*goal_turn_direction[pattern-1][count]==1)
+                    {
+                        set(Goal_turn_left);
+                    }
+                    else
+                    {
+                        set(Goal_turn_right);
+                    }
+                    set_flag=3;
                     break;
                 case 3:
+                    goal_turn();
+                    break;
+                case 4:
+                    tmp = (now_position-1)/4;
+                    if(course_flag*goal_pattern[pattern-1][count]==1)
+                    {
+                        switch(tmp)
+                        {
+                            case 0:
+                                printf("RGoal_row4_P1");
+                                set(RGoal_row4_P1);
+                                break;
+                            case 1:
+                                set(RGoal_row3_P1);
+                                printf("RGoal_row_P1");
+                                break;
+                            case 2:
+                                set(RGoal_row2_P1);
+                                printf("RGoal_row2_P1");
+                                break;
+                            case 3:
+                                set(RGoal_row1_P1);
+                                printf("RGoal_row1_P1");
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        switch(tmp)
+                        {
+                            case 0:
+                                set(RGoal_row4_P2);
+                                break;
+                            case 1:
+                                set(RGoal_row3_P2);
+                                break;
+                            case 2:
+                                set(RGoal_row2_P2);
+                                break;
+                            case 3:
+                                set(RGoal_row1_P2);
+                                break;
+                        }
+                    }
+                    set_flag=5;
+                    break;
+                case 5:
+                    goal();
                     break;
             }
 
@@ -262,5 +319,14 @@ void BlockSection::preparation_goal()
     if(SectionManager::run())
     {
         set_flag=2;
+    }
+}
+
+void BlockSection::goal_turn()
+{
+
+    if(SectionManager::run())
+    {
+        set_flag=4;
     }
 }
