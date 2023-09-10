@@ -22,6 +22,8 @@ Scene::Scene():
     mDs = new DoubleSection();
     mDs2 = new DoubleSection();
     mBs = new BlockSection();
+    int mv = ev3_battery_voltage_mV();
+    printf("%d\n",mv);
     printf("作った\n");
 }
 
@@ -140,14 +142,15 @@ void Scene::execStart()
     if (ev3_touch_sensor_is_pressed(EV3_PORT_1) == 1)
     {
         printf("SPEED\n");
-            mState=BLOCK;
+            mState=SPEED;
     }
 #else
     if (ev3_button_is_pressed(ENTER_BUTTON))
     {
         printf("SPEED\n");
-            mState=BLOCK;
-            //mState=BLOCK;
+        //mState=SPEED;
+        mState=SPEED;
+        //mState=DOUBLELOOP;
     }
 #endif
 //printf("Start_Finish\n");

@@ -9,7 +9,7 @@ SpeedSectionManager::SpeedSectionManager()
 
 void SpeedSectionManager::course(int direct)
 {
-    printf("BBBBBB\n");
+    //printf("BBBBBB\n");
     if(direct == 0)
     {
         //printf("e\n");

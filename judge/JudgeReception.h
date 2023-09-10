@@ -3,7 +3,6 @@
 
 #include "Judge.h"
 
-
 class JudgeReception : public Judge
 {
     public:

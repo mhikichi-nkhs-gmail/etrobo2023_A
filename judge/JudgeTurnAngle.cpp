@@ -8,6 +8,7 @@ JudgeTurnAngle::JudgeTurnAngle()
 void JudgeTurnAngle::setParam(double tucn[])
 {
     mTurnkids = tucn[0];
+    //printf("mTurnkids = %f\n",mTurnkids);
     memoAng = tucn[1];
 }
 

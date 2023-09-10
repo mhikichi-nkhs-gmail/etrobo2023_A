@@ -18,6 +18,7 @@ int mcount = 0;
 int redblo = 0;
 int blueblo1 = 0;
 int blueblo2 = 0;
+int mini = 0;
 
 JudgeReception::JudgeReception()
 {
@@ -26,6 +27,7 @@ JudgeReception::JudgeReception()
 
 void JudgeReception::init()
 {
+    printf("judgereception\n");
     rtime = 0.0;
     mresult = false;
     act_tsk(JUDGE_TASK);
@@ -33,7 +35,8 @@ void JudgeReception::init()
 
 bool JudgeReception::judgement()
 {
-    if(rtime < limtime && mresult == true)
+    measureTime();
+    if(rtime > limtime || mresult == true)
     {
         return true;
     }
@@ -42,6 +45,7 @@ bool JudgeReception::judgement()
 
 void JudgeReception::reception(char result[])
 {
+    rec = 1;
     if(rec == 0)
     {
         blo1 = strtok(result,","); //赤ブロック
@@ -158,7 +162,9 @@ void JudgeReception::reception(char result[])
         
             if(strcmp(result,"0") == 0||strcmp(result,"1") == 0)
             {
-                mresult = true;  
+                mresult = true;
+                mini = atoi(result);
+                printf("mini = %d\n", mini);
             }
     }
     
@@ -167,7 +173,8 @@ void JudgeReception::reception(char result[])
 }
 void JudgeReception::measureTime()
 {
-    rtime = rtime + 1.0;
+    //rtime = rtime + 1.0;
+    printf("rtime = %f",rtime);
 }
 
 void JudgeReception::setParam(double recn[])

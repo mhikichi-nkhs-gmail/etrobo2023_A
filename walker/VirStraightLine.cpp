@@ -63,7 +63,7 @@ void VirStraightLine::init()
 
     if(resetAng == 1)
     {
-        printf("WWWWWWWW\n");
+        //printf("WWWWWWWW\n");
         Section::MEMOANG = mAngle->getValue();
         //printf("MEMOANG,,%f\n",Judge::MEMOANG);
     }
