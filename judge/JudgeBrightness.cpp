@@ -17,9 +17,19 @@ void JudgeBrightness::init()
 
 bool JudgeBrightness::judgement()
 {
-    if(mBrightkids<=mBrightness->getValue())
+    if(mBrightkids < 0)
     {
-        return true;
+        if(mBrightkids<=mBrightness->getValue())
+        {
+            return true;
+        }
+    }
+    else
+    {
+        if(mBrightkids>=mBrightness->getValue())
+        {
+            return true;
+        }
     }
     return false;
 

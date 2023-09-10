@@ -30,6 +30,7 @@ APPL_CXXOBJS += \
 	JudgeTime.o \
 	JudgeBrightness.o \
 	JudgeTurnAngle.o \
+	JudgeReception.o \
 	XPosition.o \
 	YPosition.o \
 	TurnWalker.o \
@@ -38,8 +39,7 @@ APPL_CXXOBJS += \
 	DoubleSection.o \
 	BlockSection.o \
 	Process.o \
-	FileWalker.o \
-	JudgeReception.o
+	FileWalker.o
 
 SRCLANG := c++
 

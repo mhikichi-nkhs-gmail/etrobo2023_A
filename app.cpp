@@ -140,6 +140,7 @@ void polling_task(intptr_t unused) {
     //msg_log(buf);
     //printf("h,s %f,,%f\n", h,s);
     //緑:138, 黄色:39, 赤:353, 青:214
+    //printf("br,,%f\n", br);
 
     ext_tsk();
 }

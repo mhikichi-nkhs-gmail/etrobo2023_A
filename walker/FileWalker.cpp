@@ -17,6 +17,7 @@ void FileWalker::execStart()
 
 void FileWalker::init()
 {
+    /*
     printf("a\n");
     switch(mNo){
         case SNAP:
@@ -35,6 +36,7 @@ void FileWalker::init()
             break;
     }
     //mPro->writing();
+    */
 }
 
 void FileWalker::setParam(double flwk[]) //?��g?��?��?��?��?��?��?��p?��C?��v?��A?��?��?��e

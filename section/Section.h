@@ -18,7 +18,6 @@
 #include "JudgeReception.h"
 
 
-
 class Section {
     public:
 
