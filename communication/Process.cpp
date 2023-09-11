@@ -13,7 +13,7 @@ void Process::writing1(int pass) //snap
 {
     FILE * fp;
     fp = fopen("/home/pi/work/RasPike/sdk/workspace/etrobo2023_A/SnapPipe", "w");
-    printf("open\n");
+    printf("Popen\n");
 
     if(pass == 0)
     {

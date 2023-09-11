@@ -148,8 +148,8 @@ void Scene::execStart()
     if (ev3_button_is_pressed(ENTER_BUTTON))
     {
         printf("SPEED\n");
-        //mState=SPEED;
-        mState=BLOCK;
+        mState=SPEED;
+        //mState=BLOCK;
         //mState=DOUBLELOOP;
     }
 #endif
@@ -183,8 +183,8 @@ void Scene::execDoubleloop()
         {
             printf("double終わった\n");
             delete mDs2;
-            mState=END;
-            //mState=BLOCK;
+            //mState=END;
+            mState=BLOCK;
         }
     }
 }

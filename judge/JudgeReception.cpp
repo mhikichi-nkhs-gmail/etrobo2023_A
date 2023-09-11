@@ -173,8 +173,8 @@ void JudgeReception::reception(char result[])
 }
 void JudgeReception::measureTime()
 {
-    //rtime = rtime + 1.0;
-    printf("rtime = %f",rtime);
+    rtime = rtime + 1.0;
+    //printf("rtime = %f",rtime);
 }
 
 void JudgeReception::setParam(double recn[])

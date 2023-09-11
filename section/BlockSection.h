@@ -33,13 +33,13 @@ class BlockSection : public SectionManager
 
     private:
         int now_position = -1;
-        int red_position = 9;
+        int red_position = 1;
         int blue_position1 = -2;
         int blue_position2 = -2;
         int course_flag;
         int set_flag=0;
         int count=0;
-        int pattern=2;
+        int pattern=1;
         int tmp=0;
 
         enum color{
