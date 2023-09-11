@@ -22,6 +22,8 @@ Scene::Scene():
     mDs = new DoubleSection();
     mDs2 = new DoubleSection();
     mBs = new BlockSection();
+    int mv = ev3_battery_voltage_mV();
+    printf("%d\n",mv);
     printf("作った\n");
 }
 
@@ -75,9 +77,9 @@ void Scene::execCalibration()
     if(ev3_button_is_pressed(LEFT_BUTTON))
     {
         printf("left\n");
-        /*mSsm->course(0);
+        mSsm->course(0);
         mDs->course(0);
-        mDs2->scircle(0);*/
+        mDs2->scircle(0);
         mBs->course(0);
         gColor->setRGB();
         mState=START;
@@ -86,9 +88,9 @@ void Scene::execCalibration()
     if(ev3_button_is_pressed(RIGHT_BUTTON))
     {
         printf("right\n");
-        /*mSsm->course(1);
+        mSsm->course(1);
         mDs->course(1);
-        mDs2->scircle(1);*/
+        mDs2->scircle(1);
         mBs->course(1);
         gColor->setRGB();
         mState=START;
