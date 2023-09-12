@@ -24,11 +24,11 @@ void MotorManager::setPwm(int left,int right)
 			{
 				if(current_lmotor >= 0)
 				{
-					setleft = 70;
+					setleft = 90;
 				}
 				else
 				{
-					setleft = -70;
+					setleft = -90;
 				}
 			} 
 			else
@@ -51,11 +51,11 @@ void MotorManager::setPwm(int left,int right)
 			{
 				if(current_rmotor >= 0)
 				{
-					setright = 70;
+					setright = 90;
 				}
 				else
 				{
-					setright = -70;
+					setright = -90;
 				}
 			} 
 			else

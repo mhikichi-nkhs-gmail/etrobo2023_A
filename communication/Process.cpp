@@ -18,11 +18,12 @@ void Process::writing1(int pass) //snap
     if(pass == 0)
     {
         fprintf(fp,"snap\n");
+        printf("snap\n");
     }
     else
     {
         fprintf(fp,"getsnap\n");
-        printf("fprint\n");
+        printf("getsnap\n");
     }
     
     fclose(fp);

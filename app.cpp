@@ -192,7 +192,7 @@ void judge_task(intptr_t unused) {
   else
   {
     printf("SnapPipe2\n");
-    fp = fopen("/home/pi/work/RasPike/sdk/workspace/etrobo2023_A//SnapPipe2", "r");
+    fp = fopen("/home/pi/work/RasPike/sdk/workspace/etrobo2023_A/SnapPipe2", "r");
     printf("SnapPipe2\n");
     fgets(pipe, 2, fp);
     /*while(!strcmp(pipe,"") == 0)
@@ -206,6 +206,7 @@ void judge_task(intptr_t unused) {
   printf("%s\n", pipe);
   mJr->reception(pipe);
   
+  cnt++;
   fclose(fp);
   ext_tsk();
 }
