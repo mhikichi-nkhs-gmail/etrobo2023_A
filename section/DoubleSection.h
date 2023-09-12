@@ -58,7 +58,7 @@ class DoubleSection : public SectionManager
 
     private:
         int num1;
-        int len = 60;
+        int len = 80;
         //JudgeReception * mJr;
 
         SecParam Lcourse[20] = {
@@ -198,17 +198,18 @@ class DoubleSection : public SectionManager
             {Section::TRACER,{50, -0.6, 48, 2.5, 7.0 ,0 , 0, _EDGE},Section::LENGTH,{20, Section::RESETLEN}, Section::EMNONE,{}}, 
             {Section::TRACER,{50, -0.5, 48, 2.5, 7.0 ,0 , 0 ,'LEFTEDGE'},Section::LENGTH,{15, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TRACER,{50, 0.05, 45, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{len-30, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TWALKER,{-60},Section::TURNANGLE,{-75, Section::RESETANG}, Section::EMNONE,{}},
+            {Section::TWALKER,{60},Section::TURNANGLE,{-75, Section::RESETANG}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{10, Section::FLNONE}, Section::EMNONE,{}},
             //{Section::FILE,{0,0},Section::RECEPTION,{0,50, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{10, Section::FLNONE}, Section::EMNONE,{}},
-            {Section::VIRSLINE,{50, -85, 0, 25, 2.5 ,2.0,0},Section::LENGTH,{1, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TWALKER,{60},Section::TURNANGLE,{0, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{50, -75, 0, 25, 2.5 ,2.0,0},Section::LENGTH,{1, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TWALKER,{-60},Section::TURNANGLE,{0, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::TRACER,{50, -0.5, 48, 2.5, 7.0 ,0 , 0 ,_EDGE},Section::LENGTH,{138-len, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TRACER,{50, 0.05, 45, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::COLOR,{210,0.1, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TRACER,{50, 0.05, 50, 2.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{25, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::VIRSLINE,{65, 0, 0, 25, 2.5 ,2.0,1},Section::LENGTH,{17, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TRACER,{60, 0.05, 48, 2.5, 6.5 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{108, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::VIRSLINE,{60, 14, 0,0, 28, 2.5 ,1.2,1},Section::LENGTH,{14, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{60, 14, 0,0, 28, 2.5 ,1.2,1},Section::LENGTH,{4.5, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TRACER,{50, 0.05, 48, 2.5, 5.5 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{5, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TRACER,{60, 0.05, 48, 2.5, 5.5 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{27, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TRACER,{60, 0.05, 43, 2.5, 4.7 ,28 , 0, 'LEFTEDGE'},Section::TURNANGLE,{-58, Section::RESETANG}, Section::EMNONE,{}},
