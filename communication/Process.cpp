@@ -12,7 +12,7 @@ Process::Process()
 void Process::writing1(int pass) //snap
 {
     FILE * fp;
-    fp = fopen("SnapPipe", "w");
+    fp = fopen("work/RasPike/sdk/workspace/etrobo2023_A/SnapPipe", "w");
 
     if(pass == 0)
     {
@@ -29,16 +29,16 @@ void Process::writing1(int pass) //snap
 void Process::writing2(int pass) //Block
 {
     FILE * fp;
-    fp = fopen("BlockPipe", "w");
+    fp = fopen("work/RasPike/sdk/workspace/etrobo2023_A/BlockPipe", "w");
 
-    fprintf(fp,"start\n");
+    fprintf(fp,"socket!\n");
     fclose(fp);
 }
 
 void Process::writing3(int pass) //Iot
 {
     FILE * fp;
-    fp = fopen("IotPipe", "w");
+    fp = fopen("work/RasPike/sdk/workspace/etrobo2023_A/sp2", "w");
 
     fprintf(fp,"start\n");
     fclose(fp);

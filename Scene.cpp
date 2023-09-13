@@ -146,9 +146,9 @@ void Scene::execStart()
     if (ev3_button_is_pressed(ENTER_BUTTON))
     {
         printf("SPEED\n");
-        //mState=SPEED;
         mState=SPEED;
         //mState=DOUBLELOOP;
+        //mState=BLOCK;
     }
 #endif
 //printf("Start_Finish\n");
@@ -159,7 +159,7 @@ void Scene::execSpeed()
     if(mSsm->run()) {
         delete mSsm;
         mState=DOUBLELOOP;
-        //printf("speed終わっ�?");
+        //printf("speed終わった\n");
         //mState = END;
     }
     //printf("Speed_Finish\n");
@@ -190,7 +190,7 @@ void Scene::execBlock()
 {
     if(mBs->run())
     {
-        printf("block終わった");
+        printf("block終わった\n");
         delete mBs;
         mState=END;
     }

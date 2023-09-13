@@ -175,31 +175,26 @@ void tracer_task(intptr_t unused) {
   ext_tsk();
 }
 
-int cnt = 2;
+int cnt = 0;
 JudgeReception * mJr;
 
 void judge_task(intptr_t unused) {
   char pipe[256];
   FILE * fp;
-  switch (cnt)
+  if(cnt == 0)
   {
-  case 0:
-    fp = fopen("BlockPipe2","r");
-    fgets(pipe, 9, fp);
-    break;
-  case 1:
-    fp = fopen("BlockPipe2","r");
-    fgets(pipe, 2, fp);
-    break;
-  default:
-    fp = fopen("SnapPipe2", "r");
-    fgets(pipe, 2, fp);
-    break;
+    fp = fopen("work/RasPike/sdk/workspace/etrobo2023_A/BlockPipe2","r");
+    fgets(pipe, 11, fp);
   }
-  mJr->reception(pipe);
-  
+  else
+  {
+    fp = fopen("work/RasPike/sdk/workspace/etrobo2023_A/SnapPipe2", "r");
+    fgets(pipe, 2, fp);
+  }
+
   //読み込んだ1行を画面に出力する
   printf("%s", pipe);
+  mJr->reception(pipe);
   
   fclose(fp);
   ext_tsk();
