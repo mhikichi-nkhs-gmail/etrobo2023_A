@@ -17,6 +17,15 @@ bool BlockSection::run()
     {
         if(set_flag==0)
         {
+            extern int redblo;
+            extern int blueblo1;
+            extern int blueblo2;
+            extern int pat;
+
+            red_position = redblo;
+            blue_position1 = blueblo1;
+            blue_position2 = blueblo2;
+            pattern = pat;
             printf("set_block\n");
             if(course_flag==1)
             {

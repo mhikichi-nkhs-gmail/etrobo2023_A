@@ -19,6 +19,7 @@ int mcount = 0;
 int redblo = 0;
 int blueblo1 = 0;
 int blueblo2 = 0;
+int pat = 0;
 int mini = 0;
 
 JudgeReception::JudgeReception()
@@ -148,7 +149,7 @@ void JudgeReception::reception(char result[])
                     if(strcmp(blo,buffer) == 0)
                     {
                         mcount++;
-                        int pat = atoi(blo);
+                        pat = atoi(blo);
                         printf("pat = %d\n", pat);
                     }
                 }
