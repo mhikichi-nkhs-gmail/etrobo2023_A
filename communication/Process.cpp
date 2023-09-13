@@ -12,24 +12,29 @@ Process::Process()
 void Process::writing1(int pass) //snap
 {
     FILE * fp;
-    fp = fopen("work/RasPike/sdk/workspace/etrobo2023_A/SnapPipe", "w");
+    fp = fopen("/home/pi/work/RasPike/sdk/workspace/etrobo2023_A/SnapPipe", "w");
+    printf("Popen\n");
 
     if(pass == 0)
     {
         fprintf(fp,"snap\n");
+        printf("snap\n");
     }
     else
     {
         fprintf(fp,"getsnap\n");
+        printf("getsnap\n");
     }
     
     fclose(fp);
+    printf("close\n");
 }
 
 void Process::writing2(int pass) //Block
 {
     FILE * fp;
-    fp = fopen("work/RasPike/sdk/workspace/etrobo2023_A/BlockPipe", "w");
+    fp = fopen("/home/pi/work/RasPike/sdk/workspace/etrobo2023_A/BlockPipe", "w");
+
 
     fprintf(fp,"socket!\n");
     fclose(fp);
@@ -38,8 +43,12 @@ void Process::writing2(int pass) //Block
 void Process::writing3(int pass) //Iot
 {
     FILE * fp;
-    fp = fopen("work/RasPike/sdk/workspace/etrobo2023_A/sp2", "w");
+    printf("SPpipe1\n");
+    fp = fopen("/home/pi/work/RasPike/sdk/workspace/etrobo2023_A/sp2", "w");
+    printf("%d\n",fp);
+    printf("SPpipe2\n");
 
-    fprintf(fp,"start\n");
+    fputs("socket!",fp);
+    printf("SPpipe3\n");
     fclose(fp);
 }

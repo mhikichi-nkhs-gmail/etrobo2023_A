@@ -22,6 +22,8 @@ Scene::Scene():
     mDs = new DoubleSection();
     mDs2 = new DoubleSection();
     mBs = new BlockSection();
+    int mv = ev3_battery_voltage_mV();
+    printf("%d\n",mv);
     printf("作った\n");
 }
 
@@ -147,6 +149,7 @@ void Scene::execStart()
     {
         printf("SPEED\n");
         mState=SPEED;
+        //mState=BLOCK;
         //mState=DOUBLELOOP;
         //mState=BLOCK;
     }
@@ -181,8 +184,8 @@ void Scene::execDoubleloop()
         {
             printf("double終わった\n");
             delete mDs2;
-            mState=END;
-            //mState=BLOCK;
+            //mState=END;
+            mState=BLOCK;
         }
     }
 }

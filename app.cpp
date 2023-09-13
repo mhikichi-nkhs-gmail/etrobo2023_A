@@ -1,3 +1,4 @@
+#include <string.h>
 // tag::walker_def[]
 #include "app.h"
 #include "util.h"
@@ -138,7 +139,7 @@ void polling_task(intptr_t unused) {
     //sprintf(buf,"len , bri,H,S r,g,b, turn, v : %3.3f,  %7.4f,  %5.1f, %3.2f, %d,%d,%d  , %4.2f, %4.2f \n",len,br,h,s,  rgb.r, rgb.g,rgb.b ,turn,v);
     //msg_log(buf);
     //printf("h,s %f,,%f\n", h,s);
-    //緑:138, 黄色:39, 赤:353, 青:214
+    //�?:138, �?色:39, 赤:353, �?:214
     //printf("br,,%f\n", br);
 
     ext_tsk();
@@ -161,7 +162,7 @@ void tracer_task(intptr_t unused) {
 #endif
     else{
 
-    // とりあえずここで、アームの固定。設計に基づいて変えるべし
+    // とりあえずここで、アー�?の固定。設計に基づ�?て変えるべ�?
     int arm_cnt = gArm->getCount();
    // syslog(LOG_NOTICE,"%d",arm_cnt);
     int diff = -50 - arm_cnt;
@@ -175,27 +176,37 @@ void tracer_task(intptr_t unused) {
   ext_tsk();
 }
 
-int cnt = 0;
+int cnt = 1;
 JudgeReception * mJr;
 
 void judge_task(intptr_t unused) {
+  printf("task\n");
   char pipe[256];
   FILE * fp;
   if(cnt == 0)
   {
-    fp = fopen("work/RasPike/sdk/workspace/etrobo2023_A/BlockPipe2","r");
+    fp = fopen("/home/pi/work/RasPike/sdk/workspace/etrobo2023_A/BlockPipe2","r");
+    printf("BlockPipe2\n");
     fgets(pipe, 11, fp);
   }
   else
   {
-    fp = fopen("work/RasPike/sdk/workspace/etrobo2023_A/SnapPipe2", "r");
+    printf("SnapPipe2\n");
+    fp = fopen("/home/pi/work/RasPike/sdk/workspace/etrobo2023_A/SnapPipe2", "r");
+    printf("SnapPipe2\n");
     fgets(pipe, 2, fp);
+    /*while(!strcmp(pipe,"") == 0)
+    {
+      fgets(pipe, 2, fp);
+    }*/
   }
-
-  //読み込んだ1行を画面に出力する
-  printf("%s", pipe);
+  
+  
+  //読み込んだ1行を画面に出力す�?
+  printf("%s\n", pipe);
   mJr->reception(pipe);
   
+  cnt++;
   fclose(fp);
   ext_tsk();
 }
