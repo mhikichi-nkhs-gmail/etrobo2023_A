@@ -5,7 +5,8 @@
 
 double rtime = 0;
 bool mresult;
-int limtime;
+int wr;
+double limtime;
 int rec = 0;
 char * blo1;
 char * blo2;
@@ -27,10 +28,19 @@ JudgeReception::JudgeReception()
 
 void JudgeReception::init()
 {
-    printf("judgereception\n");
-    rtime = 0.0;
-    mresult = false;
-    act_tsk(JUDGE_TASK);
+    if(wr == 0)
+    {
+        printf("judgereception1\n");
+        rtime = 0.0;
+        mresult = false;
+    }
+    else
+    {
+        printf("judgereception2\n");
+        rtime = 0.0;
+        mresult = false;
+        act_tsk(JUDGE_TASK);
+    }
 }
 
 bool JudgeReception::judgement()
@@ -38,6 +48,7 @@ bool JudgeReception::judgement()
     measureTime();
     if(rtime > limtime || mresult == true)
     {
+        printf("kami\n");
         return true;
     }
     return false;
@@ -183,10 +194,11 @@ void JudgeReception::reception(char result[])
 void JudgeReception::measureTime()
 {
     rtime = rtime + 1.0;
-    //printf("rtime = %f",rtime);
+    printf("rtime = %f\n",rtime);
 }
 
 void JudgeReception::setParam(double recn[])
 {
+    wr = recn[0];
     limtime = recn[1];
 }

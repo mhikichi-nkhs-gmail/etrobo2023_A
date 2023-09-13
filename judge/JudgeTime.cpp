@@ -25,5 +25,6 @@ bool JudgeTime::judgement()
         return true;
     }
     time = time + 1.0;
+    //printf("time = %f\n");
     return false;
 }
