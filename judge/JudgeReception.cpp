@@ -45,7 +45,7 @@ bool JudgeReception::judgement()
 
 void JudgeReception::reception(char result[])
 {
-    rec = 1;
+    //rec = 1;
     if(rec == 0)
     {
         blo1 = strtok(result,","); //赤ブロック
