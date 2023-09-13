@@ -51,7 +51,7 @@ class SpeedSectionManager : public SectionManager {
             {Section::TRACER,{70, 0.1, 40, 2.5, 6.5 ,-31 , 0, _EDGE},Section::TURNANGLE,{45, Section::RESETANG}, Section::EMNONE,{}},
             {Section::TRACER,{70, 0.1, 40, 2.5, 5.0 ,0 , 0, _EDGE},Section::LENGTH,{40, Section::RESETLEN}, Section::EMNONE,{}},
             //{Section::WALKER,{0,0},Section::TIME,{10, Section::FLNONE}, Section::EMNONE,{}},
-            {Section::TRACER,{60, 0.05, 43, 2.5, 5.0 ,0 , 0, _EDGE},Section::COLOR,{208,0.1, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{60, 0.05, 43, 2.5, 5.5 ,0 , 0, _EDGE},Section::COLOR,{208,0.1, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{1, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::FILE,{3,0},Section::RECEPTION,{0,300, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{1, Section::RESETLEN}, Section::EMNONE,{}},

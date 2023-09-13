@@ -28,17 +28,13 @@ JudgeReception::JudgeReception()
 
 void JudgeReception::init()
 {
-    if(wr == 0)
+   
+    rtime = 0.0;
+    mresult = false;
+    printf("wr = %d",wr);
+    if(wr == 1)
     {
-        printf("judgereception1\n");
-        rtime = 0.0;
-        mresult = false;
-    }
-    else
-    {
-        printf("judgereception2\n");
-        rtime = 0.0;
-        mresult = false;
+         printf("judgereception1\n");
         act_tsk(JUDGE_TASK);
     }
 }
