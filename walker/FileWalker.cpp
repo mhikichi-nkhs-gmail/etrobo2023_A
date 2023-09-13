@@ -17,29 +17,29 @@ void FileWalker::execStart()
 
 void FileWalker::init()
 {
-    /*
+    
     printf("a\n");
     switch(mNo){
         case SNAP:
-            printf("snap1\n");
+            printf("snap\n");
             mPro->writing1(mComment);
             break;
         case BLOCK:
-            printf("block1\n");
+            printf("block\n");
             mPro->writing2(mComment);
             break;
         case IOT:
-            printf("iot1\n");
+            printf("iot\n");
             mPro->writing3(mComment);
             break;
         default:
             break;
     }
     //mPro->writing();
-    */
+    
 }
 
-void FileWalker::setParam(double flwk[]) //?ï¿½ï¿½g?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½p?ï¿½ï¿½C?ï¿½ï¿½v?ï¿½ï¿½A?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½e
+void FileWalker::setParam(double flwk[]) //??¿½?¿½g??¿½?¿½??¿½?¿½??¿½?¿½??¿½?¿½??¿½?¿½??¿½?¿½??¿½?¿½p??¿½?¿½C??¿½?¿½v??¿½?¿½A??¿½?¿½??¿½?¿½??¿½?¿½e
 {
     mNo = flwk[0];
     mComment = flwk[1];

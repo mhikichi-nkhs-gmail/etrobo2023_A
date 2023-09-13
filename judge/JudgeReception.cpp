@@ -3,9 +3,10 @@
 #include <stdlib.h>
 #include "JudgeReception.h"
 
-double rtime;
+double rtime = 0;
 bool mresult;
-int limtime;
+int wr;
+double limtime;
 int rec = 0;
 char * blo1;
 char * blo2;
@@ -18,6 +19,7 @@ int mcount = 0;
 int redblo = 0;
 int blueblo1 = 0;
 int blueblo2 = 0;
+int pat = 0;
 int mini = 0;
 
 JudgeReception::JudgeReception()
@@ -27,10 +29,15 @@ JudgeReception::JudgeReception()
 
 void JudgeReception::init()
 {
-    printf("judgereception\n");
+   
     rtime = 0.0;
     mresult = false;
-    act_tsk(JUDGE_TASK);
+    printf("wr = %d",wr);
+    if(wr == 1)
+    {
+         printf("judgereception1\n");
+        act_tsk(JUDGE_TASK);
+    }
 }
 
 bool JudgeReception::judgement()
@@ -38,6 +45,7 @@ bool JudgeReception::judgement()
     measureTime();
     if(rtime > limtime || mresult == true)
     {
+        printf("kami\n");
         return true;
     }
     return false;
@@ -45,7 +53,7 @@ bool JudgeReception::judgement()
 
 void JudgeReception::reception(char result[])
 {
-    rec = 1;
+    //rec = 1;
     if(rec == 0)
     {
         blo1 = strtok(result,","); //赤ブロック
@@ -141,7 +149,7 @@ void JudgeReception::reception(char result[])
                     if(strcmp(blo,buffer) == 0)
                     {
                         mcount++;
-                        int pat = atoi(blo);
+                        pat = atoi(blo);
                         printf("pat = %d\n", pat);
                     }
                 }
@@ -160,11 +168,20 @@ void JudgeReception::reception(char result[])
     {
         mresult = false;
         
-            if(strcmp(result,"0") == 0||strcmp(result,"1") == 0)
+            if(strcmp(result,"1") == 0)
             {
                 mresult = true;
                 mini = atoi(result);
-                printf("mini = %d\n", mini);
+                printf("root = %d\n", mini);
+            }
+            else
+            {
+                if(strcmp(result,"0") == 0)
+                {
+                    mresult = true;
+                    //mini = atoi(result);
+                    printf("root = %d\n", mini);
+                }
             }
     }
     
@@ -173,11 +190,12 @@ void JudgeReception::reception(char result[])
 }
 void JudgeReception::measureTime()
 {
-    //rtime = rtime + 1.0;
-    printf("rtime = %f",rtime);
+    rtime = rtime + 1.0;
+    printf("rtime = %f\n",rtime);
 }
 
 void JudgeReception::setParam(double recn[])
 {
+    wr = recn[0];
     limtime = recn[1];
 }

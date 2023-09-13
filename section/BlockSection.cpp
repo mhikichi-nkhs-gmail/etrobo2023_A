@@ -17,6 +17,15 @@ bool BlockSection::run()
     {
         if(set_flag==0)
         {
+            extern int redblo;
+            extern int blueblo1;
+            extern int blueblo2;
+            extern int pat;
+
+            red_position = redblo;
+            blue_position1 = blueblo1;
+            blue_position2 = blueblo2;
+            pattern = pat;
             printf("set_block\n");
             if(course_flag==1)
             {
@@ -199,8 +208,20 @@ bool BlockSection::run()
             {
                 if(set_flag==0)
                 {
-                    //set(Move_Block);
-                    
+                    switch(course_flag*move_pattern[pattern-1][count])
+		    {
+                        case 0:
+                            set(Move_Block_Ketu);
+                            break;
+                        case 1:
+                            set(Move_Block_Left);
+                            break;
+                        
+                        case -1:
+                            set(Move_Block_Right);
+                            break;
+                    }
+                    /*
                     switch(course_flag*position_angle[pattern-1][count])
                     {
                         case 0:
@@ -213,14 +234,14 @@ bool BlockSection::run()
                         case -90:
                             set(Avoid_Block_Right);
                             break;
-                    }
+                    }*/
                     
                     set_flag=1;
                 }
                 else
                 {
-                    //move_block();
-                    avoid_block();
+                    move_block();
+                    //avoid_block();
                 }
             }
             else
