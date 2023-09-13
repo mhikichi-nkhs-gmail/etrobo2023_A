@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include "JudgeReception.h"
 
-double rtime;
+double rtime = 0;
 bool mresult;
 int limtime;
 int rec = 0;
@@ -160,11 +160,20 @@ void JudgeReception::reception(char result[])
     {
         mresult = false;
         
-            if(strcmp(result,"0") == 0||strcmp(result,"1") == 0)
+            if(strcmp(result,"1") == 0)
             {
                 mresult = true;
                 mini = atoi(result);
-                printf("mini = %d\n", mini);
+                printf("root = %d\n", mini);
+            }
+            else
+            {
+                if(strcmp(result,"0") == 0)
+                {
+                    mresult = true;
+                    //mini = atoi(result);
+                    printf("root = %d\n", mini);
+                }
             }
     }
     

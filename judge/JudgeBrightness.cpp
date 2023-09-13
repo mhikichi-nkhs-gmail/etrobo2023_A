@@ -5,9 +5,9 @@ JudgeBrightness::JudgeBrightness()
 
 }
 
-void JudgeBrightness::setParam(double brcn[0])
+void JudgeBrightness::setParam(double brcn[])
 {
-    double mBrightkids = brcn[0];
+    mBrightkids = brcn[0];
 }
 
 void JudgeBrightness::init()
@@ -17,19 +17,12 @@ void JudgeBrightness::init()
 
 bool JudgeBrightness::judgement()
 {
-    if(mBrightkids < 0)
+    
+    if(mBrightkids>=mBrightness->getValue())
     {
-        if(mBrightkids<=mBrightness->getValue())
-        {
-            return true;
-        }
-    }
-    else
-    {
-        if(mBrightkids>=mBrightness->getValue())
-        {
-            return true;
-        }
+        printf("%f\n",mBrightkids);
+        printf("%f\n",mBrightness->getValue());
+        return true;
     }
     return false;
 
