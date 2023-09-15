@@ -16,16 +16,22 @@ void Process::writing1(int pass) //snap
     fp = fopen("/home/pi/work/RasPike/sdk/workspace/etrobo2023_A/SnapPipe", "w");
     printf("Popen\n");
 
-    if(pass == 0)
+    switch(pass)
     {
-        fprintf(fp,"snap\n");
-        printf("snap\n");
+        case 0:
+            fprintf(fp,"snapa\n");
+            printf("snapa\n");
+            break;
+        case 1:
+            fprintf(fp,"getsnap\n");
+            printf("getsnap\n");
+            break;
+        case 2:
+            fprintf(fp,"snapb\n");
+            printf("snapb\n");
+            break;
     }
-    else
-    {
-        fprintf(fp,"getsnap\n");
-        printf("getsnap\n");
-    }
+
     printf("close\n");
     fclose(fp);
     printf("closed\n");

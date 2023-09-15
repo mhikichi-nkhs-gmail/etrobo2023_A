@@ -109,9 +109,9 @@ class BlockSection : public SectionManager
 
         int move_pattern[4][16] = //1 left   -1 right    0 ketu
                             {
-                             {1,1,1,1,1,1,1,1,1,1,1,1,0,0,1,0},
-                             {1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,0,-1},
-                             {1,1,1,1,1,0,0,1,-1,0,0,0,1,-1,-1,-1},
+                             {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0},
+                             {1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
+                             {1,1,1,1,1,1,1,1,-1,-1,-1,-1,1,-1,-1,-1},
                              {1,1,-1,-1,-1,-1,1,1,1,1,-1,-1,-1,-1,1,1}
                             };
 
@@ -138,21 +138,21 @@ class BlockSection : public SectionManager
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
         SecParam Move_Block_Left[10]={
-            {Section::VIRSLINE,{50, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{6, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{70, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{8, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TWALKER,{-65,0},Section::TURNANGLE,{90,Section::RESETANG},Section::EMNONE,{}},
             {Section::VIRSLINE,{50, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{5, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::VIRSLINE,{-45, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{-4, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TWALKER,{65,0},Section::TURNANGLE,{-92,Section::RESETANG},Section::EMNONE,{}},
-            {Section::VIRSLINE,{-45, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{-3, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{-45, 0, 0, 28,4.5 ,1.2,1},Section::LENGTH,{-2.5, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TWALKER,{65,0},Section::TURNANGLE,{-90,Section::RESETANG},Section::EMNONE,{}},
+            {Section::VIRSLINE,{-45, 0, 0, 28, 4.5 ,1.2,1},Section::LENGTH,{-5, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
 	SecParam Move_Block_Right[10]={
-            {Section::VIRSLINE,{50, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{5, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{70, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{8, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TWALKER,{65,0},Section::TURNANGLE,{-90,Section::RESETANG},Section::EMNONE,{}},
             {Section::VIRSLINE,{50, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{5, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::VIRSLINE,{-45, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{-4, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{-45, 0, 0, 28, 4.5 ,1.2,1},Section::LENGTH,{-4, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TWALKER,{-65,0},Section::TURNANGLE,{90,Section::RESETANG},Section::EMNONE,{}},
-            {Section::VIRSLINE,{-45, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{-5, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{-45, 0, 0, 28, 4.5 ,1.2,1},Section::LENGTH,{-5, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
 	SecParam Move_Block_Ketu[10]={
@@ -207,7 +207,7 @@ class BlockSection : public SectionManager
             {Section::WALKER,{0,0},Section::TIME,{1, Section::FLNONE}, Section::EMNONE,{}},
             //{Section::TRACER,{40, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},
             //{Section::VIRSLINE,{38, 0, 0, 28, 2.5 ,1.2,1},Section::COLOR,{140,0.2, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TRACER,{45, 0.05, 48, 2.5, 5.0 ,0 , 0, _OPPOSITION_EDGE},Section::COLOR,{141,0.2, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::TRACER,{45, 0.05, 48, 2.5, 5.0 ,0 , 0, _OPPOSITION_EDGE},Section::COLOR,{141,0.18, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
         SecParam Next_Yellow_Circle[15]={
@@ -285,13 +285,13 @@ class BlockSection : public SectionManager
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
         
         SecParam Goal_left[5]={
-            {Section::VIRCLINE,{60, 5, 28, 2.5 ,1.2},Section::TURNANGLE,{85, Section::RESETANG}, Section::EMNONE,{}},
+            {Section::VIRCLINE,{70, 5, 28, 2.5 ,1.2},Section::TURNANGLE,{85, Section::RESETANG}, Section::EMNONE,{}},
             {Section::VIRSLINE,{50, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{2, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{1, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
         SecParam Goal_right[10]={
-            {Section::VIRSLINE,{50, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{2, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{70, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{2, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::VIRCLINE,{55, -4, 28, 2.5 ,1.2},Section::TURNANGLE,{-90, Section::RESETANG}, Section::EMNONE,{}},
             {Section::VIRSLINE,{50, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{2, Section::RESETLEN}, Section::EMNONE,{}},
             //{Section::VIRSLINE,{55, 85, 0, 28, 2.5 ,1.2,0},Section::TURNANGLE,{85, Section::RESETANG}, Section::EMNONE,{}},
@@ -299,26 +299,27 @@ class BlockSection : public SectionManager
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
         SecParam Goal_front[5]={
-            {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{12, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{70, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{12, Section::RESETLEN}, Section::EMNONE,{}},
             //{Section::VIRCLINE,{40, 5, 28, 2.5 ,1.2},Section::TURNANGLE,{85, Section::RESETANG}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{1, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
         SecParam Goal_behind[5]={
-            {Section::VIRCLINE,{60, 5, 28, 2.5 ,1.2},Section::TURNANGLE,{195, Section::RESETANG}, Section::EMNONE,{}},
-            {Section::VIRSLINE,{50, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{5, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{70, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{8, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::VIRCLINE,{65, 5, 28, 2.5 ,1.2},Section::TURNANGLE,{195, Section::RESETANG}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{50, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{13, Section::RESETLEN}, Section::EMNONE,{}},
             //{Section::VIRCLINE,{40, 5, 28, 2.5 ,1.2},Section::TURNANGLE,{-85, Section::RESETANG}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{1, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
         SecParam Goal_turn_left[5]={
-            {Section::VIRCLINE,{60, 5, 28, 2.5 ,1.2},Section::TURNANGLE,{90, Section::RESETANG}, Section::EMNONE,{}},
+            {Section::VIRCLINE,{70, 5, 28, 2.5 ,1.2},Section::TURNANGLE,{90, Section::RESETANG}, Section::EMNONE,{}},
             //{Section::VIRCLINE,{40, 5, 28, 2.5 ,1.2},Section::TURNANGLE,{-85, Section::RESETANG}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{1, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
         SecParam Goal_turn_right[5]={
-            {Section::VIRCLINE,{60, -5, 28, 2.5 ,1.2},Section::TURNANGLE,{-90, Section::RESETANG}, Section::EMNONE,{}},
+            {Section::VIRCLINE,{70, -5, 28, 2.5 ,1.2},Section::TURNANGLE,{-90, Section::RESETANG}, Section::EMNONE,{}},
             //{Section::VIRCLINE,{40, 5, 28, 2.5 ,1.2},Section::TURNANGLE,{-85, Section::RESETANG}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{1, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
@@ -326,36 +327,36 @@ class BlockSection : public SectionManager
         SecParam RGoal_row1_P1[10]={
             {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{130, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::VIRSLINE,{55, 0, 0, 25, 2.5 ,2.0,1},Section::BRIGHTNESS,{-0.25, Section::FLNONE}, Section::EMNONE,{}},
-            {Section::VIRSLINE,{50, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{1.5, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{50, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{3, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TWALKER,{65},Section::TURNANGLE,{-85, Section::RESETANG}, Section::EMNONE,{}},
-            {Section::TRACER,{50, 0.0, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::COLOR,{203,0.13, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::TRACER,{50, 0.0, 48, 2.5, 5.0 ,0 , 0, _OPPOSITION_EDGE},Section::COLOR,{203,0.08, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{100000, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
         SecParam RGoal_row2_P1[7]={
             {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{90, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::VIRSLINE,{55, 0, 0, 25, 2.5 ,2.0,1},Section::BRIGHTNESS,{-0.25, Section::FLNONE}, Section::EMNONE,{}},
-            {Section::VIRSLINE,{45, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{1.5, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{45, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{3, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TWALKER,{65},Section::TURNANGLE,{-90, Section::RESETANG}, Section::EMNONE,{}},
-            {Section::TRACER,{55, 0.0, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::COLOR,{203,0.13, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::TRACER,{55, 0.0, 48, 2.5, 5.0 ,0 , 0, _OPPOSITION_EDGE},Section::COLOR,{203,0.08, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{100000, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
         SecParam RGoal_row3_P1[7]={
             {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{50, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::VIRSLINE,{55, 0, 0, 25, 2.5 ,2.0,1},Section::BRIGHTNESS,{-0.25, Section::FLNONE}, Section::EMNONE,{}},
-            {Section::VIRSLINE,{45, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{1.5, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{45, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{2, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TWALKER,{65},Section::TURNANGLE,{-85, Section::RESETANG}, Section::EMNONE,{}},
-            {Section::TRACER,{55, 0.0, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::COLOR,{203,0.13, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::TRACER,{55, 0.0, 48, 2.5, 5.0 ,0 , 0, _OPPOSITION_EDGE},Section::COLOR,{203,0.08, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{100000, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
         SecParam RGoal_row4_P1[7]={
             {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{20, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::VIRSLINE,{45, 0, 0, 28, 2.5 ,1.2,1},Section::BRIGHTNESS,{-0.25, Section::FLNONE}, Section::EMNONE,{}},
-            {Section::VIRSLINE,{45, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{1.5, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{45, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{3, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TWALKER,{65},Section::TURNANGLE,{-85, Section::RESETANG}, Section::EMNONE,{}},
-            {Section::TRACER,{55, 0.0, 50, 2.5, 5.0 ,0 , 0, _EDGE},Section::COLOR,{203,0.13, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::TRACER,{55, 0.0, 50, 2.5, 5.0 ,0 , 0, _OPPOSITION_EDGE},Section::COLOR,{203,0.08, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{100000, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
@@ -365,7 +366,7 @@ class BlockSection : public SectionManager
             {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2,0},Section::BRIGHTNESS,{-0.25, Section::FLNONE}, Section::EMNONE,{}},
             {Section::VIRSLINE,{50, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{1.5, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TWALKER,{-65},Section::TURNANGLE,{85, Section::RESETANG}, Section::EMNONE,{}},
-            {Section::TRACER,{50, 0.0, 48, 2.5, 5.0 ,0 , 0, _OPPOSITION_EDGE},Section::COLOR,{203,0.13, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::TRACER,{50, 0.0, 48, 2.5, 5.0 ,0 , 0, _OPPOSITION_EDGE},Section::COLOR,{203,0.08, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{100000, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
@@ -374,7 +375,7 @@ class BlockSection : public SectionManager
             {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2,1},Section::BRIGHTNESS,{-0.25, Section::FLNONE}, Section::EMNONE,{}},
             {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{1.5, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TWALKER,{-65},Section::TURNANGLE,{90, Section::RESETANG}, Section::EMNONE,{}},
-            {Section::TRACER,{65, 0.0, 48, 2.5, 5.0 ,0 , 0, _OPPOSITION_EDGE},Section::COLOR,{203,0.13, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::TRACER,{65, 0.0, 48, 2.5, 5.0 ,0 , 0, _OPPOSITION_EDGE},Section::COLOR,{203,0.08, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{100000, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
@@ -383,7 +384,7 @@ class BlockSection : public SectionManager
             {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2,1},Section::BRIGHTNESS,{-0.25, Section::FLNONE}, Section::EMNONE,{}},
             {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{1.5, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TWALKER,{-65},Section::TURNANGLE,{85, Section::RESETANG}, Section::EMNONE,{}},
-            {Section::TRACER,{55, 0.0, 48, 2.5, 5.0 ,0 , 0, _OPPOSITION_EDGE},Section::COLOR,{203,0.13, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::TRACER,{55, 0.0, 48, 2.5, 5.0 ,0 , 0, _OPPOSITION_EDGE},Section::COLOR,{203,0.08, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{100000, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
@@ -402,9 +403,9 @@ class BlockSection : public SectionManager
             {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::VIRCLINE,{60, -5, 28, 2.5 ,1.2},Section::TURNANGLE,{-85, Section::RESETANG}, Section::EMNONE,{}},
             {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2,1},Section::BRIGHTNESS,{-0.25, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{1.5, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{2, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TWALKER,{65},Section::TURNANGLE,{-85, Section::RESETANG}, Section::EMNONE,{}},
-            {Section::TRACER,{55, -0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::COLOR,{203,0.13, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{55, -0.05, 48, 2.5, 5.0 ,0 , 0, _OPPOSITION_EDGE},Section::COLOR,{203,0.08, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{100000, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
@@ -414,9 +415,9 @@ class BlockSection : public SectionManager
             {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::VIRCLINE,{60, -5, 28, 2.5 ,1.2},Section::TURNANGLE,{-85, Section::RESETANG}, Section::EMNONE,{}},
             {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2,1},Section::BRIGHTNESS,{-0.25, Section::FLNONE}, Section::EMNONE,{}},
-            {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{1.5, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{3, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TWALKER,{65},Section::TURNANGLE,{-85, Section::RESETANG}, Section::EMNONE,{}},
-            {Section::TRACER,{55, -0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::COLOR,{203,0.13, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::TRACER,{55, -0.05, 48, 2.5, 5.0 ,0 , 0, _OPPOSITION_EDGE},Section::COLOR,{203,0.13, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{100000, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
@@ -426,9 +427,9 @@ class BlockSection : public SectionManager
             {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::VIRCLINE,{60, -5, 28, 2.5 ,1.2},Section::TURNANGLE,{-85, Section::RESETANG}, Section::EMNONE,{}},
             {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2,1},Section::BRIGHTNESS,{-0.25, Section::FLNONE}, Section::EMNONE,{}},
-            {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{1.5, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{3, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TWALKER,{65},Section::TURNANGLE,{-85, Section::RESETANG}, Section::EMNONE,{}},
-            {Section::TRACER,{55, -0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::COLOR,{203,0.13, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::TRACER,{55, -0.05, 48, 2.5, 5.0 ,0 , 0, _OPPOSITION_EDGE},Section::COLOR,{203,0.13, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{100000, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
@@ -437,9 +438,9 @@ class BlockSection : public SectionManager
             {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::VIRCLINE,{60, -5, 28, 2.5 ,1.2},Section::TURNANGLE,{-85, Section::RESETANG}, Section::EMNONE,{}},
             {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2,1},Section::BRIGHTNESS,{-0.25, Section::FLNONE}, Section::EMNONE,{}},
-            {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{1.5, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{3, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TWALKER,{65},Section::TURNANGLE,{-85, Section::RESETANG}, Section::EMNONE,{}},
-            {Section::TRACER,{55, -0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::COLOR,{203,0.13, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::TRACER,{55, -0.05, 48, 2.5, 5.0 ,0 , 0, _OPPOSITION_EDGE},Section::COLOR,{203,0.08, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{100000, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
@@ -451,7 +452,7 @@ class BlockSection : public SectionManager
             {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2,1},Section::BRIGHTNESS,{-0.25, Section::FLNONE}, Section::EMNONE,{}},
             {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{1.5, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TWALKER,{-65},Section::TURNANGLE,{85, Section::RESETANG}, Section::EMNONE,{}},
-            {Section::TRACER,{55, -0.05, 48, 2.5, 5.0 ,0 , 0, _OPPOSITION_EDGE},Section::COLOR,{203,0.13, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::TRACER,{55, -0.05, 48, 2.5, 5.0 ,0 , 0, _OPPOSITION_EDGE},Section::COLOR,{203,0.08, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{100000, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
@@ -463,7 +464,7 @@ class BlockSection : public SectionManager
             {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2,1},Section::BRIGHTNESS,{-0.25, Section::FLNONE}, Section::EMNONE,{}},
             {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{1.5, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TWALKER,{-65},Section::TURNANGLE,{85, Section::RESETANG}, Section::EMNONE,{}},
-            {Section::TRACER,{55, -0.05, 48, 2.5, 5.0 ,0 , 0, _OPPOSITION_EDGE},Section::COLOR,{203,0.13, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::TRACER,{55, -0.05, 48, 2.5, 5.0 ,0 , 0, _OPPOSITION_EDGE},Section::COLOR,{203,0.08, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{100000, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
@@ -475,7 +476,7 @@ class BlockSection : public SectionManager
             {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2,1},Section::BRIGHTNESS,{-0.25, Section::FLNONE}, Section::EMNONE,{}},
             {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{1.5, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TWALKER,{-65},Section::TURNANGLE,{85, Section::RESETANG}, Section::EMNONE,{}},
-            {Section::TRACER,{55, -0.05, 48, 2.5, 5.0 ,0 , 0, _OPPOSITION_EDGE},Section::COLOR,{203,0.13, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::TRACER,{55, -0.05, 48, 2.5, 5.0 ,0 , 0, _OPPOSITION_EDGE},Section::COLOR,{203,0.08, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{100000, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
@@ -487,7 +488,7 @@ class BlockSection : public SectionManager
             {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2,1},Section::BRIGHTNESS,{-0.25, Section::FLNONE}, Section::EMNONE,{}},
             {Section::VIRSLINE,{55, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{1.5, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TWALKER,{-65},Section::TURNANGLE,{85, Section::RESETANG}, Section::EMNONE,{}},
-            {Section::TRACER,{55, -0.05, 48, 2.5, 5.0 ,0 , 0, _OPPOSITION_EDGE},Section::COLOR,{203,0.13, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::TRACER,{55, -0.05, 48, 2.5, 5.0 ,0 , 0, _OPPOSITION_EDGE},Section::COLOR,{203,0.08, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{100000, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
         

@@ -22,10 +22,19 @@ bool BlockSection::run()
             extern int blueblo2;
             extern int pat;
 
-            red_position = redblo;
-            blue_position1 = blueblo1;
-            blue_position2 = blueblo2;
-            pattern = pat;
+            printf("redblo,,%d\n", redblo);
+            printf("blueblo1,,%d\n", blueblo1);
+            printf("blueblo2,,%d\n", blueblo2);
+            printf("pat,,%d\n", pat);
+
+            if(pat != 0)
+            {
+                red_position = redblo;
+                blue_position1 = blueblo1;
+                blue_position2 = blueblo2;
+                pattern = pat;
+            }
+            
             printf("set_block\n");
             if(course_flag==1)
             {
