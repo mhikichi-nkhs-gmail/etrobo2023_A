@@ -9,12 +9,11 @@ TurnWalker::TurnWalker(Odometry *odo,
 
 void TurnWalker::execStart()
 {
-    //printf("Twalker_Doing\n");
     mCurrentLen = mLength->getValue();
     //printf("current%f\n", mCurrentLen);
-    val1 = mTargetLen - mCurrentLen;
-    //printf("val1%f\n", val1);
-    mTurn = calcTurn();
+    double val1 = mTargetLen - mCurrentLen;
+    printf("val1%f\n", val1);
+    mTargetSpeed = calcTurn(val1);
 
     setCommand((int)mTargetSpeed, (int)mTurn);
 
@@ -26,21 +25,29 @@ void TurnWalker::setParam(double power[])
     mTargetSpeed = 0;
     mTarget = 0;
 
-    mCurve = power[0];
+    mTurn = power[0];
+    mPFactor = power[1];
+    mIFactor = power[2];
+    mDFactor = power[3];
   
     mPid->setTarget(mTarget);
+    mPid->setKp(mPFactor); 
+    mPid->setKi(mIFactor);
+    mPid->setKd(mDFactor);
 }
 
-double TurnWalker::calcTurn()
+double TurnWalker::calcTurn(double val2)
 {
-    double val1_turn = mPid->getOperation(val1);
+    double val3 = mPid->getOperation(val2);
     //printf("val1%f\n", val1_turn);
 
+    val3 = val3*-1;
     setBias(mCurve);
-    double turn =  val1_turn+mBias;
+    double val4 =  val3+mBias;
+    //double turn = mTarget;
     //printf("turn%f,,\n", turn);
    
-    return turn;
+    return val4;
 }
 
 void TurnWalker::setBias(double curve) //�J�[�u�p����
@@ -51,5 +58,5 @@ void TurnWalker::setBias(double curve) //�J�[�u�p����
 void TurnWalker::init()
 {
     mTargetLen = mLength->getValue();
-    //printf("target%f\n", mTargetLen);
+    printf("target%f\n", mTargetLen);
 }

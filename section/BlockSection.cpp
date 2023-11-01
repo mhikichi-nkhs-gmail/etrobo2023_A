@@ -86,7 +86,14 @@ bool BlockSection::run()
                             set(Goal_front);
                             break;
                         case behind:
-                            set(Goal_behind);
+                            if(course_flag==1)
+                            {
+                                set(RGoal_behind);
+                            }
+                            else
+                            {
+                                set(LGoal_behind);
+                            }
                             break;
                     }
                     set_flag=1;

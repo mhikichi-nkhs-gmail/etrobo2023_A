@@ -160,6 +160,7 @@ void DoubleSection::bluemarker(int num2/*char pass*/)
         //extern JudgeReception *mJr;
         //int pass = mJr->mini;
         extern int mini;
+        printf("mini = %d\n",mini);
         if(mini == 0)
         {
             if(num2 < 3)

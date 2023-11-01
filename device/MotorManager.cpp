@@ -14,6 +14,7 @@ void MotorManager::setPwm(int left,int right)
 {
 	int setleft;
 	int setright;
+	/*
 	current_lmotor = mLeftMotor->getCount();
 	current_rmotor = mRightMotor->getCount();
 	
@@ -70,6 +71,7 @@ void MotorManager::setPwm(int left,int right)
 			mrCount = 0.0;
 		}
 	}
+	*/
 
 
 /*
@@ -99,7 +101,7 @@ void MotorManager::setPwm(int left,int right)
 	//mLeftMotor->setPWM(left);
 	//mRightMotor->setPWM(right);
 	
-
+/*
 
 		if(mlCount == 200)
 		{
@@ -123,9 +125,13 @@ void MotorManager::setPwm(int left,int right)
 	
 	prev_lmotor = current_lmotor;
 	prev_rmotor = current_rmotor;
+
+*/
 		
-	//mLeftMotor->setPWM(left);
-	//mRightMotor->setPWM(right);
+	mLeftMotor->setPWM(left);
+	mRightMotor->setPWM(right);
+
+	//printf("left,,%d,,right,,%d\n", left,right);
 }
 
 

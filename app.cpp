@@ -1,4 +1,7 @@
 #include <string.h>
+#include <iostream>
+#include <thread>
+
 // tag::walker_def[]
 #include "app.h"
 #include "util.h"
@@ -176,13 +179,22 @@ void tracer_task(intptr_t unused) {
   ext_tsk();
 }
 
-int cnt = 0;
+void count()
+{
+  int cn = 0;
+  while(cn <= 300)
+  {
+    cn = cn + 1;
+  }
+}
+int cnt = 1;
 JudgeReception * mJr;
 
 void judge_task(intptr_t unused) {
   printf("task\n");
   char pipe[256];
   FILE * fp;
+  //printf("rec = %d\n",rec);
   if(cnt == 0)
   {
     fp = fopen("/home/pi/work/RasPike/sdk/workspace/etrobo2023_A/BlockPipe2","r");
@@ -195,9 +207,13 @@ void judge_task(intptr_t unused) {
     //fp = fopen("/home/pi/work/RasPike/sdk/workspace/etrobo2023_A/SnapPipe2", "r");
     //fgets(pipe, , fp);
     //fclose(fp);
+
+    std::thread first (count);
     fp = fopen("/home/pi/work/RasPike/sdk/workspace/etrobo2023_A/SnapPipe2", "r");
     printf("SnapPipe2\n");
     fgets(pipe, 2, fp);
+    first.join();
+    
     /*while(!strcmp(pipe,"") == 0)
     {
       fgets(pipe, 2, fp);

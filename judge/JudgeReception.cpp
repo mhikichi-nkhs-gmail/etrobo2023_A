@@ -55,7 +55,7 @@ bool JudgeReception::judgement()
 
 void JudgeReception::reception(char result[])
 {
-    //rec = 1;
+    rec = 1;
     if(rec == 0)
     {
         relength = strlen(result);
@@ -198,6 +198,7 @@ void JudgeReception::reception(char result[])
         {
             mresult = true;
         }
+        rec++;
         
     }
     else
@@ -209,6 +210,11 @@ void JudgeReception::reception(char result[])
                 mresult = true;
                 mini = atoi(result);
                 printf("root = %d\n", mini);
+                /*if(rec < 4)
+                {
+                    rec = 3;
+                }*/
+
             }
             else
             {
@@ -219,9 +225,8 @@ void JudgeReception::reception(char result[])
                     printf("root = %d\n", mini);
                 }
             }
+            rec++;
     }
-    
-    rec++;
     
 }
 void JudgeReception::measureTime()

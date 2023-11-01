@@ -45,7 +45,7 @@ void SimpleWalker::execStart() {
 
     double pwm_l = mForward + mTurn;      // <2>
     double pwm_r = mForward - mTurn;      // <2>
-    static const int MAXPWM=85;
+    static const int MAXPWM=100;
     int diff = 0;
     //printf("pwm_l,pwm_r%f,,%f\n", pwm_l, pwm_r);
 

@@ -81,6 +81,8 @@ void Odometry::calc()
 	th+=dth; // 左旋回＋、右旋回-
 	sumlen += (len_r+len_l)/2.0;
 
+	//.printf("x%f,,y%f,,th%f\n", x,y,th);
+
 	mLength->update(sumlen);
 	mTurnAngle->update(th);
 	//printf("mTurnAngle%f,,\n", th);
