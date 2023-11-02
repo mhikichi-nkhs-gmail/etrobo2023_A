@@ -17,6 +17,31 @@ bool BlockSection::run()
     {
         if(set_flag==0)
         {
+            extern int redblo;
+            extern int blueblo1;
+            extern int blueblo2;
+            extern int pat;
+
+            printf("redblo,,%d\n", redblo);
+            printf("blueblo1,,%d\n", blueblo1);
+            printf("blueblo2,,%d\n", blueblo2);
+            printf("pat,,%d\n", pat);
+
+            red_position = 3;
+            blue_position1 = 9;
+            blue_position2 = 7;
+            pattern = 3;
+
+/*
+            if(pat != 0)
+            {
+                red_position = redblo;
+                blue_position1 = blueblo1;
+                blue_position2 = blueblo2;
+                pattern = pat;
+            }
+            */
+            
             printf("set_block\n");
             if(course_flag==1)
             {
@@ -24,7 +49,7 @@ bool BlockSection::run()
             }
             else
             {
-                //set(LIn_Block);
+                set(LIn_Block);
             }
             set_flag=1;
         }
@@ -42,19 +67,40 @@ bool BlockSection::run()
             switch(set_flag)
             {
                 case 0:
-                    switch(position_direction[pattern-1][count])
+                    switch(goal_direction[pattern-1][count])
                     {
                         case left:
-                            set(Goal_left);
+                            if(course_flag==1)
+                            {
+                                set(Goal_left);
+                            }
+                            else
+                            {
+                                set(Goal_right);
+                            }
                             break;
                         case right:
-                            set(Goal_right);
+                            if(course_flag==1)
+                            {
+                                set(Goal_right);
+                            }
+                            else
+                            {
+                                set(Goal_left);
+                            }
                             break;
                         case front:
                             set(Goal_front);
                             break;
                         case behind:
-                            set(Goal_behind);
+                            if(course_flag==1)
+                            {
+                                set(RGoal_behind);
+                            }
+                            else
+                            {
+                                set(LGoal_behind);
+                            }
                             break;
                     }
                     set_flag=1;
@@ -63,8 +109,118 @@ bool BlockSection::run()
                     preparation_goal();
                     break;
                 case 2:
+                    if(course_flag*goal_turn_direction[pattern-1][count]==1)
+                    {
+                        set(Goal_turn_left);
+                    }
+                    else
+                    {
+                        set(Goal_turn_right);
+                    }
+                    set_flag=3;
                     break;
                 case 3:
+                    goal_turn();
+                    break;
+                case 4:
+                    tmp = (now_position-1)/4;
+                    if(goal_pattern[pattern-1][count]==1)
+                    {
+                        switch(tmp)
+                        {
+                            case 0:
+                                if(course_flag==1)
+                                {
+                                    set(RGoal_row4_P1);
+                                }
+                                else
+                                {
+                                    set(LGoal_row4_P1);
+                                }
+                                
+                                break;
+                            case 1:
+                                if(course_flag==1)
+                                {
+                                    set(RGoal_row3_P1);
+                                }
+                                else
+                                {
+                                    set(LGoal_row3_P1);
+                                }
+                                break;
+                            case 2:
+                                if(course_flag==1)
+                                {
+                                    set(RGoal_row2_P1);
+                                }
+                                else
+                                {
+                                    set(LGoal_row2_P1);
+                                }
+                                break;
+                            case 3:
+                                if(course_flag==1)
+                                {
+                                    set(RGoal_row1_P1);
+                                }
+                                else
+                                {
+                                    set(LGoal_row1_P1);
+                                }
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        switch(tmp)
+                        {
+                            case 0:
+                                if(course_flag==1)
+                                {
+                                    set(RGoal_row4_P2);
+                                }
+                                else
+                                {
+                                    set(LGoal_row4_P2);
+                                } 
+                                break;
+                            case 1:
+                                if(course_flag==1)
+                                {
+                                    set(RGoal_row3_P2);
+                                }
+                                else
+                                {
+                                    set(LGoal_row3_P2);
+                                }
+                                break;
+                            case 2:
+                                if(course_flag==1)
+                                {
+                                    set(RGoal_row2_P2);
+                                }
+                                else
+                                {
+                                    set(LGoal_row2_P2);
+                                }
+                                break;
+                            case 3:
+                                if(course_flag==1)
+                                {
+                                    set(RGoal_row1_P2);
+                                }
+                                else
+                                {
+                                    set(LGoal_row1_P2);
+                                }
+                                break;
+                        }
+                    }
+                    set_flag=5;
+                    break;
+                case 5:
+                    goal();
                     break;
             }
 
@@ -75,12 +231,40 @@ bool BlockSection::run()
             {
                 if(set_flag==0)
                 {
-                    //set(Move_Block);
+                    switch(course_flag*move_pattern[pattern-1][count])
+		    {
+                        case 0:
+                            set(Move_Block_Ketu);
+                            break;
+                        case 1:
+                            set(Move_Block_Left);
+                            break;
+                        
+                        case -1:
+                            set(Move_Block_Right);
+                            break;
+                    }
+                    /*
+                    switch(course_flag*position_angle[pattern-1][count])
+                    {
+                        case 0:
+                            set(Avoid_Block_Strate);
+                            break;
+                        case 90:
+                            set(Avoid_Block_Left);
+                            break;
+                        
+                        case -90:
+                            set(Avoid_Block_Right);
+                            break;
+                    }*/
+                    
                     set_flag=1;
                 }
                 else
                 {
-                    //move_block();
+                    move_block();
+                    //avoid_block();
                 }
             }
             else
@@ -100,11 +284,25 @@ bool BlockSection::run()
                             break;
                         case 180:
                             printf("set_behind\n");
-                            set(behind_turn);
+                            if(course_flag==1)
+                            {
+                                set(Rbehind_turn);
+                            }
+                            else
+                            {
+                                set(Lbehind_turn);
+                            }
                             break;
                         case -180:
                             printf("set_behind\n");
-                            set(behind_turn);
+                            if(course_flag==1)
+                            {
+                                set(Rbehind_turn);
+                            }
+                            else
+                            {
+                                set(Lbehind_turn);
+                            }
                             break;
                         case -90:
                             printf("set_right_turn\n");
@@ -248,6 +446,24 @@ void BlockSection::move_block()
         set_flag=0;
     }
 }
+
+void BlockSection::avoid_block()
+{
+    if(SectionManager::run())
+    {
+        if(blue_position1 == now_position)
+        {
+            blue_position1=-2;
+        }
+        else
+        {
+            blue_position2=-2;
+        }
+        set_flag=0;
+        count++;
+    }
+}
+
 void BlockSection::in_block()
 {
     if(SectionManager::run())
@@ -273,3 +489,13 @@ void BlockSection::preparation_goal()
         set_flag=2;
     }
 }
+
+void BlockSection::goal_turn()
+{
+
+    if(SectionManager::run())
+    {
+        set_flag=4;
+    }
+}
+

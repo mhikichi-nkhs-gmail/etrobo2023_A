@@ -1,4 +1,7 @@
 #include <string.h>
+#include <iostream>
+#include <thread>
+
 // tag::walker_def[]
 #include "app.h"
 #include "util.h"
@@ -139,7 +142,7 @@ void polling_task(intptr_t unused) {
     //sprintf(buf,"len , bri,H,S r,g,b, turn, v : %3.3f,  %7.4f,  %5.1f, %3.2f, %d,%d,%d  , %4.2f, %4.2f \n",len,br,h,s,  rgb.r, rgb.g,rgb.b ,turn,v);
     //msg_log(buf);
     //printf("h,s %f,,%f\n", h,s);
-    //緑:138, 黄色:39, 赤:353, 青:214
+    //�?:138, �?色:39, 赤:353, �?:214
     //printf("br,,%f\n", br);
 
     ext_tsk();
@@ -162,7 +165,7 @@ void tracer_task(intptr_t unused) {
 #endif
     else{
 
-    // とりあえずここで、アームの固定。設計に基づいて変えるべし
+    // とりあえずここで、アー�?の固定。設計に基づ�?て変えるべ�?
     int arm_cnt = gArm->getCount();
    // syslog(LOG_NOTICE,"%d",arm_cnt);
     int diff = -50 - arm_cnt;
@@ -176,6 +179,14 @@ void tracer_task(intptr_t unused) {
   ext_tsk();
 }
 
+void count()
+{
+  int cn = 0;
+  while(cn <= 300)
+  {
+    cn = cn + 1;
+  }
+}
 int cnt = 1;
 JudgeReception * mJr;
 
@@ -183,30 +194,38 @@ void judge_task(intptr_t unused) {
   printf("task\n");
   char pipe[256];
   FILE * fp;
-  switch (cnt)
+  //printf("rec = %d\n",rec);
+  if(cnt == 0)
   {
-  case 0:
     fp = fopen("/home/pi/work/RasPike/sdk/workspace/etrobo2023_A/BlockPipe2","r");
     printf("BlockPipe2\n");
     fgets(pipe, 11, fp);
-    break;
-  default:
+  }
+  else
+  {
     printf("SnapPipe2\n");
-    fp = fopen("/home/pi/work/RasPike/sdk/workspace/etrobo2023_A//SnapPipe2", "r");
+    //fp = fopen("/home/pi/work/RasPike/sdk/workspace/etrobo2023_A/SnapPipe2", "r");
+    //fgets(pipe, , fp);
+    //fclose(fp);
+
+    std::thread first (count);
+    fp = fopen("/home/pi/work/RasPike/sdk/workspace/etrobo2023_A/SnapPipe2", "r");
     printf("SnapPipe2\n");
     fgets(pipe, 2, fp);
+    first.join();
+    
     /*while(!strcmp(pipe,"") == 0)
     {
       fgets(pipe, 2, fp);
     }*/
-    break;
   }
   
   
-  //読み込んだ1行を画面に出力する
+  //読み込んだ1行を画面に出力す�?
   printf("%s\n", pipe);
   mJr->reception(pipe);
   
+  cnt++;
   fclose(fp);
   ext_tsk();
 }

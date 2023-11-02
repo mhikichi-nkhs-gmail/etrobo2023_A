@@ -12,21 +12,29 @@ Process::Process()
 void Process::writing1(int pass) //snap
 {
     FILE * fp;
-    fp = fopen("/home/pi/work/RasPike/sdk/workspace/etrobo2023_A/SnapPipe", "w");
-    printf("open\n");
-
-    if(pass == 0)
-    {
-        fprintf(fp,"snap\n");
-    }
-    else
-    {
-        fprintf(fp,"getsnap\n");
-        printf("fprint\n");
-    }
     
-    fclose(fp);
+    fp = fopen("/home/pi/work/RasPike/sdk/workspace/etrobo2023_A/SnapPipe", "w");
+    printf("Popen\n");
+
+    switch(pass)
+    {
+        case 0:
+            fprintf(fp,"snapa\n");
+            printf("snapa\n");
+            break;
+        case 1:
+            fprintf(fp,"getsnap\n");
+            printf("getsnap\n");
+            break;
+        case 2:
+            fprintf(fp,"snapb\n");
+            printf("snapb\n");
+            break;
+    }
+
     printf("close\n");
+    fclose(fp);
+    printf("closed\n");
 }
 
 void Process::writing2(int pass) //Block

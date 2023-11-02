@@ -15,13 +15,12 @@ class TurnWalker : public SimpleWalker
         void setBias(double curve);
         void init();
         void execStart();
+        double calcTurn(double val2);
 
     protected:
 
     private:
-        double calcTurn();
-    
-        double val1;
+
         double mTargetLen;
         double mCurrentLen;
 
@@ -30,6 +29,9 @@ class TurnWalker : public SimpleWalker
 
         double mCurve;
         double mBias;
+        double mPFactor;
+        double mIFactor;
+        double mDFactor;
 
 };
 
