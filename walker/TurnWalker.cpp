@@ -12,7 +12,7 @@ void TurnWalker::execStart()
     mCurrentLen = mLength->getValue();
     //printf("current%f\n", mCurrentLen);
     double val1 = mTargetLen - mCurrentLen;
-    printf("val1%f\n", val1);
+    //printf("val1%f\n", val1);
     mTargetSpeed = calcTurn(val1);
 
     setCommand((int)mTargetSpeed, (int)mTurn);
@@ -42,7 +42,7 @@ double TurnWalker::calcTurn(double val2)
     //printf("val1%f\n", val1_turn);
 
     val3 = val3*-1;
-    setBias(mCurve);
+    //setBias(mCurve);
     double val4 =  val3+mBias;
     //double turn = mTarget;
     //printf("turn%f,,\n", turn);

@@ -1,6 +1,7 @@
 #ifndef __HACKEV3_H__
 #define __HACKEV3_H__
 
+#define SP 1//speedcourse
 #define PATARN 1//snap
 
 #if defined(MAKE_SIM)

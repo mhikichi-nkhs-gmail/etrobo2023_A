@@ -27,6 +27,12 @@ bool BlockSection::run()
             printf("blueblo2,,%d\n", blueblo2);
             printf("pat,,%d\n", pat);
 
+            red_position = 3;
+            blue_position1 = 9;
+            blue_position2 = 7;
+            pattern = 3;
+
+/*
             if(pat != 0)
             {
                 red_position = redblo;
@@ -34,6 +40,7 @@ bool BlockSection::run()
                 blue_position2 = blueblo2;
                 pattern = pat;
             }
+            */
             
             printf("set_block\n");
             if(course_flag==1)
