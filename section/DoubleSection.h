@@ -59,6 +59,8 @@ class DoubleSection : public SectionManager
     private:
         int num1;
         int len = 80;
+        int cm = 3;
+        double db = 0.0;
         double vp = 100;
         double vi = 27;
         double vd = 5.0;
@@ -86,7 +88,7 @@ class DoubleSection : public SectionManager
             //{Section::WALKER,{0,0},Section::TIME,{1, Section::FLNONE}, Section::EMNONE,{}},
             {Section::FILE,{3,0},Section::RECEPTION,{0,50, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{10, Section::FLNONE}, Section::EMNONE,{}},
-            {Section::VIRSLINE,{50, 100, 0, vp, vi ,vd,0},Section::LENGTH,{-1.5, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{50, 100, 0, vp, vi ,vd,0},Section::LENGTH,{-0.5, Section::FLNONE}, Section::EMNONE,{}},
             {Section::TWALKER,{tw,tp,ti,td},Section::TURNANGLE,{15, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{1, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
@@ -130,76 +132,76 @@ class DoubleSection : public SectionManager
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
         SecParam Rcourse[100] = {
-            {Section::VIRSLINE,{50, 12, 0, 28, 2.5 ,5.0,1},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TRACER,{60, 0.05, 10, 27, 4.5 ,0 , 0, _EDGE},Section::LENGTH,{5, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TRACER,{70, 0.05, 10, 27, 4.5 ,0 , 0, _EDGE},Section::LENGTH,{90, Section::RESETLEN}, Section::EMNONE,{}},/*RESETLEN*/
-            {Section::TRACER,{50, 0.05, 43, 4.5, 6.0 ,0 , 0, _EDGE},Section::COLOR,{206,0.05, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{50, 13, 0, 12.8, 2.5 ,4.9,1},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{60, db, 13, 27.5, 5.0 ,0 , 0, _EDGE},Section::LENGTH,{5, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{60, db, 13, 27.5, 4.5 ,0 , 0, _EDGE},Section::LENGTH,{5+123, Section::FLNONE}, Section::EMNONE,{}},/*RESETLEN*/
+            {Section::TRACER,{40, -0.1, 13, 27.5, 6.5 ,0 , 0, _EDGE},Section::COLOR,{210,0.1, Section::RESETLEN}, Section::EMNONE,{}},
             //{Section::WALKER,{0,0},Section::TIME,{50, Section::FLNONE}, Section::EMNONE,{}},
             {Section::TWALKER,{tw,tp,ti,td},Section::TURNANGLE,{-85, Section::RESETANG}, Section::EMNONE,{}},/*RESETANG*/
             //{Section::WALKER,{0,0},Section::TIME,{100, Section::FLNONE}, Section::EMNONE,{}},
             //{Section::WALKER,{-45,0},Section::LENGTH,{-14, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::VIRSLINE,{-55, -95, 0, vp, vi ,vd,0},Section::LENGTH,{-14, Section::RESETLEN}, Section::EMNONE,{}},/*RESETLEN*/
+            {Section::VIRSLINE,{-55, -100, 0, vp, vi ,vd,0},Section::LENGTH,{-14, Section::RESETLEN}, Section::EMNONE,{}},/*RESETLEN*/
+            //{Section::WALKER,{0,0},Section::TIME,{1000000, Section::FLNONE}, Section::EMNONE,{}},
             //{Section::FILE,{},Section::TIME,{1, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{1, Section::FLNONE}, Section::EMNONE,{}},
             {Section::FILE,{0,0},Section::TIME,{10, Section::FLNONE}, Section::EMNONE,{}},
             {Section::FILE,{0,1},Section::TIME,{10, Section::FLNONE}, Section::EMNONE,{}},
             {Section::FILE,{3,0},Section::RECEPTION,{1,50, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{10, Section::FLNONE}, Section::EMNONE,{}},
-            {Section::VIRSLINE,{50, -100, 0, vp, vi ,vd,0},Section::LENGTH,{-0.5, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{50, -101, 0, vp, vi ,vd,0},Section::LENGTH,{-0.5, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{1, Section::FLNONE}, Section::EMNONE,{}},
             {Section::TWALKER,{-tw,tp,ti,td},Section::TURNANGLE,{-15, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{1, Section::FLNONE}, Section::EMNONE,{}},
-            
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
-        SecParam Rnextpoint[15] = {
-            {Section::TRACER,{45, -0.3, 60, 12.5, 7.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{5, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TRACER,{55, -0.3, 45, 4.5, 5.5 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{49, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TRACER,{45, -0.3, 45, 4.5, 5.5 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{15, Section::RESETLEN}, Section::EMNONE,{}},
+        SecParam Rnextpoint[20] = {
+            {Section::TRACER,{45, db, 13, 27.5, 7.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{5, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{60, db, 13, 27.5, 5.5 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{5+49, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::TRACER,{45, db, 13, 27.5, 5.5 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{5+49+15, Section::FLNONE}, Section::EMNONE,{}},
             //{Section::WALKER,{0,0},Section::TIME,{50, Section::FLNONE}, Section::EMNONE,{}},
-            {Section::TWALKER,{tw,tp,ti,td},Section::TURNANGLE,{-85, Section::RESETANG}, Section::EMNONE,{}},
-            {Section::VIRSLINE,{-50, -95, 0, vp, vi ,vd,0},Section::LENGTH,{-13.5, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TWALKER,{tw,tp,ti,td},Section::TURNANGLE,{-80, Section::RESETANG}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{-50, -99, 0, vp, vi ,vd,0},Section::LENGTH,{-13.5, Section::RESETLEN}, Section::EMNONE,{}},
             //{Section::WALKER,{0,0},Section::TIME,{300, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{10, Section::FLNONE}, Section::EMNONE,{}},
             {Section::FILE,{0,0},Section::TIME,{10, Section::FLNONE}, Section::EMNONE,{}},
             {Section::FILE,{0,1},Section::TIME,{10, Section::FLNONE}, Section::EMNONE,{}},
             {Section::FILE,{3,0},Section::RECEPTION,{1,50, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{10, Section::FLNONE}, Section::EMNONE,{}},
-            {Section::VIRSLINE,{55, -100, 0, vp, vi ,vd,0},Section::LENGTH,{0.5, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{55, -100, 0, vp, vi ,vd,0},Section::LENGTH,{0, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{10, Section::FLNONE}, Section::EMNONE,{}},
-            
             {Section::TWALKER,{-tw,tp,ti,td},Section::TURNANGLE,{-13, Section::FLNONE}, Section::EMNONE,{}},
+            //{Section::WALKER,{0,0},Section::TIME,{100000, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{10, Section::FLNONE}, Section::EMNONE,{}},
             
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
         SecParam Rbluemarker1[10] = { 
-            {Section::TRACER,{60, -0.5, 10, 28, 4.5 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{220, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TRACER,{60, -0.5, 10, 28, 4.5 ,0 , 0, 'LEFTEDGE'},Section::COLOR,{208,0.08, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{60, db, 13, 27.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{220, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{50, -0.1, 13, 27.5, 7.0 ,0 , 0, 'LEFTEDGE'},Section::COLOR,{208,0.08, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
         SecParam Rbluemarker2[10] = { 
-            {Section::TRACER,{60, -0.5, 10, 28, 4.5 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{170, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TRACER,{60, -0.5, 10, 28, 4.5 ,0 , 0, 'LEFTEDGE'},Section::COLOR,{208,0.08, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{60, db, 13, 27.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{170, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{50, -0.1, 13, 27.5, 7.0 ,0 , 0, 'LEFTEDGE'},Section::COLOR,{208,0.08, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
         SecParam Rbluemarker3[10] = { 
-            {Section::TRACER,{60, -0.5, 10, 28, 4.5 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{120, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TRACER,{60, -0.5, 10, 28, 4.5 ,0 , 0, 'LEFTEDGE'},Section::COLOR,{208,0.08, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{60, db, 13, 27.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{120, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{50, -0.1, 13, 27.5, 7.0 ,0 , 0, 'LEFTEDGE'},Section::COLOR,{208,0.08, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
         SecParam Rbluemarker4[10] = { 
-            {Section::TRACER,{60, -0.5, 60, 4.5, 9.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{50, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{60, db, 13, 27.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{45, Section::RESETLEN}, Section::EMNONE,{}},
             //{Section::WALKER,{0,0},Section::TIME,{30000000, Section::FLNONE}, Section::EMNONE,{}},
-            {Section::TRACER,{60, -0.5, 48, 4.5, 7.0 ,0 , 0, 'LEFTEDGE'},Section::COLOR,{210,0.08, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{50, -0.1, 13, 27.5, 7.0 ,0 , 0, 'LEFTEDGE'},Section::COLOR,{210,0.08, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
 #if PATARN == 1      
         SecParam SLcourse[30] = { //+10
-            {Section::TRACER,{60, -0.6, 48, 4.5, 7.0 ,0 , 0, _EDGE},Section::LENGTH,{20, Section::RESETLEN}, Section::EMNONE,{}}, 
-            {Section::TRACER,{60, -0.5, 48, 4.5, 7.0 ,0 , 0 ,'LEFTEDGE'},Section::LENGTH,{15, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TRACER,{50, 0.05, 45, 4.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{len, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TWALKER,{tw,tp,ti,td},Section::TURNANGLE,{-85, Section::RESETANG}, Section::EMNONE,{}},
+            {Section::TRACER,{60, -0.6, 15, 28, 7.0 ,0 , 0, _EDGE},Section::LENGTH,{20, Section::RESETLEN}, Section::EMNONE,{}}, 
+            {Section::TRACER,{60, -0.5, 15, 28, 7.0 ,0 , 0 ,'LEFTEDGE'},Section::LENGTH,{15, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{50, db, 13, 27.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{len, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TWALKER,{tw,tp,ti,td},Section::TURNANGLE,{-83, Section::RESETANG}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{1, Section::FLNONE}, Section::EMNONE,{}},
             {Section::FILE,{0,2},Section::TIME,{10, Section::FLNONE}, Section::EMNONE,{}},
             {Section::FILE,{0,1},Section::TIME,{10, Section::FLNONE}, Section::EMNONE,{}},
@@ -226,9 +228,11 @@ class DoubleSection : public SectionManager
             };
 
         SecParam SRcourse[40] = { //+10
-            {Section::TRACER,{60, -0.6, 48, 4.5, 7.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{20, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TRACER,{60, -0.5, 48, 6.5, 7.0 ,0 , 0 ,_EDGE},Section::LENGTH,{15, Section::RESETLEN}, Section::EMNONE,{}},//'d'noataigayowaikamo
-            {Section::TRACER,{50, 0.05, 45, 4.5, 5.0 ,0 , 0, _EDGE},Section::LENGTH,{len+20, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{60, -0.6, 15, 28, 7.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{22, Section::RESETLEN}, Section::EMNONE,{}},
+            //{Section::WALKER,{0,0},Section::TIME,{300000000, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::TRACER,{50, db, 15, 28, 7.0 ,0 , 0 ,_EDGE},Section::LENGTH,{20+15, Section::FLNONE}, Section::EMNONE,{}},//'d'noataigayowaikamo
+            //{Section::TRACER,{50, -0.1, 14, 27.5, 7.0 ,0 , 0, _EDGE},Section::LENGTH,{20+15+5, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::TRACER,{50, db, 13, 27.5, 6.5 ,0 , 0, _EDGE},Section::LENGTH,{20+15+len+20, Section::FLNONE}, Section::EMNONE,{}},
             {Section::TWALKER,{-tw,tp,ti,td},Section::TURNANGLE,{85, Section::RESETANG}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{1, Section::FLNONE}, Section::EMNONE,{}},
             {Section::FILE,{0,2},Section::TIME,{10, Section::FLNONE}, Section::EMNONE,{}},
@@ -237,25 +241,31 @@ class DoubleSection : public SectionManager
             {Section::FILE,{3,0},Section::RECEPTION,{1,50, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{10, Section::FLNONE}, Section::EMNONE,{}},
             {Section::VIRSLINE,{50, 75, 0, 25, 2.5 ,2.0,0},Section::LENGTH,{1, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TWALKER,{tw,tp,ti,td},Section::TURNANGLE,{0, Section::FLNONE}, Section::EMNONE,{}},
-            {Section::TRACER,{50, 0.05, 48, 4.5, 8.0 ,0 , 0 ,_EDGE},Section::LENGTH,{5, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TRACER,{70, 0.05, 45, 4.5, 6.0 ,0 , 0 ,_EDGE},Section::LENGTH,{80-len, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TWALKER,{tw,tp,ti,td},Section::TURNANGLE,{15, Section::FLNONE}, Section::EMNONE,{}},
             //{Section::WALKER,{0,0},Section::TIME,{300000000, Section::FLNONE}, Section::EMNONE,{}},
-            {Section::TRACER,{60, 0.05, 45, 4.5, 5.0 ,0 , 0, _EDGE},Section::COLOR,{210,0.08, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TRACER,{60, 0.05, 45, 4.5, 5.0 ,0 , 0, _EDGE},Section::LENGTH,{25, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::VIRSLINE,{55, 0, 0, 25, 2.5 ,2.0,1},Section::LENGTH,{17, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TRACER,{60, 0.05, 48, 28, 4.5 ,0 , 0, _EDGE},Section::LENGTH,{3, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TRACER,{50, 0.05, 48, 28, 4.5 ,0 , 0, _EDGE},Section::LENGTH,{107, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{50, db, 13, 27.5, 8.0 ,0 , 0 ,_EDGE},Section::LENGTH,{5, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{60, db, 13, 27.5, 5.0 ,0 , 0 ,_EDGE},Section::LENGTH,{80-len, Section::RESETLEN}, Section::EMNONE,{}},
+            //{Section::WALKER,{0,0},Section::TIME,{300000000, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::TRACER,{50, -0.1, 13, 27.5, 7.0 ,0 , 0, _EDGE},Section::COLOR,{210,0.08, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{45, -0.1, 15, 27.5, 7.0 ,0 , 0, _EDGE},Section::LENGTH,{19, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{45, -0.5, 18, 30, 8.0 ,0 , 0, _EDGE},Section::LENGTH,{6, Section::RESETLEN}, Section::EMNONE,{}},
+            //{Section::WALKER,{0,0},Section::TIME,{300000000, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::TRACER,{50, db, 15, 28, 8.0 ,0 , 0 ,'LEFTEDGE'},Section::LENGTH,{20, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{65, db, 13, 27.5, 5.0 ,0 , 0, 'LEFTEDGE'},Section::LENGTH,{20+135, Section::FLNONE}, Section::EMNONE,{}},
             //{Section::WALKER,{0,0},Section::TIME,{300, Section::FLNONE}, Section::EMNONE,{}},
-            {Section::VIRSLINE,{50, 14, 0,0, 28, 2.5 ,1.2,1},Section::LENGTH,{14, Section::RESETLEN}, Section::EMNONE,{}},
             //{Section::WALKER,{0,0},Section::TIME,{300000000, Section::FLNONE}, Section::EMNONE,{}},
-            {Section::TRACER,{45, 0.05, 48, 2.5, 5.5 ,0 , 0, _EDGE},Section::LENGTH,{5, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TRACER,{65, 0.05, 48, 2.5, 5.5 ,0 , 0, _EDGE},Section::LENGTH,{27, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TWALKER,{60},Section::TURNANGLE,{-85, Section::RESETANG}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{50, -85, 0, 28, 2.5 ,1.2,0},Section::LENGTH,{40, Section::RESETLEN}, Section::EMNONE,{}},
             //{Section::WALKER,{0,0},Section::TIME,{300000000, Section::FLNONE}, Section::EMNONE,{}},
-            {Section::TRACER,{60, 0.05, 10, 27, 4.7 ,-28 , 0, _EDGE},Section::TURNANGLE,{58, Section::RESETANG}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{55, -85, 0, 28, 2.5 ,1.2,0},Section::BRIGHTNESS,{-0.25, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{50, -85, 0, 28, 2.5 ,1.2,0},Section::LENGTH,{cm+2, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TWALKER,{-60,tp,ti,td},Section::TURNANGLE,{-5, Section::FLNONE}, Section::EMNONE,{}},
+            //{Section::WALKER,{0,0},Section::TIME,{300000000, Section::FLNONE}, Section::EMNONE,{}},
+            //{Section::TRACER,{60, 0.05, 10, 27, 4.7 ,-28 , 0, _EDGE},Section::TURNANGLE,{58, Section::RESETANG}, Section::EMNONE,{}},
             //{Section::TRACER,{60, 0.05, 48, 2.5, 5.0 ,0 , 0, _EDGE},Section::LENGTH,{32, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TRACER,{75, -0.1, 10, 28, 4.55 ,0 , 0, _EDGE},Section::LENGTH,{150, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::TRACER,{60, -0.1, 43, 2.5, 4.7 ,0 , 0, _EDGE},Section::COLOR,{354,0.1, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::TRACER,{70, db, 9.9, 27, 8.0 ,0 , 0 ,_EDGE},Section::LENGTH,{5, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::TRACER,{75, db, 9.9, 27, 5.5 ,0 , 0, _EDGE},Section::LENGTH,{5+75, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::TRACER,{60, -0.1, 13, 27.5, 6.0 ,0 , 0, _EDGE},Section::COLOR,{354,0.1, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{1, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}
             };
