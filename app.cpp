@@ -191,7 +191,7 @@ int cnt = 1;
 JudgeReception * mJr;
 
 void judge_task(intptr_t unused) {
-  printf("task\n");
+  //printf("task\n");
   char pipe[256];
   FILE * fp;
   //printf("rec = %d\n",rec);

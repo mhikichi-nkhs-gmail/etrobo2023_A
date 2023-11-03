@@ -27,10 +27,10 @@ bool BlockSection::run()
             printf("blueblo2,,%d\n", blueblo2);
             printf("pat,,%d\n", pat);
 
-            red_position = 3;
-            blue_position1 = 9;
-            blue_position2 = 7;
-            pattern = 3;
+            red_position = 13;
+            blue_position1 = 100;
+            blue_position2 = 100;
+            pattern = 1;
 
 /*
             if(pat != 0)
@@ -62,7 +62,7 @@ bool BlockSection::run()
     }
     else
     {
-        if(red_position == now_position)
+        if(red_position == now_position || count == 15)
         {
             switch(set_flag)
             {
@@ -72,33 +72,40 @@ bool BlockSection::run()
                         case left:
                             if(course_flag==1)
                             {
+                                printf("Goal_left\n");
                                 set(Goal_left);
                             }
                             else
                             {
+                                printf("Goal_right\n");
                                 set(Goal_right);
                             }
                             break;
                         case right:
                             if(course_flag==1)
                             {
+                                printf("Goal_right\n");
                                 set(Goal_right);
                             }
                             else
                             {
+                                printf("Goal_left\n");
                                 set(Goal_left);
                             }
                             break;
                         case front:
+                            printf("Goal_front\n");
                             set(Goal_front);
                             break;
                         case behind:
                             if(course_flag==1)
                             {
+                                printf("RGoal_behind\n");
                                 set(RGoal_behind);
                             }
                             else
                             {
+                                printf("LGoal_behind\n");
                                 set(LGoal_behind);
                             }
                             break;
@@ -233,9 +240,6 @@ bool BlockSection::run()
                 {
                     switch(course_flag*move_pattern[pattern-1][count])
 		    {
-                        case 0:
-                            set(Move_Block_Ketu);
-                            break;
                         case 1:
                             set(Move_Block_Left);
                             break;
@@ -317,11 +321,11 @@ bool BlockSection::run()
                 }
                 if(set_flag==2)
                 {
-                    switch(position_color[pattern-1][count+1])
+                    switch(position_color[pattern-1][count])
                     {
                         case RED:
                         printf("set_Red\n");
-                            if(position_edge[pattern-1][count+1]==0)
+                            if(position_edge[pattern-1][count]==0)
                             {
                                 set(Next_Red_Circle);
                             }
@@ -332,7 +336,7 @@ bool BlockSection::run()
                             break;
                         case BLUE:
                             printf("set_Blue\n");
-                            if(position_edge[pattern-1][count+1]==0)
+                            if(position_edge[pattern-1][count]==0)
                             {
                                 set(Next_Blue_Circle);
                             }
@@ -343,7 +347,7 @@ bool BlockSection::run()
                             break;
                         case GREAN:
                             printf("set_Grean\n");
-                            if(position_edge[pattern-1][count+1]==0)
+                            if(position_edge[pattern-1][count]==0)
                             {
                                 set(Next_Grean_Circle);
                             }
@@ -354,7 +358,7 @@ bool BlockSection::run()
                             break;
                         case YELLOW:
                             printf("set_Yellow\n");
-                            if(position_edge[pattern-1][count+1]==0)
+                            if(position_edge[pattern-1][count]==0)
                             {
                                 set(Next_Yellow_Circle);
                             }
@@ -383,9 +387,6 @@ bool BlockSection::run()
 
 void BlockSection::course(int direct)
 {
-    target = 2;
-    pos = 0;
-    master =  1;
     if(direct == 0)
     {
         //printf("left\n");
@@ -405,10 +406,6 @@ void BlockSection::next_circle()
     if(SectionManager::run())
     {
         count++;
-        if(count+1==16)
-        {
-            count--;
-        }
         now_position=position[pattern-1][count];
         set_flag=0;
         
@@ -427,12 +424,6 @@ void BlockSection::goal()
 
 void BlockSection::move_block()
 {
-    if(target == pos)
-    {
-        COURSE = INIT_FINISHE;
-        pos = 20;
-        num1 = 10;
-    }
     if(SectionManager::run())
     {
         if(blue_position1 == now_position)
