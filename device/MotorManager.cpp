@@ -26,11 +26,11 @@ void MotorManager::setPwm(int left,int right)
 			{
 				if(current_lmotor >= 0)
 				{
-					setleft = 90;
+					setleft = 100;
 				}
 				else
 				{
-					setleft = -90;
+					setleft = -100;
 				}
 			} 
 			else
@@ -53,11 +53,11 @@ void MotorManager::setPwm(int left,int right)
 			{
 				if(current_rmotor >= 0)
 				{
-					setright = 90;
+					setright = 100;
 				}
 				else
 				{
-					setright = -90;
+					setright = -100;
 				}
 			} 
 			else
@@ -105,6 +105,7 @@ void MotorManager::setPwm(int left,int right)
 		if(mlCount == 200)
 		{
 			mLeftMotor->setPWM(setleft);
+			printf("EMERGENCY!!\n");
 		}
 		else
 		{
@@ -114,6 +115,7 @@ void MotorManager::setPwm(int left,int right)
 		if(mrCount == 200)
 		{
 			mRightMotor->setPWM(setright);
+			printf("EMERGENCY!!\n");
 		}
 		else
 		{
