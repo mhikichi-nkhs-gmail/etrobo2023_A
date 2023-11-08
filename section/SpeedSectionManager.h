@@ -38,10 +38,12 @@ class SpeedSectionManager : public SectionManager {
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
         SecParam Rcourse[20] = {
+            //{Section::FILE,{3,0},Section::RECEPTION,{1,300, Section::FLNONE}, Section::EMNONE,{}},
+            //{Section::WALKER,{0,0},Section::TIME,{10000000, Section::RESETLEN}, Section::EMNONE,{}},
          //   {Section::FILE,{2,0},Section::TIME,{1, Section::FLNONE}, Section::EMNONE,{}},
             //{Section::TRACER,{90, 0, 9.7, 24, 4.45 , 0, 0, _EDGE},Section::LENGTH,{20, Section::FLNONE}, Section::EMNONE,{}},
             //{Section::TRACER,{70, 0, 11, 25, 4.2 , 0, 0, _EDGE},Section::LENGTH,{50, Section::FLNONE}, Section::EMNONE,{}},
-            {Section::TRACER,{90, 0, 9.9, 28.2, 4.6 , 0, 0, _EDGE},Section::LENGTH,{288, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::TRACER,{90, 0, 9.9, 28, 4.7 , 0, 0, _EDGE},Section::LENGTH,{288, Section::FLNONE}, Section::EMNONE,{}},
             //{Section::WALKER,{0,0},Section::TIME,{10000000, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TRACER,{70, 0, 13, 30, 4.5 ,-17 , 0, _EDGE},Section::LENGTH,{323, Section::FLNONE}, Section::EMNONE,{}},
             {Section::TRACER,{90, 0, 9.9, 28, 4.6 ,0 , 0, _EDGE},Section::LENGTH,{503, Section::FLNONE}, Section::EMNONE,{}},
