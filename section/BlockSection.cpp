@@ -27,10 +27,10 @@ bool BlockSection::run()
             printf("blueblo2,,%d\n", blueblo2);
             printf("pat,,%d\n", pat);
 
-            red_position = 6;
-            blue_position1 = 100;
-            blue_position2 = 100;
-            pattern = 2;
+            red_position = 7;
+            blue_position1 = 3;
+            blue_position2 = 12;
+            pattern = 1;
 
 /*
             if(pat != 0)

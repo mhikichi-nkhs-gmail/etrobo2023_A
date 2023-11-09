@@ -73,7 +73,7 @@ class BlockSection : public SectionManager
                             };
         int position_edge[4][16] =
                             {
-                             {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
+                             {1,1,1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
                              {-1,-1,-1,1,1,1,1,1,1,1,1,1,1,1,1,1},
                              {1,1,1,1,-1,-1,-1,1,1,1,1,1,-1,-1,-1,-1},
                              {-1,-1,-1,1,1,1,1,-1,-1,-1,-1,1,1,1,1,1}
@@ -89,16 +89,16 @@ class BlockSection : public SectionManager
         int goal_turn_direction[4][16] = //1 left   -1 right
                             {
                              {1,1,1,1,1,-1,-1,-1,-1,-1,-1,-1,1,1,-1,-1},
-                             {1,1,1,-1,-1,-1,-1,-1,-1,1,1,1,1,1,-1,-1},
-                             {-1,-1,-1,1,-1,-1,-1,-1,1,-1,-1,-1,1,-1,-1,-1},
-                             {1,1,1,-1,-1,-1,-1,1,1,1,1,-1,-1,-1,-1,1}
+                             {1,1,-1,-1,-1,-1,-1,-1,-1,1,1,1,1,-1,-1,-1},
+                             {-1,-1,-1,1,-1,-1,-1,-1,-1,-1,-1,-1,1,-1,-1,-1},
+                             {1,1,-1,-1,-1,-1,-1,1,1,1,-1,-1,-1,-1,-1,1}
                             };
         int goal_pattern[4][16] = //1 pattern1   -1 pattern2
                             {
                              {1,1,1,1,1,1,-1,-1,-1,-1,1,1,1,1,1,1},
-                             {1,1,-1,-1,-1,-1,-1,1,1,1,1,1,1,-1,1,1},
-                             {1,1,1,1,1,1,1,1,-1,1,1,1,-1,-1,-1,-1},
-                             {1,1,-1,-1,-1,-1,1,1,1,1,-1,-1,-1,-1,1,1}
+                             {1,1,1,-1,-1,-1,-1,1,1,1,1,1,1,1,1,1},
+                             {1,1,1,1,1,1,1,1,1,1,1,1,-1,-1,-1,-1},
+                             {1,1,1,-1,-1,-1,1,1,1,1,1,-1,-1,-1,1,1}
                             };
         color position_color[4][15]=
                             {
@@ -111,9 +111,9 @@ class BlockSection : public SectionManager
         direction goal_direction[4][16] =
                             {
                              {first,right,right,right,front,behind,behind,right,right,right,front,front,right,right,behind,right},
-                             {first,front,front,behind,left,left,left,front,front,behind,left,left,front,front,left,front},
-                             {first,right,right,right,front,right,right,right,front,left,left,left,behind,right,right,right},
-                             {first,front,front,behind,left,front,front,behind,right,front,front,behind,left,front,front,behind}
+                             {first,front,behind,behind,left,left,left,front,front,behind,left,left,front,behind,left,front},
+                             {first,right,right,right,front,right,right,right,behind,left,left,left,behind,right,right,right},
+                             {first,front,behind,behind,left,front,front,behind,right,front,behind,behind,left,front,front,behind}
                             };
 
         int move_pattern[4][16] = //1 left   -1 right    0 ketu
@@ -132,6 +132,7 @@ class BlockSection : public SectionManager
             {Section::VIRSLINE,{45, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{5, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::TWALKER,{-tw,tp,ti,td},Section::TURNANGLE,{105, Section::RESETANG}, Section::EMNONE,{}},
             {Section::TRACER,{38, 0.0, 50, 5, 4 ,0 , 0, _OPPOSITION_EDGE},Section::COLOR,{203,0.08, Section::FLNONE}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{45, 0, 0, 28, 2.5 ,1.2,1},Section::LENGTH,{2, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::WALKER,{0,0},Section::TIME,{1, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
@@ -230,14 +231,12 @@ class BlockSection : public SectionManager
             {Section::TWALKER,{60,tp,ti,td},Section::TURNANGLE,{-170, Section::RESETANG}, Section::EMNONE,{}},
             {Section::TRACER,{37, 0, 48, 2.5 ,5,0 , 0, _EDGE},Section::LENGTH,{5, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::VIRSLINE,{-37, 0, 0, 48, 2.5 ,5.0,1},Section::LENGTH,{-6, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::WALKER,{0,0},Section::TIME,{50, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
         SecParam Lbehind_turn[5]={
             {Section::TWALKER,{-60,tp,ti,td},Section::TURNANGLE,{170, Section::RESETANG}, Section::EMNONE,{}},
             {Section::TRACER,{40, 0, 48, 2.5 ,5,0 , 0, _OPPOSITION_EDGE},Section::LENGTH,{5, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::VIRSLINE,{-37, 0, 0, 48, 2.5 ,5.0,1},Section::LENGTH,{-6, Section::RESETLEN}, Section::EMNONE,{}},
-            {Section::WALKER,{0,0},Section::TIME,{50, Section::FLNONE}, Section::EMNONE,{}},
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
         
         SecParam Goal_left[5]={
@@ -370,7 +369,7 @@ class BlockSection : public SectionManager
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
         SecParam RGoal_row1_P2[15]={
-            {Section::VIRSLINE,{60, -90, 0, 48, 2.5 ,5.0,0},Section::LENGTH,{105, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{60, -90, 0, 48, 2.5 ,5.0,0},Section::LENGTH,{110, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::VIRCLINE,{60, 5, 28, 2.5 ,1.2},Section::TURNANGLE,{85, Section::RESETANG}, Section::EMNONE,{}},
             {Section::VIRSLINE,{60, 0, 0, 48, 2.5 ,5.0,1},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::VIRCLINE,{60, -5, 28, 2.5 ,1.2},Section::TURNANGLE,{-85, Section::RESETANG}, Section::EMNONE,{}},
@@ -381,7 +380,7 @@ class BlockSection : public SectionManager
             {Section::WANONE,{},Section::JUNONE,{}, Section::EMNONE,{}}};
 
         SecParam RGoal_row2_P2[15]={
-            {Section::VIRSLINE,{60, -90, 0, 48, 2.5 ,5.0,0},Section::LENGTH,{80, Section::RESETLEN}, Section::EMNONE,{}},
+            {Section::VIRSLINE,{60, -90, 0, 48, 2.5 ,5.0,0},Section::LENGTH,{70, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::VIRCLINE,{60, 5, 28, 2.5 ,1.2},Section::TURNANGLE,{85, Section::RESETANG}, Section::EMNONE,{}},
             {Section::VIRSLINE,{60, 0, 0, 48, 2.5 ,5.0,1},Section::LENGTH,{10, Section::RESETLEN}, Section::EMNONE,{}},
             {Section::VIRCLINE,{60, -5, 28, 2.5 ,1.2},Section::TURNANGLE,{-85, Section::RESETANG}, Section::EMNONE,{}},
