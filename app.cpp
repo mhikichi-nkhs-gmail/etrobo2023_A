@@ -192,6 +192,7 @@ void count()
   mresult = true;
 }
 int cnt = 1;
+int app_flag = 0;
 JudgeReception * mJr;
 
 void judge_task(intptr_t unused) {
@@ -201,22 +202,31 @@ void judge_task(intptr_t unused) {
   //printf("rec = %d\n",rec);
   if(cnt == 0)
   {
-    fp = fopen("/home/pi/work/RasPike/sdk/workspace/etrobo2023_A/BlockPipe2","r");
-    printf("BlockPipe2\n");
-    fgets(pipe, 11, fp);
+    printf("app_flag=%d\n", app_flag);
+    if(app_flag == 0)
+    {
+      fp = fopen("/home/pi/work/RasPike/sdk/workspace/etrobo2023_A/BlockPipe2","rw");
+      app_flag = 1;
+      printf("BlockPipe2\n");
+      fgets(pipe, 11, fp);
+    }
   }
   else
   {
+    printf("app_flag=%d\n", app_flag);
     printf("SnapPipe2\n");
     //fp = fopen("/home/pi/work/RasPike/sdk/workspace/etrobo2023_A/SnapPipe2", "r");
     //fgets(pipe, , fp);
     //fclose(fp);
-
-    count();
-    fp = fopen("/home/pi/work/RasPike/sdk/workspace/etrobo2023_A/SnapPipe2", "r");
-    printf("SnapPipe2\n");
-    fgets(pipe, 2, fp);
-    printf("count\n");
+    if(app_flag == 0)
+    {
+      count();
+      fp = fopen("/home/pi/work/RasPike/sdk/workspace/etrobo2023_A/SnapPipe2", "rw");
+      printf("SnapPipe2\n");
+      fgets(pipe, 2, fp);
+      printf("count\n");
+    }
+    
     
     /*while(!strcmp(pipe,"") == 0)
     {

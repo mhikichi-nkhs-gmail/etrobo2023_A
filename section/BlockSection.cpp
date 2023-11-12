@@ -27,10 +27,10 @@ bool BlockSection::run()
             printf("blueblo2,,%d\n", blueblo2);
             printf("pat,,%d\n", pat);
 
-            red_position = 7;
-            blue_position1 = 3;
-            blue_position2 = 12;
-            pattern = 1;
+            red_position = 70;
+            blue_position1 = 40;
+            blue_position2 = 30;
+            pattern = 7;
 
 /*
             if(pat != 0)
@@ -251,7 +251,10 @@ bool BlockSection::run()
                 if(set_flag==0)
                 {
                     switch(course_flag*move_pattern[pattern-1][count])
-		    {
+		            {
+                        case 0:
+                            set(Move_Block_Strate);
+                            break;
                         case 1:
                             set(Move_Block_Left);
                             break;
