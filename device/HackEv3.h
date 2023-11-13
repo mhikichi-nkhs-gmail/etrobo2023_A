@@ -1,8 +1,8 @@
 #ifndef __HACKEV3_H__
 #define __HACKEV3_H__
 
-#define SP 2//speedcourse
-#define PATARN 1//snap
+#define SP 1//speedcourse
+#define PATARN 3//snap
 
 #if defined(MAKE_SIM)
 const double D_RIGHT=9.00;

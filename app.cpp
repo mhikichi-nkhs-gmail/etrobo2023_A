@@ -191,7 +191,7 @@ void count()
   }
   mresult = true;
 }
-int cnt = 1;
+int cnt = 0;
 int app_flag = 0;
 JudgeReception * mJr;
 
@@ -205,6 +205,7 @@ void judge_task(intptr_t unused) {
     printf("app_flag=%d\n", app_flag);
     if(app_flag == 0)
     {
+      count();
       fp = fopen("/home/pi/work/RasPike/sdk/workspace/etrobo2023_A/BlockPipe2","rw");
       app_flag = 1;
       printf("BlockPipe2\n");
@@ -240,6 +241,8 @@ void judge_task(intptr_t unused) {
   mJr->reception(pipe);
   
   cnt++;
+  printf("cnt=%d\n",cnt);
   fclose(fp);
+  app_flag = 0;
   ext_tsk();
 }

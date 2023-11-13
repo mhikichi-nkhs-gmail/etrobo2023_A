@@ -55,7 +55,7 @@ bool JudgeReception::judgement()
 
 void JudgeReception::reception(char result[])
 {
-    rec = 1;
+    rec = 0;
     if(rec == 0)
     {
         relength = strlen(result);
@@ -179,7 +179,7 @@ void JudgeReception::reception(char result[])
             }
             else
             {
-                for(int b=1; b<5; b++)
+                for(int b=1; b<9; b++)
                 {
                     sprintf(buffer, "%d", b);
                     if(strcmp(blo,buffer) == 0)
