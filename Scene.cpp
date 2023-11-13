@@ -148,9 +148,9 @@ void Scene::execStart()
     if (ev3_button_is_pressed(ENTER_BUTTON))
     {
         printf("SPEED\n");
-        mState=SPEED;
+        //mState=SPEED;
         //mState=DOUBLELOOP;
-        //mState=BLOCK;
+        mState=BLOCK;
     }
 #endif
 //printf("Start_Finish\n");
