@@ -30,7 +30,7 @@ bool BlockSection::run()
             red_position = 70;
             blue_position1 = 40;
             blue_position2 = 30;
-            pattern = 7;
+            pattern = 3;
 
 /*
             if(pat != 0)
